@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="regresion.html"/>
+<link rel="prev" href="modelling-techniques.html"/>
 <link rel="next" href="clustering.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -52,6 +52,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -164,9 +166,87 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="algebra-lineal.html"><a href="algebra-lineal.html#matrices-dispersas"><i class="fa fa-check"></i><b>3.2</b> matrices dispersas</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="test-estadísticos-bayesiano.html"><a href="test-estadísticos-bayesiano.html"><i class="fa fa-check"></i><b>4</b> Test estadísticos bayesiano</a></li>
-<li class="chapter" data-level="5" data-path="regresion.html"><a href="regresion.html"><i class="fa fa-check"></i><b>5</b> Regresion</a></li>
+<li class="chapter" data-level="5" data-path="modelling-techniques.html"><a href="modelling-techniques.html"><i class="fa fa-check"></i><b>5</b> Modelling techniques</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#interpolation"><i class="fa fa-check"></i><b>5.1</b> Interpolation</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#polynomial-interpolation"><i class="fa fa-check"></i><b>5.1.1</b> Polynomial interpolation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="modelling-techniques.html"><a href="modelling-techniques.html#linear-regression"><i class="fa fa-check"></i><b>5.2</b> Linear Regression</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#linear-regression-in-r"><i class="fa fa-check"></i><b>5.2.1</b> Linear Regression in R</a></li>
+<li class="chapter" data-level="5.2.2" data-path="modelling-techniques.html"><a href="modelling-techniques.html#lm-function"><i class="fa fa-check"></i><b>5.2.2</b> <strong>lm()</strong> function</a></li>
+<li class="chapter" data-level="5.2.3" data-path="modelling-techniques.html"><a href="modelling-techniques.html#evaluate-the-model"><i class="fa fa-check"></i><b>5.2.3</b> Evaluate the model</a></li>
+<li class="chapter" data-level="5.2.4" data-path="modelling-techniques.html"><a href="modelling-techniques.html#accuracy-of-the-model"><i class="fa fa-check"></i><b>5.2.4</b> Accuracy of the model</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="modelling-techniques.html"><a href="modelling-techniques.html#generalized-regression"><i class="fa fa-check"></i><b>5.3</b> Generalized Regression</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#multiple-linear-regression"><i class="fa fa-check"></i><b>5.3.1</b> Multiple Linear Regression</a></li>
+<li class="chapter" data-level="5.3.2" data-path="modelling-techniques.html"><a href="modelling-techniques.html#evaluating-the-regression-coefficients"><i class="fa fa-check"></i><b>5.3.2</b> Evaluating the Regression Coefficients</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="modelling-techniques.html"><a href="modelling-techniques.html#improving-the-models"><i class="fa fa-check"></i><b>5.4</b> Improving the models</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#updating-the-models"><i class="fa fa-check"></i><b>5.4.1</b> Updating the models</a></li>
+<li class="chapter" data-level="5.4.2" data-path="modelling-techniques.html"><a href="modelling-techniques.html#searching-the-best-regression"><i class="fa fa-check"></i><b>5.4.2</b> Searching the best regression</a></li>
+<li class="chapter" data-level="5.4.3" data-path="modelling-techniques.html"><a href="modelling-techniques.html#orthogonal-polynomials"><i class="fa fa-check"></i><b>5.4.3</b> Orthogonal polynomials</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="modelling-techniques.html"><a href="modelling-techniques.html#model-validation"><i class="fa fa-check"></i><b>5.5</b> Model validation</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#residuals"><i class="fa fa-check"></i><b>5.5.1</b> Residuals</a></li>
+<li class="chapter" data-level="5.5.2" data-path="modelling-techniques.html"><a href="modelling-techniques.html#other-study-of-residuals"><i class="fa fa-check"></i><b>5.5.2</b> Other study of residuals</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="modelling-techniques.html"><a href="modelling-techniques.html#proyecto---regresion-economistdata"><i class="fa fa-check"></i><b>5.6</b> Proyecto - regresion EconomistData</a></li>
+<li class="chapter" data-level="5.7" data-path="modelling-techniques.html"><a href="modelling-techniques.html#proyecto---analysing-boston-dataset"><i class="fa fa-check"></i><b>5.7</b> Proyecto - Analysing <em>Boston</em> dataset</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#fit-a-simple-linear-regression"><i class="fa fa-check"></i><b>5.7.1</b> Fit a simple linear regression</a></li>
+<li class="chapter" data-level="5.7.2" data-path="modelling-techniques.html"><a href="modelling-techniques.html#analyzing-the-model"><i class="fa fa-check"></i><b>5.7.2</b> Analyzing the model</a></li>
+<li class="chapter" data-level="5.7.3" data-path="modelling-techniques.html"><a href="modelling-techniques.html#multiple-regression"><i class="fa fa-check"></i><b>5.7.3</b> Multiple regression</a></li>
+<li class="chapter" data-level="5.7.4" data-path="modelling-techniques.html"><a href="modelling-techniques.html#interaction-terms"><i class="fa fa-check"></i><b>5.7.4</b> Interaction terms</a></li>
+<li class="chapter" data-level="5.7.5" data-path="modelling-techniques.html"><a href="modelling-techniques.html#non-linear-transformations-of-the-predictors"><i class="fa fa-check"></i><b>5.7.5</b> Non-linear transformations of the predictors</a></li>
+<li class="chapter" data-level="5.7.6" data-path="modelling-techniques.html"><a href="modelling-techniques.html#using-anova"><i class="fa fa-check"></i><b>5.7.6</b> Using anova</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="modelling-techniques.html"><a href="modelling-techniques.html#poyecto---evaluación-de-cursos---variables-categóricas"><i class="fa fa-check"></i><b>5.8</b> Poyecto - evaluación de cursos - variables categóricas</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#eda---exploratory-data-analysis"><i class="fa fa-check"></i><b>5.8.1</b> EDA - exploratory data analysis</a></li>
+<li class="chapter" data-level="5.8.2" data-path="modelling-techniques.html"><a href="modelling-techniques.html#modelo-lineal"><i class="fa fa-check"></i><b>5.8.2</b> Modelo lineal</a></li>
+<li class="chapter" data-level="5.8.3" data-path="modelling-techniques.html"><a href="modelling-techniques.html#interacción-de-modelos"><i class="fa fa-check"></i><b>5.8.3</b> Interacción de modelos</a></li>
+<li class="chapter" data-level="5.8.4" data-path="modelling-techniques.html"><a href="modelling-techniques.html#multiple-regression-1"><i class="fa fa-check"></i><b>5.8.4</b> Multiple Regression</a></li>
+<li class="chapter" data-level="5.8.5" data-path="modelling-techniques.html"><a href="modelling-techniques.html#validando-el-modelo"><i class="fa fa-check"></i><b>5.8.5</b> Validando el modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="modelling-techniques.html"><a href="modelling-techniques.html#anexo-r-avanzado"><i class="fa fa-check"></i><b>5.9</b> Anexo: R avanzado</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#más-de-tidyverse"><i class="fa fa-check"></i><b>5.9.1</b> Más de tidyverse</a></li>
+<li class="chapter" data-level="5.9.2" data-path="modelling-techniques.html"><a href="modelling-techniques.html#skimr-package"><i class="fa fa-check"></i><b>5.9.2</b> <code>Skimr</code> package</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="modelling-techniques.html"><a href="modelling-techniques.html#proyecto---predicción-de-riesgos"><i class="fa fa-check"></i><b>5.10</b> Proyecto - Predicción de riesgos</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="series-temporales.html"><a href="series-temporales.html"><i class="fa fa-check"></i><b>6</b> Series Temporales</a></li>
-<li class="chapter" data-level="7" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>7</b> Clustering</a></li>
+<li class="chapter" data-level="7" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>7</b> Clustering</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="clustering.html"><a href="clustering.html#fundamentos"><i class="fa fa-check"></i><b>7.1</b> Fundamentos</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="clustering.html"><a href="clustering.html#medidas-de-similaridad"><i class="fa fa-check"></i><b>7.1.1</b> Medidas de similaridad</a></li>
+<li class="chapter" data-level="7.1.2" data-path="clustering.html"><a href="clustering.html#disimilaridad-basada-en-diferencias"><i class="fa fa-check"></i><b>7.1.2</b> Disimilaridad basada en diferencias</a></li>
+<li class="chapter" data-level="7.1.3" data-path="clustering.html"><a href="clustering.html#matriz-de-distancias"><i class="fa fa-check"></i><b>7.1.3</b> Matriz de distancias</a></li>
+<li class="chapter" data-level="7.1.4" data-path="clustering.html"><a href="clustering.html#similaridad-basada-en-correlaciones"><i class="fa fa-check"></i><b>7.1.4</b> Similaridad basada en correlaciones</a></li>
+<li class="chapter" data-level="7.1.5" data-path="clustering.html"><a href="clustering.html#correlación-de-pearson"><i class="fa fa-check"></i><b>7.1.5</b> Correlación de Pearson</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="clustering.html"><a href="clustering.html#clustering-en-r"><i class="fa fa-check"></i><b>7.2</b> Clustering en R</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="clustering.html"><a href="clustering.html#centros"><i class="fa fa-check"></i><b>7.2.1</b> Centros</a></li>
+<li class="chapter" data-level="7.2.2" data-path="clustering.html"><a href="clustering.html#objetivo"><i class="fa fa-check"></i><b>7.2.2</b> Objetivo</a></li>
+<li class="chapter" data-level="7.2.3" data-path="clustering.html"><a href="clustering.html#k-means"><i class="fa fa-check"></i><b>7.2.3</b> k-means</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="clustering.html"><a href="clustering.html#número-optimo-de-clusters"><i class="fa fa-check"></i><b>7.3</b> Número optimo de clusters</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="clustering.html"><a href="clustering.html#proyecto---dataset-usarrests"><i class="fa fa-check"></i><b>7.3.1</b> Proyecto - dataset USArrests</a></li>
+<li class="chapter" data-level="7.3.2" data-path="clustering.html"><a href="clustering.html#tamaño-optimal-de-clusters"><i class="fa fa-check"></i><b>7.3.2</b> Tamaño optimal de clusters</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="clustering.html"><a href="clustering.html#clustering-jerárquico"><i class="fa fa-check"></i><b>7.4</b> Clustering jerárquico</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="clustering.html"><a href="clustering.html#proyecto-dataset-protein"><i class="fa fa-check"></i><b>7.4.1</b> Proyecto dataset protein</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html"><i class="fa fa-check"></i><b>8</b> Reglas de Asociación</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#introducción-1"><i class="fa fa-check"></i><b>8.1</b> Introducción</a>
@@ -229,8 +309,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.7.6" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#re-exporting-to-arules"><i class="fa fa-check"></i><b>9.7.6</b> Re-Exporting to <code>arules</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="sna.html"><a href="sna.html"><i class="fa fa-check"></i><b>10</b> sna</a></li>
-<li class="chapter" data-level="11" data-path="pagerank.html"><a href="pagerank.html"><i class="fa fa-check"></i><b>11</b> pagerank</a></li>
+<li class="chapter" data-level="10" data-path="social-network-analysis.html"><a href="social-network-analysis.html"><i class="fa fa-check"></i><b>10</b> Social Network Analysis</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#r-for-sna"><i class="fa fa-check"></i><b>10.1</b> R for SNA</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#elementos-de-una-red"><i class="fa fa-check"></i><b>10.1.1</b> Elementos de una red</a></li>
+<li class="chapter" data-level="10.1.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#representación-de-redes"><i class="fa fa-check"></i><b>10.1.2</b> Representación de redes</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#igraph"><i class="fa fa-check"></i><b>10.2</b> <code>igraph</code></a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#acceder-a-elementos-de-grado"><i class="fa fa-check"></i><b>10.2.1</b> Acceder a elementos de grado</a></li>
+<li class="chapter" data-level="10.2.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#construirmodificar-un-grafo"><i class="fa fa-check"></i><b>10.2.2</b> Construir/Modificar un grafo</a></li>
+<li class="chapter" data-level="10.2.3" data-path="social-network-analysis.html"><a href="social-network-analysis.html#visualización-1"><i class="fa fa-check"></i><b>10.2.3</b> Visualización</a></li>
+<li class="chapter" data-level="10.2.4" data-path="social-network-analysis.html"><a href="social-network-analysis.html#layout"><i class="fa fa-check"></i><b>10.2.4</b> Layout</a></li>
+<li class="chapter" data-level="10.2.5" data-path="social-network-analysis.html"><a href="social-network-analysis.html#dibujar-grafos-ponderados"><i class="fa fa-check"></i><b>10.2.5</b> Dibujar grafos ponderados</a></li>
+<li class="chapter" data-level="10.2.6" data-path="social-network-analysis.html"><a href="social-network-analysis.html#cambiar-aspecto-y-propiedades-de-un-grafo"><i class="fa fa-check"></i><b>10.2.6</b> Cambiar aspecto y propiedades de un grafo</a></li>
+<li class="chapter" data-level="10.2.7" data-path="social-network-analysis.html"><a href="social-network-analysis.html#ejemplos---plantillas"><i class="fa fa-check"></i><b>10.2.7</b> Ejemplos - plantillas</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="social-network-analysis.html"><a href="social-network-analysis.html#exportar-grafos"><i class="fa fa-check"></i><b>10.3</b> Exportar grafos</a></li>
+<li class="chapter" data-level="10.4" data-path="social-network-analysis.html"><a href="social-network-analysis.html#de-twitter"><i class="fa fa-check"></i><b>10.4</b> De Twitter</a></li>
+<li class="chapter" data-level="10.5" data-path="social-network-analysis.html"><a href="social-network-analysis.html#medidas-de-bondad-calidad"><i class="fa fa-check"></i><b>10.5</b> Medidas de bondad, calidad</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#centrality"><i class="fa fa-check"></i><b>10.5.1</b> Centrality</a></li>
+<li class="chapter" data-level="10.5.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#degree"><i class="fa fa-check"></i><b>10.5.2</b> Degree</a></li>
+<li class="chapter" data-level="10.5.3" data-path="social-network-analysis.html"><a href="social-network-analysis.html#betweenness"><i class="fa fa-check"></i><b>10.5.3</b> Betweenness</a></li>
+<li class="chapter" data-level="10.5.4" data-path="social-network-analysis.html"><a href="social-network-analysis.html#edge_betweenness"><i class="fa fa-check"></i><b>10.5.4</b> Edge_betweenness</a></li>
+<li class="chapter" data-level="10.5.5" data-path="social-network-analysis.html"><a href="social-network-analysis.html#closeness"><i class="fa fa-check"></i><b>10.5.5</b> Closeness</a></li>
+<li class="chapter" data-level="10.5.6" data-path="social-network-analysis.html"><a href="social-network-analysis.html#eigenvector"><i class="fa fa-check"></i><b>10.5.6</b> Eigenvector</a></li>
+<li class="chapter" data-level="10.5.7" data-path="social-network-analysis.html"><a href="social-network-analysis.html#pagerank"><i class="fa fa-check"></i><b>10.5.7</b> Pagerank</a></li>
+<li class="chapter" data-level="10.5.8" data-path="social-network-analysis.html"><a href="social-network-analysis.html#diameter"><i class="fa fa-check"></i><b>10.5.8</b> Diameter</a></li>
+<li class="chapter" data-level="10.5.9" data-path="social-network-analysis.html"><a href="social-network-analysis.html#caminos-y-distancias"><i class="fa fa-check"></i><b>10.5.9</b> Caminos y distancias</a></li>
+<li class="chapter" data-level="10.5.10" data-path="social-network-analysis.html"><a href="social-network-analysis.html#transitivity"><i class="fa fa-check"></i><b>10.5.10</b> Transitivity</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="social-network-analysis.html"><a href="social-network-analysis.html#proyecto-sna---usairports"><i class="fa fa-check"></i><b>10.6</b> Proyecto SNA - USairports</a></li>
+<li class="chapter" data-level="10.7" data-path="social-network-analysis.html"><a href="social-network-analysis.html#proyecto---películas-actores"><i class="fa fa-check"></i><b>10.7</b> Proyecto - películas + actores</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#crear-grafo"><i class="fa fa-check"></i><b>10.7.1</b> crear grafo</a></li>
+<li class="chapter" data-level="10.7.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#análisis-del-grafo"><i class="fa fa-check"></i><b>10.7.2</b> Análisis del grafo</a></li>
+<li class="chapter" data-level="10.7.3" data-path="social-network-analysis.html"><a href="social-network-analysis.html#cambiar-atributos-del-grafo"><i class="fa fa-check"></i><b>10.7.3</b> Cambiar atributos del grafo</a></li>
+<li class="chapter" data-level="10.7.4" data-path="social-network-analysis.html"><a href="social-network-analysis.html#modificar-el-grafo"><i class="fa fa-check"></i><b>10.7.4</b> Modificar el grafo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="pagerank-1.html"><a href="pagerank-1.html"><i class="fa fa-check"></i><b>11</b> pagerank</a></li>
 <li class="chapter" data-level="12" data-path="análisis-de-componentes-principales.html"><a href="análisis-de-componentes-principales.html"><i class="fa fa-check"></i><b>12</b> Análisis de Componentes Principales</a></li>
 <li class="chapter" data-level="13" data-path="text-imining.html"><a href="text-imining.html"><i class="fa fa-check"></i><b>13</b> Text Imining</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -263,7 +383,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="regresion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="modelling-techniques.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="clustering.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

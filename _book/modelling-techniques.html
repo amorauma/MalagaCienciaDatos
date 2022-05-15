@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 5 Modelling techniques | Ciencia de Datos - UMA</title>
+  <meta name="description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 5 Modelling techniques | Ciencia de Datos - UMA" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 5 Modelling techniques | Ciencia de Datos - UMA" />
+  
+  <meta name="twitter:description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
+  
+
+<meta name="author" content="Domingo López, Ángel Mora" />
+
+
+<meta name="date" content="2022-05-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="test-estadísticos-bayesiano.html"/>
+<link rel="next" href="series-temporales.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Ciencia de datos con R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html"><i class="fa fa-check"></i><b>2</b> Análisis Exploratorio de Datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#importación-de-datos"><i class="fa fa-check"></i><b>2.1</b> Importación de datos</a></li>
+<li class="chapter" data-level="2.2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#dplyr-para-manipulación-de-datos"><i class="fa fa-check"></i><b>2.2</b> <code>dplyr</code> para Manipulación de Datos</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#backends"><i class="fa fa-check"></i><b>2.2.1</b> Backends</a></li>
+<li class="chapter" data-level="2.2.2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#filtrado-de-filas-con-filter"><i class="fa fa-check"></i><b>2.2.2</b> Filtrado de filas con <code>filter()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#ordenar-filas-con-arrange"><i class="fa fa-check"></i><b>2.3</b> Ordenar filas con <code>arrange()</code></a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#selección-de-columnas-select"><i class="fa fa-check"></i><b>2.3.1</b> Selección de columnas <code>select()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#añadir-o-renombrar-variables-con-mutate"><i class="fa fa-check"></i><b>2.4</b> Añadir o renombrar variables con <code>mutate()</code></a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#rename"><i class="fa fa-check"></i><b>2.4.1</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="2.4.2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#uso-del-operador"><i class="fa fa-check"></i><b>2.4.2</b> Uso del operador <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="2.4.3" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#otros-verbos-auxiliares"><i class="fa fa-check"></i><b>2.4.3</b> Otros verbos auxiliares</a></li>
+<li class="chapter" data-level="2.4.4" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#operaciones-con-dos-tablas"><i class="fa fa-check"></i><b>2.4.4</b> Operaciones con dos tablas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#proyecto-starwarks"><i class="fa fa-check"></i><b>2.5</b> Proyecto Starwarks</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="algebra-lineal.html"><a href="algebra-lineal.html"><i class="fa fa-check"></i><b>3</b> Algebra Lineal</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="algebra-lineal.html"><a href="algebra-lineal.html#grandes-sistemas"><i class="fa fa-check"></i><b>3.1</b> grandes sistemas</a></li>
+<li class="chapter" data-level="3.2" data-path="algebra-lineal.html"><a href="algebra-lineal.html#matrices-dispersas"><i class="fa fa-check"></i><b>3.2</b> matrices dispersas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="test-estadísticos-bayesiano.html"><a href="test-estadísticos-bayesiano.html"><i class="fa fa-check"></i><b>4</b> Test estadísticos bayesiano</a></li>
+<li class="chapter" data-level="5" data-path="modelling-techniques.html"><a href="modelling-techniques.html"><i class="fa fa-check"></i><b>5</b> Modelling techniques</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#interpolation"><i class="fa fa-check"></i><b>5.1</b> Interpolation</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#polynomial-interpolation"><i class="fa fa-check"></i><b>5.1.1</b> Polynomial interpolation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="modelling-techniques.html"><a href="modelling-techniques.html#linear-regression"><i class="fa fa-check"></i><b>5.2</b> Linear Regression</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#linear-regression-in-r"><i class="fa fa-check"></i><b>5.2.1</b> Linear Regression in R</a></li>
+<li class="chapter" data-level="5.2.2" data-path="modelling-techniques.html"><a href="modelling-techniques.html#lm-function"><i class="fa fa-check"></i><b>5.2.2</b> <strong>lm()</strong> function</a></li>
+<li class="chapter" data-level="5.2.3" data-path="modelling-techniques.html"><a href="modelling-techniques.html#evaluate-the-model"><i class="fa fa-check"></i><b>5.2.3</b> Evaluate the model</a></li>
+<li class="chapter" data-level="5.2.4" data-path="modelling-techniques.html"><a href="modelling-techniques.html#accuracy-of-the-model"><i class="fa fa-check"></i><b>5.2.4</b> Accuracy of the model</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="modelling-techniques.html"><a href="modelling-techniques.html#generalized-regression"><i class="fa fa-check"></i><b>5.3</b> Generalized Regression</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#multiple-linear-regression"><i class="fa fa-check"></i><b>5.3.1</b> Multiple Linear Regression</a></li>
+<li class="chapter" data-level="5.3.2" data-path="modelling-techniques.html"><a href="modelling-techniques.html#evaluating-the-regression-coefficients"><i class="fa fa-check"></i><b>5.3.2</b> Evaluating the Regression Coefficients</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="modelling-techniques.html"><a href="modelling-techniques.html#improving-the-models"><i class="fa fa-check"></i><b>5.4</b> Improving the models</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#updating-the-models"><i class="fa fa-check"></i><b>5.4.1</b> Updating the models</a></li>
+<li class="chapter" data-level="5.4.2" data-path="modelling-techniques.html"><a href="modelling-techniques.html#searching-the-best-regression"><i class="fa fa-check"></i><b>5.4.2</b> Searching the best regression</a></li>
+<li class="chapter" data-level="5.4.3" data-path="modelling-techniques.html"><a href="modelling-techniques.html#orthogonal-polynomials"><i class="fa fa-check"></i><b>5.4.3</b> Orthogonal polynomials</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="modelling-techniques.html"><a href="modelling-techniques.html#model-validation"><i class="fa fa-check"></i><b>5.5</b> Model validation</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#residuals"><i class="fa fa-check"></i><b>5.5.1</b> Residuals</a></li>
+<li class="chapter" data-level="5.5.2" data-path="modelling-techniques.html"><a href="modelling-techniques.html#other-study-of-residuals"><i class="fa fa-check"></i><b>5.5.2</b> Other study of residuals</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="modelling-techniques.html"><a href="modelling-techniques.html#proyecto---regresion-economistdata"><i class="fa fa-check"></i><b>5.6</b> Proyecto - regresion EconomistData</a></li>
+<li class="chapter" data-level="5.7" data-path="modelling-techniques.html"><a href="modelling-techniques.html#proyecto---analysing-boston-dataset"><i class="fa fa-check"></i><b>5.7</b> Proyecto - Analysing <em>Boston</em> dataset</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#fit-a-simple-linear-regression"><i class="fa fa-check"></i><b>5.7.1</b> Fit a simple linear regression</a></li>
+<li class="chapter" data-level="5.7.2" data-path="modelling-techniques.html"><a href="modelling-techniques.html#analyzing-the-model"><i class="fa fa-check"></i><b>5.7.2</b> Analyzing the model</a></li>
+<li class="chapter" data-level="5.7.3" data-path="modelling-techniques.html"><a href="modelling-techniques.html#multiple-regression"><i class="fa fa-check"></i><b>5.7.3</b> Multiple regression</a></li>
+<li class="chapter" data-level="5.7.4" data-path="modelling-techniques.html"><a href="modelling-techniques.html#interaction-terms"><i class="fa fa-check"></i><b>5.7.4</b> Interaction terms</a></li>
+<li class="chapter" data-level="5.7.5" data-path="modelling-techniques.html"><a href="modelling-techniques.html#non-linear-transformations-of-the-predictors"><i class="fa fa-check"></i><b>5.7.5</b> Non-linear transformations of the predictors</a></li>
+<li class="chapter" data-level="5.7.6" data-path="modelling-techniques.html"><a href="modelling-techniques.html#using-anova"><i class="fa fa-check"></i><b>5.7.6</b> Using anova</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="modelling-techniques.html"><a href="modelling-techniques.html#poyecto---evaluación-de-cursos---variables-categóricas"><i class="fa fa-check"></i><b>5.8</b> Poyecto - evaluación de cursos - variables categóricas</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#eda---exploratory-data-analysis"><i class="fa fa-check"></i><b>5.8.1</b> EDA - exploratory data analysis</a></li>
+<li class="chapter" data-level="5.8.2" data-path="modelling-techniques.html"><a href="modelling-techniques.html#modelo-lineal"><i class="fa fa-check"></i><b>5.8.2</b> Modelo lineal</a></li>
+<li class="chapter" data-level="5.8.3" data-path="modelling-techniques.html"><a href="modelling-techniques.html#interacción-de-modelos"><i class="fa fa-check"></i><b>5.8.3</b> Interacción de modelos</a></li>
+<li class="chapter" data-level="5.8.4" data-path="modelling-techniques.html"><a href="modelling-techniques.html#multiple-regression-1"><i class="fa fa-check"></i><b>5.8.4</b> Multiple Regression</a></li>
+<li class="chapter" data-level="5.8.5" data-path="modelling-techniques.html"><a href="modelling-techniques.html#validando-el-modelo"><i class="fa fa-check"></i><b>5.8.5</b> Validando el modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="modelling-techniques.html"><a href="modelling-techniques.html#anexo-r-avanzado"><i class="fa fa-check"></i><b>5.9</b> Anexo: R avanzado</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="modelling-techniques.html"><a href="modelling-techniques.html#más-de-tidyverse"><i class="fa fa-check"></i><b>5.9.1</b> Más de tidyverse</a></li>
+<li class="chapter" data-level="5.9.2" data-path="modelling-techniques.html"><a href="modelling-techniques.html#skimr-package"><i class="fa fa-check"></i><b>5.9.2</b> <code>Skimr</code> package</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="modelling-techniques.html"><a href="modelling-techniques.html#proyecto---predicción-de-riesgos"><i class="fa fa-check"></i><b>5.10</b> Proyecto - Predicción de riesgos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="series-temporales.html"><a href="series-temporales.html"><i class="fa fa-check"></i><b>6</b> Series Temporales</a></li>
+<li class="chapter" data-level="7" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>7</b> Clustering</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="clustering.html"><a href="clustering.html#fundamentos"><i class="fa fa-check"></i><b>7.1</b> Fundamentos</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="clustering.html"><a href="clustering.html#medidas-de-similaridad"><i class="fa fa-check"></i><b>7.1.1</b> Medidas de similaridad</a></li>
+<li class="chapter" data-level="7.1.2" data-path="clustering.html"><a href="clustering.html#disimilaridad-basada-en-diferencias"><i class="fa fa-check"></i><b>7.1.2</b> Disimilaridad basada en diferencias</a></li>
+<li class="chapter" data-level="7.1.3" data-path="clustering.html"><a href="clustering.html#matriz-de-distancias"><i class="fa fa-check"></i><b>7.1.3</b> Matriz de distancias</a></li>
+<li class="chapter" data-level="7.1.4" data-path="clustering.html"><a href="clustering.html#similaridad-basada-en-correlaciones"><i class="fa fa-check"></i><b>7.1.4</b> Similaridad basada en correlaciones</a></li>
+<li class="chapter" data-level="7.1.5" data-path="clustering.html"><a href="clustering.html#correlación-de-pearson"><i class="fa fa-check"></i><b>7.1.5</b> Correlación de Pearson</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="clustering.html"><a href="clustering.html#clustering-en-r"><i class="fa fa-check"></i><b>7.2</b> Clustering en R</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="clustering.html"><a href="clustering.html#centros"><i class="fa fa-check"></i><b>7.2.1</b> Centros</a></li>
+<li class="chapter" data-level="7.2.2" data-path="clustering.html"><a href="clustering.html#objetivo"><i class="fa fa-check"></i><b>7.2.2</b> Objetivo</a></li>
+<li class="chapter" data-level="7.2.3" data-path="clustering.html"><a href="clustering.html#k-means"><i class="fa fa-check"></i><b>7.2.3</b> k-means</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="clustering.html"><a href="clustering.html#número-optimo-de-clusters"><i class="fa fa-check"></i><b>7.3</b> Número optimo de clusters</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="clustering.html"><a href="clustering.html#proyecto---dataset-usarrests"><i class="fa fa-check"></i><b>7.3.1</b> Proyecto - dataset USArrests</a></li>
+<li class="chapter" data-level="7.3.2" data-path="clustering.html"><a href="clustering.html#tamaño-optimal-de-clusters"><i class="fa fa-check"></i><b>7.3.2</b> Tamaño optimal de clusters</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="clustering.html"><a href="clustering.html#clustering-jerárquico"><i class="fa fa-check"></i><b>7.4</b> Clustering jerárquico</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="clustering.html"><a href="clustering.html#proyecto-dataset-protein"><i class="fa fa-check"></i><b>7.4.1</b> Proyecto dataset protein</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html"><i class="fa fa-check"></i><b>8</b> Reglas de Asociación</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#introducción-1"><i class="fa fa-check"></i><b>8.1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#detectando-y-prediciendo-tendencias"><i class="fa fa-check"></i><b>8.1.1</b> Detectando y prediciendo tendencias</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#reglas-de-asociación-de-transacciones"><i class="fa fa-check"></i><b>8.2</b> Reglas de Asociación de transacciones</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#parámetros-de-apriori"><i class="fa fa-check"></i><b>8.2.1</b> Parámetros de <strong>apriori</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#reglas-de-asociación---preprocesamiento"><i class="fa fa-check"></i><b>8.3</b> Reglas de Asociación - preprocesamiento</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#discretización-de-items"><i class="fa fa-check"></i><b>8.3.1</b> Discretización de items</a></li>
+<li class="chapter" data-level="8.3.2" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#tipo-de-dato-transactions"><i class="fa fa-check"></i><b>8.3.2</b> Tipo de dato <em>transactions</em></a></li>
+<li class="chapter" data-level="8.3.3" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#métodos-de-arules"><i class="fa fa-check"></i><b>8.3.3</b> Métodos de arules</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#ejercicio-en-laboratorio"><i class="fa fa-check"></i><b>8.4</b> Ejercicio en Laboratorio</a></li>
+<li class="chapter" data-level="8.5" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#arulesviz"><i class="fa fa-check"></i><b>8.5</b> arulesViz</a></li>
+<li class="chapter" data-level="8.6" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#construyendo-un-sistema-recomendador"><i class="fa fa-check"></i><b>8.6</b> Construyendo un sistema recomendador</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html"><i class="fa fa-check"></i><b>9</b> Formal Concept Analysis</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#background-in-fca"><i class="fa fa-check"></i><b>9.1</b> Background in FCA</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#datasets"><i class="fa fa-check"></i><b>9.1.1</b> Datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#working-with-formal-contexts---datasets"><i class="fa fa-check"></i><b>9.2</b> Working with Formal Contexts - datasets</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#plotting-printing-and-latex-ing-the-formalcontext"><i class="fa fa-check"></i><b>9.2.1</b> Plotting, printing and latex-ing the FormalContext</a></li>
+<li class="chapter" data-level="9.2.2" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#closures"><i class="fa fa-check"></i><b>9.2.2</b> Closures</a></li>
+<li class="chapter" data-level="9.2.3" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#clarification-and-reduction"><i class="fa fa-check"></i><b>9.2.3</b> Clarification and Reduction</a></li>
+<li class="chapter" data-level="9.2.4" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#extracting-implications-and-concepts"><i class="fa fa-check"></i><b>9.2.4</b> Extracting Implications and Concepts</a></li>
+<li class="chapter" data-level="9.2.5" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#saving-and-loading"><i class="fa fa-check"></i><b>9.2.5</b> Saving and loading</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#concept-lattice"><i class="fa fa-check"></i><b>9.3</b> Concept Lattice</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#plot-print-and-latex"><i class="fa fa-check"></i><b>9.3.1</b> Plot, print and LaTeX</a></li>
+<li class="chapter" data-level="9.3.2" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#getting-all-extents-intents-and-retrieving-concepts"><i class="fa fa-check"></i><b>9.3.2</b> Getting all extents, intents and retrieving concepts</a></li>
+<li class="chapter" data-level="9.3.3" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#concept-support"><i class="fa fa-check"></i><b>9.3.3</b> Concept support</a></li>
+<li class="chapter" data-level="9.3.4" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#sublattices"><i class="fa fa-check"></i><b>9.3.4</b> Sublattices</a></li>
+<li class="chapter" data-level="9.3.5" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#subconcepts-superconcepts-infimum-and-supremum"><i class="fa fa-check"></i><b>9.3.5</b> Subconcepts, superconcepts, infimum and supremum</a></li>
+<li class="chapter" data-level="9.3.6" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#join--and-meet--irreducible-elements"><i class="fa fa-check"></i><b>9.3.6</b> Join- and meet- irreducible elements</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#exercises"><i class="fa fa-check"></i><b>9.4</b> Exercises</a></li>
+<li class="chapter" data-level="9.5" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#implications-in-fca"><i class="fa fa-check"></i><b>9.5</b> Implications in FCA</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#crisp-version"><i class="fa fa-check"></i><b>9.5.1</b> Crisp Version</a></li>
+<li class="chapter" data-level="9.5.2" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#computing-implications-and-concepts"><i class="fa fa-check"></i><b>9.5.2</b> Computing Implications and Concepts</a></li>
+<li class="chapter" data-level="9.5.3" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#redudancy-removal"><i class="fa fa-check"></i><b>9.5.3</b> Redudancy Removal</a></li>
+<li class="chapter" data-level="9.5.4" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#fuzzy-version"><i class="fa fa-check"></i><b>9.5.4</b> Fuzzy version</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#exercise"><i class="fa fa-check"></i><b>9.6</b> Exercise</a></li>
+<li class="chapter" data-level="9.7" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#simplification-logic-for-mushroom-dataset"><i class="fa fa-check"></i><b>9.7</b> Simplification Logic for Mushroom Dataset”</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#data-1"><i class="fa fa-check"></i><b>9.7.1</b> Data</a></li>
+<li class="chapter" data-level="9.7.2" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#preprocessing"><i class="fa fa-check"></i><b>9.7.2</b> Preprocessing</a></li>
+<li class="chapter" data-level="9.7.3" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#importing-in-fcar"><i class="fa fa-check"></i><b>9.7.3</b> Importing in fcaR</a></li>
+<li class="chapter" data-level="9.7.4" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#applying-rules"><i class="fa fa-check"></i><b>9.7.4</b> Applying Rules</a></li>
+<li class="chapter" data-level="9.7.5" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#computing-closure"><i class="fa fa-check"></i><b>9.7.5</b> Computing Closure</a></li>
+<li class="chapter" data-level="9.7.6" data-path="formal-concept-analysis.html"><a href="formal-concept-analysis.html#re-exporting-to-arules"><i class="fa fa-check"></i><b>9.7.6</b> Re-Exporting to <code>arules</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="social-network-analysis.html"><a href="social-network-analysis.html"><i class="fa fa-check"></i><b>10</b> Social Network Analysis</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#r-for-sna"><i class="fa fa-check"></i><b>10.1</b> R for SNA</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#elementos-de-una-red"><i class="fa fa-check"></i><b>10.1.1</b> Elementos de una red</a></li>
+<li class="chapter" data-level="10.1.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#representación-de-redes"><i class="fa fa-check"></i><b>10.1.2</b> Representación de redes</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#igraph"><i class="fa fa-check"></i><b>10.2</b> <code>igraph</code></a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#acceder-a-elementos-de-grado"><i class="fa fa-check"></i><b>10.2.1</b> Acceder a elementos de grado</a></li>
+<li class="chapter" data-level="10.2.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#construirmodificar-un-grafo"><i class="fa fa-check"></i><b>10.2.2</b> Construir/Modificar un grafo</a></li>
+<li class="chapter" data-level="10.2.3" data-path="social-network-analysis.html"><a href="social-network-analysis.html#visualización-1"><i class="fa fa-check"></i><b>10.2.3</b> Visualización</a></li>
+<li class="chapter" data-level="10.2.4" data-path="social-network-analysis.html"><a href="social-network-analysis.html#layout"><i class="fa fa-check"></i><b>10.2.4</b> Layout</a></li>
+<li class="chapter" data-level="10.2.5" data-path="social-network-analysis.html"><a href="social-network-analysis.html#dibujar-grafos-ponderados"><i class="fa fa-check"></i><b>10.2.5</b> Dibujar grafos ponderados</a></li>
+<li class="chapter" data-level="10.2.6" data-path="social-network-analysis.html"><a href="social-network-analysis.html#cambiar-aspecto-y-propiedades-de-un-grafo"><i class="fa fa-check"></i><b>10.2.6</b> Cambiar aspecto y propiedades de un grafo</a></li>
+<li class="chapter" data-level="10.2.7" data-path="social-network-analysis.html"><a href="social-network-analysis.html#ejemplos---plantillas"><i class="fa fa-check"></i><b>10.2.7</b> Ejemplos - plantillas</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="social-network-analysis.html"><a href="social-network-analysis.html#exportar-grafos"><i class="fa fa-check"></i><b>10.3</b> Exportar grafos</a></li>
+<li class="chapter" data-level="10.4" data-path="social-network-analysis.html"><a href="social-network-analysis.html#de-twitter"><i class="fa fa-check"></i><b>10.4</b> De Twitter</a></li>
+<li class="chapter" data-level="10.5" data-path="social-network-analysis.html"><a href="social-network-analysis.html#medidas-de-bondad-calidad"><i class="fa fa-check"></i><b>10.5</b> Medidas de bondad, calidad</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#centrality"><i class="fa fa-check"></i><b>10.5.1</b> Centrality</a></li>
+<li class="chapter" data-level="10.5.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#degree"><i class="fa fa-check"></i><b>10.5.2</b> Degree</a></li>
+<li class="chapter" data-level="10.5.3" data-path="social-network-analysis.html"><a href="social-network-analysis.html#betweenness"><i class="fa fa-check"></i><b>10.5.3</b> Betweenness</a></li>
+<li class="chapter" data-level="10.5.4" data-path="social-network-analysis.html"><a href="social-network-analysis.html#edge_betweenness"><i class="fa fa-check"></i><b>10.5.4</b> Edge_betweenness</a></li>
+<li class="chapter" data-level="10.5.5" data-path="social-network-analysis.html"><a href="social-network-analysis.html#closeness"><i class="fa fa-check"></i><b>10.5.5</b> Closeness</a></li>
+<li class="chapter" data-level="10.5.6" data-path="social-network-analysis.html"><a href="social-network-analysis.html#eigenvector"><i class="fa fa-check"></i><b>10.5.6</b> Eigenvector</a></li>
+<li class="chapter" data-level="10.5.7" data-path="social-network-analysis.html"><a href="social-network-analysis.html#pagerank"><i class="fa fa-check"></i><b>10.5.7</b> Pagerank</a></li>
+<li class="chapter" data-level="10.5.8" data-path="social-network-analysis.html"><a href="social-network-analysis.html#diameter"><i class="fa fa-check"></i><b>10.5.8</b> Diameter</a></li>
+<li class="chapter" data-level="10.5.9" data-path="social-network-analysis.html"><a href="social-network-analysis.html#caminos-y-distancias"><i class="fa fa-check"></i><b>10.5.9</b> Caminos y distancias</a></li>
+<li class="chapter" data-level="10.5.10" data-path="social-network-analysis.html"><a href="social-network-analysis.html#transitivity"><i class="fa fa-check"></i><b>10.5.10</b> Transitivity</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="social-network-analysis.html"><a href="social-network-analysis.html#proyecto-sna---usairports"><i class="fa fa-check"></i><b>10.6</b> Proyecto SNA - USairports</a></li>
+<li class="chapter" data-level="10.7" data-path="social-network-analysis.html"><a href="social-network-analysis.html#proyecto---películas-actores"><i class="fa fa-check"></i><b>10.7</b> Proyecto - películas + actores</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#crear-grafo"><i class="fa fa-check"></i><b>10.7.1</b> crear grafo</a></li>
+<li class="chapter" data-level="10.7.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#análisis-del-grafo"><i class="fa fa-check"></i><b>10.7.2</b> Análisis del grafo</a></li>
+<li class="chapter" data-level="10.7.3" data-path="social-network-analysis.html"><a href="social-network-analysis.html#cambiar-atributos-del-grafo"><i class="fa fa-check"></i><b>10.7.3</b> Cambiar atributos del grafo</a></li>
+<li class="chapter" data-level="10.7.4" data-path="social-network-analysis.html"><a href="social-network-analysis.html#modificar-el-grafo"><i class="fa fa-check"></i><b>10.7.4</b> Modificar el grafo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="pagerank-1.html"><a href="pagerank-1.html"><i class="fa fa-check"></i><b>11</b> pagerank</a></li>
+<li class="chapter" data-level="12" data-path="análisis-de-componentes-principales.html"><a href="análisis-de-componentes-principales.html"><i class="fa fa-check"></i><b>12</b> Análisis de Componentes Principales</a></li>
+<li class="chapter" data-level="13" data-path="text-imining.html"><a href="text-imining.html"><i class="fa fa-check"></i><b>13</b> Text Imining</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ciencia de Datos - UMA</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="modelling-techniques" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Capítulo 5</span> Modelling techniques<a href="modelling-techniques.html#modelling-techniques" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>There are two types of basic numerical techniques: <strong>interpolation</strong> and <strong>approximation</strong> (adjustment).</p>
+<ul>
+<li>The goal is to get a function that fits <em>the best of your ability</em> to a set of data (a cloud of data) from observations, data collected from sensors, datasets, etc.</li>
+<li>The simplest fitting model is the linear model (LM) named in Machine Learning community as <strong>linear regression</strong>.</li>
+</ul>
+<p><img src="_main_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<ul>
+<li>Although regression is probably the most simple approach for
+supervised learning, linear regression is still
+a useful and widely used statistical learning method.</li>
+<li>Other more complex statistical learning approaches are generalizations of linear regression.</li>
+</ul>
+<div id="interpolation" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Interpolation<a href="modelling-techniques.html#interpolation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The normal input is a data table
+<span class="math display">\[\{(x_i,y_i)\}\]</span></p>
+<p>And the goal is to find an interpolating function
+<span class="math display">\[  \phi(x)=a_0+a_{1}f_{1}(x)\]</span>
+(the easiest approach considers polynomial functions <span class="math inline">\(f_1(x)=x\)</span>).</p>
+<p>Then, the model will be:</p>
+<p><span class="math display">\[  \phi(x)=a_0+a_{1}x\]</span></p>
+<p><strong>Existence and uniqueness of the solution</strong></p>
+<p>Simply, if we consider that <span class="math inline">\(\phi(x)\)</span> verifies the conditions <span class="math inline">\((x_i,y_i)\)</span>, the following linear system is buit:<br />
+<span class="math display">\[ \left. \begin{array}{ll}
+a_0+a_{1}x_{1}&amp;=y_{1}\\
+a_0+a_{1}x_{2}&amp;=y_{2}\\
+\ldots&amp;\ldots\\
+a_0+a_{1}x_{m}&amp;=y_{m}\\
+\end{array}\right\}\]</span>
+<!-- is a linear system that may be incompatible, compatible determined or undetermined. --></p>
+<p>Solving the system
+above, the coefficients <span class="math inline">\(a_0\)</span> and <span class="math inline">\(a_{1}\)</span> are obtained (if they exist) and we will have the
+Interpolation function: 
+<span class="math display">\[ \phi (x)=a_0+a_{1}x\]</span>
+</p>
+<ul>
+<li><span class="math inline">\(a_0\)</span> is named the <strong>intercept</strong>.</li>
+<li><span class="math inline">\(a_1\)</span> is named the <strong>slope</strong>.</li>
+</ul>
+<p>The condition for <strong>existence</strong> of the interpolation function <span class="math inline">\(\phi(x)\)</span> is that the
+system should be consistent, its <strong>uniqueness</strong> depends on the solution(s) of the system.</p>
+<div id="polynomial-interpolation" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Polynomial interpolation<a href="modelling-techniques.html#polynomial-interpolation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Assuming we have <span class="math inline">\(n+1\)</span> points <span class="math display">\[\{ (x_{0}, y_{0}), (x_{1}, y_{1}), (x_{2}, y_{2}), \ldots, (x_{n}, y_{n})\} \]</span> polynomial interpolation consists of finding a polynomial function <span class="math inline">\(\phi(x)\)</span>
+passing through the given points.</p>
+<p><span class="math display">\[ \phi (x)=a_0+a_{1}x+a_{2}x^2+\ldots+a_{n}x^n\]</span>
+Note that we are using that a basis of the polynomials of grade less than or equal to <span class="math inline">\(n\)</span> is <span class="math inline">\(B=\{1, x,x^2,\ldots,x^n\}\)</span>.</p>
+<p>The equations will be:</p>
+<p><span class="math display">\[ \left. \begin{array}{lr}
+a_0+a_{1}x_{0}+a_{2}x_{0}^2+\ldots&amp;=y_{0}\\
+a_0+a_{1}x_{1}+a_{2}x_{1}^2+\ldots&amp;=y_{1}\\
+\ldots&amp;\ldots\\
+a_0+a_{1}x_{n}+a_{2}x_{n}^2+\ldots&amp;=y_{n}\\
+\\
+\end{array}\right\}\]</span></p>
+<!-- **$\phi(x)$ is the discrete approximation** in the base of functions  $B=\{1,x,x^2,\ldots,x^n\}$, which best approximates those -->
+<!-- minimizes some norm of the error vector: -->
+<!-- $$\vec{e}= (y_{i}-\phi(x_{i})) $$ -->
+</div>
+</div>
+<div id="linear-regression" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Linear Regression<a href="modelling-techniques.html#linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<blockquote>
+<p>Minimizing the residual sum of squares</p>
+</blockquote>
+</blockquote>
+<p>With a large number of observations, interpolation methods are not adequate, hence an adjusting <em>linear regression model</em> <span class="math inline">\(y=\phi(x)\)</span> is used. Such a model reflects the effect of changing a variable <span class="math inline">\(x\)</span> (independent variable) in variable <span class="math inline">\(y\)</span> (dependent variable). It considers that there exist a linear relationship between the variables.</p>
+<p>A common way to estimate the parameters of a statistical model is to <strong>adjust</strong> a function which minimize the errors. The most used method is that of minimizing the <em>residual sum of squares</em>, RSS, which is defined by:
+<span class="math display">\[
+RSS(a)={\mid\mid \epsilon \mid\mid_2}^2= \displaystyle\sum_{i=1}^{N}{\epsilon_i}^2=\displaystyle\sum_{i=1}^{N}(y_i-a^TX)^2
+\]</span></p>
+<p><strong>We compute the adjusting function which minimizes the RSS</strong>.</p>
+<div id="linear-regression-in-r" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Linear Regression in R<a href="modelling-techniques.html#linear-regression-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The easier model is linear regression:</p>
+<p><span class="math display">\[ \phi(x) = a_0 + a_1 x\]</span></p>
+<p><strong>Goal:</strong></p>
+<ul>
+<li>Prediction of future observations.</li>
+<li>Find relationships, functions between dataset variables.</li>
+<li>Description of the data structure.</li>
+</ul>
+<p>In mathematical terms, regression is to find a linear function that approaches the data cloud.</p>
+</div>
+<div id="lm-function" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> <strong>lm()</strong> function<a href="modelling-techniques.html#lm-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Linear model:</p>
+<ul>
+<li><em>y</em> is the dependent variable, the output.</li>
+<li><em>x</em> is the independent variable, the predictor</li>
+<li><em>dataset</em> a dataset with the attributes <em>x</em> and <em>y</em></li>
+</ul>
+<p>Call:
+lm(formula = CPI ~ HDI)</p>
+<p>Coefficients:
+(Intercept) HDI<br />
+-1.540 8.497</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p>The linear model is <span class="math display">\[\phi(x)=-1.540 + 8.497x\]</span></p>
+<p>Which is the meaning of the coefficient <span class="math inline">\(8.497\)</span>? - If <span class="math inline">\(x\)</span> is increased in 1, then <span class="math inline">\(Y\)</span> is increased in 1
+Which is the meaning of the coefficient -1.540?
+- Value expected of <span class="math inline">\(y\)</span>, if <span class="math inline">\(x\)</span> has the value 0</p>
+</div>
+<div id="evaluate-the-model" class="section level3 hasAnchor" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Evaluate the model<a href="modelling-techniques.html#evaluate-the-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Does the data fit the model found?</li>
+<li>Trying a more complicated model?: Polynomial regression.</li>
+<li>If the point cloud is <span class="math inline">\(n\)</span> in size, interpolation can be achieved with a polynomial grade of <span class="math inline">\(n-1\)</span>.</li>
+<li>Very high grade polynomials introduce errors: oscillations, cost of computation, etc.</li>
+<li><strong>For each model found, calculate in R the errors made, the accuracy, etc. </strong></li>
+</ul>
+<p>Call:
+lm(formula = CPI ~ HDI)</p>
+<p>Residuals:
+Min 1Q Median 3Q Max
+-2.9180 -1.1872 -0.2029 1.0744 3.4453</p>
+<p>Coefficients:
+Estimate Std. Error t value Pr(&gt;|t|)<br />
+(Intercept) -1.5400 0.4453 -3.458 0.000686 <strong><em>
+HDI 8.4975 0.6539 12.994 &lt; 2e-16 </em></strong>
+—
+Signif. codes: 0 ‘<em><strong>’ 0.001 ’</strong>’ 0.01 ’</em>’ 0.05 ‘.’ 0.1 ’ ’ 1</p>
+<p>Residual standard error: 1.506 on 171 degrees of freedom
+Multiple R-squared: 0.4968, Adjusted R-squared: 0.4939
+F-statistic: 168.9 on 1 and 171 DF, p-value: &lt; 2.2e-16</p>
+</div>
+<div id="accuracy-of-the-model" class="section level3 hasAnchor" number="5.2.4">
+<h3><span class="header-section-number">5.2.4</span> Accuracy of the model<a href="modelling-techniques.html#accuracy-of-the-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There is some measures of the accuracy of the model.</p>
+<div id="rse" class="section level4 hasAnchor" number="5.2.4.1">
+<h4><span class="header-section-number">5.2.4.1</span> RSE<a href="modelling-techniques.html#rse" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We define the <strong>Residual Standard Error</strong> as follows:
+<span class="math display">\[RSE=\sqrt{\frac{1}{n-2} \,\, RSS}\]</span></p>
+<p>RSE is an estimate of the standard deviation of <span class="math inline">\(\epsilon_i\)</span>.</p>
+<p><strong>RSE is considered a measure of the lack of fit of the model to the data.</strong></p>
+<ul>
+<li><p>If the predictions using the model are very good, we can conclude that the model fits the data very well.</p></li>
+<li><p>On the other hand, if the model doesn’t fit the data well then the RSE may be quite large.</p></li>
+</ul>
+</div>
+<div id="r-squared" class="section level4 hasAnchor" number="5.2.4.2">
+<h4><span class="header-section-number">5.2.4.2</span> R-squared<a href="modelling-techniques.html#r-squared" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>R-squared</strong> (called the coefficient of determination) or fraction of variance explained is</p>
+<p><span class="math display">\[R^2=1-\frac{RSS}{TSS}\]</span> where <span class="math display">\[TSS=\sum_{i=1}^n (y_i-\overline{y})\]</span></p>
+<ul>
+<li><p>RSE is an <em>absolute measure</em> of lack of fit of the model.</p></li>
+<li><p><span class="math inline">\(R^2\)</span> takes the form of a <em>proportion measure</em> (the proportion of variance
+explained), that is, the proportion of the variance in the outcome variable that can be accounted for by the predictor.</p></li>
+</ul>
+<p><span class="math inline">\(R^2\)</span> can be estimated with the correlation <span class="math inline">\(r\)</span> between the input (<span class="math inline">\(X\)</span> variable) and the output (<span class="math inline">\(Y\)</span> variable) as follows: <span class="math inline">\(R^2=r^2\)</span>.</p>
+<p>If <span class="math inline">\(R^2\)</span> is
+close to 1 indicates that a large proportion of the variability in the response
+has been explained by the regression. A number near 0 indicates that the linear model is wrong, or the inherent error is high, or both.</p>
+<p><strong>Note:</strong> The Pearson correlation is equivalent to running a linear regression model that uses only one predictor variable - the squared correlation <span class="math inline">\(r^2\)</span> is identical to the <span class="math inline">\(R^2\)</span> value for a linear regression with only a single predictor.</p>
+</div>
+<div id="r-squared-and-adjusted-r-squared" class="section level4 hasAnchor" number="5.2.4.3">
+<h4><span class="header-section-number">5.2.4.3</span> R-squared and Adjusted R-squared<a href="modelling-techniques.html#r-squared-and-adjusted-r-squared" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>R language returns Multiple R-squared and Adjusted R-squared.</p>
+<p>If you add more predictors into the model, the <span class="math inline">\(R^2\)</span> value will increase (or at least it will be the same). In a regression model with <span class="math inline">\(K\)</span> predictors, fit to a data set containing <span class="math inline">\(N\)</span> observations, the adjusted <span class="math inline">\(R^2\)</span> is:</p>
+<p><span class="math display">\[
+\mbox{adj. } R^2 = 1 - \left(\frac{\mbox{SS}_{res}}{\mbox{SS}_{tot}} \times \frac{N-1}{N-K-1} \right)
+\]</span></p>
+<p>The adjusted <span class="math inline">\(R^2\)</span> value will only increase when the new variables improve the model performance.</p>
+</div>
+</div>
+</div>
+<div id="generalized-regression" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Generalized Regression<a href="modelling-techniques.html#generalized-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The linear model <span class="math inline">\(\phi(x) = a_0 + a_1 x\)</span>
+could be generalized in several ways.</p>
+<p>We can also apply linear regression to more than 1 variable <span class="math inline">\(x=\{x_1, x_2\}\)</span>.</p>
+<p>For example, consider modeling
+temperature as a function of location <span class="math inline">\(\{x_1,x_2\}\)</span>.</p>
+<p><span class="math display">\[ \phi(x) = a_0 + a_1 x_1 + a_2x_2\]</span> or even,
+<span class="math display">\[  \phi_2(x) =a_0 + a_1x_1 + a_2x_2 + a_3x_1^2\]</span></p>
+<p>Note: it is possible to model non-linear relationships. In general, a simple
+approach (we could use non-polynomial functions) is considered using polynomial basis functions, where the model has the form</p>
+<p><span class="math display">\[\phi(x)=a_0+a_1x+a_2x^2+ \ldots+ a_nx^n\]</span></p>
+<div id="multiple-linear-regression" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Multiple Linear Regression<a href="modelling-techniques.html#multiple-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Given a set of variables <span class="math inline">\(X_1, X_2, \dots, X_m\)</span>, multiple linear
+regression computes the next model:</p>
+<p><span class="math display">\[\phi(x)=a_o+a_1X_1+a_2X_2+\dots, a_mX_m+\epsilon\]</span> In this model a
+coefficient <span class="math inline">\(a_j\)</span> is interpreted as the average effect on <span class="math inline">\(Y\)</span> of a one
+unit increase in <span class="math inline">\(X_j\)</span>, holding all other predictors fixed.</p>
+<p>The ideal scenario is when the predictors are uncorrelated and in this
+case each coefficient can be estimated and tested separately.</p>
+<p>Correlations amongst predictors cause problems because the variance of
+all coefficients tends to increase, sometimes dramatically.</p>
+<p>Normally the independence is a utopia. Normally, predictors usually
+change together.</p>
+<p>Call:
+lm(formula = HDI.Rank ~ CPI + HDI)</p>
+<p>Coefficients:
+(Intercept) CPI HDI<br />
+293.991 -2.935 -283.876</p>
+<p>(Intercept) CPI HDI
+293.991367 -2.935028 -283.876464
+1 2 3 4 5 6
+-4.605992 -5.108072 8.665987 -2.157349 -13.936740 2.895255
+<img src="_main_files/figure-html/unnamed-chunk-41-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-41-2.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-41-3.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-41-4.png" width="672" /></p>
+<div id="about-plotmodel" class="section level4 hasAnchor" number="5.3.1.1">
+<h4><span class="header-section-number">5.3.1.1</span> About plot(model)<a href="modelling-techniques.html#about-plotmodel" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>The first plot (residuals vs. fitted values) is a simple scatterplot
+between residuals and predicted values. R shows some outliers.</p></li>
+<li><p>The second plot (normal Q-Q) is a normal probability plot. It will
+give a straight line if the errors are distributed normally.
+Outliers deviate from the straight line.</p></li>
+<li><p>The third plot (Scale-Location), like the the first, should look
+random. No patterns. We have a little V-shaped pattern.</p></li>
+<li><p>The last plot (Cook’s distance) tells us which points have the
+greatest influence on the regression (leverage points). We see that
+points 20,36, 116 have great influence on the model. Detection of
+outliers: Remove these points and repeat.</p></li>
+</ul>
+</div>
+</div>
+<div id="evaluating-the-regression-coefficients" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Evaluating the Regression Coefficients<a href="modelling-techniques.html#evaluating-the-regression-coefficients" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[\phi(x)=a_o+a_1X_1+a_2X_2+\dots, a_pX_p\]</span></p>
+<div id="f-statistic" class="section level4 hasAnchor" number="5.3.2.1">
+<h4><span class="header-section-number">5.3.2.1</span> F-statistic<a href="modelling-techniques.html#f-statistic" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We establish the null hypothesis:</p>
+<p><span class="math display">\[H_O: a_o = a_1 = a_2= \dots= a_p= 0\]</span></p>
+<p>versus the alternative
+<span class="math display">\[H_a: \mbox{ at least one } a_i \mbox{ is non-zero}\]</span></p>
+<p>The hyphotesis test is performed by means of <strong>F-statistic</strong>:</p>
+<p><span class="math display">\[F=\frac{(TSS-RSS)/p}{RSS/(n-p-1)}\]</span></p>
+<p>where</p>
+<p><span class="math display">\[TSS = \sum (y_i − \overline{y} )^2\]</span></p>
+<p>When there is no relationship between the real valor and predictors, the
+F-statistic must to take on a value close to 1.</p>
+<ul>
+<li><p>If <span class="math inline">\(H_a\)</span> is true the F-value must to be greater than 1.</p></li>
+<li><p>If F-value is closer to 1, the answer to reject the hyphotesis
+depends on values of <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>.</p></li>
+<li><p>Using F-value, p-value is computed.</p></li>
+</ul>
+</div>
+<div id="p-value" class="section level4 hasAnchor" number="5.3.2.2">
+<h4><span class="header-section-number">5.3.2.2</span> p-value<a href="modelling-techniques.html#p-value" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Using p-value we can determine whether or not to reject <span class="math inline">\(H_0\)</span>.</p>
+<ul>
+<li><p><em>p-value is essentially 0</em>: extremely strong evidence that at least
+one of the media is associated with output variable.</p></li>
+<li><p>R language returns p-value for each coefficient: These provide
+information about whether each individual predictor is related to
+the response, after adjusting for the other predictors.</p></li>
+</ul>
+<p>Call:
+lm(formula = HDI.Rank ~ CPI + HDI)</p>
+<p>Residuals:
+Min 1Q Median 3Q Max
+-19.9326 -6.5788 -0.5189 5.9769 21.6061</p>
+<p>Coefficients:
+Estimate Std. Error t value Pr(&gt;|t|)<br />
+(Intercept) 293.9914 2.5014 117.529 &lt; 2e-16 <strong><em>
+CPI -2.9350 0.4153 -7.068 3.89e-11 </em></strong>
+HDI -283.8765 5.0064 -56.703 &lt; 2e-16 ***
+—
+Signif. codes: 0 ‘<em><strong>’ 0.001 ’</strong>’ 0.01 ’</em>’ 0.05 ‘.’ 0.1 ’ ’ 1</p>
+<p>Residual standard error: 8.178 on 170 degrees of freedom
+Multiple R-squared: 0.9782, Adjusted R-squared: 0.9779
+F-statistic: 3806 on 2 and 170 DF, p-value: &lt; 2.2e-16</p>
+<ul>
+<li><p>Pr(&gt;|t|) of the coefficients is close to 0 (significatives) - see
+*** in each row of the table.</p></li>
+<li><p>F-value is 3806 (must to be greater than 1).<br />
+</p></li>
+<li><p>p-value is close to 0.</p></li>
+<li><p>degrees of freedom: The number of independent pieces of information
+used in the estimation of a parameter. From the algebaic point of
+view is the theal number of equations used from the data. (see
+<a href="http://www.redalyc.org/pdf/2031/203129458002.pdf">Grados de
+libertad</a>)</p></li>
+<li><p>Multiple R-squared is used for evaluating how well your model fits
+the data. <strong>97% of the variability in HDI.Rank is explained by
+CPI+HDI</strong>.</p></li>
+<li><p>(Multiple R squared) measures the amount of variation in the
+response variable that can be explained by the predictor variables.</p></li>
+<li><p>Adjusted Rsquared adds penalties for the number of predictors in the
+model. Therefore it shows a balance between the most parsimonious
+model, and the best fitting model ( ratio between the number of
+observations and the predictors). <em>If you have a large difference
+between your multiple and your adjusted Rsquared that indicates you
+may have overfit your model.</em></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="improving-the-models" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Improving the models<a href="modelling-techniques.html#improving-the-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Trying a more complicated model</p>
+<ul>
+<li>Polynomial regression.</li>
+<li>Polynomial ortogonal regression.</li>
+<li>Non linear regression.</li>
+<li>etc.</li>
+</ul>
+<p>Using the previous example:</p>
+<p>Call:
+lm(formula = CPI ~ HDI)</p>
+<p>Coefficients:
+(Intercept) HDI<br />
+-1.540 8.497</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<p>Computing errors: We develop a function that receives the model, the
+input variable, and computes the norm 2 of the vector of errors
+(eucliean distance):</p>
+<p><span class="math display">\[\mid\mid \vec{e} \mid\mid= \sqrt{\sum (CPI_{i}-\phi(HDI_{i}))^2} \]</span> -
+<span class="math inline">\(\phi(HDI_{i}))\)</span> will be in the function <em>y_aprox</em></p>
+<p>[1] 19.69212</p>
+<p>Is this result coherent with <strong>residuals</strong>?</p>
+<p>[1] 2.734588e-14</p>
+<p>We obtain the same values (taking in account rouning).</p>
+<p>In any case the norm 2 of the errors in all the points of the dataset is
+19.6921162 (computed using <em>mi.verror$norma.error</em>). In the following we
+will improve the model.</p>
+<p>Before, we will examine the information computed in the building of the
+model (write <em>f1$</em> and R will show all the possible parameters):</p>
+<p>CPI HDI
+1 1.5 0.398
+2 3.1 0.739
+3 2.9 0.698
+4 2.0 0.486
+5 3.0 0.797
+6 2.6 0.716
+1 2 3 4 5 6
+1.841949 4.739580 4.391184 2.589725 5.232432 4.544139
+[1] 2.743037e-14</p>
+<div id="updating-the-models" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Updating the models<a href="modelling-techniques.html#updating-the-models" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<!-- anova(p1, p2, p3, p4, p5, p6, p7)  -->
+<!--  #ANALISIS DE VARIANZA -->
+<!--  #grado 2 es la  mejor  -->
+<hr />
+</div>
+<div id="searching-the-best-regression" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Searching the best regression<a href="modelling-techniques.html#searching-the-best-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Given a set of variables <span class="math inline">\(A, B, X, Y, Z, U\)</span> we can test the following
+models, in addition to the combinations of these with the linear and
+polynomial models previously seen.</p>
+<ul>
+<li><span class="math inline">\(+\)</span> para combinaciones de variables <span class="math inline">\(A+B\)</span></li>
+<li><span class="math inline">\(.\)</span> combinación de una de las variables con todas las demás</li>
+</ul>
+<!-- For advanced models -->
+<!-- -   $:$ para interacciones entre variables $A:B$ -->
+<!-- -   $*$ para las dos operaciones anteriores $A*B = A+B+A:B$ -->
+<!-- -    -->
+<p>Examples:</p>
+<!-- # f4(X) interacciones entre Y Z  -->
+<!-- f4 <- lm( X ~ Y:Z ) -->
+</div>
+<div id="orthogonal-polynomials" class="section level3 hasAnchor" number="5.4.3">
+<h3><span class="header-section-number">5.4.3</span> Orthogonal polynomials<a href="modelling-techniques.html#orthogonal-polynomials" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When we approach a function using classical approach - we minimize the
+norm 2 of the errors - we need to solve this linear equation system:</p>
+<p><img src="minimoscuadrados.png" /></p>
+<p>For this proposal we use in R language ``I(x^k)`` to add a term
+with k degree.</p>
+<p>In orthogonal approach the system will be:</p>
+<p><img src="minimoscuadradosortogonales.png" /></p>
+<p>For instance using Legendre family:</p>
+<p><img src="legendre.png" /></p>
+<p>In R language we will use ``poly(x,k)`` to use orthogonal
+polynomials of k degree.</p>
+<p>Trying a polynomial grade of <span class="math inline">\(n\)</span> for <span class="math inline">\(\phi(x)\)</span>.</p>
+<p>Call:
+lm(formula = CPI ~ HDI + I(HDI^2))</p>
+<p>Coefficients:
+(Intercept) HDI I(HDI^2)<br />
+9.552 -30.051 30.785</p>
+<p>Call:
+lm(formula = CPI ~ HDI + I(HDI^2) + I(HDI^3))</p>
+<p>Coefficients:
+(Intercept) HDI I(HDI^2) I(HDI^3)<br />
+-7.116 59.605 -119.817 80.060</p>
+<p>Call:
+lm(formula = CPI ~ HDI + I(HDI^2) + I(HDI^3) + I(HDI^4))</p>
+<p>Coefficients:
+(Intercept) HDI I(HDI^2) I(HDI^3) I(HDI^4)<br />
+-0.08463 7.38593 18.62201 -75.89626 63.32330</p>
+<p>Call:
+lm(formula = CPI ~ poly(HDI, 2))</p>
+<p>Coefficients:
+(Intercept) poly(HDI, 2)1 poly(HDI, 2)2<br />
+4.052 19.568 11.859</p>
+<p>Call:
+lm(formula = CPI ~ poly(HDI, 3))</p>
+<p>Coefficients:
+(Intercept) poly(HDI, 3)1 poly(HDI, 3)2 poly(HDI, 3)3<br />
+4.052 19.568 11.859 5.159</p>
+<p>Call:
+lm(formula = CPI ~ poly(HDI, 4))</p>
+<p>Coefficients:
+(Intercept) poly(HDI, 4)1 poly(HDI, 4)2 poly(HDI, 4)3 poly(HDI, 4)4<br />
+4.0520 19.5681 11.8590 5.1587 0.6239</p>
+<!-- anova(poli.2c,poli.3c,poli.4c,poli.2o,poli.3o,poli.4o) -->
+<p>For each model found, calculate in R the errors made, the accuracy, etc.</p>
+<p>The parameter $ Pr (&gt;F)$ is the probability that rejecting null
+hypothesis (the most complex model does not fit better than the simplest
+model) could be an error.</p>
+</div>
+</div>
+<div id="model-validation" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Model validation<a href="modelling-techniques.html#model-validation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>It is important to evaluate how the model adjusts the point cloud.<br />
+</li>
+<li>There are many ways to make this assessment.</li>
+<li>Usually statisticians examine diagnostic plots after constructing the model.</li>
+<li>Most evaluation models focus on residuals</li>
+</ul>
+<p>If we call <span class="math inline">\(\phi(x)\)</span> to the regression linear function, at each point the error (residual) function is <span class="math display">\[e (x_i)=\mid \phi(x_i)-y_i\mid \]</span></p>
+<div id="residuals" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Residuals<a href="modelling-techniques.html#residuals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We assume these errors:</p>
+<ul>
+<li>They must have a zero average.</li>
+<li>If this is not the case, the bias must be measured.</li>
+<li>More points may need to be included in the data cloud.</li>
+<li>Errors must be uniformly distributed.</li>
+<li>We must wait for the residues to be uniformly distributed without patterns that detect anomalies.<br />
+</li>
+<li>A first way would be to face the waste with the adjustment and the points should be around <span class="math inline">\(y=0\)</span>.</li>
+</ul>
+<p><img src="_main_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
+<p>Facing residues with the adjustment and points should be around y = 0.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-52-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-52-2.png" width="672" /></p>
+</div>
+<div id="other-study-of-residuals" class="section level3 hasAnchor" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> Other study of residuals<a href="modelling-techniques.html#other-study-of-residuals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Another possibility would be to confront the residues with respect to
+the X-axis values. Points should be around <span class="math inline">\(y=0\)</span>.</p>
+<p>Draw the point cloud next to the adjustment. Useful commands:
+<strong>predict</strong>, <strong>fitted</strong>. Estimators with residuals or draw the residuals</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-53-1.png" width="672" /> 1 2 3 4 5 6
+2.468377 4.156869 3.575200 2.218723 5.156484 3.817822
+1 2 3 4 5 6
+2.468377 4.156869 3.575200 2.218723 5.156484 3.817822
+<img src="_main_files/figure-html/unnamed-chunk-53-2.png" width="672" /> 1 2 3 4 5 6
+-0.9683773 -1.0568692 -0.6752004 -0.2187232 -2.1564845 -1.2178223
+[1] -3.145643e-17
+<img src="_main_files/figure-html/unnamed-chunk-53-3.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-53-4.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-53-5.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-53-6.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-53-7.png" width="672" /></p>
+</div>
+</div>
+<div id="proyecto---regresion-economistdata" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Proyecto - regresion EconomistData<a href="modelling-techniques.html#proyecto---regresion-economistdata" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Improving regression with EconomistData dataSet.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-54-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-54-2.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-54-3.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-54-4.png" width="672" />(Intercept) CPI HDI
+293.991367 -2.935028 -283.876464</p>
+<p>Call:
+lm(formula = HDI.Rank ~ CPI + HDI)</p>
+<p>Coefficients:
+(Intercept) CPI HDI<br />
+293.991 -2.935 -283.876</p>
+<pre><code>       1            2            3            4            5            6 </code></pre>
+<p>-4.60599167 -5.10807191 8.66598738 -2.15734861 -13.93673984 2.89525520
+7 8 9 10 11 12
+-2.44188161 -0.86747447 2.76622608 -0.69690560 -8.21829193 1.87144180
+13 14 15 16 17 18
+1.01589083 -7.33669193 -2.46410654 3.02896845 11.92180933 10.43680829
+19 20 21 22 23 24
+-2.51782785 21.60610822 4.98504226 1.88724332 -10.43701937 -10.22317210
+25 26 27 28 29 30
+-13.70985035 -0.36041659 0.17465976 -4.69679020 16.39312099 -11.16467728
+31 32 33 34 35 36
+-12.00982993 -0.33860867 12.59786618 4.54001917 -1.02878983 -19.93264142
+37 38 39 40 41 42
+0.77185089 0.30085876 -3.98371883 -10.28558786 -10.37611145 -6.04445802
+43 44 45 46 47 48
+-8.52410046 3.66733567 1.88059785 7.79734086 7.23059067 1.32426390
+49 50 51 52 53 54
+10.33665832 12.32046646 0.02684822 -10.58090997 -4.17033750 -9.01963378
+55 56 57 58 59 60
+5.97694164 -2.49937369 12.14645508 3.50934743 1.12369775 -4.60293950
+61 62 63 64 65 66
+6.03241096 -10.59463476 7.87830014 -12.17430366 -11.32591264 10.04000583
+67 68 69 70 71 72
+-1.82840115 12.06249696 -1.41606338 -10.84704151 -0.70956622 4.38764699
+73 74 75 76 77 78
+13.96549663 2.63386986 5.95289808 -7.21882433 -7.88590197 -10.43672650
+79 80 81 82 83 84
+1.07241621 -2.73844536 12.36203288 -6.57882450 -0.04118425 14.24613472
+85 86 87 88 89 90
+-8.50502517 -1.74412350 12.75621810 -0.78303728 -10.14369399 -5.86908897
+91 92 93 94 95 96
+4.02564135 -9.20391934 -8.37519745 -9.96329461 2.07726908 2.07442105
+97 98 99 100 101 102
+-0.63569608 -4.34075557 9.98854683 -8.86163679 -5.36998964 0.64873945
+103 104 105 106 107 108
+4.63934387 -9.60140437 9.75604064 9.30454080 -9.38249946 11.20383176
+109 110 111 112 113 114
+-10.65856881 -3.47649222 16.34554816 -0.51888391 -6.54203159 -3.34876745
+115 116 117 118 119 120
+9.54944141 -16.91023903 -0.64800176 1.11939457 9.22967666 1.41994197
+121 122 123 124 125 126
+-8.28864876 -2.24787220 8.24354415 1.79816613 8.45614978 -8.05714531
+127 128 129 130 131 132
+-5.43163410 0.04217940 -11.71774620 -6.62056839 8.46677827 13.79651559
+133 134 135 136 137 138
+11.57122268 11.76225118 -6.49236455 -0.18048754 -7.85640169 -8.46672378
+139 140 141 142 143 144
+-11.27130400 4.84791253 -10.49828222 -4.72790498 0.71020644 16.76178084
+145 146 147 148 149 150
+-3.55065523 8.85286350 -4.47372418 11.84971387 3.29073539 -0.07127899
+151 152 153 154 155 156
+-0.82266968 12.04963221 12.07221208 -0.89984945 12.59147817 0.57155095
+157 158 159 160 161 162
+-1.46103690 4.95625185 -6.85316332 9.30751297 8.76540081 7.44393283
+163 164 165 166 167 168
+0.66160421 -4.29485930 -3.87368502 -10.82508278 -3.17089656 7.66949195
+169 170 171 172 173
+16.43301085 -6.76561190 -2.67688090 1.46760353 -7.79675397</p>
+<!-- anova(modelo1) -->
+<p>In the following, we check some models.</p>
+<!-- ## **Exercise 2 Regression** -->
+<!-- - Build different model with polynomial terms (ortogonal and classe approaches), interaction between variables,etc.  Generate 5 different models -->
+<!-- - Visualize models, dataset, the models, etc. -->
+<!-- - Analyse errors with the different methods explained. -->
+<!-- - Use summary, anova. -->
+<!-- - Which is the best model? Interpret, explain,... -->
+<!-- - Prepare a document for this exercise using RMarkDown. Generate a presentation.  -->
+<!-- 1. Upload the solved exercise in a task in the CV. -->
+<!-- 2. Include in a .zip file the .Rmd file (Rmarkdown) and the otuput. -->
+</div>
+<div id="proyecto---analysing-boston-dataset" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Proyecto - Analysing <em>Boston</em> dataset<a href="modelling-techniques.html#proyecto---analysing-boston-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This dataset stores the <em>Housing Values in Suburbs of Boston</em>.</p>
+<div id="fit-a-simple-linear-regression" class="section level3 hasAnchor" number="5.7.1">
+<h3><span class="header-section-number">5.7.1</span> Fit a simple linear regression<a href="modelling-techniques.html#fit-a-simple-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[medv=\phi(lstat)=a_0+a_1\, lstat\]</span></p>
+<ul>
+<li><strong>lstat</strong>: lower status of the population (percent).</li>
+<li><strong>medv</strong>: median value of owner-occupied homes in $1000s.</li>
+</ul>
+<p>The model founded is:
+<span class="math display">\[medv=\phi(lstat)=34.55-0.95\,  lstat\]</span></p>
+</div>
+<div id="analyzing-the-model" class="section level3 hasAnchor" number="5.7.2">
+<h3><span class="header-section-number">5.7.2</span> Analyzing the model<a href="modelling-techniques.html#analyzing-the-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For more detailed information:</p>
+<p>For more information we can use <em>names</em> with the linear model:</p>
+<p>Confidence interval for the coeffient estimates:</p>
+<p>Visualizing the dataset+model:</p>
+<p>## Visualizing the linear model</p>
+<p># Computing residuals</p>
+<ul>
+<li><strong>residuals</strong>:</li>
+<li><strong>rstudent</strong>:return the studentized residuals</li>
+</ul>
+<p>Some plots regarding residuals, etc…</p>
+<p>On the basis of the residual plots, there is some evidence of non-linearity.
+Leverage statistics can be computed for any number of predictors using the
+<strong>hatvalues</strong> function</p>
+<p><strong>which.max()</strong>: function identifies the index of the largest element of a
+which.max()
+vector. In this case, it tells us which observation has the largest leverage
+statistic.</p>
+</div>
+<div id="multiple-regression" class="section level3 hasAnchor" number="5.7.3">
+<h3><span class="header-section-number">5.7.3</span> Multiple regression<a href="modelling-techniques.html#multiple-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Fitting a model trying the regression with two input variables.</p>
+<ul>
+<li><strong>lstat</strong>: lower status of the population (percent).</li>
+<li><strong>medv</strong>: median value of owner-occupied homes in $1000s.</li>
+<li><strong>age</strong>: age
+proportion of owner-occupied units built prior to 1940.</li>
+</ul>
+<p><span class="math display">\[medv=\phi(lstat,age)=a_0+a_1\, lstat+ +a_2\, age\]</span></p>
+<p>Data set contains 13 variables, how to select the best variables?:</p>
+<ul>
+<li><strong>Facing the output variable against the rest of variables</strong></li>
+<li>Analyzing the summary of the model.</li>
+</ul>
+</div>
+<div id="interaction-terms" class="section level3 hasAnchor" number="5.7.4">
+<h3><span class="header-section-number">5.7.4</span> Interaction terms<a href="modelling-techniques.html#interaction-terms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="non-linear-transformations-of-the-predictors" class="section level3 hasAnchor" number="5.7.5">
+<h3><span class="header-section-number">5.7.5</span> Non-linear transformations of the predictors<a href="modelling-techniques.html#non-linear-transformations-of-the-predictors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The p-value associated with the quadratic term suggests that <strong>lm.fit5</strong> is an improved model.</p>
+</div>
+<div id="using-anova" class="section level3 hasAnchor" number="5.7.6">
+<h3><span class="header-section-number">5.7.6</span> Using anova<a href="modelling-techniques.html#using-anova" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Fist, we compare the model: linear (lm.fit) and quadratic (lm.fit5). If the models are represented, we could extract some important ideas:</p>
+<p>We can
+see a non-linearity in the relationship between <em>medv</em> and <em>lstat</em>.</p>
+<p>Now, we will use <strong>anova()</strong> (Analysis of Variance Table) performs a hypothesis
+test comparing the models.</p>
+<p>The null hypothesis is that the two models
+fit the data equally well, and the alternative hypothesis is that the full
+model is superior.</p>
+<p>Interpretation: The null hypothesis says that the two models fit the data equally well, and the alternative hypothesis is that the full model is superior.</p>
+<p>See the F-statistic and the p-value associated.</p>
+<p>This provides very clear evidence that the model containing
+the predictors <strong><span class="math inline">\(lstat\)</span></strong> and <strong><span class="math inline">\(lstat^2\)</span></strong> is better than the model with the predictor <strong><span class="math inline">\(lstat\)</span></strong>.</p>
+<!-- ## Exercise 3 Regression -->
+<!-- - Using anova, compare all the models of this document. Which is the best model? Interpret, explain,... -->
+<!-- - Try to build different model with polynomial terms up to grade three (ortogonal and classe approaches) with the same variables (medv,lstat). -->
+<!-- - Visualize models, dataset, etc. -->
+<!-- - Analyse errors. -->
+<!-- - Use anova. -->
+<!-- - Interpret adequately the results. -->
+<!-- - Which is your best model? -->
+<!-- - Prepare a document for this exercise using RMarkDown. Generate a presentation.  -->
+<!-- 1. ***Upload the solved exercise in a task in the CV.*** -->
+<!-- 2. ***Include in a .zip file the .Rmd file (Rmarkdown) and the otuput.*** -->
+</div>
+</div>
+<div id="poyecto---evaluación-de-cursos---variables-categóricas" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> Poyecto - evaluación de cursos - variables categóricas<a href="modelling-techniques.html#poyecto---evaluación-de-cursos---variables-categóricas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Regresión múltiple:</p>
+<p><span class="math display">\[y=f(x_1,x_2,\dots)\]</span></p>
+<ul>
+<li><span class="math inline">\(y\)</span> es una variable de salida numérica</li>
+<li><span class="math inline">\(x_1\)</span> es variable 1 de entrada numérica o categórica</li>
+<li><span class="math inline">\(x_1\)</span> es variable 2 de entrada numérica o categórica, …</li>
+</ul>
+<div id="eda---exploratory-data-analysis" class="section level3 hasAnchor" number="5.8.1">
+<h3><span class="header-section-number">5.8.1</span> EDA - exploratory data analysis<a href="modelling-techniques.html#eda---exploratory-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Vamos a explorar las relaciones en un .csv con relaciones entre las puntuaciones de la evaluación de la enseñanza dadas por los estudiantes y las puntuaciones estéticas, de edad, etc. de los profesores.</p>
+<p>Recordatorio de fases de EDA:</p>
+<ul>
+<li>Observar los valores</li>
+<li>Preprocesamiento</li>
+<li>Estimar estadísticos</li>
+<li>Visualizaciones</li>
+</ul>
+<p>ID score bty_avg age gender
+1 1 4.7 5 36 female
+2 2 4.1 5 36 female
+3 3 3.9 5 36 female
+4 4 4.8 5 36 female
+5 5 4.6 3 59 male
+6 6 4.3 3 59 male
+ID score bty_avg age<br />
+Min. : 1.0 Min. :2.300 Min. :1.667 Min. :29.00<br />
+1st Qu.:116.5 1st Qu.:3.800 1st Qu.:3.167 1st Qu.:42.00<br />
+Median :232.0 Median :4.300 Median :4.333 Median :48.00<br />
+Mean :232.0 Mean :4.175 Mean :4.418 Mean :48.37<br />
+3rd Qu.:347.5 3rd Qu.:4.600 3rd Qu.:5.500 3rd Qu.:57.00<br />
+Max. :463.0 Max. :5.000 Max. :8.167 Max. :73.00<br />
+gender<br />
+Length:463<br />
+Class :character<br />
+Mode :character</p>
+<p>Nota: Nuevas funciones de tidyverse en última sección.</p>
+<p>Rows: 463
+Columns: 5
+$ ID <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,…
+$ score <dbl> 4.7, 4.1, 3.9, 4.8, 4.6, 4.3, 2.8, 4.1, 3.4, 4.5, 3.8, 4.5, 4.…
+$ bty_avg <dbl> 5.000, 5.000, 5.000, 5.000, 3.000, 3.000, 3.000, 3.333, 3.333,…
+$ age <int> 36, 36, 36, 36, 59, 59, 59, 51, 51, 40, 40, 40, 40, 40, 40, 40…
+$ gender <chr> “female”, “female”, “female”, “female”, “male”, “male”, “male”…</p>
+<table style="width: auto;" class="table table-condensed">
+<caption>
+<span id="tab:unnamed-chunk-72">Table 5.1: </span>Data summary
+</caption>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Name
+</td>
+<td style="text-align:left;">
+Piped data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of rows
+</td>
+<td style="text-align:left;">
+463
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of columns
+</td>
+<td style="text-align:left;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+_______________________
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Column type frequency:
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+________________________
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Group variables
+</td>
+<td style="text-align:left;">
+None
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: character</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+skim_variable
+</th>
+<th style="text-align:right;">
+n_missing
+</th>
+<th style="text-align:right;">
+complete_rate
+</th>
+<th style="text-align:right;">
+min
+</th>
+<th style="text-align:right;">
+max
+</th>
+<th style="text-align:right;">
+empty
+</th>
+<th style="text-align:right;">
+n_unique
+</th>
+<th style="text-align:right;">
+whitespace
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+gender
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+skim_variable
+</th>
+<th style="text-align:right;">
+n_missing
+</th>
+<th style="text-align:right;">
+complete_rate
+</th>
+<th style="text-align:right;">
+mean
+</th>
+<th style="text-align:right;">
+sd
+</th>
+<th style="text-align:right;">
+p0
+</th>
+<th style="text-align:right;">
+p25
+</th>
+<th style="text-align:right;">
+p50
+</th>
+<th style="text-align:right;">
+p75
+</th>
+<th style="text-align:right;">
+p100
+</th>
+<th style="text-align:left;">
+hist
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ID
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+232.00
+</td>
+<td style="text-align:right;">
+133.80
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+116.50
+</td>
+<td style="text-align:right;">
+232.00
+</td>
+<td style="text-align:right;">
+347.5
+</td>
+<td style="text-align:right;">
+463.00
+</td>
+<td style="text-align:left;">
+▇▇▇▇▇
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+score
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4.17
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+2.30
+</td>
+<td style="text-align:right;">
+3.80
+</td>
+<td style="text-align:right;">
+4.30
+</td>
+<td style="text-align:right;">
+4.6
+</td>
+<td style="text-align:right;">
+5.00
+</td>
+<td style="text-align:left;">
+▁▁▅▇▇
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bty_avg
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4.42
+</td>
+<td style="text-align:right;">
+1.53
+</td>
+<td style="text-align:right;">
+1.67
+</td>
+<td style="text-align:right;">
+3.17
+</td>
+<td style="text-align:right;">
+4.33
+</td>
+<td style="text-align:right;">
+5.5
+</td>
+<td style="text-align:right;">
+8.17
+</td>
+<td style="text-align:left;">
+▃▇▇▃▂
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+age
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+48.37
+</td>
+<td style="text-align:right;">
+9.80
+</td>
+<td style="text-align:right;">
+29.00
+</td>
+<td style="text-align:right;">
+42.00
+</td>
+<td style="text-align:right;">
+48.00
+</td>
+<td style="text-align:right;">
+57.0
+</td>
+<td style="text-align:right;">
+73.00
+</td>
+<td style="text-align:left;">
+▅▆▇▆▁
+</td>
+</tr>
+</tbody>
+</table>
+<p>ID score bty_avg age gender
+1 284 4.0 1.667 34 female
+2 336 3.1 1.667 60 male
+3 406 5.0 2.833 57 male
+4 101 4.4 4.333 48 male
+5 111 3.5 4.333 57 female
+mean_bty_avg mean_score median_bty_avg median_score
+1 4.417844 4.17473 4.333 4.3</p>
+<table style="width: auto;" class="table table-condensed">
+<caption>
+<span id="tab:unnamed-chunk-72">Table 5.1: </span>Data summary
+</caption>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Name
+</td>
+<td style="text-align:left;">
+Piped data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of rows
+</td>
+<td style="text-align:left;">
+463
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of columns
+</td>
+<td style="text-align:left;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+_______________________
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Column type frequency:
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+________________________
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Group variables
+</td>
+<td style="text-align:left;">
+None
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+skim_variable
+</th>
+<th style="text-align:right;">
+n_missing
+</th>
+<th style="text-align:right;">
+complete_rate
+</th>
+<th style="text-align:right;">
+mean
+</th>
+<th style="text-align:right;">
+sd
+</th>
+<th style="text-align:right;">
+p0
+</th>
+<th style="text-align:right;">
+p25
+</th>
+<th style="text-align:right;">
+p50
+</th>
+<th style="text-align:right;">
+p75
+</th>
+<th style="text-align:right;">
+p100
+</th>
+<th style="text-align:left;">
+hist
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+score
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4.17
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+2.30
+</td>
+<td style="text-align:right;">
+3.80
+</td>
+<td style="text-align:right;">
+4.30
+</td>
+<td style="text-align:right;">
+4.6
+</td>
+<td style="text-align:right;">
+5.00
+</td>
+<td style="text-align:left;">
+▁▁▅▇▇
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bty_avg
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4.42
+</td>
+<td style="text-align:right;">
+1.53
+</td>
+<td style="text-align:right;">
+1.67
+</td>
+<td style="text-align:right;">
+3.17
+</td>
+<td style="text-align:right;">
+4.33
+</td>
+<td style="text-align:right;">
+5.5
+</td>
+<td style="text-align:right;">
+8.17
+</td>
+<td style="text-align:left;">
+▃▇▇▃▂
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><span class="math inline">\(p0\)</span>: 0-percentile: valor al cual el 0% de las observaciones son más pequeñas que él (valor mínimo por tanto)</p></li>
+<li><p><span class="math inline">\(p25\)</span>: 25-percentile: valor al cual el 25% de las observaciones son más pequeñas que él</p></li>
+<li><p>…</p></li>
+</ul>
+<div id="correlación" class="section level4 hasAnchor" number="5.8.1.1">
+<h4><span class="header-section-number">5.8.1.1</span> Correlación<a href="modelling-techniques.html#correlación" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<blockquote>
+<blockquote>
+<p>Se establece entre variables numéricas</p>
+</blockquote>
+</blockquote>
+<p>El coeficiente de correlación es estimador de la relación lineal entre dos variables numéricas. Su valor oscila entre -1 y 1:</p>
+<ul>
+<li>-1: perfecta relación negativa</li>
+<li>0: no relación</li>
+<li>+1 perfecta relación positiva</li>
+</ul>
+<p>correlation
+1 0.1871424</p>
+<blockquote>
+<blockquote>
+<p>relación debilmente positiva</p>
+</blockquote>
+</blockquote>
+</div>
+<div id="visualización" class="section level4 hasAnchor" number="5.8.1.2">
+<h4><span class="header-section-number">5.8.1.2</span> Visualización<a href="modelling-techniques.html#visualización" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Objetivo: visualizar relaciones entre puntuaciones, edad según el género.</li>
+</ul>
+<p><img src="_main_files/figure-html/unnamed-chunk-74-1.png" width="672" /></p>
+</div>
+</div>
+<div id="modelo-lineal" class="section level3 hasAnchor" number="5.8.2">
+<h3><span class="header-section-number">5.8.2</span> Modelo lineal<a href="modelling-techniques.html#modelo-lineal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Construimos un primer modelo lineal univariable (puntuación frente a media de las edades):</p>
+<p>Call:
+lm(formula = score ~ bty_avg, data = evals5)</p>
+<p>Coefficients:
+(Intercept) bty_avg<br />
+3.88034 0.06664</p>
+<p>Call:
+lm(formula = score ~ bty_avg, data = evals5)</p>
+<p>Residuals:
+Min 1Q Median 3Q Max
+-1.9246 -0.3690 0.1420 0.3977 0.9309</p>
+<p>Coefficients:
+Estimate Std. Error t value Pr(&gt;|t|)<br />
+(Intercept) 3.88034 0.07614 50.96 &lt; 2e-16 <strong><em>
+bty_avg 0.06664 0.01629 4.09 5.08e-05 </em></strong>
+—
+Signif. codes: 0 ‘<em><strong>’ 0.001 ’</strong>’ 0.01 ’</em>’ 0.05 ‘.’ 0.1 ’ ’ 1</p>
+<p>Residual standard error: 0.5348 on 461 degrees of freedom
+Multiple R-squared: 0.03502, Adjusted R-squared: 0.03293
+F-statistic: 16.73 on 1 and 461 DF, p-value: 5.083e-05</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-75-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-75-2.png" width="672" /></p>
+</div>
+<div id="interacción-de-modelos" class="section level3 hasAnchor" number="5.8.3">
+<h3><span class="header-section-number">5.8.3</span> Interacción de modelos<a href="modelling-techniques.html#interacción-de-modelos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Se usa el operador de construcción de modelos <code>:</code>.</p>
+<p><span class="math display">\[y=f_1(x_1,x_2)\]</span></p>
+<p>En nuestro</p>
+<p>Call:
+lm(formula = score ~ age * gender, data = evals5)</p>
+<p>Coefficients:
+(Intercept) age gendermale age:gendermale<br />
+4.88299 -0.01752 -0.44604 0.01353</p>
+<p>Call:
+lm(formula = score ~ age * gender, data = evals5)</p>
+<p>Residuals:
+Min 1Q Median 3Q Max
+-1.86453 -0.34815 0.09863 0.40661 0.96327</p>
+<p>Coefficients:
+Estimate Std. Error t value Pr(&gt;|t|)<br />
+(Intercept) 4.882989 0.205210 23.795 &lt; 2e-16 <strong><em>
+age -0.017523 0.004472 -3.919 0.000103 </em></strong>
+gendermale -0.446044 0.265407 -1.681 0.093520 .<br />
+age:gendermale 0.013531 0.005531 2.446 0.014803 *<br />
+—
+Signif. codes: 0 ‘<em><strong>’ 0.001 ’</strong>’ 0.01 ’</em>’ 0.05 ‘.’ 0.1 ’ ’ 1</p>
+<p>Residual standard error: 0.5314 on 459 degrees of freedom
+Multiple R-squared: 0.05138, Adjusted R-squared: 0.04518
+F-statistic: 8.288 on 3 and 459 DF, p-value: 2.227e-05</p>
+<p>Explicación:</p>
+<ul>
+<li><em>intercept</em> y <em>age</em> son las variables para el género femenino (female alfabéticamente antes que male)</li>
+<li>gendermale y age:gendermale son los desplazamientos del intercept y de slope de los profesores (male) respecto a los valores de intercept y de slope de las profesoras.</li>
+</ul>
+<p>Regresión obtenida:</p>
+<p><span class="math display">\[y=b_0+b_1 \cdot age + b_2 \cdot  is\_male(x) + b_3 \cdot  is\_male(x)\]</span> - <span class="math inline">\(b_0\)</span> es (Intercept) - <span class="math inline">\(b_1\)</span> es age - <span class="math inline">\(b_2\)</span> es gendermale - <span class="math inline">\(b_3\)</span> es age:gendermale</p>
+<p>La interacción estudia si el efecto asociado de una variable depende del valor de otra variable.</p>
+<blockquote>
+<blockquote>
+<p>en nuestro caso, la respuesta es que si existe: existe una da diferencia en las pendientes de la edad de los instructores masculinos con respecto a los femeninos</p>
+</blockquote>
+</blockquote>
+</div>
+<div id="multiple-regression-1" class="section level3 hasAnchor" number="5.8.4">
+<h3><span class="header-section-number">5.8.4</span> Multiple Regression<a href="modelling-techniques.html#multiple-regression-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table style="width: auto;" class="table table-condensed">
+<caption>
+<span id="tab:unnamed-chunk-78">Table 5.2: </span>Data summary
+</caption>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Name
+</td>
+<td style="text-align:left;">
+Piped data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of rows
+</td>
+<td style="text-align:left;">
+463
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of columns
+</td>
+<td style="text-align:left;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+_______________________
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Column type frequency:
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+________________________
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Group variables
+</td>
+<td style="text-align:left;">
+None
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: character</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+skim_variable
+</th>
+<th style="text-align:right;">
+n_missing
+</th>
+<th style="text-align:right;">
+complete_rate
+</th>
+<th style="text-align:right;">
+min
+</th>
+<th style="text-align:right;">
+max
+</th>
+<th style="text-align:right;">
+empty
+</th>
+<th style="text-align:right;">
+n_unique
+</th>
+<th style="text-align:right;">
+whitespace
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+gender
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+skim_variable
+</th>
+<th style="text-align:right;">
+n_missing
+</th>
+<th style="text-align:right;">
+complete_rate
+</th>
+<th style="text-align:right;">
+mean
+</th>
+<th style="text-align:right;">
+sd
+</th>
+<th style="text-align:right;">
+p0
+</th>
+<th style="text-align:right;">
+p25
+</th>
+<th style="text-align:right;">
+p50
+</th>
+<th style="text-align:right;">
+p75
+</th>
+<th style="text-align:right;">
+p100
+</th>
+<th style="text-align:left;">
+hist
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+score
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4.17
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+2.3
+</td>
+<td style="text-align:right;">
+3.8
+</td>
+<td style="text-align:right;">
+4.3
+</td>
+<td style="text-align:right;">
+4.6
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+▁▁▅▇▇
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+age
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+48.37
+</td>
+<td style="text-align:right;">
+9.80
+</td>
+<td style="text-align:right;">
+29.0
+</td>
+<td style="text-align:right;">
+42.0
+</td>
+<td style="text-align:right;">
+48.0
+</td>
+<td style="text-align:right;">
+57.0
+</td>
+<td style="text-align:right;">
+73
+</td>
+<td style="text-align:left;">
+▅▆▇▆▁
+</td>
+</tr>
+</tbody>
+</table>
+<p>correlation
+1 -0.107032</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-80-1.png" width="672" /></p>
+<p>modelo con la edad</p>
+<p>Call:
+lm(formula = score ~ age, data = evals5)</p>
+<p>Coefficients:
+(Intercept) age<br />
+4.461932 -0.005938</p>
+<p>Call:
+lm(formula = score ~ age + bty_avg, data = evals5)</p>
+<p>Coefficients:
+(Intercept) age bty_avg<br />
+4.054732 -0.003059 0.060656</p>
+<p>Call:
+lm(formula = score ~ age, data = evals5)</p>
+<p>Residuals:
+Min 1Q Median 3Q Max
+-1.9185 -0.3531 0.1172 0.4172 0.8825</p>
+<p>Coefficients:
+Estimate Std. Error t value Pr(&gt;|t|)<br />
+(Intercept) 4.461932 0.126778 35.195 &lt;2e-16 **<em>
+age -0.005938 0.002569 -2.311 0.0213 </em><br />
+—
+Signif. codes: 0 ‘<em><strong>’ 0.001 ’</strong>’ 0.01 ’</em>’ 0.05 ‘.’ 0.1 ’ ’ 1</p>
+<p>Residual standard error: 0.5413 on 461 degrees of freedom
+Multiple R-squared: 0.01146, Adjusted R-squared: 0.009311
+F-statistic: 5.342 on 1 and 461 DF, p-value: 0.02125</p>
+<p>Call:
+lm(formula = score ~ age + bty_avg, data = evals5)</p>
+<p>Residuals:
+Min 1Q Median 3Q Max
+-1.9427 -0.3474 0.1293 0.3957 0.9478</p>
+<p>Coefficients:
+Estimate Std. Error t value Pr(&gt;|t|)<br />
+(Intercept) 4.054732 0.169865 23.870 &lt; 2e-16 <strong><em>
+age -0.003059 0.002664 -1.148 0.251396<br />
+bty_avg 0.060656 0.017098 3.548 0.000429 </em></strong>
+—
+Signif. codes: 0 ‘<em><strong>’ 0.001 ’</strong>’ 0.01 ’</em>’ 0.05 ‘.’ 0.1 ’ ’ 1</p>
+<p>Residual standard error: 0.5347 on 460 degrees of freedom
+Multiple R-squared: 0.03778, Adjusted R-squared: 0.0336
+F-statistic: 9.031 on 2 and 460 DF, p-value: 0.0001422</p>
+</div>
+<div id="validando-el-modelo" class="section level3 hasAnchor" number="5.8.5">
+<h3><span class="header-section-number">5.8.5</span> Validando el modelo<a href="modelling-techniques.html#validando-el-modelo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>Un test de hipótesis consiste en una prueba entre dos hipótesis contrapuestas</p>
+<blockquote>
+<blockquote>
+<p>Hipótesis nula <span class="math inline">\(H_0\)</span> versus una hipótesis alternativa</p>
+</blockquote>
+</blockquote></li>
+<li><p>Generalmente, la hipótesis nula es una afirmación de que “no hay efecto” o “no hay diferencia de interés”.</p></li>
+<li><p>En muchos casos, la hipótesis nula representa el statu quo o una situación en la que no ocurre nada interesante.</p></li>
+<li><p>Además, generalmente la hipótesis alternativa es la afirmación que el experimentador o investigador quiere establecer o encontrar pruebas que la respalden.</p></li>
+<li><p>Se considera una hipótesis “contraria” a la hipótesis nula</p></li>
+</ul>
+<p><span class="math display">\[y=a+bx\]</span></p>
+<blockquote>
+<blockquote>
+<p><span class="math inline">\(H_0\)</span>: no hay modelo, <span class="math inline">\(b=0\)</span></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><span class="math inline">\(H_a\)</span>: hay modelo, <span class="math inline">\(b\neq0\)</span></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>umbral <span class="math inline">\(0.05\)</span>,</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Un estadístico de prueba (test statistic) es una fórmula de estimación puntual/estadística de muestra que se utiliza para la comprobación de hipótesis: t-test statistic</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>p-value es la probabilidad de obtener un estadístico de prueba igual o más extremo que el estadístico de prueba observado suponiendo que la hipótesis nula <span class="math inline">\(H_0\)</span> es verdadera.</p>
+</blockquote>
+</blockquote>
+</div>
+</div>
+<div id="anexo-r-avanzado" class="section level2 hasAnchor" number="5.9">
+<h2><span class="header-section-number">5.9</span> Anexo: R avanzado<a href="modelling-techniques.html#anexo-r-avanzado" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="más-de-tidyverse" class="section level3 hasAnchor" number="5.9.1">
+<h3><span class="header-section-number">5.9.1</span> Más de tidyverse<a href="modelling-techniques.html#más-de-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p><code>[glimpse](https://dplyr.tidyverse.org/reference/glimpse.html)</code></p></li>
+<li><p><code>[sample_n](https://dplyr.tidyverse.org/reference/sample_n.html?q=sample_n#null)</code></p></li>
+</ul>
+</div>
+<div id="skimr-package" class="section level3 hasAnchor" number="5.9.2">
+<h3><span class="header-section-number">5.9.2</span> <code>Skimr</code> package<a href="modelling-techniques.html#skimr-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p><code>[skim](https://www.datanovia.com/en/blog/display-a-beautiful-summary-statistics-in-r-using-skimr-package/)</code></p>
+<ul>
+<li>skim() can handle data that has been grouped using dplyr::group_by.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="proyecto---predicción-de-riesgos" class="section level2 hasAnchor" number="5.10">
+<h2><span class="header-section-number">5.10</span> Proyecto - Predicción de riesgos<a href="modelling-techniques.html#proyecto---predicción-de-riesgos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Importa en R el dataset <em>riesgos.csv</em></li>
+<li>La compañía de seguros quiere tener un modelo para predecir los gastos médicos de los asegurados.</li>
+</ul>
+<p>Realiza un análisis del dataset y desarrolla uno o varios modelos que contesten a lo siguiente. Entregar en el book.</p>
+<ul>
+<li><p>Analiza la estructura del dataset. ¿Qué tipo datos tenemos? Plantea los problemas que podemos tener al trabajar con este dataset.</p></li>
+<li><p>Analiza estadísticamente los atributos. Detecta normalidad, sesgos, outliers, etc.</p></li>
+<li><p>Dibuja el atributo <em>gastos</em> con un histograma. ¿Qué conocimiento extraes de la información visualizada?</p></li>
+<li><p>Obten la matriz de correlación entre los atributos del dataset. ¿Qué atributos parecen estar más y menos relacionados? (<em>cor</em>).</p></li>
+<li><p>Visualiza las relaciones entre los atributos - scatterplot (<em>plot, pairs, pairs.panels</em>).<br />
+</p></li>
+<li><p>Plantea un modelo lineal <strong>m1</strong> de regresión entre <strong>gastos</strong> y otra variable (la que pienses mejor modela los gastos médicos de los asegurados).</p></li>
+<li><p>Intenta un modelo <strong>m2</strong> usando funciones polinómicas.</p></li>
+<li><p>Evalua la eficiencia de los modelos (<em>summary</em>). Extrae toda la información acerca de la validez de los dos modelos creados.</p></li>
+<li><p>Mejora el modelo usando regresión generalizada. Crea un modelo <strong>m3</strong> teniendo en cuenta todas las variables. Analiza qué variables son significativas. Mira la eficiencia del nuevo modelo.</p></li>
+<li><p>Usa <em>anova</em> para vez que modelo de los creados es más interesante.</p></li>
+</ul>
+<!-- >> Buscar en INE un dataset interesante: consumo eléctrico, evolución de sueldos, del paro de España, etc. y realizar análisis de daTos usando los métodos de regresión vistos.  -->
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="test-estadísticos-bayesiano.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="series-temporales.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-regresion.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

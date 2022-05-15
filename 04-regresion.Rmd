@@ -1,5 +1,1232 @@
+
+# Modelling techniques
+
+There are two types of basic numerical techniques: **interpolation** and **approximation** (adjustment). 
+
+- The goal is to get a function that fits *the best of your ability* to a set of data (a cloud of data) from observations, data collected from sensors, datasets, etc. 
+- The simplest fitting model is the linear model (LM) named in Machine Learning community as **linear regression**. 
+
+```{r,echo=FALSE,display=FALSE,eval=TRUE,warning=FALSE,message=FALSE}
+# execute only the fist time
+# install.packages("readr") 
+library(readr)
+CPIdata <- read_csv("data/EconomistData.csv"); 
+
  
-#  Regresion
+
+
+attach(CPIdata)
+
+ 
+
+# lm is a model formula
+# ~ (read "is modeled as")
+
+f1 <- lm(CPI ~ HDI)
+plot(HDI,CPI)
+abline(f1)  
+
+
+```
+
+- Although regression is probably the most   simple approach for
+supervised learning, linear regression is still
+a useful and widely used statistical learning method.
+- Other more complex  statistical learning approaches are  generalizations of linear regression.
+
+
+## Interpolation
+
+The normal input is a data table 
+$$\{(x_i,y_i)\}$$
+
+And the goal is to find an interpolating function 
+$$  \phi(x)=a_0+a_{1}f_{1}(x)$$ 
+(the easiest approach considers polynomial functions $f_1(x)=x$). 
+
+Then, the model will be: 
+
+$$  \phi(x)=a_0+a_{1}x$$ 
+
+**Existence and uniqueness of the solution**
+
+Simply, if we consider that  $\phi(x)$ verifies the conditions $(x_i,y_i)$, the following linear system is buit:  
+$$ \left. \begin{array}{ll}
+a_0+a_{1}x_{1}&=y_{1}\\
+a_0+a_{1}x_{2}&=y_{2}\\
+\ldots&\ldots\\
+a_0+a_{1}x_{m}&=y_{m}\\
+\end{array}\right\}$$
+<!-- is a linear system that may be incompatible, compatible determined or undetermined. -->
+
+Solving the system
+above,  the coefficients $a_0$ and $a_{1}$ are obtained (if they exist) and we will have the
+Interpolation function: \mathversion{bold}
+$$ \phi (x)=a_0+a_{1}x$$
+\mathversion{normal}
+
+- $a_0$ is named the **intercept**.
+- $a_1$ is named the **slope**.
+ 
+
+The condition for **existence** of the interpolation function $\phi(x)$ is that the
+system should be consistent, its **uniqueness** depends on the solution(s) of the system. 
+
+
+### Polynomial interpolation
+
+Assuming we have $n+1$ points $$\{ (x_{0}, y_{0}), (x_{1}, y_{1}), (x_{2}, y_{2}), \ldots, (x_{n}, y_{n})\} $$ polynomial interpolation consists of finding a polynomial function $\phi(x)$
+passing through the given points. 
+
+$$ \phi (x)=a_0+a_{1}x+a_{2}x^2+\ldots+a_{n}x^n$$
+Note that we are using that a basis of the polynomials of grade less than or equal to $n$ is $B=\{1, x,x^2,\ldots,x^n\}$.
+
+The equations will be:
+
+$$ \left. \begin{array}{lr}
+a_0+a_{1}x_{0}+a_{2}x_{0}^2+\ldots&=y_{0}\\
+a_0+a_{1}x_{1}+a_{2}x_{1}^2+\ldots&=y_{1}\\
+\ldots&\ldots\\
+a_0+a_{1}x_{n}+a_{2}x_{n}^2+\ldots&=y_{n}\\
+\\
+\end{array}\right\}$$
+
+<!-- **$\phi(x)$ is the discrete approximation** in the base of functions  $B=\{1,x,x^2,\ldots,x^n\}$, which best approximates those -->
+<!-- minimizes some norm of the error vector: -->
+<!-- $$\vec{e}= (y_{i}-\phi(x_{i})) $$ -->
+
+ 
+## Linear Regression
+
+>> Minimizing the residual sum of squares
+
+With a large number of observations, interpolation methods are not adequate, hence an adjusting *linear regression model* $y=\phi(x)$ is used. Such a model reflects the effect of changing a variable $x$ (independent variable) in  variable $y$ (dependent variable). It considers that there exist a linear relationship between the  variables. 
+
+A common way to estimate the parameters of a statistical model is to **adjust** a function which minimize the errors. The most used method is that of minimizing the *residual sum of squares*, RSS, which is defined by:
+$$
+RSS(a)={\mid\mid \epsilon \mid\mid_2}^2= \displaystyle\sum_{i=1}^{N}{\epsilon_i}^2=\displaystyle\sum_{i=1}^{N}(y_i-a^TX)^2
+$$
+
+**We  compute   the adjusting function which  minimizes the RSS**.
+
+
+ 
+
+ 
+
+### Linear Regression in R
+
+
+The easier model is linear regression:
+
+$$ \phi(x) = a_0 + a_1 x$$
+
+**Goal:**
+
+- Prediction of future observations. 
+- Find relationships, functions between dataset variables. 
+- Description of the data structure. 
+
+In mathematical terms, regression is to find   a linear function that approaches the data cloud. 
+
+
+### **lm()** function
+
+Linear model:
+
+```{r,eval=FALSE}
+regression.model <- lm( formula = y ~ x,  
+                    data = dataset )  
+```
+
+- *y* is the dependent variable, the output.
+- *x* is the independent variable, the predictor
+- *dataset* a dataset with the attributes *x* and *y*
+
+
+
+
+
+
+
+```{r,warning=FALSE,message=FALSE}
+# execute only the fist time
+# install.packages("readr") 
+require(readr)
+library(readr)
+CPIdata <- read_csv("./data/EconomistData.csv")
+#View(CPIdata)
+attach(CPIdata)
+
+# lm is a model formula
+# ~ (read "is modeled as")
+f1 <- lm(CPI ~ HDI)
+f1
+
+
+plot(HDI,CPI)
+abline(f1)  
+```
+
+The linear model is $$\phi(x)=-1.540 + 8.497x$$
+
+Which is the meaning of the coefficient $8.497$? - If $x$ is increased in 1, then $Y$ is increased in 1
+Which is the meaning of the coefficient -1.540? 
+- Value expected of $y$,  if $x$ has the value 0
+
+
+
+### Evaluate the model
+
+- Does the data fit the model found?
+- Trying a more complicated model?: Polynomial regression.
+- If the point cloud is $n$ in size, interpolation can be achieved with a polynomial grade of $n-1$.
+- Very high grade polynomials introduce errors: oscillations, cost of computation, etc. 
+- **For each model found, calculate in R the errors made, the accuracy, etc. **
+
+```{r}
+summary(f1)
+#Explain the main estimators
+```
+
+
+### Accuracy of the model
+
+There is some measures of the accuracy of the model.
+ 
+#### RSE
+
+We define the **Residual Standard Error** as follows:
+$$RSE=\sqrt{\frac{1}{n-2} \,\, RSS}$$ 
+
+RSE is an estimate of the standard deviation of $\epsilon_i$.
+
+**RSE is considered a measure of the lack of fit of the model   to the data.**  
+
+  * If the predictions  using the model are very good, we can conclude that the model fits the data very well. 
+
+  * On the other hand, if  the model doesn’t fit the data well then the RSE may be quite large.
+
+#### R-squared
+ **R-squared** (called the coefficient of determination) or fraction of variance explained is 
+
+
+$$R^2=1-\frac{RSS}{TSS}$$ where $$TSS=\sum_{i=1}^n (y_i-\overline{y})$$
+
+- RSE is an *absolute measure* of lack of fit of the model.
+
+- $R^2$   takes the form of a *proportion measure* (the proportion of variance
+explained), that is, the proportion of the variance in the outcome variable that can be accounted for by the predictor. 
+
+$R^2$ can be estimated with the correlation $r$ between the input ($X$ variable) and the output ($Y$ variable) as follows: $R^2=r^2$.
+
+If $R^2$ is
+close to 1 indicates that a large proportion of the variability in the response
+has been explained by the regression. A number near 0 indicates that  the linear model is wrong, or the inherent error  is high, or both.
+
+
+
+**Note:** The Pearson correlation is equivalent to running a linear regression model that uses only one predictor variable - the squared correlation  $r^2$ is identical to the  $R^2$ value for a linear regression with only a single predictor.
+
+#### R-squared and Adjusted R-squared
+
+R language returns Multiple R-squared and Adjusted R-squared.
+
+If you add more predictors into the model,  the $R^2$ value will  increase (or at least it will be the same). In a regression model with $K$ predictors, fit to a data set containing $N$ observations, the adjusted $R^2$ is:
+
+$$
+\mbox{adj. } R^2 = 1 - \left(\frac{\mbox{SS}_{res}}{\mbox{SS}_{tot}} \times \frac{N-1}{N-K-1} \right)
+$$
+
+The adjusted $R^2$ value will only increase when the new variables improve the model performance.
+
+
+##  Generalized Regression 
+ 
+The linear model $\phi(x) = a_0 + a_1 x$
+could be generalized in several ways. 
+
+We can also apply linear regression to more than 1 variable $x=\{x_1, x_2\}$. 
+
+For example, consider modeling
+temperature as a function of location $\{x_1,x_2\}$. 
+
+$$ \phi(x) = a_0 + a_1 x_1 + a_2x_2$$  or even,
+$$  \phi_2(x) =a_0 + a_1x_1 + a_2x_2 + a_3x_1^2$$
+ 
+
+Note: it is possible to model non-linear relationships.  In general,  a simple
+approach  (we could use non-polynomial functions) is considered using  polynomial basis functions, where the model has the form 
+
+$$\phi(x)=a_0+a_1x+a_2x^2+ \ldots+ a_nx^n$$
+
+
+###  Multiple Linear Regression
+
+Given a set of variables $X_1, X_2, \dots, X_m$, multiple linear
+regression computes the next model:
+
+$$\phi(x)=a_o+a_1X_1+a_2X_2+\dots, a_mX_m+\epsilon$$ In this model a
+coefficient $a_j$ is interpreted as the average effect on $Y$ of a one
+unit increase in $X_j$, holding all other predictors fixed.
+
+The ideal scenario is when the predictors are uncorrelated and in this
+case each coefficient can be estimated and tested separately.
+
+Correlations amongst predictors cause problems because the variance of
+all coefficients tends to increase, sometimes dramatically.
+
+Normally the independence is a utopia. Normally, predictors usually
+change together.
+
+```{r, warning=FALSE}
+# execute only the fist time
+# install.packages("readr") 
+require(readr)
+library(readr)
+CPIdata <- read_csv("./data/EconomistData.csv")
+#View(CPIdata)
+attach(CPIdata)
+
+# f(HDI.Rank)=a CPI + b HDI
+modelo1 <- lm( HDI.Rank ~ CPI + HDI )
+modelo1
+coef(modelo1)
+head(residuals(modelo1))
+plot(modelo1)
+```
+
+#### About plot(model)
+
+-   The first plot (residuals vs. fitted values) is a simple scatterplot
+    between residuals and predicted values. R shows some outliers.
+
+-   The second plot (normal Q-Q) is a normal probability plot. It will
+    give a straight line if the errors are distributed normally.
+    Outliers deviate from the straight line.
+
+-   The third plot (Scale-Location), like the the first, should look
+    random. No patterns. We have a little V-shaped pattern.
+
+-   The last plot (Cook's distance) tells us which points have the
+    greatest influence on the regression (leverage points). We see that
+    points 20,36, 116 have great influence on the model. Detection of
+    outliers: Remove these points and repeat.
+
+### Evaluating the Regression Coefficients
+
+$$\phi(x)=a_o+a_1X_1+a_2X_2+\dots, a_pX_p$$
+
+#### F-statistic
+
+We establish the null hypothesis:
+
+$$H_O: a_o = a_1 = a_2= \dots= a_p= 0$$
+
+versus the alternative
+$$H_a: \mbox{ at least one } a_i \mbox{ is non-zero}$$
+
+The hyphotesis test is performed by means of **F-statistic**:
+
+$$F=\frac{(TSS-RSS)/p}{RSS/(n-p-1)}$$
+
+where
+
+$$TSS = \sum (y_i − \overline{y} )^2$$
+
+When there is no relationship between the real valor and predictors, the
+F-statistic must to take on a value close to 1.
+
+-   If $H_a$ is true the F-value must to be greater than 1.
+
+-   If F-value is closer to 1, the answer to reject the hyphotesis
+    depends on values of $n$ and $p$.
+
+-   Using F-value, p-value is computed.
+
+#### p-value
+
+Using p-value we can determine whether or not to reject $H_0$.
+
+-   *p-value is essentially 0*: extremely strong evidence that at least
+    one of the media is associated with output variable.
+
+-   R language returns p-value for each coefficient: These provide
+    information about whether each individual predictor is related to
+    the response, after adjusting for the other predictors.
+
+```{r}
+summary(modelo1)
+```
+
+-   Pr(\>\|t\|) of the coefficients is close to 0 (significatives) - see
+    \*\*\* in each row of the table.
+
+-   F-value is 3806 (must to be greater than 1).\
+
+-   p-value is close to 0.
+
+-   degrees of freedom: The number of independent pieces of information
+    used in the estimation of a parameter. From the algebaic point of
+    view is the theal number of equations used from the data. (see
+    [Grados de
+    libertad](http://www.redalyc.org/pdf/2031/203129458002.pdf))
+
+-   Multiple R-squared is used for evaluating how well your model fits
+    the data. **97% of the variability in HDI.Rank is explained by
+    CPI+HDI**.
+
+-   (Multiple R squared) measures the amount of variation in the
+    response variable that can be explained by the predictor variables.
+
+-   Adjusted Rsquared adds penalties for the number of predictors in the
+    model. Therefore it shows a balance between the most parsimonious
+    model, and the best fitting model ( ratio between the number of
+    observations and the predictors). *If you have a large difference
+    between your multiple and your adjusted Rsquared that indicates you
+    may have overfit your model.*
+
+## Improving the models
+
+Trying a more complicated model
+
+-   Polynomial regression.
+-   Polynomial ortogonal regression.
+-   Non linear regression.
+-   etc.
+
+Using the previous example:
+
+```{r, warning=FALSE}
+  require(readr)
+  library(readr)
+  CPIdata <- read_csv("./data/EconomistData.csv")
+#  View(CPIdata)
+  attach(CPIdata)
+  
+  # lm is a model formula
+  # ~ (read "is modeled as")
+  f1 <- lm(CPI ~ HDI)
+  f1
+  
+  plot(HDI,CPI)
+  abline(f1)  
+
+```
+
+Computing errors: We develop a function that receives the model, the
+input variable, and computes the norm 2 of the vector of errors
+(eucliean distance):
+
+$$\mid\mid \vec{e} \mid\mid= \sqrt{\sum (CPI_{i}-\phi(HDI_{i}))^2} $$ -
+$\phi(HDI_{i}))$ will be in the function *y_aprox*
+
+```{r, warning=FALSE}
+require(pracma)#numerical package
+library(pracma)
+v.error <- function(Model,X,Y){
+  y_aprox <-predict(f1, data.frame(x = X))
+  r1 <- Y-y_aprox
+  nerror <- Norm(r1)
+  return(list(error.vector=r1,     norma.error=nerror))
+
+}#end function
+
+# Compute errors with f1,HDI,CPI
+mi.verror<-v.error(f1,HDI,CPI)
+
+#norm 2 of the error
+mie1 <- mi.verror$norma.error
+mie1
+# Try
+# mi.verror
+# mi.verror$error.vector
+# mi.verror$norma.error
+
+```
+
+Is this result coherent with **residuals**?
+
+```{r}
+dif.myerror.resiuadls <- Norm(mi.verror$error.vector-residuals(f1))
+dif.myerror.resiuadls
+
+```
+
+We obtain the same values (taking in account rouning).
+
+```{r, include=FALSE}
+require(pracma)#numerical package
+library(pracma)
+v.error <- function(Model,X,Y){
+  y_aprox <-predict(f1, data.frame(x = X))
+  r1 <- Y-y_aprox
+  nerror <- Norm(r1)
+  return(list(error.vector=r1,     norma.error=nerror))
+
+}#end function
+
+# Compute errors with f1,HDI,CPI
+mi.verror<-v.error(f1,HDI,CPI)
+
+#norm 2 of the error
+mie1 <- mi.verror$norma.error
+
+# Try
+# mi.verror
+# mi.verror$error.vector
+# mi.verror$norma.error
+
+```
+
+In any case the norm 2 of the errors in all the points of the dataset is
+`r mie1` (computed using *mi.verror\$norma.error*). In the following we
+will improve the model.
+
+Before, we will examine the information computed in the building of the
+model (write *f1\$* and R will show all the possible parameters):
+
+```{r}
+head(f1$model)
+head(f1$fitted.values)
+# is the same that
+# predict(f1, data.frame(x = HDI)
+# the difference is: 
+Norm(f1$fitted.values-predict(f1, data.frame(x = HDI)))
+```
+
+
+### Updating the models
+
+```{r}
+
+ p1 <- lm(CPI ~ HDI)
+ p2 <- update(p1, . ~ . + I(HDI^2))
+ p3 <- update(p2, . ~ . + I(HDI^3))
+ p4 <- update(p3, . ~ . + I(HDI^4))
+ p5 <- update(p4, . ~ . + I(HDI^5))
+ p6 <- update(p5, . ~ . + I(HDI^6))
+ p7 <- update(p6, . ~ . + I(HDI^7))
+ 
+```
+
+<!-- anova(p1, p2, p3, p4, p5, p6, p7)  -->
+
+<!--  #ANALISIS DE VARIANZA -->
+
+<!--  #grado 2 es la  mejor  -->
+
+------------------------------------------------------------------------
+
+### Searching the best regression
+
+Given a set of variables $A, B, X, Y, Z, U$ we can test the following
+models, in addition to the combinations of these with the linear and
+polynomial models previously seen.
+
+-   $+$ para combinaciones de variables $A+B$
+-   $.$ combinación de una de las variables con todas las demás
+
+<!-- For advanced models -->
+
+<!-- -   $:$ para interacciones entre variables $A:B$ -->
+<!-- -   $*$ para las dos operaciones anteriores $A*B = A+B+A:B$ -->
+<!-- -    -->
+
+Examples:
+
+```{r, eval=FALSE}
+
+# f1(X)=aY + bZ 
+f1 <- lm( X ~ Y + Z )
+
+# f2(X)=a(Y+Z) + bU 
+f2 <- lm( X ~ I(Y + Z) + U )
+
+#f3(X)=aY + bY^2+cZ
+f3 <- lm( X ~ I(Y) + I(Y^2) + I(Z) )
+f3 <- lm( X ~   Y + I(Y^2) +     Z )
+
+
+# f5(X) interacciones entre X y todas las demás variables
+f5 <- lm( X ~ . )
+
+```
+
+<!-- # f4(X) interacciones entre Y Z  -->
+<!-- f4 <- lm( X ~ Y:Z ) -->
+
+### Orthogonal polynomials
+
+When we approach a function using classical approach - we minimize the
+norm 2 of the errors - we need to solve this linear equation system:
+
+![](minimoscuadrados.png)
+
+For this proposal we use in R language \`\`I(x\^k)\`\` to add a term
+with k degree.
+
+In orthogonal approach the system will be:
+
+![](minimoscuadradosortogonales.png)
+
+For instance using Legendre family:
+
+![](legendre.png)
+
+In R language we will use \`\`poly(x,k)\`\` to use orthogonal
+polynomials of k degree.
+
+Trying a polynomial grade of $n$ for $\phi(x)$.
+
+```{r}
+# Ajuste usando polinomios ortogonales
+
+# Classical polynomial approach
+# Usando I() para especificar que es una expresión matemática
+poli.2c <- lm(CPI ~ HDI + I(HDI^2))
+poli.3c <- lm(CPI ~ HDI + I(HDI^2) + I(HDI^3))
+poli.4c <- lm(CPI ~ HDI + I(HDI^2) + I(HDI^3)+ I(HDI^4))
+poli.2c
+poli.3c
+poli.4c
+
+
+
+
+# Orthogonal polynomial approach
+# Usando poly() para especificar el grado de los polinomios ortogonales
+poli.2o <- lm(CPI ~ poly(HDI, 2))
+poli.3o <- lm(CPI ~ poly(HDI,3))
+poli.4o <- lm(CPI ~ poly(HDI,4))
+poli.2o
+poli.3o
+poli.4o
+
+```
+
+<!-- anova(poli.2c,poli.3c,poli.4c,poli.2o,poli.3o,poli.4o) -->
+
+For each model found, calculate in R the errors made, the accuracy, etc.
+
+The parameter \$ Pr (\>F)\$ is the probability that rejecting null
+hypothesis (the most complex model does not fit better than the simplest
+model) could be an error.
+
+
+## Model validation
+
+- It is important to evaluate how the model adjusts the point cloud.  
+- There are many ways to make this assessment. 
+- Usually statisticians examine diagnostic plots after constructing the model. 
+- Most evaluation models focus on residuals 
+
+If we call $\phi(x)$ to the regression linear function, at each point the error (residual) function is $$e (x_i)=\mid \phi(x_i)-y_i\mid $$
+
+### Residuals
+
+We assume these errors: 
+ 
+- They must have a zero average. 
+- If this is not the case, the bias must be measured.
+- More points may need to be included in the data cloud. 
+- Errors must be uniformly distributed. 
+- We must wait for the residues to be uniformly distributed without patterns that detect anomalies.  
+- A first way would be to face the waste with the adjustment and the points should be around $y=0$.
+
+
+
+```{r}
+
+plot(fitted(f1), residuals(f1), xlab = "Approached values",  ylab = "Residuals")
+abline(h=0, lty=2)
+ lines(smooth.spline(fitted(f1), residuals(f1)))
+ # See help of:
+ #?fitted
+ #?residuals
+ #?smooth.spline
+
+```
+
+ 
+
+Facing residues with the adjustment and points should be around y = 0.
+
+```{r}
+plot(fitted(f1), residuals(f1), xlab = "Approached values",  ylab = "Residuals")
+abline(h=0, lty=2)
+ lines(smooth.spline(fitted(f1), residuals(f1)))
+ 
+plot(fitted(poli.2c), residuals(poli.2c), xlab = "Approached values", ylab = "Residuals")
+
+abline(h=0, lty=2)
+lines(smooth.spline(fitted(poli.2c), residuals(poli.2c)))
+
+
+```
+
+### Other study of residuals
+
+Another possibility would be to confront the residues with respect to
+the X-axis values. Points should be around $y=0$.
+
+Draw the point cloud next to the adjustment. Useful commands:
+**predict**, **fitted**. Estimators with residuals or draw the residuals
+
+```{r}
+# 1
+ plot(HDI, residuals(poli.2o), xlab = "HDI", ylab = "Residuos")
+ abline(0, 0)
+ 
+ # 2
+ head(fitted(poli.2o))
+ head(predict(poli.2o, data.frame(x = HDI)))
+ plot(HDI,CPI,col="red")
+ par(new=TRUE)
+ plot(HDI,predict(poli.2o, data.frame(x = HDI)))
+ 
+# predicted.intervals <- predict(poli.2o,data.frame(x=HDI),interval='confidence',
+#                               level=0.99)
+# lines(HDI,predicted.intervals[,1],col='firebrick1',lwd=3)
+ 
+ # 3
+ head(resid(poli.2o)) #List of residuals
+ mean(residuals(poli.2o)) 
+ 
+ plot(hist(resid(f1))) #A density plot
+ 
+ plot(density(resid(f1))) #A density plot
+ 
+ plot(density(resid(poli.2o))) #A density plot
+ 
+ 
+qqnorm(resid(poli.2o)) 
+
+ qqline(resid(poli.2o))
+ #The deviations from the straight line are minimal. This indicates normal distribution.
+ 
+ 
+# Quantile-quantile (QQ) plot.
+# Evaluating the fit of sample data to the normal distribution. 
+# a plot of the sorted quantiles of one data set against the sorted quantiles of another data set.  It is used to visually inspect the similarity between the underlying distributions of 2 data sets.
+ 
+ #Each point (x, y) is a plot of a quantile of one distribution along the vertical axis (y-axis) against the corresponding quantile of the other distribution along the horizontal axis (x-axis). 
+```
+
+
+
+## Proyecto - regresion EconomistData
+
+Improving regression with EconomistData dataSet.
+
+```{r}
+# execute only the fist time
+# install.packages("readr") 
+require(readr)
+library(readr)
+CPIdata <- read_csv("./data/EconomistData.csv")
+#View(CPIdata)
+attach(CPIdata)
+
+# f(HDI.Rank)=a CPI + b HDI
+modelo1 <- lm( HDI.Rank ~ CPI + HDI )
+plot(modelo1)
+coef(modelo1)
+modelo1
+residuals(modelo1)
+
+```
+
+<!-- anova(modelo1) -->
+
+In the following, we check some models.
+
+```{r}
+
+# INTERACCION ENTRE CPI y HDI
+modelo1a = lm( HDI.Rank ~ ., data = CPIdata)
+
+# modelo no lineal
+modelo2a = lm( HDI.Rank ~ log(CPI) + HDI)
+
+#  test others models
+# modelo3a=
+# modelo4a=.....
+```
+
+<!-- ## **Exercise 2 Regression** -->
+
+<!-- - Build different model with polynomial terms (ortogonal and classe approaches), interaction between variables,etc.  Generate 5 different models -->
+
+<!-- - Visualize models, dataset, the models, etc. -->
+
+<!-- - Analyse errors with the different methods explained. -->
+
+<!-- - Use summary, anova. -->
+
+<!-- - Which is the best model? Interpret, explain,... -->
+
+<!-- - Prepare a document for this exercise using RMarkDown. Generate a presentation.  -->
+
+<!-- 1. Upload the solved exercise in a task in the CV. -->
+
+<!-- 2. Include in a .zip file the .Rmd file (Rmarkdown) and the otuput. -->
+
+## Proyecto - Analysing  *Boston* dataset
+
+This dataset stores the *Housing Values in Suburbs  of Boston*. 
+
+```{r, eval=FALSE}
+# package with a lot of datasets
+library (MASS) # install if error
+data(Boston) #Housing Values in Suburbs of Boston
+names(Boston)
+View(Boston)
+?Boston # See the descriptions of columns
+```
+
+### Fit a simple linear regression
+
+$$medv=\phi(lstat)=a_0+a_1\, lstat$$
+
+- **lstat**: lower status of the population (percent).
+- **medv**: median value of owner-occupied homes in $1000s.
+
+
+
+```{r, eval=FALSE}
+lm.fit =lm(medv~lstat,data=Boston)
+#the same that
+#attach (Boston )
+#lm.fit =lm(medv∼lstat)
+lm.fit
+
+```
+The model founded is: 
+$$medv=\phi(lstat)=34.55-0.95\,  lstat$$
+
+### Analyzing the model
+
+For more detailed information: 
+```{r, eval=FALSE}
+summary(lm.fit)
+```
+
+For more information we can use *names* with the linear model:
+```{r, eval=FALSE}
+names(lm.fit)
+# we ask for these information
+coefficients(lm.fit)
+
+```
+
+Confidence interval for the coeffient estimates: 
+ 
+```{r, eval=FALSE}
+confint (lm.fit)
+```
+ 
+ Visualizing the dataset+model:
+```{r, eval=FALSE}
+attach(Boston)
+# differents plots
+plot(lstat ,medv ,col ="red ")
+plot(lstat ,medv ,pch =20)
+plot(lstat ,medv ,pch ="+")
+abline (lm.fit)
+abline (lm.fit ,lwd =3)
+abline (lm.fit ,lwd =3, col ="red ")
+```
+ 
+ ## Visualizing the linear model
+ 
+```{r, eval=FALSE}
+#par(mfrow =c(2,2))
+# divides the plotting region into a 2 × 2 grid of panels
+plot(lm.fit)
+```
+ # Computing residuals
+ 
+ - **residuals**:
+ - **rstudent**:return the studentized residuals 
+ 
+ 
+ Some plots regarding residuals, etc...
+ 
+```{r, eval=FALSE}
+plot(predict (lm.fit), residuals (lm.fit))
+plot(predict (lm.fit), rstudent (lm.fit))
+```
+ 
+ 
+ On the basis of the residual plots, there is some evidence of non-linearity.
+Leverage statistics can be computed for any number of predictors using the
+**hatvalues**  function
+
+```{r, eval=FALSE}
+plot(hatvalues (lm.fit ))
+which.max (hatvalues (lm.fit))
+```
+
+**which.max()**:  function identifies the index of the largest element of a
+which.max()
+vector. In this case, it tells us which observation has the largest leverage
+statistic.
+
+### Multiple regression 
+
+
+Fitting a model trying the regression with two input variables. 
+
+- **lstat**: lower status of the population (percent).
+- **medv**: median value of owner-occupied homes in $1000s.
+- **age**: age
+proportion of owner-occupied units built prior to 1940.
+
+
+$$medv=\phi(lstat,age)=a_0+a_1\, lstat+ +a_2\, age$$
+```{r, eval=FALSE}
+lm.fit2 =lm(medv~lstat+age ,data=Boston )
+lm.fit2
+summary (lm.fit2)
+```
+
+Data set contains 13 variables, how to select the best variables?: 
+
+- **Facing the output variable against the rest of variables**
+- Analyzing the summary of the model.
+
+```{r, eval=FALSE}
+lm.fit3 =lm(medv~.,data=Boston )
+summary (lm.fit3)
+```
+
+### Interaction terms
+
+```{r, eval=FALSE}
+lm.fit4 <- lm(medv~lstat*age ,data=Boston )
+summary (lm.fit4)
+```
+
+### Non-linear transformations of the predictors
+
+```{r, eval=FALSE}
+lm.fit5 <- lm(medv~lstat+I(lstat^2) ,data=Boston )
+summary (lm.fit5)
+```
+
+The   p-value associated with the quadratic term suggests that **lm.fit5** is an improved model.
+
+
+
+### Using anova
+
+Fist, we compare the  model: linear (lm.fit) and quadratic (lm.fit5). If the models are represented, we could extract some important ideas:
+
+```{r, eval=FALSE}
+#par(mfrow=c(2,2))
+plot(lm.fit)
+#par(mfrow=c(2,2))
+plot(lm.fit5)
+```
+
+We can
+see a non-linearity in the relationship between *medv* and *lstat*. 
+
+Now, we will use  **anova()** (Analysis of Variance Table)  performs a hypothesis
+test comparing the  models.
+```{r, eval=FALSE}
+anova(lm.fit ,lm.fit5)
+```
+
+
+The null hypothesis is that the two models
+fit the data equally well, and the alternative hypothesis is that the full
+model is superior.
+
+
+Interpretation:  The null hypothesis says    that the two models fit the data equally well, and the alternative hypothesis is that the full model is superior. 
+
+See the  F-statistic   and the   p-value associated. 
+
+This provides very clear evidence that the model containing
+the predictors **$lstat$** and **$lstat^2$** is better than the model with  the predictor **$lstat$**. 
+
+<!-- ## Exercise 3 Regression -->
+
+<!-- - Using anova, compare all the models of this document. Which is the best model? Interpret, explain,... -->
+
+<!-- - Try to build different model with polynomial terms up to grade three (ortogonal and classe approaches) with the same variables (medv,lstat). -->
+
+<!-- - Visualize models, dataset, etc. -->
+
+<!-- - Analyse errors. -->
+
+<!-- - Use anova. -->
+
+<!-- - Interpret adequately the results. -->
+
+<!-- - Which is your best model? -->
+
+<!-- - Prepare a document for this exercise using RMarkDown. Generate a presentation.  -->
+
+
+
+<!-- 1. ***Upload the solved exercise in a task in the CV.*** -->
+<!-- 2. ***Include in a .zip file the .Rmd file (Rmarkdown) and the otuput.*** -->
+
+
+```{r setup, include=FALSE}
+library(tufte)
+library(tidyverse)
+library(skimr) 
+
+```
+
+## Poyecto - evaluación de cursos - variables categóricas
+
+Regresión múltiple:
+
+$$y=f(x_1,x_2,\dots)$$
+
+-   $y$ es una variable de salida numérica
+-   $x_1$ es variable 1 de entrada numérica o categórica
+-   $x_1$ es variable 2 de entrada numérica o categórica, ...
+
+### EDA - exploratory data analysis
+
+Vamos a explorar las relaciones en un .csv con relaciones entre las puntuaciones de la evaluación de la enseñanza dadas por los estudiantes y las puntuaciones estéticas, de edad, etc. de los profesores.
+
+Recordatorio de fases de EDA:
+
+-   Observar los valores
+-   Preprocesamiento
+-   Estimar estadísticos
+-   Visualizaciones
+
+```{r}
+evaluacion <- read.csv("data/evaluation_courses.csv")
+evals5 <- evaluacion %>% 
+  select(ID, score, bty_avg, age,gender)  
+
+head(evals5)
+summary(evals5)
+
+
+```
+
+Nota: Nuevas funciones de tidyverse en última sección.
+
+```{r}
+
+glimpse(evals5)
+
+evals5 %>% skim()
+
+evals5 %>%
+  sample_n(size = 5)
+
+evals5 %>%
+  summarize(mean_bty_avg = mean(bty_avg), 
+            mean_score = mean(score),
+            median_bty_avg = median(bty_avg), 
+            median_score = median(score))
+
+evals5 %>% select(score, bty_avg) %>% skim()
+ 
+```
+
+-   $p0$: 0-percentile: valor al cual el 0% de las observaciones son más pequeñas que él (valor mínimo por tanto)
+
+-   $p25$: 25-percentile: valor al cual el 25% de las observaciones son más pequeñas que él
+
+-   ...
+
+#### Correlación
+
+> > Se establece entre variables numéricas
+
+El coeficiente de correlación es estimador de la relación lineal entre dos variables numéricas. Su valor oscila entre -1 y 1:
+
+-   -1: perfecta relación negativa
+-   0: no relación
+-   +1 perfecta relación positiva
+
+```{r}
+
+evals5 %>% 
+  summarize(correlation = cor(score, bty_avg))
+```
+
+> > relación debilmente positiva
+
+#### Visualización
+
+-   Objetivo: visualizar relaciones entre puntuaciones, edad según el género.
+
+```{r}
+ggplot(evals5, aes(x = age, y = score, color = gender)) +
+  geom_point() +
+  labs(x = "Edad", y = "Nota de evaluación", color = "Género") +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+### Modelo lineal
+
+Construimos un primer modelo lineal univariable (puntuación frente a media de las edades):
+
+```{r}
+model1 <- lm(score ~ bty_avg, data = evals5)
+model1
+summary(model1)
+
+ggplot(evals5, aes(x = bty_avg, y = score)) +
+  geom_point() +
+  geom_line(aes(x = bty_avg, y = predict(model1,evals5)),col="blue") 
+
+# lo mismo usando en geom_smooth el método lm
+
+ggplot(evals5, aes(x = bty_avg, y = score)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+
+```
+
+### Interacción de modelos
+
+Se usa el operador de construcción de modelos `:`.
+
+$$y=f_1(x_1,x_2)$$
+
+```{r, eval=FALSE}
+f1 <- lm(y ~ x1 * x2)
+```
+
+En nuestro
+
+```{r}
+# Fit regression model:
+modelo2 <- lm(score ~ age * gender, data = evals5)
+
+modelo2
+summary(modelo2)
+```
+
+Explicación:
+
+-   *intercept* y *age* son las variables para el género femenino (female alfabéticamente antes que male)
+-   gendermale y age:gendermale son los desplazamientos del intercept y de slope de los profesores (male) respecto a los valores de intercept y de slope de las profesoras.
+
+Regresión obtenida:
+
+$$y=b_0+b_1 \cdot age + b_2 \cdot  is\_male(x) + b_3 \cdot  is\_male(x)$$ - $b_0$ es (Intercept) - $b_1$ es age - $b_2$ es gendermale - $b_3$ es age:gendermale
+
+La interacción estudia si el efecto asociado de una variable depende del valor de otra variable.
+
+> > en nuestro caso, la respuesta es que si existe: existe una da diferencia en las pendientes de la edad de los instructores masculinos con respecto a los femeninos
+
+### Multiple Regression
+
+```{r}
+evals5 %>% select(score, age, gender) %>% skim()
+```
+
+```{r}
+ 
+evals5 %>% 
+  summarize(correlation = cor(score, age))
+```
+
+```{r}
+ggplot(evals5, aes(x = age, y = score, color = gender)) +
+  geom_point() +
+  labs(x = "Age", y = "Teaching Score", color = "Gender") +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+modelo con la edad
+
+```{r}
+# Fit regression model:
+model1 <- lm(score ~ age , data = evals5)
+
+model2 <- lm(score ~ age  +  bty_avg , data = evals5)
+
+model1
+
+model2
+
+summary(model1)
+
+summary(model2)
+
+```
+
+### Validando el modelo
+
+-   Un test de hipótesis consiste en una prueba entre dos hipótesis contrapuestas
+
+    > > Hipótesis nula $H_0$ versus una hipótesis alternativa
+
+-   Generalmente, la hipótesis nula es una afirmación de que "no hay efecto" o "no hay diferencia de interés".
+
+-   En muchos casos, la hipótesis nula representa el statu quo o una situación en la que no ocurre nada interesante.
+
+-   Además, generalmente la hipótesis alternativa es la afirmación que el experimentador o investigador quiere establecer o encontrar pruebas que la respalden.
+
+-   Se considera una hipótesis "contraria" a la hipótesis nula
+
+$$y=a+bx$$
+
+> > $H_0$: no hay modelo, $b=0$
+
+> > $H_a$: hay modelo, $b\neq0$
+
+> > umbral $0.05$,
+
+> > Un estadístico de prueba (test statistic) es una fórmula de estimación puntual/estadística de muestra que se utiliza para la comprobación de hipótesis: t-test statistic
+
+> > p-value es la probabilidad de obtener un estadístico de prueba igual o más extremo que el estadístico de prueba observado suponiendo que la hipótesis nula $H_0$ es verdadera.
+
+## Anexo: R avanzado
+
+### Más de tidyverse
+
+-   `[glimpse](https://dplyr.tidyverse.org/reference/glimpse.html)`
+
+-   `[sample_n](https://dplyr.tidyverse.org/reference/sample_n.html?q=sample_n#null)`
+
+### `Skimr` package
+
+-   `[skim](https://www.datanovia.com/en/blog/display-a-beautiful-summary-statistics-in-r-using-skimr-package/)`
+
+    -   skim() can handle data that has been grouped using dplyr::group_by.
+
+
+
+
+## Proyecto -  Predicción de riesgos
+  
+- Importa en R el dataset *riesgos.csv*
+- La compañía de seguros quiere tener un modelo para predecir los gastos médicos de los asegurados. 
+
+Realiza un análisis del dataset y desarrolla uno o varios modelos que contesten a lo siguiente. Entregar en el book.
+
+- Analiza la estructura del dataset. ¿Qué tipo datos tenemos? Plantea los problemas que podemos tener al trabajar con este dataset.  
+
+- Analiza estadísticamente los atributos. Detecta normalidad, sesgos, outliers, etc. 
+- Dibuja el atributo *gastos* con un histograma. ¿Qué conocimiento extraes de la información visualizada? 
+- Obten la matriz de correlación entre los atributos del dataset. ¿Qué atributos parecen estar más y menos relacionados? (*cor*).
+- Visualiza las relaciones entre los atributos - scatterplot (*plot, pairs, pairs.panels*).  
+- Plantea un modelo lineal **m1**  de regresión entre **gastos** y otra variable (la que pienses mejor modela los gastos médicos de los asegurados).
+- Intenta un modelo **m2** usando funciones polinómicas. 
+- Evalua la eficiencia de los modelos (*summary*). Extrae toda la información acerca de la validez de los dos modelos creados. 
+- Mejora el modelo usando regresión generalizada. Crea un modelo **m3**  teniendo en cuenta todas las variables. Analiza qué variables son significativas. Mira la eficiencia del nuevo modelo.
+- Usa *anova* para vez que modelo de los creados es más interesante. 
+
+<!-- >> Buscar en INE un dataset interesante: consumo eléctrico, evolución de sueldos, del paro de España, etc. y realizar análisis de daTos usando los métodos de regresión vistos.  -->
+
+
 
 
 
