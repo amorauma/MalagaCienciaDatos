@@ -177,6 +177,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="de-twitter.html"><a href="de-twitter.html"><i class="fa fa-check"></i><b>7</b> De Twitter</a></li>
 <li class="chapter" data-level="8" data-path="exportar-grafos.html"><a href="exportar-grafos.html"><i class="fa fa-check"></i><b>8</b> Exportar grafos</a></li>
+<li class="chapter" data-level="9" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html"><i class="fa fa-check"></i><b>9</b> Analysis of the Networks to extract knowledge.</a></li>
+<li class="chapter" data-level="10" data-path="centrality.html"><a href="centrality.html"><i class="fa fa-check"></i><b>10</b> Centrality</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="centrality.html"><a href="centrality.html#degree"><i class="fa fa-check"></i><b>10.1</b> Degree</a></li>
+<li class="chapter" data-level="10.2" data-path="centrality.html"><a href="centrality.html#betweenness"><i class="fa fa-check"></i><b>10.2</b> Betweenness</a></li>
+<li class="chapter" data-level="10.3" data-path="centrality.html"><a href="centrality.html#edge_betweenness"><i class="fa fa-check"></i><b>10.3</b> Edge_betweenness</a></li>
+<li class="chapter" data-level="10.4" data-path="centrality.html"><a href="centrality.html#closeness"><i class="fa fa-check"></i><b>10.4</b> Closeness</a></li>
+<li class="chapter" data-level="10.5" data-path="centrality.html"><a href="centrality.html#eigenvector"><i class="fa fa-check"></i><b>10.5</b> Eigenvector</a></li>
+<li class="chapter" data-level="10.6" data-path="centrality.html"><a href="centrality.html#pagerank"><i class="fa fa-check"></i><b>10.6</b> Pagerank</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="paths.html"><a href="paths.html"><i class="fa fa-check"></i><b>11</b> Paths</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="paths.html"><a href="paths.html#diameter"><i class="fa fa-check"></i><b>11.1</b> Diameter</a></li>
+<li class="chapter" data-level="11.2" data-path="paths.html"><a href="paths.html#caminos-y-distancias"><i class="fa fa-check"></i><b>11.2</b> Caminos y distancias</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>12</b> Clustering</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="clustering.html"><a href="clustering.html#transitivity"><i class="fa fa-check"></i><b>12.1</b> Transitivity</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="clustering.html"><a href="clustering.html#global-clustering"><i class="fa fa-check"></i><b>12.1.1</b> Global clustering:</a></li>
+<li class="chapter" data-level="12.1.2" data-path="clustering.html"><a href="clustering.html#local-clustering"><i class="fa fa-check"></i><b>12.1.2</b> Local clustering</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="otras-medidas-y-definiciones.html"><a href="otras-medidas-y-definiciones.html"><i class="fa fa-check"></i><b>13</b> Otras medidas y definiciones</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -206,9 +230,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb85-2"><a href="visualización.html#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Trees</span></span>
 <span id="cb85-3"><a href="visualización.html#cb85-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_tree</span>(<span class="dv">27</span>, <span class="at">children=</span><span class="dv">3</span>)</span>
 <span id="cb85-4"><a href="visualización.html#cb85-4" aria-hidden="true" tabindex="-1"></a>g; <span class="fu">plot</span>(g)</span></code></pre></div>
-<pre><code>## IGRAPH 5a9b648 D--- 27 26 -- Tree
+<pre><code>## IGRAPH f389ce1 D--- 27 26 -- Tree
 ## + attr: name (g/c), children (g/n), mode (g/c)
-## + edges from 5a9b648:
+## + edges from f389ce1:
 ##  [1] 1-&gt; 2 1-&gt; 3 1-&gt; 4 2-&gt; 5 2-&gt; 6 2-&gt; 7 3-&gt; 8 3-&gt; 9 3-&gt;10 4-&gt;11 4-&gt;12 4-&gt;13
 ## [13] 5-&gt;14 5-&gt;15 5-&gt;16 6-&gt;17 6-&gt;18 6-&gt;19 7-&gt;20 7-&gt;21 7-&gt;22 8-&gt;23 8-&gt;24 8-&gt;25
 ## [25] 9-&gt;26 9-&gt;27</code></pre>
@@ -216,19 +240,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="visualización.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cliques </span></span>
 <span id="cb87-2"><a href="visualización.html#cb87-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_full_graph</span>(<span class="at">n=</span><span class="dv">6</span>)</span>
 <span id="cb87-3"><a href="visualización.html#cb87-3" aria-hidden="true" tabindex="-1"></a>g; <span class="fu">plot</span>(g)</span></code></pre></div>
-<pre><code>## IGRAPH e25d99a U--- 6 15 -- Full graph
+<pre><code>## IGRAPH 5d37b57 U--- 6 15 -- Full graph
 ## + attr: name (g/c), loops (g/l)
-## + edges from e25d99a:
+## + edges from 5d37b57:
 ##  [1] 1--2 1--3 1--4 1--5 1--6 2--3 2--4 2--5 2--6 3--4 3--5 3--6 4--5 4--6 5--6</code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-20-2.png" width="672" /></p>
 <div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="visualización.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lattices</span></span>
 <span id="cb89-2"><a href="visualización.html#cb89-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_lattice</span>(<span class="at">dimvector =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>), <span class="at">circular =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb89-3"><a href="visualización.html#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>label <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
 <span id="cb89-4"><a href="visualización.html#cb89-4" aria-hidden="true" tabindex="-1"></a>g; <span class="fu">plot</span>(g)</span></code></pre></div>
-<pre><code>## IGRAPH 83ccff1 U--- 25 40 -- Lattice graph
+<pre><code>## IGRAPH 5d0e548 U--- 25 40 -- Lattice graph
 ## + attr: name (g/c), dimvector (g/n), nei (g/n), mutual (g/l), circular
 ## | (g/l), label (v/l)
-## + edges from 83ccff1:
+## + edges from 5d0e548:
 ##  [1]  1-- 2  1-- 6  2-- 3  2-- 7  3-- 4  3-- 8  4-- 5  4-- 9  5--10  6-- 7
 ## [11]  6--11  7-- 8  7--12  8-- 9  8--13  9--10  9--14 10--15 11--12 11--16
 ## [21] 12--13 12--17 13--14 13--18 14--15 14--19 15--20 16--17 16--21 17--18
@@ -237,9 +261,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="visualización.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Stars</span></span>
 <span id="cb91-2"><a href="visualización.html#cb91-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_star</span>(<span class="at">n=</span><span class="dv">10</span>,<span class="at">mode =</span> <span class="st">&quot;undirected&quot;</span>)</span>
 <span id="cb91-3"><a href="visualización.html#cb91-3" aria-hidden="true" tabindex="-1"></a>g;  <span class="fu">plot</span>(g)</span></code></pre></div>
-<pre><code>## IGRAPH 6247eb0 U--- 10 9 -- Star
+<pre><code>## IGRAPH a6d07e6 U--- 10 9 -- Star
 ## + attr: name (g/c), mode (g/c), center (g/n)
-## + edges from 6247eb0:
+## + edges from a6d07e6:
 ## [1] 1-- 2 1-- 3 1-- 4 1-- 5 1-- 6 1-- 7 1-- 8 1-- 9 1--10</code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-20-4.png" width="672" /></p>
 <blockquote>
@@ -403,7 +427,7 @@ V(g)$color</code></pre>
 <div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="visualización.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g)<span class="sc">$</span>width <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb117-2"><a href="visualización.html#cb117-2" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span><span class="fu">V</span>(g)[isVowel]</span>
 <span id="cb117-3"><a href="visualización.html#cb117-3" aria-hidden="true" tabindex="-1"></a>v1</span></code></pre></div>
-<pre><code>## + 3/10 vertices, named, from 4f4fa95:
+<pre><code>## + 3/10 vertices, named, from 7aec58d:
 ## [1] A E I</code></pre>
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="visualización.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g)[v1  <span class="sc">%--%</span>  v1]<span class="sc">$</span>width <span class="ot">&lt;-</span> <span class="dv">4</span></span>
 <span id="cb119-2"><a href="visualización.html#cb119-2" aria-hidden="true" tabindex="-1"></a></span>

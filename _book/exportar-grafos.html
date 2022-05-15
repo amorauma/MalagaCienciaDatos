@@ -37,7 +37,7 @@ set in the _output.yml file.</p>" />
   
   
 <link rel="prev" href="de-twitter.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="analysis-of-the-networks-to-extract-knowledge..html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -177,6 +177,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="de-twitter.html"><a href="de-twitter.html"><i class="fa fa-check"></i><b>7</b> De Twitter</a></li>
 <li class="chapter" data-level="8" data-path="exportar-grafos.html"><a href="exportar-grafos.html"><i class="fa fa-check"></i><b>8</b> Exportar grafos</a></li>
+<li class="chapter" data-level="9" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html"><i class="fa fa-check"></i><b>9</b> Analysis of the Networks to extract knowledge.</a></li>
+<li class="chapter" data-level="10" data-path="centrality.html"><a href="centrality.html"><i class="fa fa-check"></i><b>10</b> Centrality</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="centrality.html"><a href="centrality.html#degree"><i class="fa fa-check"></i><b>10.1</b> Degree</a></li>
+<li class="chapter" data-level="10.2" data-path="centrality.html"><a href="centrality.html#betweenness"><i class="fa fa-check"></i><b>10.2</b> Betweenness</a></li>
+<li class="chapter" data-level="10.3" data-path="centrality.html"><a href="centrality.html#edge_betweenness"><i class="fa fa-check"></i><b>10.3</b> Edge_betweenness</a></li>
+<li class="chapter" data-level="10.4" data-path="centrality.html"><a href="centrality.html#closeness"><i class="fa fa-check"></i><b>10.4</b> Closeness</a></li>
+<li class="chapter" data-level="10.5" data-path="centrality.html"><a href="centrality.html#eigenvector"><i class="fa fa-check"></i><b>10.5</b> Eigenvector</a></li>
+<li class="chapter" data-level="10.6" data-path="centrality.html"><a href="centrality.html#pagerank"><i class="fa fa-check"></i><b>10.6</b> Pagerank</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="paths.html"><a href="paths.html"><i class="fa fa-check"></i><b>11</b> Paths</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="paths.html"><a href="paths.html#diameter"><i class="fa fa-check"></i><b>11.1</b> Diameter</a></li>
+<li class="chapter" data-level="11.2" data-path="paths.html"><a href="paths.html#caminos-y-distancias"><i class="fa fa-check"></i><b>11.2</b> Caminos y distancias</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>12</b> Clustering</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="clustering.html"><a href="clustering.html#transitivity"><i class="fa fa-check"></i><b>12.1</b> Transitivity</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="clustering.html"><a href="clustering.html#global-clustering"><i class="fa fa-check"></i><b>12.1.1</b> Global clustering:</a></li>
+<li class="chapter" data-level="12.1.2" data-path="clustering.html"><a href="clustering.html#local-clustering"><i class="fa fa-check"></i><b>12.1.2</b> Local clustering</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="otras-medidas-y-definiciones.html"><a href="otras-medidas-y-definiciones.html"><i class="fa fa-check"></i><b>13</b> Otras medidas y definiciones</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -218,7 +242,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://www.r-project.org/nosvn/conferences/useR-2010/slides/Zhang.pdf">https://www.r-project.org/nosvn/conferences/useR-2010/slides/Zhang.pdf</a></li>
 <li><a href="https://programminghistorian.org/en/lessons/temporal-network-analysis-with-r">https://programminghistorian.org/en/lessons/temporal-network-analysis-with-r</a></li>
 </ul>
-
 </div>
             </section>
 
@@ -226,7 +249,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="de-twitter.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="analysis-of-the-networks-to-extract-knowledge..html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

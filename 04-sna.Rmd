@@ -625,3 +625,242 @@ Referencias:
 
 * [https://www.r-project.org/nosvn/conferences/useR-2010/slides/Zhang.pdf](https://www.r-project.org/nosvn/conferences/useR-2010/slides/Zhang.pdf)
 * [https://programminghistorian.org/en/lessons/temporal-network-analysis-with-r](https://programminghistorian.org/en/lessons/temporal-network-analysis-with-r)
+
+
+
+# Analysis of the Networks to extract knowledge. 
+
+
+>> Goal of a SNA proyect
+
+[http://snap.stanford.edu/class/cs224w-2015/slides/06-applicationsI.pdf](http://snap.stanford.edu/class/cs224w-2015/slides/06-applicationsI.pdf)
+
+* Locate people in the network for...
+
+  1. higher compensation
+  2. positive performance evaluations  
+  3. more promotions
+  4. more good ideas
+
+
+> Ego network is a special type of network consisting of one central node and all other nodes directly connected to it. The central node is known as ego, while the other surrounding nodes directly connected to it are known as alters.
+
+ 
+
+* [https://medium.com/applied-data-science/the-google-vs-trick-618c8fd5359f](https://medium.com/applied-data-science/the-google-vs-trick-618c8fd5359f)
+
+* [http://olizardo.bol.ucla.edu/classes/soc-111/lessons-winter-2022/5-lesson-egonet-metrics.html](http://olizardo.bol.ucla.edu/classes/soc-111/lessons-winter-2022/5-lesson-egonet-metrics.html)
+
+Vamos a usar este grafo como ejemplo de las medidas de bondad del grafo.
+
+```{r}
+library(igraph)
+g1 <- graph( c(1,2, 1,3, 2,3, 
+               3,4, 3,5, 1,5,
+               4,2, 3,6, 4,8,
+               8,1, 9,1, 10,2, 
+               7,6, 5,10))
+g1
+summary(g1)
+plot(g1)
+```
+
+**Vértices, arcos**.
+
+```{r}
+class(g1)
+V(g1)
+V(g1)[1]
+E(g1)
+E(g1)[1]
+class(V(g1))
+class(E(g1))
+```
+
+# Centrality
+
+Importancia de los nodos en un grafo.
+
+-   Número de arcos de entrada-salida de los nodos.
+-   Redes con alta centralidad tienen pocos nodos con muchas conexiones. 
+- Redes con baja centralidad tienen muchos nodos con similar o menos conexiones.
+-   Ver <https://en.wikipedia.org/wiki/Centrality#PageRank_centrality>
+
+## Degree
+
+Número de arcos conectados a un vértice. Señala la importancia de un vértice o el nivel de actividad del vértice en la red.
+
+-   Cómo de central es un nodo en la red
+
+-   Cuántos arcos de entrada-salida tiene o con cuántos nodos se conecta directamente via un arco.
+
+> > `centr_degree`, `igraph::degree`
+
+```{r}
+g1
+plot(g1)
+igraph::degree(g1)
+igraph::degree(g1, mode="in")
+igraph::degree(g1, mode="out")
+deg <- centr_degree(g1)
+deg
+```
+
+## Betweenness
+
+Mide el grado en el que la información fluye a través de un vértice particular y su importancia relativa como un intermediario en la red.
+
+Describe nodos que son conexiones clave o puentes entre grupos de nodos.
+
+-   El número de caminos más cortos que pasan por un nodo dado (medida relativa) - la suma de las longitudes de los caminos más cortos entre otros nodos pasando por el nodo, dividida por las longitudes de camino más cortas (no necesariamente a través del nodo) entre los otros nodos.
+
+> > `igraph::betweenness`
+
+```{r}
+igraph::betweenness(g1)
+ 
+```
+
+-   Por el vértice 6 no pasa ningún *camino más corto* entre dos vértices.
+-   Por el vértice 3 pasan 25 *caminos más cortos* entre dos vértices.
+-   ...
+
+## Edge_betweenness
+
+Similar al anterior pero teniendo en cuenta cada arco.
+
+> > `igraph::edge_betweenness`
+
+```{r}
+ 
+g1 <- set.edge.attribute(g1, "weight",  value= 1)
+bg <- edge_betweenness(g1)
+plot(g1, edge.label = bg)
+```
+
+## Closeness
+
+Distancia a otros nodos. Un nodo con valor alto de este estimador es más central y puede difundir la información a muchos otros nodos.
+
+-   Se obtiene como 1 divido por la suma de las distancias geodésicas desde un vértice al resto. Alcanzará su valor máximo cuando un vértice esté conectado a todos los demás. Longitud media de los caminos más cortos (geodésicos).
+
+
+-   Mide cuantos pasos se requieren desde un vértice para alcanzar el resto de vértices de la red.
+
+-   Caminos cortos entre vértices señalan que estos están cercanos unos a otros.
+
+> > `centr_clo`, `igraph::closeness`
+
+```{r}
+ igraph::closeness(g1)
+```
+
+## Eigenvector
+
+No todas las conexiones tienen la misma importancia - medida de la importancia de un nodo.
+
+-   La medida *Eigenvector Centrality* se calcula como el autovalor de mayor módulo de la matriz de adyacencia que contiene los pesos.
+
+-   *a high score to vertices that either have a lot of connections, or are connected to someone with a lot of connections*
+
+> > Eigenvector Centrality: `eigen_centrality`
+
+```{r}
+eigen_centrality(g1)
+```
+
+## Pagerank
+
+Algoritmo de Google para realizar un ranking con la importancia de los resultados de la búsqueda.
+
+Nodos son más importantes si tienen muchos enlaces de entrada.
+
+> > `page.rank`
+
+```{r}
+page.rank(g1)
+```
+
+# Paths
+
+Caminos de un vértice a otro o de grupos de vértices a otros.
+
+## Diameter
+
+El máximo camino más corto entre cualquier par de nodos. En grafos muy grandes indica la posibilidad de que la información se difunda más o menos fácilmente. El algoritmo tiene costo $O(n^3)$. En Twitter hay cientos de millones de usuarios,...
+
+> > `get_diameter`
+
+> > `diameter`- el camino más largo entre dos nodos.
+
+```{r}
+plot(g1)
+diameter(g1)
+```
+
+## Caminos y distancias
+
+**Distancia geodésica**: El menor número de arcos a atravesar para conectar dos nodos.
+
+```{r}
+sp <- shortest_paths(g1, from="1", to="10")
+sp$vpath
+sp1 <- shortest_paths(g1, from="1", to="9")
+sp1$vpath
+distances(g1)
+```
+
+Relacionado con distancias:
+
+> > `distance_table, mean_distance`
+
+# Clustering
+
+*Whether your friends are likely to be friends*.
+
+**Grupos**: Subconjunto de vértices que comparten características en común.
+
+-   Una primera forma es buscar los triángulos en el grafo. \*La medida de clustering (transitividad) es la frecuencia relativa de triángulos cerrados.
+
+$$C=\frac{3*\mbox{ número de triángulos }}{\mbox{número de triples conectados}}$$
+
+## Transitivity
+
+*friends of friends to be friends and enemies of enemies to be enemies*
+
+Probabilidad de que vértices adyacentes de un vértice estén conectados - se denomina también coeficiente de agrupación o *clustering*.
+
+> > `transitivity`, `shortest_paths`
+
+### Global clustering:
+
+```{r}
+transitivity(g1, type = "global")
+```
+
+### Local clustering
+
+Fracción de triples conectados a través de cada vértice que son cerrados.
+
+```{r}
+transitivity(g1, type = "local")
+```
+
+# Otras medidas y definiciones
+
+-   Densidad: Número de conexiones respecto al total de conexiones posibles. Un grafo completo tiene una densidad igual a 1 - `edge_density`.
+
+-   Popularidad: nodos que son centrales tienden a ser más populares.
+
+-   Cliques: todos con todos - `clique_num(g, min=k)` encuenta cliques con un mínimo de k vértices.
+
+-   Componentes: Una componente es el conjunto de vértices de la que tienen conexiones entre ellos. Una red puede tener varias componentes - `components`
+
+-   Nodos a distancia k - `random_walk`.
+
+-   Hub, Authorities - `hub_score, authority.score` un nodo se denomina hub tiene muchos enlaces de salida y se denomina authorities si tiene muchos de entrada.
+
+-   detección de comunidades: `cluster_edge_betweenness`
+
+
+

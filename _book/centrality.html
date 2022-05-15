@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Hello bookdown | A Minimal Book Example</title>
+  <title>Chapter 10 Centrality | A Minimal Book Example</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Hello bookdown | A Minimal Book Example" />
+  <meta property="og:title" content="Chapter 10 Centrality | A Minimal Book Example" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Hello bookdown | A Minimal Book Example" />
+  <meta name="twitter:title" content="Chapter 10 Centrality | A Minimal Book Example" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="social-network-analysis.html"/>
+<link rel="prev" href="analysis-of-the-networks-to-extract-knowledge..html"/>
+<link rel="next" href="paths.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -222,26 +222,210 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="hello-bookdown" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Hello bookdown<a href="hello-bookdown.html#hello-bookdown" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>ssss</p>
-
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="hello-bookdown.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualización de tablas desde Rmarkdown</span></span>
-<span id="cb3-2"><a href="hello-bookdown.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;kableExtra&quot;)</span></span>
-<span id="cb3-3"><a href="hello-bookdown.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb3-4"><a href="hello-bookdown.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb3-5"><a href="hello-bookdown.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">knitr.table.format =</span> <span class="st">&quot;html&quot;</span>) </span>
-<span id="cb3-6"><a href="hello-bookdown.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
-<span id="cb3-7"><a href="hello-bookdown.html#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraphdata)</span>
-<span id="cb3-8"><a href="hello-bookdown.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div id="centrality" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Centrality<a href="centrality.html#centrality" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Importancia de los nodos en un grafo.</p>
+<ul>
+<li>Número de arcos de entrada-salida de los nodos.</li>
+<li>Redes con alta centralidad tienen pocos nodos con muchas conexiones.</li>
+<li>Redes con baja centralidad tienen muchos nodos con similar o menos conexiones.</li>
+<li>Ver <a href="https://en.wikipedia.org/wiki/Centrality#PageRank_centrality" class="uri">https://en.wikipedia.org/wiki/Centrality#PageRank_centrality</a></li>
+</ul>
+<div id="degree" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Degree<a href="centrality.html#degree" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Número de arcos conectados a un vértice. Señala la importancia de un vértice o el nivel de actividad del vértice en la red.</p>
+<ul>
+<li><p>Cómo de central es un nodo en la red</p></li>
+<li><p>Cuántos arcos de entrada-salida tiene o con cuántos nodos se conecta directamente via un arco.</p></li>
+</ul>
+<blockquote>
+<blockquote>
+<p><code>centr_degree</code>, <code>igraph::degree</code></p>
+</blockquote>
+</blockquote>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="centrality.html#cb142-1" aria-hidden="true" tabindex="-1"></a>g1</span></code></pre></div>
+<pre><code>## IGRAPH 6050a01 D--- 10 14 -- 
+## + edges from 6050a01:
+##  [1]  1-&gt; 2  1-&gt; 3  2-&gt; 3  3-&gt; 4  3-&gt; 5  1-&gt; 5  4-&gt; 2  3-&gt; 6  4-&gt; 8  8-&gt; 1
+## [11]  9-&gt; 1 10-&gt; 2  7-&gt; 6  5-&gt;10</code></pre>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="centrality.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g1)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="centrality.html#cb145-1" aria-hidden="true" tabindex="-1"></a>igraph<span class="sc">::</span><span class="fu">degree</span>(g1)</span></code></pre></div>
+<pre><code>##  [1] 5 4 5 3 3 2 1 2 1 2</code></pre>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="centrality.html#cb147-1" aria-hidden="true" tabindex="-1"></a>igraph<span class="sc">::</span><span class="fu">degree</span>(g1, <span class="at">mode=</span><span class="st">&quot;in&quot;</span>)</span></code></pre></div>
+<pre><code>##  [1] 2 3 2 1 2 2 0 1 0 1</code></pre>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="centrality.html#cb149-1" aria-hidden="true" tabindex="-1"></a>igraph<span class="sc">::</span><span class="fu">degree</span>(g1, <span class="at">mode=</span><span class="st">&quot;out&quot;</span>)</span></code></pre></div>
+<pre><code>##  [1] 3 1 3 2 1 0 1 1 1 1</code></pre>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="centrality.html#cb151-1" aria-hidden="true" tabindex="-1"></a>deg <span class="ot">&lt;-</span> <span class="fu">centr_degree</span>(g1)</span>
+<span id="cb151-2"><a href="centrality.html#cb151-2" aria-hidden="true" tabindex="-1"></a>deg</span></code></pre></div>
+<pre><code>## $res
+##  [1] 5 4 5 3 3 2 1 2 1 2
+## 
+## $centralization
+## [1] 0.1358025
+## 
+## $theoretical_max
+## [1] 162</code></pre>
+</div>
+<div id="betweenness" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Betweenness<a href="centrality.html#betweenness" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Mide el grado en el que la información fluye a través de un vértice particular y su importancia relativa como un intermediario en la red.</p>
+<p>Describe nodos que son conexiones clave o puentes entre grupos de nodos.</p>
+<ul>
+<li>El número de caminos más cortos que pasan por un nodo dado (medida relativa) - la suma de las longitudes de los caminos más cortos entre otros nodos pasando por el nodo, dividida por las longitudes de camino más cortas (no necesariamente a través del nodo) entre los otros nodos.</li>
+</ul>
+<blockquote>
+<blockquote>
+<p><code>igraph::betweenness</code></p>
+</blockquote>
+</blockquote>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="centrality.html#cb153-1" aria-hidden="true" tabindex="-1"></a>igraph<span class="sc">::</span><span class="fu">betweenness</span>(g1)</span></code></pre></div>
+<pre><code>##  [1] 14 14 25 11  6  0  0  6  0  6</code></pre>
+<ul>
+<li>Por el vértice 6 no pasa ningún <em>camino más corto</em> entre dos vértices.</li>
+<li>Por el vértice 3 pasan 25 <em>caminos más cortos</em> entre dos vértices.</li>
+<li>…</li>
+</ul>
+</div>
+<div id="edge_betweenness" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Edge_betweenness<a href="centrality.html#edge_betweenness" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Similar al anterior pero teniendo en cuenta cada arco.</p>
+<blockquote>
+<blockquote>
+<p><code>igraph::edge_betweenness</code></p>
+</blockquote>
+</blockquote>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="centrality.html#cb155-1" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">set.edge.attribute</span>(g1, <span class="st">&quot;weight&quot;</span>,  <span class="at">value=</span> <span class="dv">1</span>)</span>
+<span id="cb155-2"><a href="centrality.html#cb155-2" aria-hidden="true" tabindex="-1"></a>bg <span class="ot">&lt;-</span> <span class="fu">edge_betweenness</span>(g1)</span>
+<span id="cb155-3"><a href="centrality.html#cb155-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g1, <span class="at">edge.label =</span> bg)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+</div>
+<div id="closeness" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Closeness<a href="centrality.html#closeness" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Distancia a otros nodos. Un nodo con valor alto de este estimador es más central y puede difundir la información a muchos otros nodos.</p>
+<ul>
+<li><p>Se obtiene como 1 divido por la suma de las distancias geodésicas desde un vértice al resto. Alcanzará su valor máximo cuando un vértice esté conectado a todos los demás. Longitud media de los caminos más cortos (geodésicos).</p></li>
+<li><p>Mide cuantos pasos se requieren desde un vértice para alcanzar el resto de vértices de la red.</p></li>
+<li><p>Caminos cortos entre vértices señalan que estos están cercanos unos a otros.</p></li>
+</ul>
+<blockquote>
+<blockquote>
+<p><code>centr_clo</code>, <code>igraph::closeness</code></p>
+</blockquote>
+</blockquote>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="centrality.html#cb156-1" aria-hidden="true" tabindex="-1"></a> igraph<span class="sc">::</span><span class="fu">closeness</span>(g1)</span></code></pre></div>
+<pre><code>##  [1] 0.08333333 0.05882353 0.08333333 0.06250000 0.04000000        NaN
+##  [7] 1.00000000 0.06250000 0.05000000 0.04761905</code></pre>
+</div>
+<div id="eigenvector" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Eigenvector<a href="centrality.html#eigenvector" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>No todas las conexiones tienen la misma importancia - medida de la importancia de un nodo.</p>
+<ul>
+<li><p>La medida <em>Eigenvector Centrality</em> se calcula como el autovalor de mayor módulo de la matriz de adyacencia que contiene los pesos.</p></li>
+<li><p><em>a high score to vertices that either have a lot of connections, or are connected to someone with a lot of connections</em></p></li>
+</ul>
+<blockquote>
+<blockquote>
+<p>Eigenvector Centrality: <code>eigen_centrality</code></p>
+</blockquote>
+</blockquote>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="centrality.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen_centrality</span>(g1)</span></code></pre></div>
+<pre><code>## $vector
+##  [1] 0.94446858 0.87756472 1.00000000 0.67054129 0.68544140 0.31214483
+##  [7] 0.08943566 0.46273222 0.27060890 0.44783212
+## 
+## $value
+## [1] 3.490161
+## 
+## $options
+## $options$bmat
+## [1] &quot;I&quot;
+## 
+## $options$n
+## [1] 10
+## 
+## $options$which
+## [1] &quot;LA&quot;
+## 
+## $options$nev
+## [1] 1
+## 
+## $options$tol
+## [1] 0
+## 
+## $options$ncv
+## [1] 0
+## 
+## $options$ldv
+## [1] 0
+## 
+## $options$ishift
+## [1] 1
+## 
+## $options$maxiter
+## [1] 1000
+## 
+## $options$nb
+## [1] 1
+## 
+## $options$mode
+## [1] 1
+## 
+## $options$start
+## [1] 1
+## 
+## $options$sigma
+## [1] 0
+## 
+## $options$sigmai
+## [1] 0
+## 
+## $options$info
+## [1] 0
+## 
+## $options$iter
+## [1] 6
+## 
+## $options$nconv
+## [1] 1
+## 
+## $options$numop
+## [1] 20
+## 
+## $options$numopb
+## [1] 0
+## 
+## $options$numreo
+## [1] 15</code></pre>
+</div>
+<div id="pagerank" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> Pagerank<a href="centrality.html#pagerank" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Algoritmo de Google para realizar un ranking con la importancia de los resultados de la búsqueda.</p>
+<p>Nodos son más importantes si tienen muchos enlaces de entrada.</p>
+<blockquote>
+<blockquote>
+<p><code>page.rank</code></p>
+</blockquote>
+</blockquote>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="centrality.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">page.rank</span>(g1)</span></code></pre></div>
+<pre><code>## $vector
+##  [1] 0.09371203 0.18396681 0.20662720 0.08224805 0.10879979 0.10239617
+##  [7] 0.02370367 0.05865910 0.02370367 0.11618350
+## 
+## $value
+## [1] 1
+## 
+## $options
+## NULL</code></pre>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="social-network-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="analysis-of-the-networks-to-extract-knowledge..html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="paths.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -272,7 +456,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-sna.Rmd",
 "text": "Edit"
 },
 "history": {

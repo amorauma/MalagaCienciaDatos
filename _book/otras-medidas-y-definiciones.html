@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Hello bookdown | A Minimal Book Example</title>
+  <title>Chapter 13 Otras medidas y definiciones | A Minimal Book Example</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Hello bookdown | A Minimal Book Example" />
+  <meta property="og:title" content="Chapter 13 Otras medidas y definiciones | A Minimal Book Example" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Hello bookdown | A Minimal Book Example" />
+  <meta name="twitter:title" content="Chapter 13 Otras medidas y definiciones | A Minimal Book Example" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="social-network-analysis.html"/>
+<link rel="prev" href="clustering.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -222,26 +222,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="hello-bookdown" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Hello bookdown<a href="hello-bookdown.html#hello-bookdown" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>ssss</p>
+<div id="otras-medidas-y-definiciones" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">Chapter 13</span> Otras medidas y definiciones<a href="otras-medidas-y-definiciones.html#otras-medidas-y-definiciones" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<ul>
+<li><p>Densidad: Número de conexiones respecto al total de conexiones posibles. Un grafo completo tiene una densidad igual a 1 - <code>edge_density</code>.</p></li>
+<li><p>Popularidad: nodos que son centrales tienden a ser más populares.</p></li>
+<li><p>Cliques: todos con todos - <code>clique_num(g, min=k)</code> encuenta cliques con un mínimo de k vértices.</p></li>
+<li><p>Componentes: Una componente es el conjunto de vértices de la que tienen conexiones entre ellos. Una red puede tener varias componentes - <code>components</code></p></li>
+<li><p>Nodos a distancia k - <code>random_walk</code>.</p></li>
+<li><p>Hub, Authorities - <code>hub_score, authority.score</code> un nodo se denomina hub tiene muchos enlaces de salida y se denomina authorities si tiene muchos de entrada.</p></li>
+<li><p>detección de comunidades: <code>cluster_edge_betweenness</code></p></li>
+</ul>
 
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="hello-bookdown.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualización de tablas desde Rmarkdown</span></span>
-<span id="cb3-2"><a href="hello-bookdown.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;kableExtra&quot;)</span></span>
-<span id="cb3-3"><a href="hello-bookdown.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb3-4"><a href="hello-bookdown.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb3-5"><a href="hello-bookdown.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">knitr.table.format =</span> <span class="st">&quot;html&quot;</span>) </span>
-<span id="cb3-6"><a href="hello-bookdown.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
-<span id="cb3-7"><a href="hello-bookdown.html#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraphdata)</span>
-<span id="cb3-8"><a href="hello-bookdown.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="social-network-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="clustering.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -272,7 +272,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-sna.Rmd",
 "text": "Edit"
 },
 "history": {

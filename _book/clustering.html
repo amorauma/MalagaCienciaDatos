@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Hello bookdown | A Minimal Book Example</title>
+  <title>Chapter 12 Clustering | A Minimal Book Example</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Hello bookdown | A Minimal Book Example" />
+  <meta property="og:title" content="Chapter 12 Clustering | A Minimal Book Example" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Hello bookdown | A Minimal Book Example" />
+  <meta name="twitter:title" content="Chapter 12 Clustering | A Minimal Book Example" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="social-network-analysis.html"/>
+<link rel="prev" href="paths.html"/>
+<link rel="next" href="otras-medidas-y-definiciones.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -222,26 +222,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="hello-bookdown" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Hello bookdown<a href="hello-bookdown.html#hello-bookdown" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>ssss</p>
-
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="hello-bookdown.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualización de tablas desde Rmarkdown</span></span>
-<span id="cb3-2"><a href="hello-bookdown.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;kableExtra&quot;)</span></span>
-<span id="cb3-3"><a href="hello-bookdown.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb3-4"><a href="hello-bookdown.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb3-5"><a href="hello-bookdown.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">knitr.table.format =</span> <span class="st">&quot;html&quot;</span>) </span>
-<span id="cb3-6"><a href="hello-bookdown.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
-<span id="cb3-7"><a href="hello-bookdown.html#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraphdata)</span>
-<span id="cb3-8"><a href="hello-bookdown.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div id="clustering" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">Chapter 12</span> Clustering<a href="clustering.html#clustering" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><em>Whether your friends are likely to be friends</em>.</p>
+<p><strong>Grupos</strong>: Subconjunto de vértices que comparten características en común.</p>
+<ul>
+<li>Una primera forma es buscar los triángulos en el grafo. *La medida de clustering (transitividad) es la frecuencia relativa de triángulos cerrados.</li>
+</ul>
+<p><span class="math display">\[C=\frac{3*\mbox{ número de triángulos }}{\mbox{número de triples conectados}}\]</span></p>
+<div id="transitivity" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> Transitivity<a href="clustering.html#transitivity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>friends of friends to be friends and enemies of enemies to be enemies</em></p>
+<p>Probabilidad de que vértices adyacentes de un vértice estén conectados - se denomina también coeficiente de agrupación o <em>clustering</em>.</p>
+<blockquote>
+<blockquote>
+<p><code>transitivity</code>, <code>shortest_paths</code></p>
+</blockquote>
+</blockquote>
+<div id="global-clustering" class="section level3 hasAnchor" number="12.1.1">
+<h3><span class="header-section-number">12.1.1</span> Global clustering:<a href="clustering.html#global-clustering" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="clustering.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">transitivity</span>(g1, <span class="at">type =</span> <span class="st">&quot;global&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] 0.2571429</code></pre>
+</div>
+<div id="local-clustering" class="section level3 hasAnchor" number="12.1.2">
+<h3><span class="header-section-number">12.1.2</span> Local clustering<a href="clustering.html#local-clustering" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Fracción de triples conectados a través de cada vértice que son cerrados.</p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="clustering.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">transitivity</span>(g1, <span class="at">type =</span> <span class="st">&quot;local&quot;</span>)</span></code></pre></div>
+<pre><code>##  [1] 0.2000000 0.3333333 0.3000000 0.3333333 0.3333333 0.0000000       NaN
+##  [8] 0.0000000       NaN 0.0000000</code></pre>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="social-network-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="paths.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="otras-medidas-y-definiciones.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -272,7 +290,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-sna.Rmd",
 "text": "Edit"
 },
 "history": {

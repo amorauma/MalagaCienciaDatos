@@ -177,6 +177,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="de-twitter.html"><a href="de-twitter.html"><i class="fa fa-check"></i><b>7</b> De Twitter</a></li>
 <li class="chapter" data-level="8" data-path="exportar-grafos.html"><a href="exportar-grafos.html"><i class="fa fa-check"></i><b>8</b> Exportar grafos</a></li>
+<li class="chapter" data-level="9" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html"><i class="fa fa-check"></i><b>9</b> Analysis of the Networks to extract knowledge.</a></li>
+<li class="chapter" data-level="10" data-path="centrality.html"><a href="centrality.html"><i class="fa fa-check"></i><b>10</b> Centrality</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="centrality.html"><a href="centrality.html#degree"><i class="fa fa-check"></i><b>10.1</b> Degree</a></li>
+<li class="chapter" data-level="10.2" data-path="centrality.html"><a href="centrality.html#betweenness"><i class="fa fa-check"></i><b>10.2</b> Betweenness</a></li>
+<li class="chapter" data-level="10.3" data-path="centrality.html"><a href="centrality.html#edge_betweenness"><i class="fa fa-check"></i><b>10.3</b> Edge_betweenness</a></li>
+<li class="chapter" data-level="10.4" data-path="centrality.html"><a href="centrality.html#closeness"><i class="fa fa-check"></i><b>10.4</b> Closeness</a></li>
+<li class="chapter" data-level="10.5" data-path="centrality.html"><a href="centrality.html#eigenvector"><i class="fa fa-check"></i><b>10.5</b> Eigenvector</a></li>
+<li class="chapter" data-level="10.6" data-path="centrality.html"><a href="centrality.html#pagerank"><i class="fa fa-check"></i><b>10.6</b> Pagerank</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="paths.html"><a href="paths.html"><i class="fa fa-check"></i><b>11</b> Paths</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="paths.html"><a href="paths.html#diameter"><i class="fa fa-check"></i><b>11.1</b> Diameter</a></li>
+<li class="chapter" data-level="11.2" data-path="paths.html"><a href="paths.html#caminos-y-distancias"><i class="fa fa-check"></i><b>11.2</b> Caminos y distancias</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>12</b> Clustering</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="clustering.html"><a href="clustering.html#transitivity"><i class="fa fa-check"></i><b>12.1</b> Transitivity</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="clustering.html"><a href="clustering.html#global-clustering"><i class="fa fa-check"></i><b>12.1.1</b> Global clustering:</a></li>
+<li class="chapter" data-level="12.1.2" data-path="clustering.html"><a href="clustering.html#local-clustering"><i class="fa fa-check"></i><b>12.1.2</b> Local clustering</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="otras-medidas-y-definiciones.html"><a href="otras-medidas-y-definiciones.html"><i class="fa fa-check"></i><b>13</b> Otras medidas y definiciones</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -286,7 +310,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   .. ..$ Group: num [1:81] 3 1 3 3 2 2 2 1 3 2 ...
 ##   ..$ :List of 1
 ##   .. ..$ weight: num [1:817] 4 14 4 4 10 2 6 2 4 4 ...
-##  $ :&lt;environment: 0x7fe2a161c958&gt;</code></pre>
+##  $ :&lt;environment: 0x7fb37e593200&gt;</code></pre>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="introducción-a-igraph.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">E</span>(UKfaculty)<span class="sc">$</span>weight)</span></code></pre></div>
 <pre><code>## [1]  4 14  4  4 10  2</code></pre>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="introducción-a-igraph.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">V</span>(UKfaculty)<span class="sc">$</span>Group)</span></code></pre></div>
@@ -300,26 +324,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="introducción-a-igraph.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Un grafo dirigido  vacío  </span></span>
 <span id="cb37-2"><a href="introducción-a-igraph.html#cb37-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_empty_graph</span>(<span class="at">n =</span> <span class="dv">0</span>, <span class="at">directed =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb37-3"><a href="introducción-a-igraph.html#cb37-3" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
-<pre><code>## IGRAPH 3533d36 D--- 0 0 -- 
-## + edges from 3533d36:</code></pre>
+<pre><code>## IGRAPH 5966fe3 D--- 0 0 -- 
+## + edges from 5966fe3:</code></pre>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="introducción-a-igraph.html#cb39-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertices</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>))</span>
 <span id="cb39-2"><a href="introducción-a-igraph.html#cb39-2" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
-<pre><code>## IGRAPH b35f602 DN-- 3 0 -- 
+<pre><code>## IGRAPH 6967d84 DN-- 3 0 -- 
 ## + attr: name (v/c)
-## + edges from b35f602 (vertex names):</code></pre>
+## + edges from 6967d84 (vertex names):</code></pre>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="introducción-a-igraph.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Arcos:  A to C ,  B to C</span></span>
 <span id="cb41-2"><a href="introducción-a-igraph.html#cb41-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;C&quot;</span>, <span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>)) </span>
 <span id="cb41-3"><a href="introducción-a-igraph.html#cb41-3" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
-<pre><code>## IGRAPH 168550d DN-- 3 2 -- 
+<pre><code>## IGRAPH 51fbb7c DN-- 3 2 -- 
 ## + attr: name (v/c)
-## + edges from 168550d (vertex names):
+## + edges from 51fbb7c (vertex names):
 ## [1] A-&gt;C B-&gt;C</code></pre>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="introducción-a-igraph.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Eliminar arco  A</span></span>
 <span id="cb43-2"><a href="introducción-a-igraph.html#cb43-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">-</span> <span class="fu">V</span>(g)[<span class="st">&quot;A&quot;</span>]</span>
 <span id="cb43-3"><a href="introducción-a-igraph.html#cb43-3" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
-<pre><code>## IGRAPH eb5d520 DN-- 2 1 -- 
+<pre><code>## IGRAPH fb534af DN-- 2 1 -- 
 ## + attr: name (v/c)
-## + edge from eb5d520 (vertex names):
+## + edge from fb534af (vertex names):
 ## [1] B-&gt;C</code></pre>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="introducción-a-igraph.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Eliminará todos los arcos conectados con A</span></span></code></pre></div>
 <blockquote>
@@ -329,22 +353,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb46-2"><a href="introducción-a-igraph.html#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb46-3"><a href="introducción-a-igraph.html#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     graph() id desde   1. </span></span>
 <span id="cb46-4"><a href="introducción-a-igraph.html#cb46-4" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">graph</span>( <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">1</span>,<span class="dv">3</span>, <span class="dv">2</span>,<span class="dv">3</span>, <span class="dv">3</span>,<span class="dv">4</span> ));g1</span></code></pre></div>
-<pre><code>## IGRAPH 9feb2e4 D--- 4 4 -- 
-## + edges from 9feb2e4:
+<pre><code>## IGRAPH 2017861 D--- 4 4 -- 
+## + edges from 2017861:
 ## [1] 1-&gt;2 1-&gt;3 2-&gt;3 3-&gt;4</code></pre>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="introducción-a-igraph.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(g1)</span></code></pre></div>
-<pre><code>## IGRAPH 9feb2e4 D--- 4 4 --</code></pre>
+<pre><code>## IGRAPH 2017861 D--- 4 4 --</code></pre>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="introducción-a-igraph.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g1)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="introducción-a-igraph.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># El parámetro &quot;directed&quot; a  FALSE para</span></span>
 <span id="cb51-2"><a href="introducción-a-igraph.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co"># grafos no dirigidos.  </span></span>
 <span id="cb51-3"><a href="introducción-a-igraph.html#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb51-4"><a href="introducción-a-igraph.html#cb51-4" aria-hidden="true" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">graph</span>( <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">1</span>,<span class="dv">3</span>, <span class="dv">2</span>,<span class="dv">3</span>, <span class="dv">3</span>,<span class="dv">4</span> , <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">3</span>), <span class="at">directed=</span><span class="cn">FALSE</span>); g2 </span></code></pre></div>
-<pre><code>## IGRAPH b7648d6 U--- 5 6 -- 
-## + edges from b7648d6:
+<pre><code>## IGRAPH f817106 U--- 5 6 -- 
+## + edges from f817106:
 ## [1] 1--2 1--3 2--3 3--4 3--5 1--3</code></pre>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="introducción-a-igraph.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(g2)</span></code></pre></div>
-<pre><code>## IGRAPH b7648d6 U--- 5 6 --</code></pre>
+<pre><code>## IGRAPH f817106 U--- 5 6 --</code></pre>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="introducción-a-igraph.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g2)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-15-2.png" width="672" /></p>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="introducción-a-igraph.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Obtener la lista de arcos a partir de un grafo   </span></span>
@@ -366,13 +390,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [6,]    1    3</code></pre>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="introducción-a-igraph.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtener el grafo a partir de la lista de arcos</span></span>
 <span id="cb60-2"><a href="introducción-a-igraph.html#cb60-2" aria-hidden="true" tabindex="-1"></a>g3<span class="ot">&lt;-</span><span class="fu">graph</span>( <span class="fu">t</span>(edgelist));  g3;  <span class="fu">plot</span>(g3)</span></code></pre></div>
-<pre><code>## IGRAPH d513b3e D--- 5 6 -- 
-## + edges from d513b3e:
+<pre><code>## IGRAPH 4b29320 D--- 5 6 -- 
+## + edges from 4b29320:
 ## [1] 1-&gt;2 1-&gt;3 2-&gt;3 3-&gt;4 3-&gt;5 1-&gt;3</code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-15-3.png" width="672" /></p>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="introducción-a-igraph.html#cb62-1" aria-hidden="true" tabindex="-1"></a>g3<span class="ot">&lt;-</span><span class="fu">graph</span>( edgelist);  g3;  <span class="fu">plot</span>(g3)</span></code></pre></div>
-<pre><code>## IGRAPH 17bd08d D--- 5 6 -- 
-## + edges from 17bd08d:
+<pre><code>## IGRAPH 9fa17c6 D--- 5 6 -- 
+## + edges from 9fa17c6:
 ## [1] 1-&gt;1 2-&gt;3 3-&gt;1 2-&gt;3 3-&gt;4 5-&gt;3</code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-15-4.png" width="672" /></p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="introducción-a-igraph.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># algunos parámetros de plot </span></span>
@@ -434,9 +458,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3    El    Tu      3</code></pre>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="introducción-a-igraph.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear el grafo </span></span>
 <span id="cb72-2"><a href="introducción-a-igraph.html#cb72-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.data.frame</span>(df, <span class="at">directed=</span><span class="cn">FALSE</span>); g</span></code></pre></div>
-<pre><code>## IGRAPH e6553c4 UNW- 3 3 -- 
+<pre><code>## IGRAPH c44cb8b UNW- 3 3 -- 
 ## + attr: name (v/c), weight (e/n)
-## + edges from e6553c4 (vertex names):
+## + edges from c44cb8b (vertex names):
 ## [1] Ella--El Ella--Tu Tu  --El</code></pre>
 <div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="introducción-a-igraph.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
@@ -456,9 +480,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb79-2"><a href="introducción-a-igraph.html#cb79-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb79-3"><a href="introducción-a-igraph.html#cb79-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph_from_literal</span>(A<span class="sc">--</span>C, A<span class="sc">-+</span>D, C<span class="sc">-+</span>A, , D<span class="sc">-+</span>C)</span>
 <span id="cb79-4"><a href="introducción-a-igraph.html#cb79-4" aria-hidden="true" tabindex="-1"></a>g</span></code></pre></div>
-<pre><code>## IGRAPH ff9a743 DN-- 4 3 -- 
+<pre><code>## IGRAPH 13eae4c DN-- 4 3 -- 
 ## + attr: name (v/c)
-## + edges from ff9a743 (vertex names):
+## + edges from 13eae4c (vertex names):
 ## [1] A-&gt;D C-&gt;A D-&gt;C</code></pre>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="introducción-a-igraph.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>

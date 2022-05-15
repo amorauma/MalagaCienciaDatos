@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Hello bookdown | A Minimal Book Example</title>
+  <title>Chapter 9 Analysis of the Networks to extract knowledge. | A Minimal Book Example</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Hello bookdown | A Minimal Book Example" />
+  <meta property="og:title" content="Chapter 9 Analysis of the Networks to extract knowledge. | A Minimal Book Example" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Hello bookdown | A Minimal Book Example" />
+  <meta name="twitter:title" content="Chapter 9 Analysis of the Networks to extract knowledge. | A Minimal Book Example" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="social-network-analysis.html"/>
+<link rel="prev" href="exportar-grafos.html"/>
+<link rel="next" href="centrality.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -222,26 +222,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="hello-bookdown" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Hello bookdown<a href="hello-bookdown.html#hello-bookdown" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>ssss</p>
-
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="hello-bookdown.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualización de tablas desde Rmarkdown</span></span>
-<span id="cb3-2"><a href="hello-bookdown.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;kableExtra&quot;)</span></span>
-<span id="cb3-3"><a href="hello-bookdown.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb3-4"><a href="hello-bookdown.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb3-5"><a href="hello-bookdown.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">knitr.table.format =</span> <span class="st">&quot;html&quot;</span>) </span>
-<span id="cb3-6"><a href="hello-bookdown.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
-<span id="cb3-7"><a href="hello-bookdown.html#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraphdata)</span>
-<span id="cb3-8"><a href="hello-bookdown.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div id="analysis-of-the-networks-to-extract-knowledge." class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Chapter 9</span> Analysis of the Networks to extract knowledge.<a href="analysis-of-the-networks-to-extract-knowledge..html#analysis-of-the-networks-to-extract-knowledge." class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<blockquote>
+<p>Goal of a SNA proyect</p>
+</blockquote>
+</blockquote>
+<p><a href="http://snap.stanford.edu/class/cs224w-2015/slides/06-applicationsI.pdf">http://snap.stanford.edu/class/cs224w-2015/slides/06-applicationsI.pdf</a></p>
+<ul>
+<li><p>Locate people in the network for…</p>
+<ol style="list-style-type: decimal">
+<li>higher compensation</li>
+<li>positive performance evaluations<br />
+</li>
+<li>more promotions</li>
+<li>more good ideas</li>
+</ol></li>
+</ul>
+<blockquote>
+<p>Ego network is a special type of network consisting of one central node and all other nodes directly connected to it. The central node is known as ego, while the other surrounding nodes directly connected to it are known as alters.</p>
+</blockquote>
+<ul>
+<li><p><a href="https://medium.com/applied-data-science/the-google-vs-trick-618c8fd5359f">https://medium.com/applied-data-science/the-google-vs-trick-618c8fd5359f</a></p></li>
+<li><p><a href="http://olizardo.bol.ucla.edu/classes/soc-111/lessons-winter-2022/5-lesson-egonet-metrics.html">http://olizardo.bol.ucla.edu/classes/soc-111/lessons-winter-2022/5-lesson-egonet-metrics.html</a></p></li>
+</ul>
+<p>Vamos a usar este grafo como ejemplo de las medidas de bondad del grafo.</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
+<span id="cb123-2"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb123-2" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">graph</span>( <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">1</span>,<span class="dv">3</span>, <span class="dv">2</span>,<span class="dv">3</span>, </span>
+<span id="cb123-3"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb123-3" aria-hidden="true" tabindex="-1"></a>               <span class="dv">3</span>,<span class="dv">4</span>, <span class="dv">3</span>,<span class="dv">5</span>, <span class="dv">1</span>,<span class="dv">5</span>,</span>
+<span id="cb123-4"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb123-4" aria-hidden="true" tabindex="-1"></a>               <span class="dv">4</span>,<span class="dv">2</span>, <span class="dv">3</span>,<span class="dv">6</span>, <span class="dv">4</span>,<span class="dv">8</span>,</span>
+<span id="cb123-5"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb123-5" aria-hidden="true" tabindex="-1"></a>               <span class="dv">8</span>,<span class="dv">1</span>, <span class="dv">9</span>,<span class="dv">1</span>, <span class="dv">10</span>,<span class="dv">2</span>, </span>
+<span id="cb123-6"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb123-6" aria-hidden="true" tabindex="-1"></a>               <span class="dv">7</span>,<span class="dv">6</span>, <span class="dv">5</span>,<span class="dv">10</span>))</span>
+<span id="cb123-7"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb123-7" aria-hidden="true" tabindex="-1"></a>g1</span></code></pre></div>
+<pre><code>## IGRAPH 6050a01 D--- 10 14 -- 
+## + edges from 6050a01:
+##  [1]  1-&gt; 2  1-&gt; 3  2-&gt; 3  3-&gt; 4  3-&gt; 5  1-&gt; 5  4-&gt; 2  3-&gt; 6  4-&gt; 8  8-&gt; 1
+## [11]  9-&gt; 1 10-&gt; 2  7-&gt; 6  5-&gt;10</code></pre>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(g1)</span></code></pre></div>
+<pre><code>## IGRAPH 6050a01 D--- 10 14 --</code></pre>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g1)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p><strong>Vértices, arcos</strong>.</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(g1)</span></code></pre></div>
+<pre><code>## [1] &quot;igraph&quot;</code></pre>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g1)</span></code></pre></div>
+<pre><code>## + 10/10 vertices, from 6050a01:
+##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g1)[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## + 1/10 vertex, from 6050a01:
+## [1] 1</code></pre>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g1)</span></code></pre></div>
+<pre><code>## + 14/14 edges from 6050a01:
+##  [1]  1-&gt; 2  1-&gt; 3  2-&gt; 3  3-&gt; 4  3-&gt; 5  1-&gt; 5  4-&gt; 2  3-&gt; 6  4-&gt; 8  8-&gt; 1
+## [11]  9-&gt; 1 10-&gt; 2  7-&gt; 6  5-&gt;10</code></pre>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g1)[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## + 1/14 edge from 6050a01:
+## [1] 1-&gt;2</code></pre>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">V</span>(g1))</span></code></pre></div>
+<pre><code>## [1] &quot;igraph.vs&quot;</code></pre>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">E</span>(g1))</span></code></pre></div>
+<pre><code>## [1] &quot;igraph.es&quot;</code></pre>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="social-network-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="exportar-grafos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="centrality.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -272,7 +321,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-sna.Rmd",
 "text": "Edit"
 },
 "history": {
