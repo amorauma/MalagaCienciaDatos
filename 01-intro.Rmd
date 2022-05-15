@@ -1,2 +1,710 @@
-# Hello bookdown 
- ssss
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Análisis Exploratorio de Datos
+
+<https://dplyr.tidyverse.org/>
+<https://dplyr.tidyverse.org/articles/dplyr.html>
+<https://r4ds.had.co.nz/transform.html>
+
+-   Descargar a local desde directorio Datasets de CV, un dataset
+    descargado del repositorio UCI: breast-cancer.data, y
+    breast-cancer.names1.csv (nombres de las columnas)
+
+-   Usar el paquete `dplyr`, otro de los paquetes centrales del
+    denominado *tidyverse*.
+
+-   En `tidyverse` - `dplyr`
+
+-   Instalar `tidyverse`
+
+-   Cargar paquete `tidyverse`
+
+## Importación de datos
+
+-   Importa en R el fichero **breast-cancer.data**.
+-   Colocar los nombres al dataset que están en
+    **breast-cancer.names1.csv**.
+
+```{r}
+library(tidyverse)
+breast.cancer <- read.csv("data/breast-cancer.data", header=FALSE)
+breast.cancer.names1 <- as.vector(read.csv("data/breast-cancer.names1.csv", sep=""))
+breast.cancer.names1  <- c("Recurrencia",breast.cancer.names1$Class )
+colnames(breast.cancer) <- breast.cancer.names1 
+```
+
+## `dplyr` para Manipulación de Datos
+
+`dplyr` is a grammar of data manipulation, providing a consistent set of
+verbs that help you solve the most common data manipulation challenges:
+
+5 funciones clave de `dplyr`:
+
+-   Escoger observaciones (filas) según sus valores (`filter()`) -
+    filtrar, consultar las filas según condiciones, etc.
+-   Reordenar las filas (`arrange()`).
+-   Seleccionar variables por su nombre (`select()`).
+-   Añadir nuevas variables como función de variables ya existentes
+    (`mutate()`).
+-   Encontrar valores representativos de cada variable (`summarise()`).
+
+Estas se combinan con: `group_by()` which allows you to perform any
+operation "by group".
+
+Todos estos verbos funcionan de la misma manera:
+
+-   El primer argumento es un dataframe.
+-   Los demás argumentos describen qué hacer con el dataframe, usando
+    los nombres de las variables (columnas) sin necesidad de utilizar
+    comillas.
+-   El resultado es un nuevo dataframe.
+
+### Backends
+
+In addition to data frames/tibbles, dplyr makes working with other
+computational backends accessible and efficient. Below is a list of
+alternative backends:
+
+-   dtplyr: for large, in-memory datasets. Translates your dplyr code to
+    high performance data.table code.
+
+-   dbplyr: for data stored in a relational database. Translates your
+    dplyr code to SQL.
+
+-   sparklyr: for very large datasets stored in Apache Spark.
+
+### Filtrado de filas con `filter()`
+
+`filter()` extrae un subconjunto de las observaciones (filas), basándose
+en los valores de una o más columnas.
+
+Argumentos: - nombre del dataframe - expresiones (lógicas) para filtrar
+el dataframe
+
+> > extraer las filas del dataset para los pacientes que el tumor ha
+> > sido recurrente
+
+> > extraer las filas del dataset que tienen cancer en el pecho
+> > izquierdo, no radiadas y de edad 40 a 49
+
+```{r, echo=FALSE,eval=FALSE}
+filter(breast.cancer, breast=="left",age=="40-49",irradiat=="no" )
+
+indices <- breast.cancer$breast=="left" & breast.cancer$age=="40-49" & breast.cancer$irradiat=="no"
+breast.cancer[indices,]
+
+```
+
+> > extraer las filas del dataset con edad menor de 35 años y que tienen
+> > cancer en el pecho izquierdo
+
+## Ordenar filas con `arrange()`
+
+Para ordenar con `arrange()` indicar columnas por las que ordenar ascendentemente, en caso de querer descendente: `desc(variable)`.
+
+
+Ejemplo: 
+
+```{r}
+
+breast.cancer1 <- filter(breast.cancer, breast=="left",age=="40-49",irradiat=="no" )
+
+breast.cancer1 <-  arrange(breast.cancer1,age, desc(inv_nodes))
+
+#breast.cancer1 <-  select(breast.cancer1, -c(deg_malig), menopause)
+
+brcan_data <- mutate(breast.cancer,
+       dist_grado_peor = 4-deg_malig
+)
+
+breast.cancer1 <- breast.cancer %>% 
+                filter(breast=="left",age=="40-49",irradiat=="no" )%>% 
+                arrange(age, desc(inv_nodes)) %>% 
+                mutate(dist_grado_peor = 4-deg_malig)
+
+res_deg_malig <-   breast.cancer %>% 
+  as_tibble()%>%
+  select(deg_malig)%>%
+  summarise(num_casos=n(),
+            distintos=n_distinct())
+
+
+
+kableExtra::kable(res_deg_malig)
+
+groups_deg_malig <-   breast.cancer %>% 
+  group_by(deg_malig)%>% 
+    summarise(
+    n = n(),
+    media = mean(deg_malig, na.rm = TRUE), 
+    lasuma=sum(deg_malig)
+  ) 
+
+
+kableExtra::kable(groups_deg_malig)
+ 
+
+```
+
+> > reordenar el dataset según el tamaño del tumor
+
+> > reordenar el dataset según el tamaño del tumor y el grado de que
+> > tiene el tumor
+
+> > reordenar el dataset según el tamaño del tumor (pero descendiente) y
+> > el grado de maligno que tiene el tumor - ayuda - desc(columna)
+
+> > extraer los 10 pacientes con pre-menopausia, con mayor tamaño de
+> > tumor y menor número de nodos invasores y ordenados por edad.
+
+### Selección de columnas `select()`
+
+-   seleccionar únicamente aquellas variables en las que estamos
+    interesados - ayuda - select(dataset, col1, col2, col3)
+
+> > Seleccionar del dataset las columnas clase, tamaño de tumor y grado
+> > de tumor
+
+Podemos seleccionar intervalos de columnas (de col1 a col4):
+
+```{r, eval=FALSE}
+s1 <- select(dataset, col1:col4)
+s1
+```
+
+-   'deseleccionar' columnas - NO SELECCIONAR COLUMNAS
+
+```{r, eval=FALSE}
+select(s1, -c(col1))
+```
+
+Otros argumentos interesantes `select()`:
+
+-   `everything()`, es mover algunas columnas o variables al principio
+    del dataframe.
+
+```{r, eval=FALSE}
+select(dataset, col5, col6, everything())
+```
+
+-   `starts_with('abc')`: encuentra todas las columnas cuyo nombre
+    comienza por "abc".
+
+-   `ends_with('xyz')`: encuentra todas las columnas cuyo nombre termina
+    en "xyz".
+
+-   `contains('ijk')`: para seleccionar las columnas cuyo nombre
+    contenga la cadena de caracteres "ijk".
+
+Y otras funciones más complejas (que filtran las columnas por
+*expresiones regulares*), que se pueden ver al hacer `?select`.
+
+## Añadir o renombrar variables con `mutate()`
+
+El verbo `mutate()` se usa para añadir nuevas columnas al final del
+dataframe.
+
+> > añadimos columna **dist_grado_peor** que es 4 menos el grado de
+> > malignidad.
+
+```{r eval = FALSE}
+brcan_data <- mutate(breast.cancer,
+       dist_grado_peor = 4-deg_malig
+)
+
+breast.cancer <- mutate(breast.cancer,num_pacientes_similares=0)
+
+kableExtra::kable(breast.cancer)
+```
+
+-   añadir una columna **media_tumor** que tenga el valor medio de los
+    valores almacenados en variable **tumor_size**
+
+### `rename()`
+
+-   función `rename()`, que, internamente, se comporta como `select()`,
+    pero guardando todas las variables que no se mencionan
+    explícitamente:
+
+```{r, eval=FALSE}
+rename(brcan_data, dist_degree_worst = dist_grado_peor)
+```
+
+### Uso del operador `%>%`
+
+-   `%>%` utiliza la salida del término que hay a la izquierda del
+    símbolo `%>%` como primer argumento de la función que está a la
+    derecha de dicho símbolo.
+
+-   `x  %>% f(y)` es igual que hacer `f(x, y)`
+
+```{r, eval=FALSE}
+brcan_data %>% 
+  filter(breast == "left")
+```
+
+```{r,eval=FALSE }
+br1 <- brcan_data %>% 
+  filter(breast == "left" & age == "30-39") %>% 
+  select(deg_malig, tumor_size, everything()) %>% 
+  arrange(desc(deg_malig),tumor_size)  
+  br1[1:5,]
+  
+  kableExtra::kable(br1)
+```
+
+```{r,eval=FALSE }
+brcan_data %>% 
+  filter(breast == "left" & age == "30-39") %>% 
+  top_n(5,desc(deg_malig))
+```
+
+```{r,eval=FALSE }
+brcan_data %>% 
+  filter(breast == "left" & age == "30-39") %>% 
+  select(age,tumor_size,deg_malig) %>% 
+  top_n(5,desc(deg_malig))
+```
+
+### Otros verbos auxiliares
+
+#### `summarize()`
+
+```{r}
+res_deg_malig <-   breast.cancer %>% 
+  as_tibble()%>%
+  select(deg_malig)%>%
+  summarise(num_casos=n(),
+            distintos=n_distinct())
+ 
+
+kableExtra::kable(res_deg_malig)
+
+```
+
+-   n() contar
+-   n_distinct() valores únicos
+-   mean(), min(), max()
+-   first(), last(), nth()
+
+#### `group_by()`
+
+summarize se suele usar con group by
+
+```{r}
+groups_deg_malig <-   breast.cancer %>% 
+  group_by(deg_malig)%>% 
+    summarise(
+    n = n(),
+    media = mean(deg_malig, na.rm = TRUE)
+  ) 
+
+kableExtra::kable(groups_deg_malig)
+
+```
+
+#### `slice()`
+
+> > Usando `slice()` extraer los 10 pacientes con pre-menopausia, con
+> > mayor tamaño de tumor y menor número de nodos invasores y ordenados
+> > por edad.
+
+```{r}
+breast.cancer%>% 
+    slice(1:10)
+```
+
+#### `transmute()`
+
+Si sólo se desea guardar las nuevas variables, se puede usar la función
+`transmute()`:
+
+```{r, eval=FALSE}
+brcan_data <- transmute(brcan_data,
+       dist_grado_peor = 4-deg_malig
+)
+
+kableExtra::kable(brcan_data)
+```
+
+### Operaciones con dos tablas
+
+<https://dplyr.tidyverse.org/articles/two-table.html>
+
+## Proyecto Starwarks
+
+Usando el dataset **starwarks** que está en paquete dplyr:
+
+1.  Obtener los 10 humanos más viejos, masculinos, con planeta natal
+    Tatooine.
+
+```{r,eval=FALSE,echo=FALSE}
+data(starwars)
+sw <- filter(starwars, gender == "male", species == "Human", homeworld == "Tatooine")
+sw <- arrange(sw,birth_year)[1:10, ]
+sw
+
+starwars %>%
+ filter(species=="Human" & gender == "masculine" & homeworld == "Tatooine") %>%
+ arrange(birth_year) %>%
+ slice(1:10)
+
+```
+
+2.  Encontrar a aquellos personajes de ojos azules y rubios/as de
+    especie humana, procedentes de Tatooine, ordenados por edad de menor
+    a mayor. Calcular su altura media.
+
+```{r,eval=FALSE,echo=FALSE}
+
+human_blue <- filter(starwars, eye_color=="blue")
+human_blue <- arrange(human_blue, desc(birth_year)) %>% summarize(mean(height))
+ 
+
+```
+
+3.  Encontrar aquellos personajes de especie Human o Naboo y calcular
+    una variable con los valores pesado o ligero (si su massa es mayor
+    que 79 es pesado). Mostrar las variables name, height mass y
+    heavyorlight y ordenar por mass de mayor a menor.
+
+```{r,eval=FALSE,echo=FALSE}
+starwars %>% filter(species %in% c("Human", "Naboo")) %>%
+mutate(heavyorlight = ifelse(mass >= 79, "heavy", "light")) %>% subset(select = c("name", "height", "mass", "heavyorlight")) %>% arrange(desc(mass))
+
+```
+
+4.  Calcular el indice de masa corporal de todos los personajes
+    (eliminando los que tienen masa o altura NA). A continuación mostrar
+    el nombre, altura, masa y IMC de cada personaje, con orden de IMC
+    descendente.
+
+```{r,eval=FALSE,echo=FALSE}
+sw <- starwars[!is.na(starwars$height) & !is.na(starwars$mass),  ]
+sw <- mutate(sw, IMC = mass/((height/100)*(height/100)))
+sw <-select(sw, name:mass, IMC)
+sw <- arrange(sw,desc(IMC))
+sw
+```
+
+```{r JEAN PAUL4,eval=FALSE,echo=FALSE}
+starwars$bmi <- (starwars$mass / (starwars$height)^2)*10000
+
+bmi <- starwars %>%
+  na.omit() %>%
+  select(name, height, mass, bmi) %>%
+  arrange(desc(bmi))
+
+bmi %>% 
+  datatable(style = 'bootstrap', options = list(pageLength=page.length, scrollX=TRUE)) %>%
+  formatRound(columns=c('height', 'mass', 'bmi'), digits=dig)
+```
+
+5.  Obtener los personajes cuya única nave fuese un X-wing y ordenarlos
+    de forma descendente según su masa
+
+```{r,eval=FALSE,echo=FALSE}
+onlyXWing <- filter(sw, starships=="X-wing")
+onlyXWing <- arrange(onlyXWing, desc(mass))
+onlyXWing
+```
+
+6.  Obtener los personajes de masa superior a la media de las masas,
+    obviando valores nulos, y ordenarlos de forma decreciente.
+
+```{r,eval=FALSE,echo=FALSE}
+list <- filter(sw, mass>mean(na.omit(sw$mass)))
+list <- arrange(list, desc(mass))
+list
+```
+
+7.  Obtener las alturas medias de los personajes con el campo "gender"
+    igual a "female", "male" y "hermaphrodite", ignorando NA.
+
+```{r,eval=FALSE,echo=FALSE}
+data(starwars)
+sw <- starwars[!is.na(starwars$gender) ,]
+sw <- group_by(sw, gender)
+sw <- summarise(sw, meanOfHeight=mean(height, na.rm=TRUE))
+sw <- sw[1:3,]
+sw
+```
+
+8.  Filtrar por las especies que sean "Droid", ordenados por altura
+    descendiente y masa. Reemplazar las masas y alturas con valor NA por
+    1 y mostrar solo la media de todas esas masas y la mediana de esas
+    alturas.
+
+```{r,eval=FALSE,echo=FALSE}
+#filtrado por especie
+
+swd <- starwars%>%filter(species == "Droid")
+
+#mostrar ordenados por altura descendiente y masa
+arrange(swd, desc(height),mass)
+
+
+#sustitución de la masa y altura con valores NA por 1
+swd$mass[which(is.na(swd$mass))] <- 1
+swd$height[which(is.na(swd$height))] <- 1
+
+
+#Cálculo de media de la masa y mediana de la altura
+swd%>%summarise(mean(mass),median(height))
+```
+
+```{r JEAN PAUL1,eval=FALSE,echo=FALSE}
+droids <- starwars %>%
+  filter(species == "Droid") %>%  
+  arrange(desc(height), mass) %>%
+  mutate(mass = replace(mass, is.na(mass), 1),
+         height = replace(height, is.na(height), 1)) %>%
+  summarise(avg_mass = mean(mass),
+            avg_height = median(height))
+  
+droids %>% 
+  datatable(style = 'bootstrap', options = list(pageLength=page.length, scrollX=TRUE)) %>%
+  formatRound(columns=c('avg_mass', 'avg_height'), digits=dig)
+```
+
+9.  Sacar aquellas filas con las cadenas "Jedi" ó "Clones" en la columna
+    films. Agrupar por homeworld y sacar la media de la columnas height
+    y mass (por separado). Reemplazar los valores NA en la columna mass
+    por 0.
+
+```{r,eval=FALSE,echo=FALSE}
+#sacar filas con las cadenas indicadas a través de la función grepl (para expresiones regulares)
+#agrupar por homeworld
+
+sw <- starwars %>% filter(grepl("Jedi",films) | grepl("Clones",films))%>% group_by(homeworld)
+
+#sustituir los valores NA por 0 en mass
+sw$mass[which(is.nan(sw$mass))] <- 0
+
+#media de altura y masa para cada homeworld
+sw <- sw%>%summarize(mean_height = mean(height, na.rm =T) , mean_mass = mean(mass)) 
+
+sw
+```
+
+```{r JEAN PAUL 2,eval=FALSE,echo=FALSE}
+films <- starwars %>%
+  filter(grepl("Jedi|Clones", films)) %>% 
+  group_by(homeworld) %>%
+  mutate(height = replace(height, is.na(height), 0),
+         mass = replace(mass, is.na(mass), 0)) %>%
+  summarize(avg_height = mean(height, na.rm = TRUE),
+            avg_mass = mean(mass, na.rm = TRUE), 
+            count=n()) %>% 
+  mutate(homeworld = replace(homeworld, is.na(homeworld), "Unknown")) %>%
+  arrange(homeworld)
+
+films %>% 
+  datatable(style = 'bootstrap', options = list(pageLength=page.length)) %>%
+  formatRound(columns=c('avg_height', 'avg_mass'), digits=dig)
+```
+
+10. Filtrar los datos de aquellos personajes que hayan aparecido solo en
+    la película "Return of the Jedi"y que tengan un mundo natal,
+    ordenados por peso. Para ello transforma los valores NA en 0.
+
+```{r A1,eval=FALSE,echo=FALSE}
+arrange(filter(mutate(starwars, mass = coalesce(mass, 0)), films %in% list("Return of the Jedi") & !is.na(homeworld)), desc(mass))
+```
+
+```{r JEAN PAUL3 ,eval=FALSE,echo=FALSE}
+people <- starwars %>%
+  filter(films == "Return of the Jedi") %>%
+  drop_na(homeworld) %>%
+  mutate(mass = replace(mass, is.na(mass), 0)) %>%
+  arrange(desc(mass))
+
+people %>% 
+  datatable(style = 'bootstrap', options = list(pageLength=page.length, scrollX=TRUE)) %>%
+  formatRound(columns=c('height', 'mass'), digits=dig)
+```
+
+11. Seleccionar los humanos que midan más de 170 cm y que hayan salido
+    en Attack of the Clones, agrupandolos por homeworld obviando los NA
+    y hallar la media de sus pesos sustituyendo los NA por la mediana y
+    mostrarlos en orden descendiente.
+
+```{r,eval=FALSE,echo=FALSE}
+#filtrar por especie y película + agrupar por homeworld
+sw2 <- starwars %>% filter(species == "Human", height > 170, grepl("Attack of the Clones",films))%>%group_by(homeworld)
+
+#sustituir valores na
+sw2$mass[which(is.na(sw2$mass))] <- median(starwars$mass, na.rm = T)
+
+#ordenar
+arrange(sw2%>% summarise(mean_mass = mean(mass)),desc(homeworld))
+
+```
+
+12. Encontrar para cada homeworld cuantas especies diferentes lo habitan
+    y ordenalos de mayor a menor variedad. Controlar que no se tiene en
+    cuenta NA como especie
+
+```{r,eval=FALSE,echo=FALSE}
+data(starwars)
+sw <- starwars[!is.na(starwars$homeworld),]
+sw <- group_by(sw, homeworld)
+sw <- summarise(sw, numSpecies=n_distinct(species, na.rm=TRUE))
+sw <- arrange(sw, desc(numSpecies))
+```
+
+```{r,eval=FALSE,echo=FALSE}
+species <- starwars %>% 
+  select(homeworld, species) %>% 
+  na.omit() %>%
+  group_by(homeworld) %>% 
+  count(homeworld, species) %>%
+  arrange(desc(n))
+
+species %>% 
+  datatable(style = 'bootstrap', options = list(pageLength=page.length, scrollX=TRUE))
+```
+
+13. Filtrar a los personajes mayores de 25, y luego ordenarlos por el
+    número de películas en el que aparecen (dato que no viene
+    directamente y tenemos que obtenerlo).
+
+```{r,eval=FALSE,echo=FALSE}
+
+sw2 <- sw
+sw2$birth_year[(is.na(sw2$birth_year))] <- 5
+Elegidos <- which(sw2$birth_year>25)
+MasDe25 <- sw2[Elegidos,]
+NFilms <- lengths(MasDe25$films)
+length(NFilms)
+MasDe25$NFilms <- NFilms
+MasDe25 <- arrange(MasDe25,NFilms,height)
+MasDe25
+```
+
+14. Encontrar cuantas especies diferentes habitan cada homeworld y
+    ordenarlos de mayor a menor variedad, controlando que NA no es una
+    especie.
+
+```{r,eval=FALSE,echo=FALSE}
+homeworlds <- unique(sw$homeworld)
+
+computar.especie <- function(HW){
+  mundo <- filter(sw, homeworld==HW)
+  num <- (unique(na.omit(mundo$species)))
+  return(c(Homeworld=HW,Specie=num,Diversity=length(num)))
+}
+
+
+DiversidadMundos <- lapply(homeworlds, computar.especie)
+sol3 <- as.data.frame.AsIs(DiversidadMundos, check.names=TRUE)
+sol3
+##Obtenemos los mundos con sus razas y su diversidad, pero el set
+##de datos resultante no se como convertirlo en algo con lo que poder operar
+
+
+```
+
+```{r,eval=FALSE,echo=FALSE}
+
+computar.especie <- function(HW){
+  mundo <- filter(sw, homeworld==HW)
+  num <- (unique(na.omit(mundo$species)))
+  return(c(Homeworld=HW,Specie=num,Diversity=length(num)))
+}
+computar.Diversidad <- function(HW){
+  mundo <- filter(sw, homeworld==HW)
+  num <- (unique(na.omit(mundo$species)))
+  return(Diversity=length(num))
+}
+mundos <- unique(sw$homeworld)
+diversidad <- lapply(mundos, computar.Diversidad)
+diversidad <- as.numeric(diversidad)
+mi.set <- data.frame(mundos,diversidad)
+mi.set <- arrange(mi.set, desc(diversidad))
+mi.set
+
+
+```
+
+15. De todos los personajes de Star Wars filtrar por los que tengan
+    `mass` mayor o igual a 70, agruparlos por `species` y `gender` y
+    calcular la media de `height` de estos (eliminando los valores NA
+    previamente). Mostrar el resultado ordenado de mayor a menor altura
+
+```{r,eval=FALSE,echo=FALSE}
+big.mass <- filter(starwars, mass>=70)
+grouped <- group_by(big.mass, species, gender)
+mean.by.group <- summarise(grouped, height=mean(height, na.rm = T))
+result <- arrange(mean.by.group,desc(height))
+result
+```
+
+16. 
+
+-   Filtrar por aquellos personajes que tienen los ojos azules y un
+    *homeworld* y *birth_year* asignados (diferentes de NA)
+-   Añadir una columna ficticia en la que se indica la edad que tendrían
+    si no hubiesen muerto y actualmente estemos en 2019, es decir,
+    restar a 2019 su año de nacimiento
+-   Agrupar según el país dónde viven
+-   Obtener como resultado la media de los valores height, mass y la
+    columna edad previamente calculada
+-   Ordenar por la columna mass de forma descendentemente
+
+```{r,eval=FALSE,echo=FALSE}
+blue.eyes <- filter(starwars, eye_color=="blue", !is.na(homeworld), !is.na(birth_year))
+
+age.now <- mutate(blue.eyes, age=2019-birth_year)
+
+grouped.by.country <- group_by(age.now, homeworld)
+
+mean.height.mass.age <- summarise(grouped.by.country, height=mean(height), mass=mean(mass), age=mean(age))
+
+arranged.by.mass <- arrange(mean.height.mass.age, mass)
+arranged.by.mass
+```
+
+17. 
+
+-   Sustituir los valores NA del peso y la altura por la media de todos
+    los pesos y alturas respectivamente.
+-   Filtrar los humanos cuyo peso sea mayor o igual a 70, agrupados por
+    homeworld,
+-   calcular la mediana de la altura y el número de humanos de cada
+    homeworld.
+-   Ordenar por número de humanos que hay en cada homeworld.
+
+```{r,eval=FALSE,echo=FALSE}
+without.na <- starwars
+without.na[is.na(without.na$mass),"mass"] <- mean(without.na$mass, na.rm=T)
+without.na[is.na(without.na$height),"height"] <- mean(starwars$height, na.rm=T)
+big.mass.human <- filter(without.na, species=="Human", mass >=70)
+grouped.human <- group_by(big.mass.human, homeworld)
+grouped.mean.count <- summarise(grouped.human, count=n(), median.height <- median(height))
+ordered.number <- arrange(grouped.mean.count, count)
+ordered.number
+```
+
+18. 
+
+-   Obtener todos los humanos, quitando los que su altura es NA
+-   Añadir una columna con la diferencia entre su altura y la altura
+    media de los humanos
+-   Agrupémoslos por su homeworld y la columna nueva pasa a ser la media
+-   Obten las 3 homeworld que están más por debajo de la media
+
+```{r,eval=FALSE,echo=FALSE}
+humans <- filter(starwars, species=="Human", !is.na(height))
+difference.height <- mutate(humans, difference=height-mean(height))
+homeworld.grouped <- group_by(difference.height, homeworld)
+ranking.homeworlds <- summarise(homeworld.grouped, difference=mean(difference))
+ranking.homeworlds <- arrange(ranking.homeworlds, difference)
+ranking.homeworlds <- head(ranking.homeworlds, 3)
+### Si hubiese pedido los 3 mayores sí que lo podría haber hecho con top_n
+ranking.homeworlds
+```

@@ -4,29 +4,23 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Visualización | A Minimal Book Example</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <title>Capítulo 9 Visualización | Ciencia de Datos - UMA</title>
+  <meta name="description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Visualización | A Minimal Book Example" />
+  <meta property="og:title" content="Capítulo 9 Visualización | Ciencia de Datos - UMA" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  <meta property="og:description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
+  
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Visualización | A Minimal Book Example" />
+  <meta name="twitter:title" content="Capítulo 9 Visualización | Ciencia de Datos - UMA" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="twitter:description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
   
 
-<meta name="author" content="John Doe" />
+<meta name="author" content="Domingo López, Ángel Mora" />
 
 
 <meta name="date" content="2022-05-15" />
@@ -139,68 +133,102 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Ciencia de datos con R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html"><i class="fa fa-check"></i><b>2</b> Análisis Exploratorio de Datos</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a></li>
+<li class="chapter" data-level="2.1" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#importación-de-datos"><i class="fa fa-check"></i><b>2.1</b> Importación de datos</a></li>
+<li class="chapter" data-level="2.2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#dplyr-para-manipulación-de-datos"><i class="fa fa-check"></i><b>2.2</b> <code>dplyr</code> para Manipulación de Datos</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#backends"><i class="fa fa-check"></i><b>2.2.1</b> Backends</a></li>
+<li class="chapter" data-level="2.2.2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#filtrado-de-filas-con-filter"><i class="fa fa-check"></i><b>2.2.2</b> Filtrado de filas con <code>filter()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>2</b> Hello bookdown</a></li>
-<li class="chapter" data-level="3" data-path="social-network-analysis.html"><a href="social-network-analysis.html"><i class="fa fa-check"></i><b>3</b> Social Network Analysis</a>
-<ul>
-<li class="chapter" data-level="3.0.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#gephi"><i class="fa fa-check"></i><b>3.0.1</b> Gephi</a></li>
-<li class="chapter" data-level="3.0.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#cytoscape"><i class="fa fa-check"></i><b>3.0.2</b> Cytoscape</a></li>
-<li class="chapter" data-level="3.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#r-for-sna"><i class="fa fa-check"></i><b>3.1</b> R for SNA</a></li>
+<li class="chapter" data-level="2.3" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#ordenar-filas-con-arrange"><i class="fa fa-check"></i><b>2.3</b> Ordenar filas con <code>arrange()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html"><i class="fa fa-check"></i><b>4</b> Elementos de una red</a>
+<li class="chapter" data-level="3" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html"><i class="fa fa-check"></i><b>3</b> A tibble: 1 × 2</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#representación-de-redes"><i class="fa fa-check"></i><b>4.1</b> Representación de redes</a>
+<li class="chapter" data-level="3.0.1" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html#selección-de-columnas-select"><i class="fa fa-check"></i><b>3.0.1</b> Selección de columnas <code>select()</code></a></li>
+<li class="chapter" data-level="3.1" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html#añadir-o-renombrar-variables-con-mutate"><i class="fa fa-check"></i><b>3.1</b> Añadir o renombrar variables con <code>mutate()</code></a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#grafos-como-listas-de-arcos"><i class="fa fa-check"></i><b>4.1.1</b> Grafos como listas de arcos</a></li>
-<li class="chapter" data-level="4.1.2" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#grafos-como-matrices"><i class="fa fa-check"></i><b>4.1.2</b> Grafos como matrices</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html"><i class="fa fa-check"></i><b>5</b> Introducción a <strong>igraph</strong></a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html#acceder-a-elementos-de-grado"><i class="fa fa-check"></i><b>5.1</b> Acceder a elementos de grado</a></li>
-<li class="chapter" data-level="5.2" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html#construirmodificar-un-grafo"><i class="fa fa-check"></i><b>5.2</b> Construir/Modificar un grafo</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="visualización.html"><a href="visualización.html"><i class="fa fa-check"></i><b>6</b> Visualización</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="visualización.html"><a href="visualización.html#layout"><i class="fa fa-check"></i><b>6.1</b> Layout</a></li>
-<li class="chapter" data-level="6.2" data-path="visualización.html"><a href="visualización.html#dibujar-grafos-ponderados"><i class="fa fa-check"></i><b>6.2</b> Dibujar grafos ponderados</a></li>
-<li class="chapter" data-level="6.3" data-path="visualización.html"><a href="visualización.html#cambiar-aspecto-y-propiedades-de-un-grafo"><i class="fa fa-check"></i><b>6.3</b> Cambiar aspecto y propiedades de un grafo</a></li>
-<li class="chapter" data-level="6.4" data-path="visualización.html"><a href="visualización.html#ejemplos---plantillas"><i class="fa fa-check"></i><b>6.4</b> Ejemplos - plantillas</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="de-twitter.html"><a href="de-twitter.html"><i class="fa fa-check"></i><b>7</b> De Twitter</a></li>
-<li class="chapter" data-level="8" data-path="exportar-grafos.html"><a href="exportar-grafos.html"><i class="fa fa-check"></i><b>8</b> Exportar grafos</a></li>
-<li class="chapter" data-level="9" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html"><i class="fa fa-check"></i><b>9</b> Analysis of the Networks to extract knowledge.</a></li>
-<li class="chapter" data-level="10" data-path="centrality.html"><a href="centrality.html"><i class="fa fa-check"></i><b>10</b> Centrality</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="centrality.html"><a href="centrality.html#degree"><i class="fa fa-check"></i><b>10.1</b> Degree</a></li>
-<li class="chapter" data-level="10.2" data-path="centrality.html"><a href="centrality.html#betweenness"><i class="fa fa-check"></i><b>10.2</b> Betweenness</a></li>
-<li class="chapter" data-level="10.3" data-path="centrality.html"><a href="centrality.html#edge_betweenness"><i class="fa fa-check"></i><b>10.3</b> Edge_betweenness</a></li>
-<li class="chapter" data-level="10.4" data-path="centrality.html"><a href="centrality.html#closeness"><i class="fa fa-check"></i><b>10.4</b> Closeness</a></li>
-<li class="chapter" data-level="10.5" data-path="centrality.html"><a href="centrality.html#eigenvector"><i class="fa fa-check"></i><b>10.5</b> Eigenvector</a></li>
-<li class="chapter" data-level="10.6" data-path="centrality.html"><a href="centrality.html#pagerank"><i class="fa fa-check"></i><b>10.6</b> Pagerank</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="paths.html"><a href="paths.html"><i class="fa fa-check"></i><b>11</b> Paths</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="paths.html"><a href="paths.html#diameter"><i class="fa fa-check"></i><b>11.1</b> Diameter</a></li>
-<li class="chapter" data-level="11.2" data-path="paths.html"><a href="paths.html#caminos-y-distancias"><i class="fa fa-check"></i><b>11.2</b> Caminos y distancias</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>12</b> Clustering</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="clustering.html"><a href="clustering.html#transitivity"><i class="fa fa-check"></i><b>12.1</b> Transitivity</a>
-<ul>
-<li class="chapter" data-level="12.1.1" data-path="clustering.html"><a href="clustering.html#global-clustering"><i class="fa fa-check"></i><b>12.1.1</b> Global clustering:</a></li>
-<li class="chapter" data-level="12.1.2" data-path="clustering.html"><a href="clustering.html#local-clustering"><i class="fa fa-check"></i><b>12.1.2</b> Local clustering</a></li>
+<li class="chapter" data-level="3.1.1" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html#rename"><i class="fa fa-check"></i><b>3.1.1</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="3.1.2" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html#uso-del-operador"><i class="fa fa-check"></i><b>3.1.2</b> Uso del operador <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="3.1.3" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html#otros-verbos-auxiliares"><i class="fa fa-check"></i><b>3.1.3</b> Otros verbos auxiliares</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="otras-medidas-y-definiciones.html"><a href="otras-medidas-y-definiciones.html"><i class="fa fa-check"></i><b>13</b> Otras medidas y definiciones</a></li>
+<li class="chapter" data-level="4" data-path="a-tibble-1-2-1.html"><a href="a-tibble-1-2-1.html"><i class="fa fa-check"></i><b>4</b> A tibble: 1 × 2</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="a-tibble-1-2-1.html"><a href="a-tibble-1-2-1.html#operaciones-con-dos-tablas"><i class="fa fa-check"></i><b>4.0.1</b> Operaciones con dos tablas</a></li>
+<li class="chapter" data-level="4.1" data-path="a-tibble-1-2-1.html"><a href="a-tibble-1-2-1.html#proyecto-starwarks"><i class="fa fa-check"></i><b>4.1</b> Proyecto Starwarks</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html"><i class="fa fa-check"></i><b>5</b> Reglas de Asociación</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#introducción-1"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#detectando-y-prediciendo-tendencias"><i class="fa fa-check"></i><b>5.2</b> Detectando y prediciendo tendencias</a></li>
+<li class="chapter" data-level="5.3" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#reglas-de-asociación-de-transacciones"><i class="fa fa-check"></i><b>5.3</b> Reglas de Asociación de transacciones</a></li>
+<li class="chapter" data-level="5.4" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#parámetros-de-apriori"><i class="fa fa-check"></i><b>5.4</b> Parámetros de <strong>apriori</strong></a></li>
+<li class="chapter" data-level="5.5" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#reglas-de-asociación---preprocesamiento"><i class="fa fa-check"></i><b>5.5</b> Reglas de Asociación - preprocesamiento</a></li>
+<li class="chapter" data-level="5.6" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#discretización-de-items"><i class="fa fa-check"></i><b>5.6</b> Discretización de items</a></li>
+<li class="chapter" data-level="5.7" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#tipo-de-dato-transactions"><i class="fa fa-check"></i><b>5.7</b> Tipo de dato <em>transactions</em></a></li>
+<li class="chapter" data-level="5.8" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#métodos-de-arules"><i class="fa fa-check"></i><b>5.8</b> Métodos de arules</a></li>
+<li class="chapter" data-level="5.9" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#operaciones-con-reglas"><i class="fa fa-check"></i><b>5.9</b> Operaciones con reglas</a></li>
+<li class="chapter" data-level="5.10" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#ejercicio-en-laboratorio"><i class="fa fa-check"></i><b>5.10</b> Ejercicio en Laboratorio</a></li>
+<li class="chapter" data-level="5.11" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#arulesviz"><i class="fa fa-check"></i><b>5.11</b> arulesViz</a></li>
+<li class="chapter" data-level="5.12" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#construyendo-un-sistema-recomendador"><i class="fa fa-check"></i><b>5.12</b> Construyendo un sistema recomendador</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="social-network-analysis.html"><a href="social-network-analysis.html"><i class="fa fa-check"></i><b>6</b> Social Network Analysis</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#gephi"><i class="fa fa-check"></i><b>6.0.1</b> Gephi</a></li>
+<li class="chapter" data-level="6.0.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#cytoscape"><i class="fa fa-check"></i><b>6.0.2</b> Cytoscape</a></li>
+<li class="chapter" data-level="6.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#r-for-sna"><i class="fa fa-check"></i><b>6.1</b> R for SNA</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html"><i class="fa fa-check"></i><b>7</b> Elementos de una red</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#representación-de-redes"><i class="fa fa-check"></i><b>7.1</b> Representación de redes</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#grafos-como-listas-de-arcos"><i class="fa fa-check"></i><b>7.1.1</b> Grafos como listas de arcos</a></li>
+<li class="chapter" data-level="7.1.2" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#grafos-como-matrices"><i class="fa fa-check"></i><b>7.1.2</b> Grafos como matrices</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html"><i class="fa fa-check"></i><b>8</b> Introducción a <strong>igraph</strong></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html#acceder-a-elementos-de-grado"><i class="fa fa-check"></i><b>8.1</b> Acceder a elementos de grado</a></li>
+<li class="chapter" data-level="8.2" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html#construirmodificar-un-grafo"><i class="fa fa-check"></i><b>8.2</b> Construir/Modificar un grafo</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="visualización.html"><a href="visualización.html"><i class="fa fa-check"></i><b>9</b> Visualización</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="visualización.html"><a href="visualización.html#layout"><i class="fa fa-check"></i><b>9.1</b> Layout</a></li>
+<li class="chapter" data-level="9.2" data-path="visualización.html"><a href="visualización.html#dibujar-grafos-ponderados"><i class="fa fa-check"></i><b>9.2</b> Dibujar grafos ponderados</a></li>
+<li class="chapter" data-level="9.3" data-path="visualización.html"><a href="visualización.html#cambiar-aspecto-y-propiedades-de-un-grafo"><i class="fa fa-check"></i><b>9.3</b> Cambiar aspecto y propiedades de un grafo</a></li>
+<li class="chapter" data-level="9.4" data-path="visualización.html"><a href="visualización.html#ejemplos---plantillas"><i class="fa fa-check"></i><b>9.4</b> Ejemplos - plantillas</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="de-twitter.html"><a href="de-twitter.html"><i class="fa fa-check"></i><b>10</b> De Twitter</a></li>
+<li class="chapter" data-level="11" data-path="exportar-grafos.html"><a href="exportar-grafos.html"><i class="fa fa-check"></i><b>11</b> Exportar grafos</a></li>
+<li class="chapter" data-level="12" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html"><i class="fa fa-check"></i><b>12</b> Analysis of the Networks to extract knowledge.</a></li>
+<li class="chapter" data-level="13" data-path="centrality.html"><a href="centrality.html"><i class="fa fa-check"></i><b>13</b> Centrality</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="centrality.html"><a href="centrality.html#degree"><i class="fa fa-check"></i><b>13.1</b> Degree</a></li>
+<li class="chapter" data-level="13.2" data-path="centrality.html"><a href="centrality.html#betweenness"><i class="fa fa-check"></i><b>13.2</b> Betweenness</a></li>
+<li class="chapter" data-level="13.3" data-path="centrality.html"><a href="centrality.html#edge_betweenness"><i class="fa fa-check"></i><b>13.3</b> Edge_betweenness</a></li>
+<li class="chapter" data-level="13.4" data-path="centrality.html"><a href="centrality.html#closeness"><i class="fa fa-check"></i><b>13.4</b> Closeness</a></li>
+<li class="chapter" data-level="13.5" data-path="centrality.html"><a href="centrality.html#eigenvector"><i class="fa fa-check"></i><b>13.5</b> Eigenvector</a></li>
+<li class="chapter" data-level="13.6" data-path="centrality.html"><a href="centrality.html#pagerank"><i class="fa fa-check"></i><b>13.6</b> Pagerank</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="paths.html"><a href="paths.html"><i class="fa fa-check"></i><b>14</b> Paths</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="paths.html"><a href="paths.html#diameter"><i class="fa fa-check"></i><b>14.1</b> Diameter</a></li>
+<li class="chapter" data-level="14.2" data-path="paths.html"><a href="paths.html#caminos-y-distancias"><i class="fa fa-check"></i><b>14.2</b> Caminos y distancias</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>15</b> Clustering</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="clustering.html"><a href="clustering.html#transitivity"><i class="fa fa-check"></i><b>15.1</b> Transitivity</a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="clustering.html"><a href="clustering.html#global-clustering"><i class="fa fa-check"></i><b>15.1.1</b> Global clustering:</a></li>
+<li class="chapter" data-level="15.1.2" data-path="clustering.html"><a href="clustering.html#local-clustering"><i class="fa fa-check"></i><b>15.1.2</b> Local clustering</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="otras-medidas-y-definiciones.html"><a href="otras-medidas-y-definiciones.html"><i class="fa fa-check"></i><b>16</b> Otras medidas y definiciones</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -214,7 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ciencia de Datos - UMA</a>
           </h1>
         </div>
 
@@ -222,63 +250,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="visualización" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Visualización<a href="visualización.html#visualización" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="visualización" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Capítulo 9</span> Visualización<a href="visualización.html#visualización" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Buscar ayuda de los comandos <strong>plot.igraph</strong>, <strong>igraph.plotting</strong>.</p>
 <p>A continuación dibujamos algunos grafos interesantes:</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="visualización.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(igraph)</span></span>
-<span id="cb85-2"><a href="visualización.html#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Trees</span></span>
-<span id="cb85-3"><a href="visualización.html#cb85-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_tree</span>(<span class="dv">27</span>, <span class="at">children=</span><span class="dv">3</span>)</span>
-<span id="cb85-4"><a href="visualización.html#cb85-4" aria-hidden="true" tabindex="-1"></a>g; <span class="fu">plot</span>(g)</span></code></pre></div>
-<pre><code>## IGRAPH f389ce1 D--- 27 26 -- Tree
-## + attr: name (g/c), children (g/n), mode (g/c)
-## + edges from f389ce1:
-##  [1] 1-&gt; 2 1-&gt; 3 1-&gt; 4 2-&gt; 5 2-&gt; 6 2-&gt; 7 3-&gt; 8 3-&gt; 9 3-&gt;10 4-&gt;11 4-&gt;12 4-&gt;13
-## [13] 5-&gt;14 5-&gt;15 5-&gt;16 6-&gt;17 6-&gt;18 6-&gt;19 7-&gt;20 7-&gt;21 7-&gt;22 8-&gt;23 8-&gt;24 8-&gt;25
-## [25] 9-&gt;26 9-&gt;27</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="visualización.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cliques </span></span>
-<span id="cb87-2"><a href="visualización.html#cb87-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_full_graph</span>(<span class="at">n=</span><span class="dv">6</span>)</span>
-<span id="cb87-3"><a href="visualización.html#cb87-3" aria-hidden="true" tabindex="-1"></a>g; <span class="fu">plot</span>(g)</span></code></pre></div>
-<pre><code>## IGRAPH 5d37b57 U--- 6 15 -- Full graph
-## + attr: name (g/c), loops (g/l)
-## + edges from 5d37b57:
-##  [1] 1--2 1--3 1--4 1--5 1--6 2--3 2--4 2--5 2--6 3--4 3--5 3--6 4--5 4--6 5--6</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-20-2.png" width="672" /></p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="visualización.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lattices</span></span>
-<span id="cb89-2"><a href="visualización.html#cb89-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_lattice</span>(<span class="at">dimvector =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>), <span class="at">circular =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb89-3"><a href="visualización.html#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>label <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb89-4"><a href="visualización.html#cb89-4" aria-hidden="true" tabindex="-1"></a>g; <span class="fu">plot</span>(g)</span></code></pre></div>
-<pre><code>## IGRAPH 5d0e548 U--- 25 40 -- Lattice graph
-## + attr: name (g/c), dimvector (g/n), nei (g/n), mutual (g/l), circular
-## | (g/l), label (v/l)
-## + edges from 5d0e548:
-##  [1]  1-- 2  1-- 6  2-- 3  2-- 7  3-- 4  3-- 8  4-- 5  4-- 9  5--10  6-- 7
-## [11]  6--11  7-- 8  7--12  8-- 9  8--13  9--10  9--14 10--15 11--12 11--16
-## [21] 12--13 12--17 13--14 13--18 14--15 14--19 15--20 16--17 16--21 17--18
-## [31] 17--22 18--19 18--23 19--20 19--24 20--25 21--22 22--23 23--24 24--25</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-20-3.png" width="672" /></p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="visualización.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Stars</span></span>
-<span id="cb91-2"><a href="visualización.html#cb91-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_star</span>(<span class="at">n=</span><span class="dv">10</span>,<span class="at">mode =</span> <span class="st">&quot;undirected&quot;</span>)</span>
-<span id="cb91-3"><a href="visualización.html#cb91-3" aria-hidden="true" tabindex="-1"></a>g;  <span class="fu">plot</span>(g)</span></code></pre></div>
-<pre><code>## IGRAPH a6d07e6 U--- 10 9 -- Star
-## + attr: name (g/c), mode (g/c), center (g/n)
-## + edges from a6d07e6:
-## [1] 1-- 2 1-- 3 1-- 4 1-- 5 1-- 6 1-- 7 1-- 8 1-- 9 1--10</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-20-4.png" width="672" /></p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="visualización.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(igraph)</span></span>
+<span id="cb108-2"><a href="visualización.html#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Trees</span></span>
+<span id="cb108-3"><a href="visualización.html#cb108-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_tree</span>(<span class="dv">27</span>, <span class="at">children=</span><span class="dv">3</span>)</span>
+<span id="cb108-4"><a href="visualización.html#cb108-4" aria-hidden="true" tabindex="-1"></a>g; <span class="fu">plot</span>(g)</span></code></pre></div>
+<p>IGRAPH b1f1ed1 D— 27 26 – Tree
++ attr: name (g/c), children (g/n), mode (g/c)
++ edges from b1f1ed1:
+[1] 1-&gt; 2 1-&gt; 3 1-&gt; 4 2-&gt; 5 2-&gt; 6 2-&gt; 7 3-&gt; 8 3-&gt; 9 3-&gt;10 4-&gt;11 4-&gt;12 4-&gt;13
+[13] 5-&gt;14 5-&gt;15 5-&gt;16 6-&gt;17 6-&gt;18 6-&gt;19 7-&gt;20 7-&gt;21 7-&gt;22 8-&gt;23 8-&gt;24 8-&gt;25
+[25] 9-&gt;26 9-&gt;27
+<img src="_main_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="visualización.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cliques </span></span>
+<span id="cb109-2"><a href="visualización.html#cb109-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_full_graph</span>(<span class="at">n=</span><span class="dv">6</span>)</span>
+<span id="cb109-3"><a href="visualización.html#cb109-3" aria-hidden="true" tabindex="-1"></a>g; <span class="fu">plot</span>(g)</span></code></pre></div>
+<p>IGRAPH cf04096 U— 6 15 – Full graph
++ attr: name (g/c), loops (g/l)
++ edges from cf04096:
+[1] 1–2 1–3 1–4 1–5 1–6 2–3 2–4 2–5 2–6 3–4 3–5 3–6 4–5 4–6 5–6
+<img src="_main_files/figure-html/unnamed-chunk-62-2.png" width="672" /></p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="visualización.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lattices</span></span>
+<span id="cb110-2"><a href="visualización.html#cb110-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_lattice</span>(<span class="at">dimvector =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>), <span class="at">circular =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb110-3"><a href="visualización.html#cb110-3" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>label <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb110-4"><a href="visualización.html#cb110-4" aria-hidden="true" tabindex="-1"></a>g; <span class="fu">plot</span>(g)</span></code></pre></div>
+<p>IGRAPH 4b042c5 U— 25 40 – Lattice graph
++ attr: name (g/c), dimvector (g/n), nei (g/n), mutual (g/l), circular
+| (g/l), label (v/l)
++ edges from 4b042c5:
+[1] 1– 2 1– 6 2– 3 2– 7 3– 4 3– 8 4– 5 4– 9 5–10 6– 7
+[11] 6–11 7– 8 7–12 8– 9 8–13 9–10 9–14 10–15 11–12 11–16
+[21] 12–13 12–17 13–14 13–18 14–15 14–19 15–20 16–17 16–21 17–18
+[31] 17–22 18–19 18–23 19–20 19–24 20–25 21–22 22–23 23–24 24–25
+<img src="_main_files/figure-html/unnamed-chunk-62-3.png" width="672" /></p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="visualización.html#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Stars</span></span>
+<span id="cb111-2"><a href="visualización.html#cb111-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_star</span>(<span class="at">n=</span><span class="dv">10</span>,<span class="at">mode =</span> <span class="st">&quot;undirected&quot;</span>)</span>
+<span id="cb111-3"><a href="visualización.html#cb111-3" aria-hidden="true" tabindex="-1"></a>g;  <span class="fu">plot</span>(g)</span></code></pre></div>
+<p>IGRAPH 85345af U— 10 9 – Star
++ attr: name (g/c), mode (g/c), center (g/n)
++ edges from 85345af:
+[1] 1– 2 1– 3 1– 4 1– 5 1– 6 1– 7 1– 8 1– 9 1–10
+<img src="_main_files/figure-html/unnamed-chunk-62-4.png" width="672" /></p>
 <blockquote>
 <p>Anillo con conexiones cruzadas:</p>
 </blockquote>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="visualización.html#cb93-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_ring</span>(<span class="dv">10</span>, <span class="at">directed=</span><span class="cn">TRUE</span>, <span class="at">mutual=</span><span class="cn">TRUE</span>)</span>
-<span id="cb93-2"><a href="visualización.html#cb93-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-3"><a href="visualización.html#cb93-3" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>name <span class="ot">&lt;-</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span>
-<span id="cb93-4"><a href="visualización.html#cb93-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-5"><a href="visualización.html#cb93-5" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span>  g <span class="sc">+</span> <span class="fu">edges</span>(<span class="dv">9</span>,<span class="dv">5</span>, <span class="dv">7</span>,<span class="dv">1</span>, <span class="dv">1</span>,<span class="dv">5</span>)</span>
-<span id="cb93-6"><a href="visualización.html#cb93-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-7"><a href="visualización.html#cb93-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
-<div id="layout" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Layout<a href="visualización.html#layout" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="visualización.html#cb112-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_ring</span>(<span class="dv">10</span>, <span class="at">directed=</span><span class="cn">TRUE</span>, <span class="at">mutual=</span><span class="cn">TRUE</span>)</span>
+<span id="cb112-2"><a href="visualización.html#cb112-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-3"><a href="visualización.html#cb112-3" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>name <span class="ot">&lt;-</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span>
+<span id="cb112-4"><a href="visualización.html#cb112-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-5"><a href="visualización.html#cb112-5" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span>  g <span class="sc">+</span> <span class="fu">edges</span>(<span class="dv">9</span>,<span class="dv">5</span>, <span class="dv">7</span>,<span class="dv">1</span>, <span class="dv">1</span>,<span class="dv">5</span>)</span>
+<span id="cb112-6"><a href="visualización.html#cb112-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-7"><a href="visualización.html#cb112-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
+<div id="layout" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Layout<a href="visualización.html#layout" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Un <em>layout</em> es un conjunto de coordenadas x,y preestablecidas. Se pueden especificar manualmente o usando <strong>layout_functions</strong></p>
 <blockquote>
 <blockquote>
@@ -295,68 +323,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Algoritmos que lo consiguen: por ejemplo - Kamada Kawai algorithm, the Fruchterman Reingold algorithm, etc.</p>
 </blockquote>
 </blockquote>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="visualización.html#cb94-1" aria-hidden="true" tabindex="-1"></a>Lykamada <span class="ot">&lt;-</span> <span class="fu">layout.kamada.kawai</span>(g)</span>
-<span id="cb94-2"><a href="visualización.html#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>Lykamada)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="visualización.html#cb95-1" aria-hidden="true" tabindex="-1"></a>Lyfruchtermant <span class="ot">&lt;-</span> <span class="fu">layout.fruchterman.reingold</span>(g)</span>
-<span id="cb95-2"><a href="visualización.html#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>Lyfruchtermant)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-22-2.png" width="672" /></p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="visualización.html#cb96-1" aria-hidden="true" tabindex="-1"></a>lo <span class="ot">&lt;-</span> <span class="fu">layout_in_circle</span>(g)</span>
-<span id="cb96-2"><a href="visualización.html#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(lo, <span class="at">n=</span><span class="dv">4</span>) </span></code></pre></div>
-<pre><code>##           [,1]      [,2]
-## [1,]  1.000000 0.0000000
-## [2,]  0.809017 0.5877853
-## [3,]  0.309017 0.9510565
-## [4,] -0.309017 0.9510565</code></pre>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="visualización.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lo es una matriz de coordenadas  </span></span>
-<span id="cb98-2"><a href="visualización.html#cb98-2" aria-hidden="true" tabindex="-1"></a>lo</span></code></pre></div>
-<pre><code>##            [,1]          [,2]
-##  [1,]  1.000000  0.000000e+00
-##  [2,]  0.809017  5.877853e-01
-##  [3,]  0.309017  9.510565e-01
-##  [4,] -0.309017  9.510565e-01
-##  [5,] -0.809017  5.877853e-01
-##  [6,] -1.000000  1.224647e-16
-##  [7,] -0.809017 -5.877853e-01
-##  [8,] -0.309017 -9.510565e-01
-##  [9,]  0.309017 -9.510565e-01
-## [10,]  0.809017 -5.877853e-01</code></pre>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="visualización.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-22-3.png" width="672" /></p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="visualización.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># See ?layout_ for a full list</span></span>
-<span id="cb101-2"><a href="visualización.html#cb101-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb101-3"><a href="visualización.html#cb101-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Para redes tipo árbol:  layout_as_tree</span></span>
-<span id="cb101-4"><a href="visualización.html#cb101-4" aria-hidden="true" tabindex="-1"></a>gTree <span class="ot">&lt;-</span> <span class="fu">make_tree</span>(<span class="dv">15</span>)</span>
-<span id="cb101-5"><a href="visualización.html#cb101-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gTree, <span class="at">layout=</span><span class="fu">layout_as_tree</span>(gTree, <span class="at">root =</span> <span class="dv">1</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-22-4.png" width="672" /></p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="visualización.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># layout como un grid</span></span>
-<span id="cb102-2"><a href="visualización.html#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span><span class="fu">layout_on_grid</span>(g))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-22-5.png" width="672" /></p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="visualización.html#cb113-1" aria-hidden="true" tabindex="-1"></a>Lykamada <span class="ot">&lt;-</span> <span class="fu">layout.kamada.kawai</span>(g)</span>
+<span id="cb113-2"><a href="visualización.html#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>Lykamada)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="visualización.html#cb114-1" aria-hidden="true" tabindex="-1"></a>Lyfruchtermant <span class="ot">&lt;-</span> <span class="fu">layout.fruchterman.reingold</span>(g)</span>
+<span id="cb114-2"><a href="visualización.html#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>Lyfruchtermant)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-64-2.png" width="672" /></p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="visualización.html#cb115-1" aria-hidden="true" tabindex="-1"></a>lo <span class="ot">&lt;-</span> <span class="fu">layout_in_circle</span>(g)</span>
+<span id="cb115-2"><a href="visualización.html#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(lo, <span class="at">n=</span><span class="dv">4</span>) </span></code></pre></div>
+<pre><code>      [,1]      [,2]</code></pre>
+<p>[1,] 1.000000 0.0000000
+[2,] 0.809017 0.5877853
+[3,] 0.309017 0.9510565
+[4,] -0.309017 0.9510565</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="visualización.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lo es una matriz de coordenadas  </span></span>
+<span id="cb117-2"><a href="visualización.html#cb117-2" aria-hidden="true" tabindex="-1"></a>lo</span></code></pre></div>
+<pre><code>       [,1]          [,2]</code></pre>
+<p>[1,] 1.000000 0.000000e+00
+[2,] 0.809017 5.877853e-01
+[3,] 0.309017 9.510565e-01
+[4,] -0.309017 9.510565e-01
+[5,] -0.809017 5.877853e-01
+[6,] -1.000000 1.224647e-16
+[7,] -0.809017 -5.877853e-01
+[8,] -0.309017 -9.510565e-01
+[9,] 0.309017 -9.510565e-01
+[10,] 0.809017 -5.877853e-01</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="visualización.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-64-3.png" width="672" /></p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="visualización.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co"># See ?layout_ for a full list</span></span>
+<span id="cb120-2"><a href="visualización.html#cb120-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-3"><a href="visualización.html#cb120-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Para redes tipo árbol:  layout_as_tree</span></span>
+<span id="cb120-4"><a href="visualización.html#cb120-4" aria-hidden="true" tabindex="-1"></a>gTree <span class="ot">&lt;-</span> <span class="fu">make_tree</span>(<span class="dv">15</span>)</span>
+<span id="cb120-5"><a href="visualización.html#cb120-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gTree, <span class="at">layout=</span><span class="fu">layout_as_tree</span>(gTree, <span class="at">root =</span> <span class="dv">1</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-64-4.png" width="672" /></p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="visualización.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="co"># layout como un grid</span></span>
+<span id="cb121-2"><a href="visualización.html#cb121-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span><span class="fu">layout_on_grid</span>(g))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-64-5.png" width="672" /></p>
 <p>Mallas:</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="visualización.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
-<span id="cb103-2"><a href="visualización.html#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Buscar en ayuda</span></span>
-<span id="cb103-3"><a href="visualización.html#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="co">#?igraph::layout  </span></span>
-<span id="cb103-4"><a href="visualización.html#cb103-4" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_tree</span>(<span class="dv">15</span>)</span>
-<span id="cb103-5"><a href="visualización.html#cb103-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3952</span>)</span>
-<span id="cb103-6"><a href="visualización.html#cb103-6" aria-hidden="true" tabindex="-1"></a>layout1 <span class="ot">&lt;-</span> <span class="fu">layout.fruchterman.reingold</span>(g)</span>
-<span id="cb103-7"><a href="visualización.html#cb103-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>layout1)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="visualización.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Otra malla diferente</span></span>
-<span id="cb104-2"><a href="visualización.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>layout.kamada.kawai)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-23-2.png" width="672" /></p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="visualización.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Malla interactiva - Ejecutar en consola</span></span>
-<span id="cb105-2"><a href="visualización.html#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="co"># tkplot(g, layout=layout.kamada.kawai)</span></span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-65-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-65-2.png" width="672" /></p>
 </div>
-<div id="dibujar-grafos-ponderados" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Dibujar grafos ponderados<a href="visualización.html#dibujar-grafos-ponderados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="visualización.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>label.cex <span class="ot">&lt;-</span> ...</span>
-<span id="cb106-2"><a href="visualización.html#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>label.color <span class="ot">&lt;-</span> ...</span>
-<span id="cb106-3"><a href="visualización.html#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>frame.color <span class="ot">&lt;-</span> ... </span>
-<span id="cb106-4"><a href="visualización.html#cb106-4" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g)<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="fu">rgb</span>(....</span>
-<span id="cb106-5"><a href="visualización.html#cb106-5" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g)<span class="sc">$</span>width <span class="ot">&lt;-</span>    </span></code></pre></div>
+<div id="dibujar-grafos-ponderados" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Dibujar grafos ponderados<a href="visualización.html#dibujar-grafos-ponderados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="cambiar-aspecto-y-propiedades-de-un-grafo" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Cambiar aspecto y propiedades de un grafo<a href="visualización.html#cambiar-aspecto-y-propiedades-de-un-grafo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="cambiar-aspecto-y-propiedades-de-un-grafo" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Cambiar aspecto y propiedades de un grafo<a href="visualización.html#cambiar-aspecto-y-propiedades-de-un-grafo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <pre><code>V(g)$shape 
 V(g)$size
 V(g)$color</code></pre>
@@ -369,95 +380,84 @@ V(g)$color</code></pre>
 <li>set_vertex_attr</li>
 <li>set_graph_attr</li>
 </ul>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="visualización.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">vertex.size =</span> <span class="dv">20</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="visualización.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">vertex.size =</span> <span class="dv">10</span>, <span class="at">vertex.color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">vertex.frame.color =</span> <span class="cn">NA</span>, <span class="at">vertex.label =</span> <span class="cn">NA</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-25-2.png" width="672" /></p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="visualización.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">vertex.size =</span> <span class="dv">10</span>, <span class="at">vertex.color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">vertex.frame.color =</span> <span class="cn">NA</span>, <span class="at">vertex.label.cex =</span> .<span class="dv">7</span>,  <span class="at">vertex.label =</span> <span class="cn">NA</span>, <span class="at">edge.curved =</span> .<span class="dv">5</span>, <span class="at">edge.arrow.size =</span> .<span class="dv">3</span>, <span class="at">edge.width =</span> .<span class="dv">7</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-25-3.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-67-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-67-2.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-67-3.png" width="672" /></p>
 <p>Note: colores en R [<a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf" class="uri">http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf</a>](<a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf" class="uri">http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf</a>)</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="visualización.html#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb111-2"><a href="visualización.html#cb111-2" aria-hidden="true" tabindex="-1"></a>g1random <span class="ot">&lt;-</span> <span class="fu">sample_gnp</span>(<span class="dv">10</span>, <span class="at">p=</span><span class="fl">0.4</span>)</span>
-<span id="cb111-3"><a href="visualización.html#cb111-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb111-4"><a href="visualización.html#cb111-4" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g1random)[<span class="dv">1</span>]<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="st">&quot;yellow&quot;</span> </span>
-<span id="cb111-5"><a href="visualización.html#cb111-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb111-6"><a href="visualización.html#cb111-6" aria-hidden="true" tabindex="-1"></a>g1random <span class="sc">%&gt;%</span></span>
-<span id="cb111-7"><a href="visualización.html#cb111-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_edge_attr</span>(<span class="st">&quot;color&quot;</span>,<span class="at">value =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb111-8"><a href="visualización.html#cb111-8" aria-hidden="true" tabindex="-1"></a> <span class="fu">plot</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
 </div>
-<div id="ejemplos---plantillas" class="section level2 hasAnchor" number="6.4">
-<h2><span class="header-section-number">6.4</span> Ejemplos - plantillas<a href="visualización.html#ejemplos---plantillas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ejemplos---plantillas" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Ejemplos - plantillas<a href="visualización.html#ejemplos---plantillas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <blockquote>
 <p>Plot vocales como rectángulos</p>
 </blockquote>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="visualización.html#cb112-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_ring</span>(<span class="dv">10</span>, <span class="at">directed=</span><span class="cn">TRUE</span>, <span class="at">mutual=</span><span class="cn">TRUE</span>)</span>
-<span id="cb112-2"><a href="visualización.html#cb112-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-3"><a href="visualización.html#cb112-3" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>name <span class="ot">&lt;-</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span>
-<span id="cb112-4"><a href="visualización.html#cb112-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-5"><a href="visualización.html#cb112-5" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span>  g <span class="sc">+</span> <span class="fu">edges</span>(<span class="dv">9</span>,<span class="dv">5</span>, <span class="dv">7</span>,<span class="dv">1</span>, <span class="dv">1</span>,<span class="dv">5</span>)</span>
-<span id="cb112-6"><a href="visualización.html#cb112-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-7"><a href="visualización.html#cb112-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="visualización.html#cb113-1" aria-hidden="true" tabindex="-1"></a>vowel <span class="ot">&lt;-</span> <span class="fu">V</span>(g)<span class="sc">$</span>name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;E&quot;</span>,<span class="st">&quot;I&quot;</span>,<span class="st">&quot;O&quot;</span>,<span class="st">&quot;U&quot;</span>) <span class="sc">+</span> <span class="dv">1</span> <span class="co"># gives 1 or 2</span></span>
-<span id="cb113-2"><a href="visualización.html#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo, <span class="at">vertex.shape=</span><span class="fu">c</span>(<span class="st">&quot;circle&quot;</span>, <span class="st">&quot;square&quot;</span>)[vowel])</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-27-2.png" width="672" /></p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="visualización.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="co">#colores</span></span>
-<span id="cb114-2"><a href="visualización.html#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo, <span class="at">vertex.color=</span><span class="fu">c</span>(<span class="st">&quot;tomato2&quot;</span>, <span class="st">&quot;royalblue&quot;</span>)[vowel])</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-27-3.png" width="672" /></p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="visualización.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co">#tamaño</span></span>
-<span id="cb115-2"><a href="visualización.html#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo, <span class="at">vertex.size=</span><span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">30</span>)[vowel])</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-27-4.png" width="672" /></p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="visualización.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Propiedades usando atributos</span></span>
-<span id="cb116-2"><a href="visualización.html#cb116-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb116-3"><a href="visualización.html#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>shape <span class="ot">&lt;-</span> <span class="st">&quot;circle&quot;</span> <span class="co"># Aplicado a todos los vértices</span></span>
-<span id="cb116-4"><a href="visualización.html#cb116-4" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>size <span class="ot">&lt;-</span> <span class="dv">15</span></span>
-<span id="cb116-5"><a href="visualización.html#cb116-5" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="st">&quot;orange&quot;</span></span>
-<span id="cb116-6"><a href="visualización.html#cb116-6" aria-hidden="true" tabindex="-1"></a>isVowel <span class="ot">&lt;-</span> <span class="fu">V</span>(g)<span class="sc">$</span>name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;E&quot;</span>,<span class="st">&quot;I&quot;</span>,<span class="st">&quot;O&quot;</span>,<span class="st">&quot;U&quot;</span>)</span>
-<span id="cb116-7"><a href="visualización.html#cb116-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Sobreescribir los nodos vocales </span></span>
-<span id="cb116-8"><a href="visualización.html#cb116-8" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)[isVowel]<span class="sc">$</span>shape <span class="ot">&lt;-</span> <span class="st">&quot;square&quot;</span></span>
-<span id="cb116-9"><a href="visualización.html#cb116-9" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)[isVowel]<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="st">&quot;royalblue&quot;</span></span>
-<span id="cb116-10"><a href="visualización.html#cb116-10" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)[isVowel]<span class="sc">$</span>size <span class="ot">&lt;-</span> <span class="dv">25</span></span>
-<span id="cb116-11"><a href="visualización.html#cb116-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb116-12"><a href="visualización.html#cb116-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-27-5.png" width="672" /></p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="visualización.html#cb123-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_ring</span>(<span class="dv">10</span>, <span class="at">directed=</span><span class="cn">TRUE</span>, <span class="at">mutual=</span><span class="cn">TRUE</span>)</span>
+<span id="cb123-2"><a href="visualización.html#cb123-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb123-3"><a href="visualización.html#cb123-3" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>name <span class="ot">&lt;-</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span>
+<span id="cb123-4"><a href="visualización.html#cb123-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb123-5"><a href="visualización.html#cb123-5" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span>  g <span class="sc">+</span> <span class="fu">edges</span>(<span class="dv">9</span>,<span class="dv">5</span>, <span class="dv">7</span>,<span class="dv">1</span>, <span class="dv">1</span>,<span class="dv">5</span>)</span>
+<span id="cb123-6"><a href="visualización.html#cb123-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb123-7"><a href="visualización.html#cb123-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="visualización.html#cb124-1" aria-hidden="true" tabindex="-1"></a>vowel <span class="ot">&lt;-</span> <span class="fu">V</span>(g)<span class="sc">$</span>name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;E&quot;</span>,<span class="st">&quot;I&quot;</span>,<span class="st">&quot;O&quot;</span>,<span class="st">&quot;U&quot;</span>) <span class="sc">+</span> <span class="dv">1</span> <span class="co"># gives 1 or 2</span></span>
+<span id="cb124-2"><a href="visualización.html#cb124-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo, <span class="at">vertex.shape=</span><span class="fu">c</span>(<span class="st">&quot;circle&quot;</span>, <span class="st">&quot;square&quot;</span>)[vowel])</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-69-2.png" width="672" /></p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="visualización.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="co">#colores</span></span>
+<span id="cb125-2"><a href="visualización.html#cb125-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo, <span class="at">vertex.color=</span><span class="fu">c</span>(<span class="st">&quot;tomato2&quot;</span>, <span class="st">&quot;royalblue&quot;</span>)[vowel])</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-69-3.png" width="672" /></p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="visualización.html#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="co">#tamaño</span></span>
+<span id="cb126-2"><a href="visualización.html#cb126-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo, <span class="at">vertex.size=</span><span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">30</span>)[vowel])</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-69-4.png" width="672" /></p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="visualización.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Propiedades usando atributos</span></span>
+<span id="cb127-2"><a href="visualización.html#cb127-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-3"><a href="visualización.html#cb127-3" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>shape <span class="ot">&lt;-</span> <span class="st">&quot;circle&quot;</span> <span class="co"># Aplicado a todos los vértices</span></span>
+<span id="cb127-4"><a href="visualización.html#cb127-4" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>size <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb127-5"><a href="visualización.html#cb127-5" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="st">&quot;orange&quot;</span></span>
+<span id="cb127-6"><a href="visualización.html#cb127-6" aria-hidden="true" tabindex="-1"></a>isVowel <span class="ot">&lt;-</span> <span class="fu">V</span>(g)<span class="sc">$</span>name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;E&quot;</span>,<span class="st">&quot;I&quot;</span>,<span class="st">&quot;O&quot;</span>,<span class="st">&quot;U&quot;</span>)</span>
+<span id="cb127-7"><a href="visualización.html#cb127-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Sobreescribir los nodos vocales </span></span>
+<span id="cb127-8"><a href="visualización.html#cb127-8" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)[isVowel]<span class="sc">$</span>shape <span class="ot">&lt;-</span> <span class="st">&quot;square&quot;</span></span>
+<span id="cb127-9"><a href="visualización.html#cb127-9" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)[isVowel]<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="st">&quot;royalblue&quot;</span></span>
+<span id="cb127-10"><a href="visualización.html#cb127-10" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)[isVowel]<span class="sc">$</span>size <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb127-11"><a href="visualización.html#cb127-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-12"><a href="visualización.html#cb127-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-69-5.png" width="672" /></p>
 <blockquote>
 <p>Propiedades de los arcos</p>
 </blockquote>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="visualización.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g)<span class="sc">$</span>width <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb117-2"><a href="visualización.html#cb117-2" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span><span class="fu">V</span>(g)[isVowel]</span>
-<span id="cb117-3"><a href="visualización.html#cb117-3" aria-hidden="true" tabindex="-1"></a>v1</span></code></pre></div>
-<pre><code>## + 3/10 vertices, named, from 7aec58d:
-## [1] A E I</code></pre>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="visualización.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g)[v1  <span class="sc">%--%</span>  v1]<span class="sc">$</span>width <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb119-2"><a href="visualización.html#cb119-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-3"><a href="visualización.html#cb119-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver http://igraph.org/r/doc/igraph-es-indexing.html</span></span>
-<span id="cb119-4"><a href="visualización.html#cb119-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-5"><a href="visualización.html#cb119-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="visualización.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Arcos curvados</span></span>
-<span id="cb120-2"><a href="visualización.html#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo, <span class="at">edge.curved=</span><span class="fl">0.3</span><span class="sc">*</span><span class="fu">which_mutual</span>(g))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-28-2.png" width="672" /></p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="visualización.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g)<span class="sc">$</span>width <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb128-2"><a href="visualización.html#cb128-2" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span><span class="fu">V</span>(g)[isVowel]</span>
+<span id="cb128-3"><a href="visualización.html#cb128-3" aria-hidden="true" tabindex="-1"></a>v1</span></code></pre></div>
+<ul>
+<li>3/10 vertices, named, from 0080741:
+[1] A E I</li>
+</ul>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="visualización.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g)[v1  <span class="sc">%--%</span>  v1]<span class="sc">$</span>width <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb129-2"><a href="visualización.html#cb129-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-3"><a href="visualización.html#cb129-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver http://igraph.org/r/doc/igraph-es-indexing.html</span></span>
+<span id="cb129-4"><a href="visualización.html#cb129-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-5"><a href="visualización.html#cb129-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="visualización.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Arcos curvados</span></span>
+<span id="cb130-2"><a href="visualización.html#cb130-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo, <span class="at">edge.curved=</span><span class="fl">0.3</span><span class="sc">*</span><span class="fu">which_mutual</span>(g))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-70-2.png" width="672" /></p>
 <blockquote>
 <p>Agrupaciones por índices:</p>
 </blockquote>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="visualización.html#cb121-1" aria-hidden="true" tabindex="-1"></a>groupList <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">vowelGroup =</span> <span class="fu">which</span>(isVowel),</span>
-<span id="cb121-2"><a href="visualización.html#cb121-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">constGroup1 =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>),</span>
-<span id="cb121-3"><a href="visualización.html#cb121-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">constGroup2 =</span> <span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>))</span>
-<span id="cb121-4"><a href="visualización.html#cb121-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb121-5"><a href="visualización.html#cb121-5" aria-hidden="true" tabindex="-1"></a>groupColours <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rgb</span>(<span class="dv">0</span>,<span class="fl">0.3</span>,<span class="dv">1</span>,<span class="fl">0.5</span>),</span>
-<span id="cb121-6"><a href="visualización.html#cb121-6" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">rgb</span>(<span class="fl">0.8</span>,<span class="fl">0.4</span>,<span class="fl">0.1</span>,<span class="fl">0.5</span>),</span>
-<span id="cb121-7"><a href="visualización.html#cb121-7" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">rgb</span>(<span class="fl">0.8</span>,<span class="fl">0.4</span>,<span class="fl">0.1</span>,<span class="fl">0.5</span>))</span>
-<span id="cb121-8"><a href="visualización.html#cb121-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>layout_with_fr, <span class="co"># Fruchterman?Reingold layout</span></span>
-<span id="cb121-9"><a href="visualización.html#cb121-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">mark.groups=</span>groupList, <span class="co"># Mark the groups</span></span>
-<span id="cb121-10"><a href="visualización.html#cb121-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">mark.col=</span> groupColours,</span>
-<span id="cb121-11"><a href="visualización.html#cb121-11" aria-hidden="true" tabindex="-1"></a>     <span class="co"># Eliminar el borde</span></span>
-<span id="cb121-12"><a href="visualización.html#cb121-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">mark.border =</span> <span class="cn">NA</span>, </span>
-<span id="cb121-13"><a href="visualización.html#cb121-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">edge.curved=</span><span class="fl">0.1</span><span class="sc">*</span><span class="fu">which_mutual</span>(g))</span>
-<span id="cb121-14"><a href="visualización.html#cb121-14" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fl">0.45</span>,<span class="fl">0.1</span>,<span class="st">&quot;Vocales&quot;</span>, <span class="at">cex=</span><span class="fl">1.5</span>)</span>
-<span id="cb121-15"><a href="visualización.html#cb121-15" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fl">0.5</span>,<span class="fl">0.9</span>,<span class="st">&quot;Grupo consonantes 1&quot;</span>, <span class="at">cex=</span><span class="fl">1.5</span>)</span>
-<span id="cb121-16"><a href="visualización.html#cb121-16" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="sc">-</span><span class="fl">0.8</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="st">&quot;Grupo consonantes 2&quot;</span>, <span class="at">cex=</span><span class="fl">1.5</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="visualización.html#cb131-1" aria-hidden="true" tabindex="-1"></a>groupList <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">vowelGroup =</span> <span class="fu">which</span>(isVowel),</span>
+<span id="cb131-2"><a href="visualización.html#cb131-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">constGroup1 =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>),</span>
+<span id="cb131-3"><a href="visualización.html#cb131-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">constGroup2 =</span> <span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>))</span>
+<span id="cb131-4"><a href="visualización.html#cb131-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-5"><a href="visualización.html#cb131-5" aria-hidden="true" tabindex="-1"></a>groupColours <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rgb</span>(<span class="dv">0</span>,<span class="fl">0.3</span>,<span class="dv">1</span>,<span class="fl">0.5</span>),</span>
+<span id="cb131-6"><a href="visualización.html#cb131-6" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">rgb</span>(<span class="fl">0.8</span>,<span class="fl">0.4</span>,<span class="fl">0.1</span>,<span class="fl">0.5</span>),</span>
+<span id="cb131-7"><a href="visualización.html#cb131-7" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">rgb</span>(<span class="fl">0.8</span>,<span class="fl">0.4</span>,<span class="fl">0.1</span>,<span class="fl">0.5</span>))</span>
+<span id="cb131-8"><a href="visualización.html#cb131-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>layout_with_fr, <span class="co"># Fruchterman?Reingold layout</span></span>
+<span id="cb131-9"><a href="visualización.html#cb131-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">mark.groups=</span>groupList, <span class="co"># Mark the groups</span></span>
+<span id="cb131-10"><a href="visualización.html#cb131-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">mark.col=</span> groupColours,</span>
+<span id="cb131-11"><a href="visualización.html#cb131-11" aria-hidden="true" tabindex="-1"></a>     <span class="co"># Eliminar el borde</span></span>
+<span id="cb131-12"><a href="visualización.html#cb131-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">mark.border =</span> <span class="cn">NA</span>, </span>
+<span id="cb131-13"><a href="visualización.html#cb131-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">edge.curved=</span><span class="fl">0.1</span><span class="sc">*</span><span class="fu">which_mutual</span>(g))</span>
+<span id="cb131-14"><a href="visualización.html#cb131-14" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fl">0.45</span>,<span class="fl">0.1</span>,<span class="st">&quot;Vocales&quot;</span>, <span class="at">cex=</span><span class="fl">1.5</span>)</span>
+<span id="cb131-15"><a href="visualización.html#cb131-15" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fl">0.5</span>,<span class="fl">0.9</span>,<span class="st">&quot;Grupo consonantes 1&quot;</span>, <span class="at">cex=</span><span class="fl">1.5</span>)</span>
+<span id="cb131-16"><a href="visualización.html#cb131-16" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="sc">-</span><span class="fl">0.8</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="st">&quot;Grupo consonantes 2&quot;</span>, <span class="at">cex=</span><span class="fl">1.5</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
 </div>
 </div>
             </section>

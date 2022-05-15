@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 6 Parómetros de apriori | Ciencia de Datos - UMA</title>
+  <meta name="description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 6 Parómetros de apriori | Ciencia de Datos - UMA" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 6 Parómetros de apriori | Ciencia de Datos - UMA" />
+  
+  <meta name="twitter:description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
+  
+
+<meta name="author" content="Domingo López, Ángel Mora" />
+
+
+<meta name="date" content="2022-05-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="reglas-de-asociación.html"/>
+<link rel="next" href="métodos-de-arules.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Ciencia de datos con R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html"><i class="fa fa-check"></i><b>2</b> Análisis Exploratorio de Datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#importación-de-datos"><i class="fa fa-check"></i><b>2.1</b> Importación de datos</a></li>
+<li class="chapter" data-level="2.2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#dplyr-para-manipulación-de-datos"><i class="fa fa-check"></i><b>2.2</b> <code>dplyr</code> para Manipulación de Datos</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#backends"><i class="fa fa-check"></i><b>2.2.1</b> Backends</a></li>
+<li class="chapter" data-level="2.2.2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#filtrado-de-filas-con-filter"><i class="fa fa-check"></i><b>2.2.2</b> Filtrado de filas con <code>filter()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#ordenar-filas-con-arrange"><i class="fa fa-check"></i><b>2.3</b> Ordenar filas con <code>arrange()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html"><i class="fa fa-check"></i><b>3</b> A tibble: 1 × 2</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html#selección-de-columnas-select"><i class="fa fa-check"></i><b>3.0.1</b> Selección de columnas <code>select()</code></a></li>
+<li class="chapter" data-level="3.1" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html#añadir-o-renombrar-variables-con-mutate"><i class="fa fa-check"></i><b>3.1</b> Añadir o renombrar variables con <code>mutate()</code></a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html#rename"><i class="fa fa-check"></i><b>3.1.1</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="3.1.2" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html#uso-del-operador"><i class="fa fa-check"></i><b>3.1.2</b> Uso del operador <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="3.1.3" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html#otros-verbos-auxiliares"><i class="fa fa-check"></i><b>3.1.3</b> Otros verbos auxiliares</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="a-tibble-1-2-1.html"><a href="a-tibble-1-2-1.html"><i class="fa fa-check"></i><b>4</b> A tibble: 1 × 2</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="a-tibble-1-2-1.html"><a href="a-tibble-1-2-1.html#operaciones-con-dos-tablas"><i class="fa fa-check"></i><b>4.0.1</b> Operaciones con dos tablas</a></li>
+<li class="chapter" data-level="4.1" data-path="a-tibble-1-2-1.html"><a href="a-tibble-1-2-1.html#proyecto-starwarks"><i class="fa fa-check"></i><b>4.1</b> Proyecto Starwarks</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html"><i class="fa fa-check"></i><b>5</b> Reglas de Asociación</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#introducción-1"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#detectando-y-prediciendo-tendencias"><i class="fa fa-check"></i><b>5.2</b> Detectando y prediciendo tendencias</a></li>
+<li class="chapter" data-level="5.3" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#reglas-de-asociación-de-transacciones"><i class="fa fa-check"></i><b>5.3</b> Reglas de Asociación de transacciones</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="parómetros-de-apriori.html"><a href="parómetros-de-apriori.html"><i class="fa fa-check"></i><b>6</b> Parómetros de <strong>apriori</strong></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="parómetros-de-apriori.html"><a href="parómetros-de-apriori.html#reglas-de-asociación---preprocesamiento"><i class="fa fa-check"></i><b>6.1</b> Reglas de Asociación - preprocesamiento</a></li>
+<li class="chapter" data-level="6.2" data-path="parómetros-de-apriori.html"><a href="parómetros-de-apriori.html#discretización-de-items"><i class="fa fa-check"></i><b>6.2</b> Discretización de items</a></li>
+<li class="chapter" data-level="6.3" data-path="parómetros-de-apriori.html"><a href="parómetros-de-apriori.html#tipo-de-dato-transactions"><i class="fa fa-check"></i><b>6.3</b> Tipo de dato <em>transactions</em></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="métodos-de-arules.html"><a href="métodos-de-arules.html"><i class="fa fa-check"></i><b>7</b> Métodos de arules</a></li>
+<li class="chapter" data-level="8" data-path="operaciones-con-reglas.html"><a href="operaciones-con-reglas.html"><i class="fa fa-check"></i><b>8</b> Operaciones con reglas</a></li>
+<li class="chapter" data-level="9" data-path="ejercicio-en-laboratorio.html"><a href="ejercicio-en-laboratorio.html"><i class="fa fa-check"></i><b>9</b> Ejercicio en Laboratorio</a></li>
+<li class="chapter" data-level="10" data-path="arulesviz.html"><a href="arulesviz.html"><i class="fa fa-check"></i><b>10</b> arulesViz</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="arulesviz.html"><a href="arulesviz.html#construyendo-un-sistema-recomendador"><i class="fa fa-check"></i><b>10.1</b> Construyendo un sistema recomendador</a></li>
+<li class="chapter" data-level="10.2" data-path="arulesviz.html"><a href="arulesviz.html#sistema-de-recomendación"><i class="fa fa-check"></i><b>10.2</b> Sistema de recomendación</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="social-network-analysis.html"><a href="social-network-analysis.html"><i class="fa fa-check"></i><b>11</b> Social Network Analysis</a>
+<ul>
+<li class="chapter" data-level="11.0.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#gephi"><i class="fa fa-check"></i><b>11.0.1</b> Gephi</a></li>
+<li class="chapter" data-level="11.0.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#cytoscape"><i class="fa fa-check"></i><b>11.0.2</b> Cytoscape</a></li>
+<li class="chapter" data-level="11.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#r-for-sna"><i class="fa fa-check"></i><b>11.1</b> R for SNA</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html"><i class="fa fa-check"></i><b>12</b> Elementos de una red</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#representación-de-redes"><i class="fa fa-check"></i><b>12.1</b> Representación de redes</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#grafos-como-listas-de-arcos"><i class="fa fa-check"></i><b>12.1.1</b> Grafos como listas de arcos</a></li>
+<li class="chapter" data-level="12.1.2" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#grafos-como-matrices"><i class="fa fa-check"></i><b>12.1.2</b> Grafos como matrices</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html"><i class="fa fa-check"></i><b>13</b> Introducción a <strong>igraph</strong></a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html#acceder-a-elementos-de-grado"><i class="fa fa-check"></i><b>13.1</b> Acceder a elementos de grado</a></li>
+<li class="chapter" data-level="13.2" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html#construirmodificar-un-grafo"><i class="fa fa-check"></i><b>13.2</b> Construir/Modificar un grafo</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="visualización.html"><a href="visualización.html"><i class="fa fa-check"></i><b>14</b> Visualización</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="visualización.html"><a href="visualización.html#layout"><i class="fa fa-check"></i><b>14.1</b> Layout</a></li>
+<li class="chapter" data-level="14.2" data-path="visualización.html"><a href="visualización.html#dibujar-grafos-ponderados"><i class="fa fa-check"></i><b>14.2</b> Dibujar grafos ponderados</a></li>
+<li class="chapter" data-level="14.3" data-path="visualización.html"><a href="visualización.html#cambiar-aspecto-y-propiedades-de-un-grafo"><i class="fa fa-check"></i><b>14.3</b> Cambiar aspecto y propiedades de un grafo</a></li>
+<li class="chapter" data-level="14.4" data-path="visualización.html"><a href="visualización.html#ejemplos---plantillas"><i class="fa fa-check"></i><b>14.4</b> Ejemplos - plantillas</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="de-twitter.html"><a href="de-twitter.html"><i class="fa fa-check"></i><b>15</b> De Twitter</a></li>
+<li class="chapter" data-level="16" data-path="exportar-grafos.html"><a href="exportar-grafos.html"><i class="fa fa-check"></i><b>16</b> Exportar grafos</a></li>
+<li class="chapter" data-level="17" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html"><i class="fa fa-check"></i><b>17</b> Analysis of the Networks to extract knowledge.</a></li>
+<li class="chapter" data-level="18" data-path="centrality.html"><a href="centrality.html"><i class="fa fa-check"></i><b>18</b> Centrality</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="centrality.html"><a href="centrality.html#degree"><i class="fa fa-check"></i><b>18.1</b> Degree</a></li>
+<li class="chapter" data-level="18.2" data-path="centrality.html"><a href="centrality.html#betweenness"><i class="fa fa-check"></i><b>18.2</b> Betweenness</a></li>
+<li class="chapter" data-level="18.3" data-path="centrality.html"><a href="centrality.html#edge_betweenness"><i class="fa fa-check"></i><b>18.3</b> Edge_betweenness</a></li>
+<li class="chapter" data-level="18.4" data-path="centrality.html"><a href="centrality.html#closeness"><i class="fa fa-check"></i><b>18.4</b> Closeness</a></li>
+<li class="chapter" data-level="18.5" data-path="centrality.html"><a href="centrality.html#eigenvector"><i class="fa fa-check"></i><b>18.5</b> Eigenvector</a></li>
+<li class="chapter" data-level="18.6" data-path="centrality.html"><a href="centrality.html#pagerank"><i class="fa fa-check"></i><b>18.6</b> Pagerank</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="paths.html"><a href="paths.html"><i class="fa fa-check"></i><b>19</b> Paths</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="paths.html"><a href="paths.html#diameter"><i class="fa fa-check"></i><b>19.1</b> Diameter</a></li>
+<li class="chapter" data-level="19.2" data-path="paths.html"><a href="paths.html#caminos-y-distancias"><i class="fa fa-check"></i><b>19.2</b> Caminos y distancias</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>20</b> Clustering</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="clustering.html"><a href="clustering.html#transitivity"><i class="fa fa-check"></i><b>20.1</b> Transitivity</a>
+<ul>
+<li class="chapter" data-level="20.1.1" data-path="clustering.html"><a href="clustering.html#global-clustering"><i class="fa fa-check"></i><b>20.1.1</b> Global clustering:</a></li>
+<li class="chapter" data-level="20.1.2" data-path="clustering.html"><a href="clustering.html#local-clustering"><i class="fa fa-check"></i><b>20.1.2</b> Local clustering</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="otras-medidas-y-definiciones.html"><a href="otras-medidas-y-definiciones.html"><i class="fa fa-check"></i><b>21</b> Otras medidas y definiciones</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ciencia de Datos - UMA</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="parómetros-de-apriori" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Capítulo 6</span> Parómetros de <strong>apriori</strong><a href="parómetros-de-apriori.html#parómetros-de-apriori" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<p>parameter: lista con las restricciones en el proceso de extracción</p>
+</blockquote>
+<ul>
+<li><em>supp</em> o <em>support</em></li>
+<li><em>conf</em> o <em>confidence</em></li>
+<li><em>minlen</em> - máximo número de items en itemset</li>
+<li><em>maxlen</em> - máximo número de items en itemset</li>
+<li><em>maxtime</em> - límite de tiempo</li>
+<li><em>target</em> - indicar qué tipo de asociaciones queremos extraer: “rules”, “frequent itemsets”, “maximally frequent itemsets”, “closed frequent itemsets”.</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="parómetros-de-apriori.html#cb11-1" aria-hidden="true" tabindex="-1"></a>rules <span class="ot">&lt;-</span> <span class="fu">apriori</span>(Adult,  <span class="at">parameter =</span> <span class="fu">list</span>(<span class="at">supp =</span> <span class="fl">0.5</span>, <span class="at">conf =</span> <span class="fl">0.9</span>,<span class="at">minlen=</span><span class="dv">2</span>)) </span></code></pre></div>
+<p>Apriori</p>
+<p>Parameter specification:
+confidence minval smax arem aval originalSupport maxtime support minlen
+0.9 0.1 1 none FALSE TRUE 5 0.5 2
+maxlen target ext
+10 rules TRUE</p>
+<p>Algorithmic control:
+filter tree heap memopt load sort verbose
+0.1 TRUE TRUE FALSE TRUE 2 TRUE</p>
+<p>Absolute minimum support count: 24421</p>
+<p>set item appearances …[0 item(s)] done [0.00s].
+set transactions …[115 item(s), 48842 transaction(s)] done [0.03s].
+sorting and recoding items … [9 item(s)] done [0.00s].
+creating transaction tree … done [0.02s].
+checking subsets of size 1 2 3 4 done [0.00s].
+writing … [50 rule(s)] done [0.00s].
+creating S4 object … done [0.00s].</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="parómetros-de-apriori.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect</span>(<span class="fu">tail</span>(rules))</span></code></pre></div>
+<pre><code>lhs                               rhs                              support confidence  coverage      lift count</code></pre>
+<p>[1] {workclass=Private,<br />
+race=White,<br />
+capital-loss=None} =&gt; {capital-gain=None} 0.5204742 0.9171628 0.5674829 0.9997559 25421
+[2] {workclass=Private,<br />
+capital-gain=None,<br />
+native-country=United-States} =&gt; {capital-loss=None} 0.5414807 0.9517075 0.5689570 0.9983526 26447
+[3] {workclass=Private,<br />
+capital-loss=None,<br />
+native-country=United-States} =&gt; {capital-gain=None} 0.5414807 0.9182030 0.5897179 1.0008898 26447
+[4] {race=White,<br />
+capital-gain=None,<br />
+native-country=United-States} =&gt; {capital-loss=None} 0.6803980 0.9457029 0.7194628 0.9920537 33232
+[5] {race=White,<br />
+capital-loss=None,<br />
+native-country=United-States} =&gt; {capital-gain=None} 0.6803980 0.9083504 0.7490480 0.9901500 33232
+[6] {race=White,<br />
+capital-gain=None,<br />
+capital-loss=None} =&gt; {native-country=United-States} 0.6803980 0.9189249 0.7404283 1.0239581 33232</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="parómetros-de-apriori.html#cb14-1" aria-hidden="true" tabindex="-1"></a>patterns <span class="ot">&lt;-</span> <span class="fu">apriori</span>(Adult,  <span class="at">parameter =</span> <span class="fu">list</span>(<span class="at">supp =</span> <span class="fl">0.5</span>, <span class="at">conf =</span> <span class="fl">0.9</span>,<span class="at">maxlen=</span><span class="dv">10</span>, <span class="at">target=</span><span class="st">&quot;frequent itemsets&quot;</span>)) </span></code></pre></div>
+<p>Apriori</p>
+<p>Parameter specification:
+confidence minval smax arem aval originalSupport maxtime support minlen
+NA 0.1 1 none FALSE TRUE 5 0.5 1
+maxlen target ext
+10 frequent itemsets TRUE</p>
+<p>Algorithmic control:
+filter tree heap memopt load sort verbose
+0.1 TRUE TRUE FALSE TRUE 2 TRUE</p>
+<p>Absolute minimum support count: 24421</p>
+<p>set item appearances …[0 item(s)] done [0.00s].
+set transactions …[115 item(s), 48842 transaction(s)] done [0.02s].
+sorting and recoding items … [9 item(s)] done [0.00s].
+creating transaction tree … done [0.01s].
+checking subsets of size 1 2 3 4 done [0.00s].
+sorting transactions … done [0.01s].
+writing … [49 set(s)] done [0.00s].
+creating S4 object … done [0.00s].</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="parómetros-de-apriori.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(patterns)</span></code></pre></div>
+<p>set of 49 itemsets</p>
+<p>most frequent items:
+capital-loss=None capital-gain=None
+23 21
+native-country=United-States race=White
+21 19
+workclass=Private (Other)
+14 20</p>
+<p>element (itemset/transaction) length distribution:sizes
+1 2 3 4
+9 17 17 6</p>
+<p>Min. 1st Qu. Median Mean 3rd Qu. Max.
+1.000 2.000 2.000 2.408 3.000 4.000</p>
+<p>summary of quality measures:
+support count<br />
+Min. :0.5051 Min. :24671<br />
+1st Qu.:0.5434 1st Qu.:26540<br />
+Median :0.5942 Median :29024<br />
+Mean :0.6449 Mean :31497<br />
+3rd Qu.:0.7404 3rd Qu.:36164<br />
+Max. :0.9533 Max. :46560</p>
+<p>includes transaction ID lists: FALSE</p>
+<p>mining info:
+data ntransactions support confidence
+Adult 48842 0.5 1
+call
+apriori(data = Adult, parameter = list(supp = 0.5, conf = 0.9, maxlen = 10, target = “frequent itemsets”))</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="parómetros-de-apriori.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect</span>(<span class="fu">tail</span>(patterns))</span></code></pre></div>
+<pre><code>items                            support count</code></pre>
+<p>[1] {race=White,<br />
+sex=Male,<br />
+capital-loss=None,<br />
+native-country=United-States} 0.5113632 24976
+[2] {sex=Male,<br />
+capital-gain=None,<br />
+capital-loss=None,<br />
+native-country=United-States} 0.5084149 24832
+[3] {workclass=Private,<br />
+race=White,<br />
+capital-loss=None,<br />
+native-country=United-States} 0.5181401 25307
+[4] {workclass=Private,<br />
+race=White,<br />
+capital-gain=None,<br />
+capital-loss=None} 0.5204742 25421
+[5] {workclass=Private,<br />
+capital-gain=None,<br />
+capital-loss=None,<br />
+native-country=United-States} 0.5414807 26447
+[6] {race=White,<br />
+capital-gain=None,<br />
+capital-loss=None,<br />
+native-country=United-States} 0.6803980 33232</p>
+<blockquote>
+<p>appearance: especificar restricciones en la extracción de las asociaciones.</p>
+</blockquote>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="parómetros-de-apriori.html#cb18-1" aria-hidden="true" tabindex="-1"></a>rules1 <span class="ot">&lt;-</span> <span class="fu">apriori</span>(Adult,  </span>
+<span id="cb18-2"><a href="parómetros-de-apriori.html#cb18-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parameter =</span> <span class="fu">list</span>(<span class="at">supp =</span> <span class="fl">0.5</span>, <span class="at">conf =</span> <span class="fl">0.9</span>), </span>
+<span id="cb18-3"><a href="parómetros-de-apriori.html#cb18-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">appearance =</span> <span class="fu">list</span>(<span class="at">items =</span> <span class="fu">c</span>(<span class="st">&quot;income=small&quot;</span>, <span class="st">&quot;sex=Male&quot;</span>))) </span></code></pre></div>
+<p>Apriori</p>
+<p>Parameter specification:
+confidence minval smax arem aval originalSupport maxtime support minlen
+0.9 0.1 1 none FALSE TRUE 5 0.5 1
+maxlen target ext
+10 rules TRUE</p>
+<p>Algorithmic control:
+filter tree heap memopt load sort verbose
+0.1 TRUE TRUE FALSE TRUE 2 TRUE</p>
+<p>Absolute minimum support count: 24421</p>
+<p>set item appearances …[2 item(s)] done [0.00s].
+set transactions …[2 item(s), 48842 transaction(s)] done [0.02s].
+sorting and recoding items … [2 item(s)] done [0.00s].
+creating transaction tree … done [0.01s].
+checking subsets of size 1 2 done [0.00s].
+writing … [0 rule(s)] done [0.00s].
+creating S4 object … done [0.00s].</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="parómetros-de-apriori.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect</span>(<span class="fu">head</span>(rules1)) </span>
+<span id="cb19-2"><a href="parómetros-de-apriori.html#cb19-2" aria-hidden="true" tabindex="-1"></a>                 </span>
+<span id="cb19-3"><a href="parómetros-de-apriori.html#cb19-3" aria-hidden="true" tabindex="-1"></a>rules2 <span class="ot">&lt;-</span> <span class="fu">apriori</span>(Adult,  </span>
+<span id="cb19-4"><a href="parómetros-de-apriori.html#cb19-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parameter =</span> <span class="fu">list</span>(<span class="at">supp =</span> <span class="fl">0.5</span>, <span class="at">conf =</span> <span class="fl">0.9</span>), </span>
+<span id="cb19-5"><a href="parómetros-de-apriori.html#cb19-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">appearance =</span> <span class="fu">list</span>(<span class="at">none =</span> <span class="fu">c</span>(<span class="st">&quot;income=small&quot;</span>, <span class="st">&quot;sex=Male&quot;</span>))) </span></code></pre></div>
+<p>Apriori</p>
+<p>Parameter specification:
+confidence minval smax arem aval originalSupport maxtime support minlen
+0.9 0.1 1 none FALSE TRUE 5 0.5 1
+maxlen target ext
+10 rules TRUE</p>
+<p>Algorithmic control:
+filter tree heap memopt load sort verbose
+0.1 TRUE TRUE FALSE TRUE 2 TRUE</p>
+<p>Absolute minimum support count: 24421</p>
+<p>set item appearances …[2 item(s)] done [0.00s].
+set transactions …[115 item(s), 48842 transaction(s)] done [0.02s].
+sorting and recoding items … [7 item(s)] done [0.00s].
+creating transaction tree … done [0.01s].
+checking subsets of size 1 2 3 4 done [0.00s].
+writing … [39 rule(s)] done [0.00s].
+creating S4 object … done [0.00s].</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="parómetros-de-apriori.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect</span>(<span class="fu">head</span>(rules2))                              </span></code></pre></div>
+<pre><code>lhs                           rhs                 support   confidence</code></pre>
+<p>[1] {} =&gt; {capital-gain=None} 0.9173867 0.9173867
+[2] {} =&gt; {capital-loss=None} 0.9532779 0.9532779
+[3] {hours-per-week=Full-time} =&gt; {capital-gain=None} 0.5435895 0.9290688
+[4] {hours-per-week=Full-time} =&gt; {capital-loss=None} 0.5606650 0.9582531
+[5] {workclass=Private} =&gt; {capital-gain=None} 0.6413742 0.9239073
+[6] {workclass=Private} =&gt; {capital-loss=None} 0.6639982 0.9564974
+coverage lift count
+[1] 1.0000000 1.000000 44807
+[2] 1.0000000 1.000000 46560
+[3] 0.5850907 1.012734 26550
+[4] 0.5850907 1.005219 27384
+[5] 0.6941976 1.007108 31326
+[6] 0.6941976 1.003377 32431</p>
+<div id="reglas-de-asociación---preprocesamiento" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Reglas de Asociación - preprocesamiento<a href="parómetros-de-apriori.html#reglas-de-asociación---preprocesamiento" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<blockquote>
+<p>Explorando el dataset <strong>AdultUCI</strong></p>
+</blockquote>
+</blockquote>
+<p>Contiene los datos del dataset que originalmente se llamó ‘Census Income’ Database en formato data.frame.</p>
+<p>El dataset <strong>Adult</strong> del apartado anterior tiene los datos preparados para el cómputo de las reglas.
+El tipo de datos de este dataset es <strong>transactions</strong> que es adecuado para el paquete arules.</p>
+<p>El dataset AdultUCI:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="parómetros-de-apriori.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arules)</span>
+<span id="cb22-2"><a href="parómetros-de-apriori.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;AdultUCI&quot;</span>)</span>
+<span id="cb22-3"><a href="parómetros-de-apriori.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">#View(AdultUCI)</span></span>
+<span id="cb22-4"><a href="parómetros-de-apriori.html#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(AdultUCI)</span></code></pre></div>
+<p>‘data.frame’: 48842 obs. of 15 variables:
+$ age : int 39 50 38 53 28 37 49 52 31 42 …
+$ workclass : Factor w/ 8 levels “Federal-gov”,..: 7 6 4 4 4 4 4 6 4 4 …
+$ fnlwgt : int 77516 83311 215646 234721 338409 284582 160187 209642 45781 159449 …
+$ education : Ord.factor w/ 16 levels “Preschool”&lt;“1st-4th”&lt;..: 14 14 9 7 14 15 5 9 15 14 …
+$ education-num : int 13 13 9 7 13 14 5 9 14 13 …
+$ marital-status: Factor w/ 7 levels “Divorced”,“Married-AF-spouse”,..: 5 3 1 3 3 3 4 3 5 3 …
+$ occupation : Factor w/ 14 levels “Adm-clerical”,..: 1 4 6 6 10 4 8 4 10 4 …
+$ relationship : Factor w/ 6 levels “Husband”,“Not-in-family”,..: 2 1 2 1 6 6 2 1 2 1 …
+$ race : Factor w/ 5 levels “Amer-Indian-Eskimo”,..: 5 5 5 3 3 5 3 5 5 5 …
+$ sex : Factor w/ 2 levels “Female”,“Male”: 2 2 2 2 1 1 1 2 1 2 …
+$ capital-gain : int 2174 0 0 0 0 0 0 0 14084 5178 …
+$ capital-loss : int 0 0 0 0 0 0 0 0 0 0 …
+$ hours-per-week: int 40 13 40 40 40 40 16 45 50 40 …
+$ native-country: Factor w/ 41 levels “Cambodia”,“Canada”,..: 39 39 39 39 5 39 23 39 39 39 …
+$ income : Ord.factor w/ 2 levels “small”&lt;“large”: 1 1 1 1 1 1 1 2 2 2 …</p>
+<p>En la mayoría de los datasets es necesario un primer paso de preprocesamiento.</p>
+<p>A continuación aplicaremos el preprocesamiento a AdultUCI hasta convertirlo en transacciones que arules maneja adecuadamente.</p>
+</div>
+<div id="discretización-de-items" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Discretización de items<a href="parómetros-de-apriori.html#discretización-de-items" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p>Borrar algunas columnas que no son interesantes: {}</p>
+</blockquote>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="parómetros-de-apriori.html#cb23-1" aria-hidden="true" tabindex="-1"></a>AdultUCI<span class="sc">$</span>fnlwgt <span class="ot">&lt;-</span><span class="cn">NULL</span>  </span>
+<span id="cb23-2"><a href="parómetros-de-apriori.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="do">## o  AdultUCI[[&quot;fnlwgt&quot;]] &lt;- NULL</span></span>
+<span id="cb23-3"><a href="parómetros-de-apriori.html#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="parómetros-de-apriori.html#cb23-4" aria-hidden="true" tabindex="-1"></a>AdultUCI<span class="sc">$</span><span class="st">`</span><span class="at">education-num</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="cn">NULL</span> </span></code></pre></div>
+<blockquote>
+<p>Convertir a discretos valores numéricos: <em>age</em>, <em>hours-per-week</em>, <em>capital-gain</em>, <em>capital-loss</em>}.</p>
+</blockquote>
+<p>Usaremos comandos {} para hacerlo. A continuación un ejemplo de cómo funcionan estos dos comandos:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="parómetros-de-apriori.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ejemplo de funcionamiento de cut y ordered</span></span>
+<span id="cb24-2"><a href="parómetros-de-apriori.html#cb24-2" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span>
+<span id="cb24-3"><a href="parómetros-de-apriori.html#cb24-3" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">cut</span>(v,<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">25</span>,<span class="dv">50</span>,<span class="dv">75</span>,<span class="dv">100</span>),<span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;bajo&quot;</span>,<span class="st">&quot;medio&quot;</span>,<span class="st">&quot;alto&quot;</span>,<span class="st">&quot;muyalto&quot;</span>))</span>
+<span id="cb24-4"><a href="parómetros-de-apriori.html#cb24-4" aria-hidden="true" tabindex="-1"></a>v3 <span class="ot">&lt;-</span> <span class="fu">ordered</span>(v2)</span></code></pre></div>
+<p>Aplicamos estas funciones a AdultUCI:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="parómetros-de-apriori.html#cb25-1" aria-hidden="true" tabindex="-1"></a>AdultUCI<span class="sc">$</span>age <span class="ot">&lt;-</span> <span class="fu">ordered</span>(<span class="fu">cut</span>(AdultUCI[[ <span class="st">&quot;age&quot;</span>]], <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">25</span>,<span class="dv">45</span>,<span class="dv">65</span>,<span class="dv">100</span>)),</span>
+<span id="cb25-2"><a href="parómetros-de-apriori.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Young&quot;</span>, <span class="st">&quot;Middle-aged&quot;</span>, <span class="st">&quot;Senior&quot;</span>, <span class="st">&quot;Old&quot;</span>))</span>
+<span id="cb25-3"><a href="parómetros-de-apriori.html#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="parómetros-de-apriori.html#cb25-4" aria-hidden="true" tabindex="-1"></a>AdultUCI[[ <span class="st">&quot;hours-per-week&quot;</span>]] <span class="ot">&lt;-</span> <span class="fu">ordered</span>(<span class="fu">cut</span>(AdultUCI[[ <span class="st">&quot;hours-per-week&quot;</span>]],</span>
+<span id="cb25-5"><a href="parómetros-de-apriori.html#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">25</span>,<span class="dv">40</span>,<span class="dv">60</span>,<span class="dv">168</span>)),</span>
+<span id="cb25-6"><a href="parómetros-de-apriori.html#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Part-time&quot;</span>, <span class="st">&quot;Full-time&quot;</span>, <span class="st">&quot;Over-time&quot;</span>, <span class="st">&quot;Workaholic&quot;</span>))</span>
+<span id="cb25-7"><a href="parómetros-de-apriori.html#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="parómetros-de-apriori.html#cb25-8" aria-hidden="true" tabindex="-1"></a>AdultUCI[[ <span class="st">&quot;capital-gain&quot;</span>]] <span class="ot">&lt;-</span> <span class="fu">ordered</span>(<span class="fu">cut</span>(AdultUCI[[ <span class="st">&quot;capital-gain&quot;</span>]],</span>
+<span id="cb25-9"><a href="parómetros-de-apriori.html#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>,<span class="dv">0</span>,<span class="fu">median</span>(AdultUCI[[ <span class="st">&quot;capital-gain&quot;</span>]][AdultUCI[[ <span class="st">&quot;capital-gain&quot;</span>]]<span class="sc">&gt;</span><span class="dv">0</span>]),</span>
+<span id="cb25-10"><a href="parómetros-de-apriori.html#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="cn">Inf</span>)), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;None&quot;</span>, <span class="st">&quot;Low&quot;</span>, <span class="st">&quot;High&quot;</span>))</span>
+<span id="cb25-11"><a href="parómetros-de-apriori.html#cb25-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-12"><a href="parómetros-de-apriori.html#cb25-12" aria-hidden="true" tabindex="-1"></a>AdultUCI[[ <span class="st">&quot;capital-loss&quot;</span>]] <span class="ot">&lt;-</span> <span class="fu">ordered</span>(<span class="fu">cut</span>(AdultUCI[[ <span class="st">&quot;capital-loss&quot;</span>]],</span>
+<span id="cb25-13"><a href="parómetros-de-apriori.html#cb25-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>,<span class="dv">0</span>, <span class="fu">median</span>(AdultUCI[[ <span class="st">&quot;capital-loss&quot;</span>]][AdultUCI[[ <span class="st">&quot;capital-loss&quot;</span>]]<span class="sc">&gt;</span><span class="dv">0</span>]),</span>
+<span id="cb25-14"><a href="parómetros-de-apriori.html#cb25-14" aria-hidden="true" tabindex="-1"></a>  <span class="cn">Inf</span>)), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;None&quot;</span>, <span class="st">&quot;Low&quot;</span>, <span class="st">&quot;High&quot;</span>))</span></code></pre></div>
+<p>Llamamos a <strong>apriori</strong>:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="parómetros-de-apriori.html#cb26-1" aria-hidden="true" tabindex="-1"></a>reg <span class="ot">&lt;-</span> <span class="fu">apriori</span>(AdultUCI)</span></code></pre></div>
+<p>Apriori</p>
+<p>Parameter specification:
+confidence minval smax arem aval originalSupport maxtime support minlen
+0.8 0.1 1 none FALSE TRUE 5 0.1 1
+maxlen target ext
+10 rules TRUE</p>
+<p>Algorithmic control:
+filter tree heap memopt load sort verbose
+0.1 TRUE TRUE FALSE TRUE 2 TRUE</p>
+<p>Absolute minimum support count: 4884</p>
+<p>set item appearances …[0 item(s)] done [0.00s].
+set transactions …[115 item(s), 48842 transaction(s)] done [0.02s].
+sorting and recoding items … [31 item(s)] done [0.00s].
+creating transaction tree … done [0.02s].
+checking subsets of size 1 2 3 4 5 6 7 8 9 done [0.09s].
+writing … [6137 rule(s)] done [0.00s].
+creating S4 object … done [0.00s].</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="parómetros-de-apriori.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect</span>(<span class="fu">head</span>(reg))</span></code></pre></div>
+<pre><code>lhs                         rhs                            support  </code></pre>
+<p>[1] {} =&gt; {race=White} 0.8550428
+[2] {} =&gt; {native-country=United-States} 0.8974243
+[3] {} =&gt; {capital-gain=None} 0.9173867
+[4] {} =&gt; {capital-loss=None} 0.9532779
+[5] {relationship=Unmarried} =&gt; {capital-loss=None} 0.1019819
+[6] {occupation=Sales} =&gt; {race=White} 0.1005282
+confidence coverage lift count
+[1] 0.8550428 1.0000000 1.000000 41762
+[2] 0.8974243 1.0000000 1.000000 43832
+[3] 0.9173867 1.0000000 1.000000 44807
+[4] 0.9532779 1.0000000 1.000000 46560
+[5] 0.9719024 0.1049302 1.019537 4981
+[6] 0.8920785 0.1126899 1.043314 4910</p>
+</div>
+<div id="tipo-de-dato-transactions" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Tipo de dato <em>transactions</em><a href="parómetros-de-apriori.html#tipo-de-dato-transactions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ver <a href="https://www.r-bloggers.com/data-frames-and-transactions/" class="uri">https://www.r-bloggers.com/data-frames-and-transactions/</a>}</p>
+<p>Comparamos AdultUCI que hemos procesado con Adult.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="parómetros-de-apriori.html#cb29-1" aria-hidden="true" tabindex="-1"></a>Adult1 <span class="ot">&lt;-</span> <span class="fu">as</span>(AdultUCI, <span class="st">&quot;transactions&quot;</span>)</span>
+<span id="cb29-2"><a href="parómetros-de-apriori.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(Adult1)</span></code></pre></div>
+<p>[1] “transactions”
+attr(,“package”)
+[1] “arules”</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="parómetros-de-apriori.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(Adult1)</span></code></pre></div>
+<p>[1] 48842</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="parómetros-de-apriori.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(Adult1)</span></code></pre></div>
+<p>[1] 48842 115</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="parómetros-de-apriori.html#cb32-1" aria-hidden="true" tabindex="-1"></a>Adult1</span></code></pre></div>
+<p>transactions in sparse format with
+48842 transactions (rows) and
+115 items (columns)</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="parómetros-de-apriori.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect</span>(Adult1[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span></code></pre></div>
+<pre><code>items                                transactionID</code></pre>
+<p>[1] {age=Middle-aged,<br />
+workclass=State-gov,<br />
+education=Bachelors,<br />
+marital-status=Never-married,<br />
+occupation=Adm-clerical,<br />
+relationship=Not-in-family,<br />
+race=White,<br />
+sex=Male,<br />
+capital-gain=Low,<br />
+capital-loss=None,<br />
+hours-per-week=Full-time,<br />
+native-country=United-States,<br />
+income=small} 1
+[2] {age=Senior,<br />
+workclass=Self-emp-not-inc,<br />
+education=Bachelors,<br />
+marital-status=Married-civ-spouse,<br />
+occupation=Exec-managerial,<br />
+relationship=Husband,<br />
+race=White,<br />
+sex=Male,<br />
+capital-gain=None,<br />
+capital-loss=None,<br />
+hours-per-week=Part-time,<br />
+native-country=United-States,<br />
+income=small} 2</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="parómetros-de-apriori.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;Adult&quot;</span>)</span>
+<span id="cb35-2"><a href="parómetros-de-apriori.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(Adult)</span></code></pre></div>
+<p>[1] “transactions”
+attr(,“package”)
+[1] “arules”</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="parómetros-de-apriori.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(Adult)</span></code></pre></div>
+<p>[1] 48842</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="parómetros-de-apriori.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(Adult)</span></code></pre></div>
+<p>[1] 48842 115</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="parómetros-de-apriori.html#cb38-1" aria-hidden="true" tabindex="-1"></a>Adult</span></code></pre></div>
+<p>transactions in sparse format with
+48842 transactions (rows) and
+115 items (columns)</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="parómetros-de-apriori.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect</span>(Adult[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span></code></pre></div>
+<pre><code>items                                transactionID</code></pre>
+<p>[1] {age=Middle-aged,<br />
+workclass=State-gov,<br />
+education=Bachelors,<br />
+marital-status=Never-married,<br />
+occupation=Adm-clerical,<br />
+relationship=Not-in-family,<br />
+race=White,<br />
+sex=Male,<br />
+capital-gain=Low,<br />
+capital-loss=None,<br />
+hours-per-week=Full-time,<br />
+native-country=United-States,<br />
+income=small} 1
+[2] {age=Senior,<br />
+workclass=Self-emp-not-inc,<br />
+education=Bachelors,<br />
+marital-status=Married-civ-spouse,<br />
+occupation=Exec-managerial,<br />
+relationship=Husband,<br />
+race=White,<br />
+sex=Male,<br />
+capital-gain=None,<br />
+capital-loss=None,<br />
+hours-per-week=Part-time,<br />
+native-country=United-States,<br />
+income=small} 2</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="reglas-de-asociación.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="métodos-de-arules.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-reglasAsociacion.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

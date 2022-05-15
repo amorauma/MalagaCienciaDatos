@@ -1,60 +1,54 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
+title: "Ciencia de Datos - UMA"
+author: "Domingo López, Ángel Mora"
 date: "`r Sys.Date()`"
+fontsize: 11pt
+geometry: margin=1.5in
+linkcolor: blue
+urlcolor: blue
+citecolor: blue
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
-description: |
-  This is a minimal example of using the bookdown package to write a book.
-  The HTML output format for this example is bookdown::gitbook,
-  set in the _output.yml file.
+biblio-style: apalike
 link-citations: yes
-github-repo: rstudio/bookdown-demo
+description: "Material usado como Introducción a Ciencia de Datos - ETSI Informática"
+output: 
+  html_document: 
+    toc: yes
+    toc_depth: 5
+    number_sections: yes
+    df_print: kable
 ---
 
-# About
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+# Introducción
 
-## Usage 
+```{r echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      results = "asis",
+                      message = FALSE,
+                      warning = FALSE)
 
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
+set.seed(1234)
+``` 
 
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
+En este libro queremos  recopilar  material que se ha estado utilizando en las asignaturas de: 
 
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
+- Laboratorio de Computación Científica - E.T.S.I. Informática - Universidad de Málaga
+- Introducción a Ciencia de Datos I - Máster Universitario en Ingeniería Informática - Universidad de Málaga
 
-## Render book
+Docentes: 
 
-You can render the HTML version of this example book without changing anything:
+>> Domingo López-Rodíguez - dominlopez@uma.es [https://dominlopez.netlify.com](https://dominlopez.netlify.com)
 
-1. Find the **Build** pane in the RStudio IDE, and
-
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
-
-Or build the book from the R console:
-
-```{r, eval=FALSE}
-bookdown::render_book()
-```
-
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
-
-## Preview book
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
-
-```{r eval=FALSE}
-bookdown::serve_book()
-```
+>> Ángel Mora Bonilla - amora@uma.es  - [https://amorabonilla.github.io](https://amorabonilla.github.io)
 
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
+
+Contenido: 
+
+- Resúmenes de material
+- Ejercicios
+- Proyectos 
+ 

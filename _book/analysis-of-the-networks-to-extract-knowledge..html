@@ -4,29 +4,23 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 Analysis of the Networks to extract knowledge. | A Minimal Book Example</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <title>Capítulo 5 Analysis of the Networks to extract knowledge. | Ciencia de Datos - UMA</title>
+  <meta name="description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Analysis of the Networks to extract knowledge. | A Minimal Book Example" />
+  <meta property="og:title" content="Capítulo 5 Analysis of the Networks to extract knowledge. | Ciencia de Datos - UMA" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  <meta property="og:description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
+  
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Analysis of the Networks to extract knowledge. | A Minimal Book Example" />
+  <meta name="twitter:title" content="Capítulo 5 Analysis of the Networks to extract knowledge. | Ciencia de Datos - UMA" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="twitter:description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
   
 
-<meta name="author" content="John Doe" />
+<meta name="author" content="Domingo López, Ángel Mora" />
 
 
 <meta name="date" content="2022-05-15" />
@@ -36,8 +30,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="exportar-grafos.html"/>
-<link rel="next" href="centrality.html"/>
+<link rel="prev" href="social-network-analysis.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -139,68 +133,89 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Ciencia de datos con R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html"><i class="fa fa-check"></i><b>2</b> Análisis Exploratorio de Datos</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>2</b> Hello bookdown</a></li>
-<li class="chapter" data-level="3" data-path="social-network-analysis.html"><a href="social-network-analysis.html"><i class="fa fa-check"></i><b>3</b> Social Network Analysis</a>
+<li class="chapter" data-level="2.1" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#importación-de-datos"><i class="fa fa-check"></i><b>2.1</b> Importación de datos</a></li>
+<li class="chapter" data-level="2.2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#dplyr-para-manipulación-de-datos"><i class="fa fa-check"></i><b>2.2</b> <code>dplyr</code> para Manipulación de Datos</a>
 <ul>
-<li class="chapter" data-level="3.0.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#gephi"><i class="fa fa-check"></i><b>3.0.1</b> Gephi</a></li>
-<li class="chapter" data-level="3.0.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#cytoscape"><i class="fa fa-check"></i><b>3.0.2</b> Cytoscape</a></li>
-<li class="chapter" data-level="3.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#r-for-sna"><i class="fa fa-check"></i><b>3.1</b> R for SNA</a></li>
+<li class="chapter" data-level="2.2.1" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#backends"><i class="fa fa-check"></i><b>2.2.1</b> Backends</a></li>
+<li class="chapter" data-level="2.2.2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#filtrado-de-filas-con-filter"><i class="fa fa-check"></i><b>2.2.2</b> Filtrado de filas con <code>filter()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html"><i class="fa fa-check"></i><b>4</b> Elementos de una red</a>
+<li class="chapter" data-level="2.3" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#ordenar-filas-con-arrange"><i class="fa fa-check"></i><b>2.3</b> Ordenar filas con <code>arrange()</code></a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#representación-de-redes"><i class="fa fa-check"></i><b>4.1</b> Representación de redes</a>
+<li class="chapter" data-level="2.3.1" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#selección-de-columnas-select"><i class="fa fa-check"></i><b>2.3.1</b> Selección de columnas <code>select()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#añadir-o-renombrar-variables-con-mutate"><i class="fa fa-check"></i><b>2.4</b> Añadir o renombrar variables con <code>mutate()</code></a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#grafos-como-listas-de-arcos"><i class="fa fa-check"></i><b>4.1.1</b> Grafos como listas de arcos</a></li>
-<li class="chapter" data-level="4.1.2" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#grafos-como-matrices"><i class="fa fa-check"></i><b>4.1.2</b> Grafos como matrices</a></li>
+<li class="chapter" data-level="2.4.1" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#rename"><i class="fa fa-check"></i><b>2.4.1</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="2.4.2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#uso-del-operador"><i class="fa fa-check"></i><b>2.4.2</b> Uso del operador <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="2.4.3" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#otros-verbos-auxiliares"><i class="fa fa-check"></i><b>2.4.3</b> Otros verbos auxiliares</a></li>
+<li class="chapter" data-level="2.4.4" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#operaciones-con-dos-tablas"><i class="fa fa-check"></i><b>2.4.4</b> Operaciones con dos tablas</a></li>
 </ul></li>
+<li class="chapter" data-level="2.5" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#proyecto-starwarks"><i class="fa fa-check"></i><b>2.5</b> Proyecto Starwarks</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html"><i class="fa fa-check"></i><b>5</b> Introducción a <strong>igraph</strong></a>
+<li class="chapter" data-level="3" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html"><i class="fa fa-check"></i><b>3</b> Reglas de Asociación</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html#acceder-a-elementos-de-grado"><i class="fa fa-check"></i><b>5.1</b> Acceder a elementos de grado</a></li>
-<li class="chapter" data-level="5.2" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html#construirmodificar-un-grafo"><i class="fa fa-check"></i><b>5.2</b> Construir/Modificar un grafo</a></li>
+<li class="chapter" data-level="3.1" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#introducción-1"><i class="fa fa-check"></i><b>3.1</b> Introducción</a></li>
+<li class="chapter" data-level="3.2" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#detectando-y-prediciendo-tendencias"><i class="fa fa-check"></i><b>3.2</b> Detectando y prediciendo tendencias</a></li>
+<li class="chapter" data-level="3.3" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#reglas-de-asociación-de-transacciones"><i class="fa fa-check"></i><b>3.3</b> Reglas de Asociación de transacciones</a></li>
+<li class="chapter" data-level="3.4" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#parámetros-de-apriori"><i class="fa fa-check"></i><b>3.4</b> Parámetros de <strong>apriori</strong></a></li>
+<li class="chapter" data-level="3.5" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#reglas-de-asociación---preprocesamiento"><i class="fa fa-check"></i><b>3.5</b> Reglas de Asociación - preprocesamiento</a></li>
+<li class="chapter" data-level="3.6" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#discretización-de-items"><i class="fa fa-check"></i><b>3.6</b> Discretización de items</a></li>
+<li class="chapter" data-level="3.7" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#tipo-de-dato-transactions"><i class="fa fa-check"></i><b>3.7</b> Tipo de dato <em>transactions</em></a></li>
+<li class="chapter" data-level="3.8" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#métodos-de-arules"><i class="fa fa-check"></i><b>3.8</b> Métodos de arules</a></li>
+<li class="chapter" data-level="3.9" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#operaciones-con-reglas"><i class="fa fa-check"></i><b>3.9</b> Operaciones con reglas</a></li>
+<li class="chapter" data-level="3.10" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#ejercicio-en-laboratorio"><i class="fa fa-check"></i><b>3.10</b> Ejercicio en Laboratorio</a></li>
+<li class="chapter" data-level="3.11" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#arulesviz"><i class="fa fa-check"></i><b>3.11</b> arulesViz</a></li>
+<li class="chapter" data-level="3.12" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#construyendo-un-sistema-recomendador"><i class="fa fa-check"></i><b>3.12</b> Construyendo un sistema recomendador</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="visualización.html"><a href="visualización.html"><i class="fa fa-check"></i><b>6</b> Visualización</a>
+<li class="chapter" data-level="4" data-path="social-network-analysis.html"><a href="social-network-analysis.html"><i class="fa fa-check"></i><b>4</b> Social Network Analysis</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="visualización.html"><a href="visualización.html#layout"><i class="fa fa-check"></i><b>6.1</b> Layout</a></li>
-<li class="chapter" data-level="6.2" data-path="visualización.html"><a href="visualización.html#dibujar-grafos-ponderados"><i class="fa fa-check"></i><b>6.2</b> Dibujar grafos ponderados</a></li>
-<li class="chapter" data-level="6.3" data-path="visualización.html"><a href="visualización.html#cambiar-aspecto-y-propiedades-de-un-grafo"><i class="fa fa-check"></i><b>6.3</b> Cambiar aspecto y propiedades de un grafo</a></li>
-<li class="chapter" data-level="6.4" data-path="visualización.html"><a href="visualización.html#ejemplos---plantillas"><i class="fa fa-check"></i><b>6.4</b> Ejemplos - plantillas</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="de-twitter.html"><a href="de-twitter.html"><i class="fa fa-check"></i><b>7</b> De Twitter</a></li>
-<li class="chapter" data-level="8" data-path="exportar-grafos.html"><a href="exportar-grafos.html"><i class="fa fa-check"></i><b>8</b> Exportar grafos</a></li>
-<li class="chapter" data-level="9" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html"><i class="fa fa-check"></i><b>9</b> Analysis of the Networks to extract knowledge.</a></li>
-<li class="chapter" data-level="10" data-path="centrality.html"><a href="centrality.html"><i class="fa fa-check"></i><b>10</b> Centrality</a>
+<li class="chapter" data-level="4.0.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#gephi"><i class="fa fa-check"></i><b>4.0.1</b> Gephi</a></li>
+<li class="chapter" data-level="4.0.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#cytoscape"><i class="fa fa-check"></i><b>4.0.2</b> Cytoscape</a></li>
+<li class="chapter" data-level="4.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#r-for-sna"><i class="fa fa-check"></i><b>4.1</b> R for SNA</a></li>
+<li class="chapter" data-level="4.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#elementos-de-una-red"><i class="fa fa-check"></i><b>4.2</b> Elementos de una red</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="centrality.html"><a href="centrality.html#degree"><i class="fa fa-check"></i><b>10.1</b> Degree</a></li>
-<li class="chapter" data-level="10.2" data-path="centrality.html"><a href="centrality.html#betweenness"><i class="fa fa-check"></i><b>10.2</b> Betweenness</a></li>
-<li class="chapter" data-level="10.3" data-path="centrality.html"><a href="centrality.html#edge_betweenness"><i class="fa fa-check"></i><b>10.3</b> Edge_betweenness</a></li>
-<li class="chapter" data-level="10.4" data-path="centrality.html"><a href="centrality.html#closeness"><i class="fa fa-check"></i><b>10.4</b> Closeness</a></li>
-<li class="chapter" data-level="10.5" data-path="centrality.html"><a href="centrality.html#eigenvector"><i class="fa fa-check"></i><b>10.5</b> Eigenvector</a></li>
-<li class="chapter" data-level="10.6" data-path="centrality.html"><a href="centrality.html#pagerank"><i class="fa fa-check"></i><b>10.6</b> Pagerank</a></li>
+<li class="chapter" data-level="4.2.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#representación-de-redes"><i class="fa fa-check"></i><b>4.2.1</b> Representación de redes</a></li>
+<li class="chapter" data-level="4.2.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#grafos-como-matrices"><i class="fa fa-check"></i><b>4.2.2</b> Grafos como matrices</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="paths.html"><a href="paths.html"><i class="fa fa-check"></i><b>11</b> Paths</a>
+<li class="chapter" data-level="4.3" data-path="social-network-analysis.html"><a href="social-network-analysis.html#introducción-a-igraph"><i class="fa fa-check"></i><b>4.3</b> Introducción a <strong>igraph</strong></a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="paths.html"><a href="paths.html#diameter"><i class="fa fa-check"></i><b>11.1</b> Diameter</a></li>
-<li class="chapter" data-level="11.2" data-path="paths.html"><a href="paths.html#caminos-y-distancias"><i class="fa fa-check"></i><b>11.2</b> Caminos y distancias</a></li>
+<li class="chapter" data-level="4.3.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#acceder-a-elementos-de-grado"><i class="fa fa-check"></i><b>4.3.1</b> Acceder a elementos de grado</a></li>
+<li class="chapter" data-level="4.3.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#construirmodificar-un-grafo"><i class="fa fa-check"></i><b>4.3.2</b> Construir/Modificar un grafo</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>12</b> Clustering</a>
+<li class="chapter" data-level="4.4" data-path="social-network-analysis.html"><a href="social-network-analysis.html#visualización"><i class="fa fa-check"></i><b>4.4</b> Visualización</a></li>
+<li class="chapter" data-level="4.5" data-path="social-network-analysis.html"><a href="social-network-analysis.html#layouts"><i class="fa fa-check"></i><b>4.5</b> Layouts</a></li>
+<li class="chapter" data-level="4.6" data-path="social-network-analysis.html"><a href="social-network-analysis.html#dibujar-grafos-ponderados"><i class="fa fa-check"></i><b>4.6</b> Dibujar grafos ponderados</a></li>
+<li class="chapter" data-level="4.7" data-path="social-network-analysis.html"><a href="social-network-analysis.html#cambiar-aspecto-y-propiedades-de-un-grafo"><i class="fa fa-check"></i><b>4.7</b> Cambiar aspecto y propiedades de un grafo</a></li>
+<li class="chapter" data-level="4.8" data-path="social-network-analysis.html"><a href="social-network-analysis.html#ejemplos---plantillas"><i class="fa fa-check"></i><b>4.8</b> Ejemplos - plantillas</a></li>
+<li class="chapter" data-level="4.9" data-path="social-network-analysis.html"><a href="social-network-analysis.html#exportar-grafos"><i class="fa fa-check"></i><b>4.9</b> Exportar grafos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html"><i class="fa fa-check"></i><b>5</b> Analysis of the Networks to extract knowledge.</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="clustering.html"><a href="clustering.html#transitivity"><i class="fa fa-check"></i><b>12.1</b> Transitivity</a>
+<li class="chapter" data-level="5.1" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html#centrality"><i class="fa fa-check"></i><b>5.1</b> Centrality</a></li>
+<li class="chapter" data-level="5.2" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html#degree"><i class="fa fa-check"></i><b>5.2</b> Degree</a></li>
+<li class="chapter" data-level="5.3" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html#betweenness"><i class="fa fa-check"></i><b>5.3</b> Betweenness</a></li>
+<li class="chapter" data-level="5.4" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html#edge_betweenness"><i class="fa fa-check"></i><b>5.4</b> Edge_betweenness</a></li>
+<li class="chapter" data-level="5.5" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html#closeness"><i class="fa fa-check"></i><b>5.5</b> Closeness</a></li>
+<li class="chapter" data-level="5.6" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html#eigenvector"><i class="fa fa-check"></i><b>5.6</b> Eigenvector</a></li>
+<li class="chapter" data-level="5.7" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html#pagerank"><i class="fa fa-check"></i><b>5.7</b> Pagerank</a></li>
+<li class="chapter" data-level="5.8" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html#paths"><i class="fa fa-check"></i><b>5.8</b> Paths</a></li>
+<li class="chapter" data-level="5.9" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html#diameter"><i class="fa fa-check"></i><b>5.9</b> Diameter</a></li>
+<li class="chapter" data-level="5.10" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html#caminos-y-distancias"><i class="fa fa-check"></i><b>5.10</b> Caminos y distancias</a></li>
+<li class="chapter" data-level="5.11" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html#clustering"><i class="fa fa-check"></i><b>5.11</b> Clustering</a></li>
+<li class="chapter" data-level="5.12" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html#transitivity"><i class="fa fa-check"></i><b>5.12</b> Transitivity</a>
 <ul>
-<li class="chapter" data-level="12.1.1" data-path="clustering.html"><a href="clustering.html#global-clustering"><i class="fa fa-check"></i><b>12.1.1</b> Global clustering:</a></li>
-<li class="chapter" data-level="12.1.2" data-path="clustering.html"><a href="clustering.html#local-clustering"><i class="fa fa-check"></i><b>12.1.2</b> Local clustering</a></li>
+<li class="chapter" data-level="5.12.1" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html#global-clustering"><i class="fa fa-check"></i><b>5.12.1</b> Global clustering:</a></li>
+<li class="chapter" data-level="5.12.2" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html#local-clustering"><i class="fa fa-check"></i><b>5.12.2</b> Local clustering</a></li>
 </ul></li>
+<li class="chapter" data-level="5.13" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html#otras-medidas-y-definiciones"><i class="fa fa-check"></i><b>5.13</b> Otras medidas y definiciones</a></li>
+<li class="chapter" data-level="5.14" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html#sna-de-twitter"><i class="fa fa-check"></i><b>5.14</b> SNA de Twitter</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="otras-medidas-y-definiciones.html"><a href="otras-medidas-y-definiciones.html"><i class="fa fa-check"></i><b>13</b> Otras medidas y definiciones</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -214,7 +229,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ciencia de Datos - UMA</a>
           </h1>
         </div>
 
@@ -222,8 +237,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="analysis-of-the-networks-to-extract-knowledge." class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">Chapter 9</span> Analysis of the Networks to extract knowledge.<a href="analysis-of-the-networks-to-extract-knowledge..html#analysis-of-the-networks-to-extract-knowledge." class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="analysis-of-the-networks-to-extract-knowledge." class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Capítulo 5</span> Analysis of the Networks to extract knowledge.<a href="analysis-of-the-networks-to-extract-knowledge..html#analysis-of-the-networks-to-extract-knowledge." class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <blockquote>
 <blockquote>
 <p>Goal of a SNA proyect</p>
@@ -248,49 +263,285 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><a href="http://olizardo.bol.ucla.edu/classes/soc-111/lessons-winter-2022/5-lesson-egonet-metrics.html">http://olizardo.bol.ucla.edu/classes/soc-111/lessons-winter-2022/5-lesson-egonet-metrics.html</a></p></li>
 </ul>
 <p>Vamos a usar este grafo como ejemplo de las medidas de bondad del grafo.</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
-<span id="cb123-2"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb123-2" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">graph</span>( <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">1</span>,<span class="dv">3</span>, <span class="dv">2</span>,<span class="dv">3</span>, </span>
-<span id="cb123-3"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb123-3" aria-hidden="true" tabindex="-1"></a>               <span class="dv">3</span>,<span class="dv">4</span>, <span class="dv">3</span>,<span class="dv">5</span>, <span class="dv">1</span>,<span class="dv">5</span>,</span>
-<span id="cb123-4"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb123-4" aria-hidden="true" tabindex="-1"></a>               <span class="dv">4</span>,<span class="dv">2</span>, <span class="dv">3</span>,<span class="dv">6</span>, <span class="dv">4</span>,<span class="dv">8</span>,</span>
-<span id="cb123-5"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb123-5" aria-hidden="true" tabindex="-1"></a>               <span class="dv">8</span>,<span class="dv">1</span>, <span class="dv">9</span>,<span class="dv">1</span>, <span class="dv">10</span>,<span class="dv">2</span>, </span>
-<span id="cb123-6"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb123-6" aria-hidden="true" tabindex="-1"></a>               <span class="dv">7</span>,<span class="dv">6</span>, <span class="dv">5</span>,<span class="dv">10</span>))</span>
-<span id="cb123-7"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb123-7" aria-hidden="true" tabindex="-1"></a>g1</span></code></pre></div>
-<pre><code>## IGRAPH 6050a01 D--- 10 14 -- 
-## + edges from 6050a01:
-##  [1]  1-&gt; 2  1-&gt; 3  2-&gt; 3  3-&gt; 4  3-&gt; 5  1-&gt; 5  4-&gt; 2  3-&gt; 6  4-&gt; 8  8-&gt; 1
-## [11]  9-&gt; 1 10-&gt; 2  7-&gt; 6  5-&gt;10</code></pre>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(g1)</span></code></pre></div>
-<pre><code>## IGRAPH 6050a01 D--- 10 14 --</code></pre>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g1)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p>IGRAPH 02c1640 D— 10 14 –
++ edges from 02c1640:
+[1] 1-&gt; 2 1-&gt; 3 2-&gt; 3 3-&gt; 4 3-&gt; 5 1-&gt; 5 4-&gt; 2 3-&gt; 6 4-&gt; 8 8-&gt; 1
+[11] 9-&gt; 1 10-&gt; 2 7-&gt; 6 5-&gt;10
+IGRAPH 02c1640 D— 10 14 –
+<img src="_main_files/figure-html/unnamed-chunk-73-1.png" width="672" /></p>
 <p><strong>Vértices, arcos</strong>.</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(g1)</span></code></pre></div>
-<pre><code>## [1] &quot;igraph&quot;</code></pre>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g1)</span></code></pre></div>
-<pre><code>## + 10/10 vertices, from 6050a01:
-##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g1)[<span class="dv">1</span>]</span></code></pre></div>
-<pre><code>## + 1/10 vertex, from 6050a01:
-## [1] 1</code></pre>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g1)</span></code></pre></div>
-<pre><code>## + 14/14 edges from 6050a01:
-##  [1]  1-&gt; 2  1-&gt; 3  2-&gt; 3  3-&gt; 4  3-&gt; 5  1-&gt; 5  4-&gt; 2  3-&gt; 6  4-&gt; 8  8-&gt; 1
-## [11]  9-&gt; 1 10-&gt; 2  7-&gt; 6  5-&gt;10</code></pre>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g1)[<span class="dv">1</span>]</span></code></pre></div>
-<pre><code>## + 1/14 edge from 6050a01:
-## [1] 1-&gt;2</code></pre>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">V</span>(g1))</span></code></pre></div>
-<pre><code>## [1] &quot;igraph.vs&quot;</code></pre>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="analysis-of-the-networks-to-extract-knowledge..html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">E</span>(g1))</span></code></pre></div>
-<pre><code>## [1] &quot;igraph.es&quot;</code></pre>
+<p>[1] “igraph”
++ 10/10 vertices, from 02c1640:
+[1] 1 2 3 4 5 6 7 8 9 10
++ 1/10 vertex, from 02c1640:
+[1] 1
++ 14/14 edges from 02c1640:
+[1] 1-&gt; 2 1-&gt; 3 2-&gt; 3 3-&gt; 4 3-&gt; 5 1-&gt; 5 4-&gt; 2 3-&gt; 6 4-&gt; 8 8-&gt; 1
+[11] 9-&gt; 1 10-&gt; 2 7-&gt; 6 5-&gt;10
++ 1/14 edge from 02c1640:
+[1] 1-&gt;2
+[1] “igraph.vs”
+[1] “igraph.es”</p>
+<div id="centrality" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Centrality<a href="analysis-of-the-networks-to-extract-knowledge..html#centrality" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Importancia de los nodos en un grafo.</p>
+<ul>
+<li>Número de arcos de entrada-salida de los nodos.</li>
+<li>Redes con alta centralidad tienen pocos nodos con muchas conexiones.</li>
+<li>Redes con baja centralidad tienen muchos nodos con similar o menos conexiones.</li>
+<li>Ver <a href="https://en.wikipedia.org/wiki/Centrality#PageRank_centrality" class="uri">https://en.wikipedia.org/wiki/Centrality#PageRank_centrality</a></li>
+</ul>
+</div>
+<div id="degree" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Degree<a href="analysis-of-the-networks-to-extract-knowledge..html#degree" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Número de arcos conectados a un vértice. Señala la importancia de un vértice o el nivel de actividad del vértice en la red.</p>
+<ul>
+<li><p>Cómo de central es un nodo en la red</p></li>
+<li><p>Cuántos arcos de entrada-salida tiene o con cuántos nodos se conecta directamente via un arco.</p></li>
+</ul>
+<blockquote>
+<blockquote>
+<p><code>centr_degree</code>, <code>igraph::degree</code></p>
+</blockquote>
+</blockquote>
+<p>IGRAPH 02c1640 D— 10 14 –
++ edges from 02c1640:
+[1] 1-&gt; 2 1-&gt; 3 2-&gt; 3 3-&gt; 4 3-&gt; 5 1-&gt; 5 4-&gt; 2 3-&gt; 6 4-&gt; 8 8-&gt; 1
+[11] 9-&gt; 1 10-&gt; 2 7-&gt; 6 5-&gt;10
+<img src="_main_files/figure-html/unnamed-chunk-75-1.png" width="672" /> [1] 5 4 5 3 3 2 1 2 1 2
+[1] 2 3 2 1 2 2 0 1 0 1
+[1] 3 1 3 2 1 0 1 1 1 1
+$res
+[1] 5 4 5 3 3 2 1 2 1 2</p>
+<p>$centralization
+[1] 0.1358025</p>
+<p>$theoretical_max
+[1] 162</p>
+</div>
+<div id="betweenness" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Betweenness<a href="analysis-of-the-networks-to-extract-knowledge..html#betweenness" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Mide el grado en el que la información fluye a través de un vértice particular y su importancia relativa como un intermediario en la red.</p>
+<p>Describe nodos que son conexiones clave o puentes entre grupos de nodos.</p>
+<ul>
+<li>El número de caminos más cortos que pasan por un nodo dado (medida relativa) - la suma de las longitudes de los caminos más cortos entre otros nodos pasando por el nodo, dividida por las longitudes de camino más cortas (no necesariamente a través del nodo) entre los otros nodos.</li>
+</ul>
+<blockquote>
+<blockquote>
+<p><code>igraph::betweenness</code></p>
+</blockquote>
+</blockquote>
+<p>[1] 14 14 25 11 6 0 0 6 0 6</p>
+<ul>
+<li>Por el vértice 6 no pasa ningún <em>camino más corto</em> entre dos vértices.</li>
+<li>Por el vértice 3 pasan 25 <em>caminos más cortos</em> entre dos vértices.</li>
+<li>…</li>
+</ul>
+</div>
+<div id="edge_betweenness" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Edge_betweenness<a href="analysis-of-the-networks-to-extract-knowledge..html#edge_betweenness" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Similar al anterior pero teniendo en cuenta cada arco.</p>
+<blockquote>
+<blockquote>
+<p><code>igraph::edge_betweenness</code></p>
+</blockquote>
+</blockquote>
+<p><img src="_main_files/figure-html/unnamed-chunk-77-1.png" width="672" /></p>
+</div>
+<div id="closeness" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Closeness<a href="analysis-of-the-networks-to-extract-knowledge..html#closeness" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Distancia a otros nodos. Un nodo con valor alto de este estimador es más central y puede difundir la información a muchos otros nodos.</p>
+<ul>
+<li><p>Se obtiene como 1 divido por la suma de las distancias geodésicas desde un vértice al resto. Alcanzará su valor máximo cuando un vértice esté conectado a todos los demás. Longitud media de los caminos más cortos (geodésicos).</p></li>
+<li><p>Mide cuantos pasos se requieren desde un vértice para alcanzar el resto de vértices de la red.</p></li>
+<li><p>Caminos cortos entre vértices señalan que estos están cercanos unos a otros.</p></li>
+</ul>
+<blockquote>
+<blockquote>
+<p><code>centr_clo</code>, <code>igraph::closeness</code></p>
+</blockquote>
+</blockquote>
+<p>[1] 0.08333333 0.05882353 0.08333333 0.06250000 0.04000000 NaN
+[7] 1.00000000 0.06250000 0.05000000 0.04761905</p>
+</div>
+<div id="eigenvector" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Eigenvector<a href="analysis-of-the-networks-to-extract-knowledge..html#eigenvector" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>No todas las conexiones tienen la misma importancia - medida de la importancia de un nodo.</p>
+<ul>
+<li><p>La medida <em>Eigenvector Centrality</em> se calcula como el autovalor de mayor módulo de la matriz de adyacencia que contiene los pesos.</p></li>
+<li><p><em>a high score to vertices that either have a lot of connections, or are connected to someone with a lot of connections</em></p></li>
+</ul>
+<blockquote>
+<blockquote>
+<p>Eigenvector Centrality: <code>eigen_centrality</code></p>
+</blockquote>
+</blockquote>
+<p>$vector
+[1] 0.94446858 0.87756472 1.00000000 0.67054129 0.68544140 0.31214483
+[7] 0.08943566 0.46273222 0.27060890 0.44783212</p>
+<p>$value
+[1] 3.490161</p>
+<p>$options
+<span class="math inline">\(options\)</span>bmat
+[1] “I”</p>
+<p><span class="math inline">\(options\)</span>n
+[1] 10</p>
+<p><span class="math inline">\(options\)</span>which
+[1] “LA”</p>
+<p><span class="math inline">\(options\)</span>nev
+[1] 1</p>
+<p><span class="math inline">\(options\)</span>tol
+[1] 0</p>
+<p><span class="math inline">\(options\)</span>ncv
+[1] 0</p>
+<p><span class="math inline">\(options\)</span>ldv
+[1] 0</p>
+<p><span class="math inline">\(options\)</span>ishift
+[1] 1</p>
+<p><span class="math inline">\(options\)</span>maxiter
+[1] 1000</p>
+<p><span class="math inline">\(options\)</span>nb
+[1] 1</p>
+<p><span class="math inline">\(options\)</span>mode
+[1] 1</p>
+<p><span class="math inline">\(options\)</span>start
+[1] 1</p>
+<p><span class="math inline">\(options\)</span>sigma
+[1] 0</p>
+<p><span class="math inline">\(options\)</span>sigmai
+[1] 0</p>
+<p><span class="math inline">\(options\)</span>info
+[1] 0</p>
+<p><span class="math inline">\(options\)</span>iter
+[1] 6</p>
+<p><span class="math inline">\(options\)</span>nconv
+[1] 1</p>
+<p><span class="math inline">\(options\)</span>numop
+[1] 20</p>
+<p><span class="math inline">\(options\)</span>numopb
+[1] 0</p>
+<p><span class="math inline">\(options\)</span>numreo
+[1] 15</p>
+</div>
+<div id="pagerank" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Pagerank<a href="analysis-of-the-networks-to-extract-knowledge..html#pagerank" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Algoritmo de Google para realizar un ranking con la importancia de los resultados de la búsqueda.</p>
+<p>Nodos son más importantes si tienen muchos enlaces de entrada.</p>
+<blockquote>
+<blockquote>
+<p><code>page.rank</code></p>
+</blockquote>
+</blockquote>
+<p>$vector
+[1] 0.09371203 0.18396681 0.20662720 0.08224805 0.10879979 0.10239617
+[7] 0.02370367 0.05865910 0.02370367 0.11618350</p>
+<p>$value
+[1] 1</p>
+<p>$options
+NULL</p>
+</div>
+<div id="paths" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> Paths<a href="analysis-of-the-networks-to-extract-knowledge..html#paths" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Caminos de un vértice a otro o de grupos de vértices a otros.</p>
+</div>
+<div id="diameter" class="section level2 hasAnchor" number="5.9">
+<h2><span class="header-section-number">5.9</span> Diameter<a href="analysis-of-the-networks-to-extract-knowledge..html#diameter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El máximo camino más corto entre cualquier par de nodos. En grafos muy grandes indica la posibilidad de que la información se difunda más o menos fácilmente. El algoritmo tiene costo <span class="math inline">\(O(n^3)\)</span>. En Twitter hay cientos de millones de usuarios,…</p>
+<blockquote>
+<blockquote>
+<p><code>get_diameter</code></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><code>diameter</code>- el camino más largo entre dos nodos.</p>
+</blockquote>
+</blockquote>
+<p><img src="_main_files/figure-html/unnamed-chunk-81-1.png" width="672" />[1] 6</p>
+</div>
+<div id="caminos-y-distancias" class="section level2 hasAnchor" number="5.10">
+<h2><span class="header-section-number">5.10</span> Caminos y distancias<a href="analysis-of-the-networks-to-extract-knowledge..html#caminos-y-distancias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Distancia geodésica</strong>: El menor número de arcos a atravesar para conectar dos nodos.</p>
+<p>[[1]]
++ 3/10 vertices, from 02c1640:
+[1] 1 5 10</p>
+<p>[[1]]
++ 0/10 vertices, from 02c1640:</p>
+<pre><code>  [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]</code></pre>
+<p>[1,] 0 1 1 2 1 2 3 1 1 2
+[2,] 1 0 1 1 2 2 3 2 2 1
+[3,] 1 1 0 1 1 1 2 2 2 2
+[4,] 2 1 1 0 2 2 3 1 3 2
+[5,] 1 2 1 2 0 2 3 2 2 1
+[6,] 2 2 1 2 2 0 1 3 3 3
+[7,] 3 3 2 3 3 1 0 4 4 4
+[8,] 1 2 2 1 2 3 4 0 2 3
+[9,] 1 2 2 3 2 3 4 2 0 3
+[10,] 2 1 2 2 1 3 4 3 3 0</p>
+<p>Relacionado con distancias:</p>
+<blockquote>
+<blockquote>
+<p><code>distance_table, mean_distance</code></p>
+</blockquote>
+</blockquote>
+</div>
+<div id="clustering" class="section level2 hasAnchor" number="5.11">
+<h2><span class="header-section-number">5.11</span> Clustering<a href="analysis-of-the-networks-to-extract-knowledge..html#clustering" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>Whether your friends are likely to be friends</em>.</p>
+<p><strong>Grupos</strong>: Subconjunto de vértices que comparten características en común.</p>
+<ul>
+<li>Una primera forma es buscar los triángulos en el grafo. *La medida de clustering (transitividad) es la frecuencia relativa de triángulos cerrados.</li>
+</ul>
+<p><span class="math display">\[C=\frac{3*\mbox{ número de triángulos }}{\mbox{número de triples conectados}}\]</span></p>
+</div>
+<div id="transitivity" class="section level2 hasAnchor" number="5.12">
+<h2><span class="header-section-number">5.12</span> Transitivity<a href="analysis-of-the-networks-to-extract-knowledge..html#transitivity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>friends of friends to be friends and enemies of enemies to be enemies</em></p>
+<p>Probabilidad de que vértices adyacentes de un vértice estén conectados - se denomina también coeficiente de agrupación o <em>clustering</em>.</p>
+<blockquote>
+<blockquote>
+<p><code>transitivity</code>, <code>shortest_paths</code></p>
+</blockquote>
+</blockquote>
+<div id="global-clustering" class="section level3 hasAnchor" number="5.12.1">
+<h3><span class="header-section-number">5.12.1</span> Global clustering:<a href="analysis-of-the-networks-to-extract-knowledge..html#global-clustering" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>[1] 0.2571429</p>
+</div>
+<div id="local-clustering" class="section level3 hasAnchor" number="5.12.2">
+<h3><span class="header-section-number">5.12.2</span> Local clustering<a href="analysis-of-the-networks-to-extract-knowledge..html#local-clustering" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Fracción de triples conectados a través de cada vértice que son cerrados.</p>
+<p>[1] 0.2000000 0.3333333 0.3000000 0.3333333 0.3333333 0.0000000 NaN
+[8] 0.0000000 NaN 0.0000000</p>
+</div>
+</div>
+<div id="otras-medidas-y-definiciones" class="section level2 hasAnchor" number="5.13">
+<h2><span class="header-section-number">5.13</span> Otras medidas y definiciones<a href="analysis-of-the-networks-to-extract-knowledge..html#otras-medidas-y-definiciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Densidad: Número de conexiones respecto al total de conexiones posibles. Un grafo completo tiene una densidad igual a 1 - <code>edge_density</code>.</p></li>
+<li><p>Popularidad: nodos que son centrales tienden a ser más populares.</p></li>
+<li><p>Cliques: todos con todos - <code>clique_num(g, min=k)</code> encuenta cliques con un mínimo de k vértices.</p></li>
+<li><p>Componentes: Una componente es el conjunto de vértices de la que tienen conexiones entre ellos. Una red puede tener varias componentes - <code>components</code></p></li>
+<li><p>Nodos a distancia k - <code>random_walk</code>.</p></li>
+<li><p>Hub, Authorities - <code>hub_score, authority.score</code> un nodo se denomina hub tiene muchos enlaces de salida y se denomina authorities si tiene muchos de entrada.</p></li>
+<li><p>detección de comunidades: <code>cluster_edge_betweenness</code></p></li>
+</ul>
+</div>
+<div id="sna-de-twitter" class="section level2 hasAnchor" number="5.14">
+<h2><span class="header-section-number">5.14</span> SNA de Twitter<a href="analysis-of-the-networks-to-extract-knowledge..html#sna-de-twitter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>El primer paso será extraer los términos usando las técnicas de text mining y crear una matriz de términos (DTM - Document Term Matrix:).</li>
+<li>Los documentos serían los tweets y los términos serían las palabras o grupos de palabras destacadas en los datos extraidos.</li>
+<li><strong>Objetivo: Construir una red de términos (personas) basada en sus co-ocurrencias en los mismos tweets (pertenencia a los mismos grupos)</strong>.</li>
+</ul>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="exportar-grafos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="centrality.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="social-network-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

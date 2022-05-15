@@ -4,29 +4,23 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 13 Otras medidas y definiciones | A Minimal Book Example</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <title>Capítulo 16 Otras medidas y definiciones | Ciencia de Datos - UMA</title>
+  <meta name="description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 13 Otras medidas y definiciones | A Minimal Book Example" />
+  <meta property="og:title" content="Capítulo 16 Otras medidas y definiciones | Ciencia de Datos - UMA" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  <meta property="og:description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
+  
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 13 Otras medidas y definiciones | A Minimal Book Example" />
+  <meta name="twitter:title" content="Capítulo 16 Otras medidas y definiciones | Ciencia de Datos - UMA" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="twitter:description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
   
 
-<meta name="author" content="John Doe" />
+<meta name="author" content="Domingo López, Ángel Mora" />
 
 
 <meta name="date" content="2022-05-15" />
@@ -139,68 +133,102 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Ciencia de datos con R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html"><i class="fa fa-check"></i><b>2</b> Análisis Exploratorio de Datos</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a></li>
+<li class="chapter" data-level="2.1" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#importación-de-datos"><i class="fa fa-check"></i><b>2.1</b> Importación de datos</a></li>
+<li class="chapter" data-level="2.2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#dplyr-para-manipulación-de-datos"><i class="fa fa-check"></i><b>2.2</b> <code>dplyr</code> para Manipulación de Datos</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#backends"><i class="fa fa-check"></i><b>2.2.1</b> Backends</a></li>
+<li class="chapter" data-level="2.2.2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#filtrado-de-filas-con-filter"><i class="fa fa-check"></i><b>2.2.2</b> Filtrado de filas con <code>filter()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>2</b> Hello bookdown</a></li>
-<li class="chapter" data-level="3" data-path="social-network-analysis.html"><a href="social-network-analysis.html"><i class="fa fa-check"></i><b>3</b> Social Network Analysis</a>
-<ul>
-<li class="chapter" data-level="3.0.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#gephi"><i class="fa fa-check"></i><b>3.0.1</b> Gephi</a></li>
-<li class="chapter" data-level="3.0.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#cytoscape"><i class="fa fa-check"></i><b>3.0.2</b> Cytoscape</a></li>
-<li class="chapter" data-level="3.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#r-for-sna"><i class="fa fa-check"></i><b>3.1</b> R for SNA</a></li>
+<li class="chapter" data-level="2.3" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html#ordenar-filas-con-arrange"><i class="fa fa-check"></i><b>2.3</b> Ordenar filas con <code>arrange()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html"><i class="fa fa-check"></i><b>4</b> Elementos de una red</a>
+<li class="chapter" data-level="3" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html"><i class="fa fa-check"></i><b>3</b> A tibble: 1 × 2</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#representación-de-redes"><i class="fa fa-check"></i><b>4.1</b> Representación de redes</a>
+<li class="chapter" data-level="3.0.1" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html#selección-de-columnas-select"><i class="fa fa-check"></i><b>3.0.1</b> Selección de columnas <code>select()</code></a></li>
+<li class="chapter" data-level="3.1" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html#añadir-o-renombrar-variables-con-mutate"><i class="fa fa-check"></i><b>3.1</b> Añadir o renombrar variables con <code>mutate()</code></a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#grafos-como-listas-de-arcos"><i class="fa fa-check"></i><b>4.1.1</b> Grafos como listas de arcos</a></li>
-<li class="chapter" data-level="4.1.2" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#grafos-como-matrices"><i class="fa fa-check"></i><b>4.1.2</b> Grafos como matrices</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html"><i class="fa fa-check"></i><b>5</b> Introducción a <strong>igraph</strong></a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html#acceder-a-elementos-de-grado"><i class="fa fa-check"></i><b>5.1</b> Acceder a elementos de grado</a></li>
-<li class="chapter" data-level="5.2" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html#construirmodificar-un-grafo"><i class="fa fa-check"></i><b>5.2</b> Construir/Modificar un grafo</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="visualización.html"><a href="visualización.html"><i class="fa fa-check"></i><b>6</b> Visualización</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="visualización.html"><a href="visualización.html#layout"><i class="fa fa-check"></i><b>6.1</b> Layout</a></li>
-<li class="chapter" data-level="6.2" data-path="visualización.html"><a href="visualización.html#dibujar-grafos-ponderados"><i class="fa fa-check"></i><b>6.2</b> Dibujar grafos ponderados</a></li>
-<li class="chapter" data-level="6.3" data-path="visualización.html"><a href="visualización.html#cambiar-aspecto-y-propiedades-de-un-grafo"><i class="fa fa-check"></i><b>6.3</b> Cambiar aspecto y propiedades de un grafo</a></li>
-<li class="chapter" data-level="6.4" data-path="visualización.html"><a href="visualización.html#ejemplos---plantillas"><i class="fa fa-check"></i><b>6.4</b> Ejemplos - plantillas</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="de-twitter.html"><a href="de-twitter.html"><i class="fa fa-check"></i><b>7</b> De Twitter</a></li>
-<li class="chapter" data-level="8" data-path="exportar-grafos.html"><a href="exportar-grafos.html"><i class="fa fa-check"></i><b>8</b> Exportar grafos</a></li>
-<li class="chapter" data-level="9" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html"><i class="fa fa-check"></i><b>9</b> Analysis of the Networks to extract knowledge.</a></li>
-<li class="chapter" data-level="10" data-path="centrality.html"><a href="centrality.html"><i class="fa fa-check"></i><b>10</b> Centrality</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="centrality.html"><a href="centrality.html#degree"><i class="fa fa-check"></i><b>10.1</b> Degree</a></li>
-<li class="chapter" data-level="10.2" data-path="centrality.html"><a href="centrality.html#betweenness"><i class="fa fa-check"></i><b>10.2</b> Betweenness</a></li>
-<li class="chapter" data-level="10.3" data-path="centrality.html"><a href="centrality.html#edge_betweenness"><i class="fa fa-check"></i><b>10.3</b> Edge_betweenness</a></li>
-<li class="chapter" data-level="10.4" data-path="centrality.html"><a href="centrality.html#closeness"><i class="fa fa-check"></i><b>10.4</b> Closeness</a></li>
-<li class="chapter" data-level="10.5" data-path="centrality.html"><a href="centrality.html#eigenvector"><i class="fa fa-check"></i><b>10.5</b> Eigenvector</a></li>
-<li class="chapter" data-level="10.6" data-path="centrality.html"><a href="centrality.html#pagerank"><i class="fa fa-check"></i><b>10.6</b> Pagerank</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="paths.html"><a href="paths.html"><i class="fa fa-check"></i><b>11</b> Paths</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="paths.html"><a href="paths.html#diameter"><i class="fa fa-check"></i><b>11.1</b> Diameter</a></li>
-<li class="chapter" data-level="11.2" data-path="paths.html"><a href="paths.html#caminos-y-distancias"><i class="fa fa-check"></i><b>11.2</b> Caminos y distancias</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>12</b> Clustering</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="clustering.html"><a href="clustering.html#transitivity"><i class="fa fa-check"></i><b>12.1</b> Transitivity</a>
-<ul>
-<li class="chapter" data-level="12.1.1" data-path="clustering.html"><a href="clustering.html#global-clustering"><i class="fa fa-check"></i><b>12.1.1</b> Global clustering:</a></li>
-<li class="chapter" data-level="12.1.2" data-path="clustering.html"><a href="clustering.html#local-clustering"><i class="fa fa-check"></i><b>12.1.2</b> Local clustering</a></li>
+<li class="chapter" data-level="3.1.1" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html#rename"><i class="fa fa-check"></i><b>3.1.1</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="3.1.2" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html#uso-del-operador"><i class="fa fa-check"></i><b>3.1.2</b> Uso del operador <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="3.1.3" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html#otros-verbos-auxiliares"><i class="fa fa-check"></i><b>3.1.3</b> Otros verbos auxiliares</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="otras-medidas-y-definiciones.html"><a href="otras-medidas-y-definiciones.html"><i class="fa fa-check"></i><b>13</b> Otras medidas y definiciones</a></li>
+<li class="chapter" data-level="4" data-path="a-tibble-1-2-1.html"><a href="a-tibble-1-2-1.html"><i class="fa fa-check"></i><b>4</b> A tibble: 1 × 2</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="a-tibble-1-2-1.html"><a href="a-tibble-1-2-1.html#operaciones-con-dos-tablas"><i class="fa fa-check"></i><b>4.0.1</b> Operaciones con dos tablas</a></li>
+<li class="chapter" data-level="4.1" data-path="a-tibble-1-2-1.html"><a href="a-tibble-1-2-1.html#proyecto-starwarks"><i class="fa fa-check"></i><b>4.1</b> Proyecto Starwarks</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html"><i class="fa fa-check"></i><b>5</b> Reglas de Asociación</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#introducción-1"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#detectando-y-prediciendo-tendencias"><i class="fa fa-check"></i><b>5.2</b> Detectando y prediciendo tendencias</a></li>
+<li class="chapter" data-level="5.3" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#reglas-de-asociación-de-transacciones"><i class="fa fa-check"></i><b>5.3</b> Reglas de Asociación de transacciones</a></li>
+<li class="chapter" data-level="5.4" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#parámetros-de-apriori"><i class="fa fa-check"></i><b>5.4</b> Parámetros de <strong>apriori</strong></a></li>
+<li class="chapter" data-level="5.5" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#reglas-de-asociación---preprocesamiento"><i class="fa fa-check"></i><b>5.5</b> Reglas de Asociación - preprocesamiento</a></li>
+<li class="chapter" data-level="5.6" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#discretización-de-items"><i class="fa fa-check"></i><b>5.6</b> Discretización de items</a></li>
+<li class="chapter" data-level="5.7" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#tipo-de-dato-transactions"><i class="fa fa-check"></i><b>5.7</b> Tipo de dato <em>transactions</em></a></li>
+<li class="chapter" data-level="5.8" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#métodos-de-arules"><i class="fa fa-check"></i><b>5.8</b> Métodos de arules</a></li>
+<li class="chapter" data-level="5.9" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#operaciones-con-reglas"><i class="fa fa-check"></i><b>5.9</b> Operaciones con reglas</a></li>
+<li class="chapter" data-level="5.10" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#ejercicio-en-laboratorio"><i class="fa fa-check"></i><b>5.10</b> Ejercicio en Laboratorio</a></li>
+<li class="chapter" data-level="5.11" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#arulesviz"><i class="fa fa-check"></i><b>5.11</b> arulesViz</a></li>
+<li class="chapter" data-level="5.12" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#construyendo-un-sistema-recomendador"><i class="fa fa-check"></i><b>5.12</b> Construyendo un sistema recomendador</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="social-network-analysis.html"><a href="social-network-analysis.html"><i class="fa fa-check"></i><b>6</b> Social Network Analysis</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#gephi"><i class="fa fa-check"></i><b>6.0.1</b> Gephi</a></li>
+<li class="chapter" data-level="6.0.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#cytoscape"><i class="fa fa-check"></i><b>6.0.2</b> Cytoscape</a></li>
+<li class="chapter" data-level="6.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#r-for-sna"><i class="fa fa-check"></i><b>6.1</b> R for SNA</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html"><i class="fa fa-check"></i><b>7</b> Elementos de una red</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#representación-de-redes"><i class="fa fa-check"></i><b>7.1</b> Representación de redes</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#grafos-como-listas-de-arcos"><i class="fa fa-check"></i><b>7.1.1</b> Grafos como listas de arcos</a></li>
+<li class="chapter" data-level="7.1.2" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#grafos-como-matrices"><i class="fa fa-check"></i><b>7.1.2</b> Grafos como matrices</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html"><i class="fa fa-check"></i><b>8</b> Introducción a <strong>igraph</strong></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html#acceder-a-elementos-de-grado"><i class="fa fa-check"></i><b>8.1</b> Acceder a elementos de grado</a></li>
+<li class="chapter" data-level="8.2" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html#construirmodificar-un-grafo"><i class="fa fa-check"></i><b>8.2</b> Construir/Modificar un grafo</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="visualización.html"><a href="visualización.html"><i class="fa fa-check"></i><b>9</b> Visualización</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="visualización.html"><a href="visualización.html#layout"><i class="fa fa-check"></i><b>9.1</b> Layout</a></li>
+<li class="chapter" data-level="9.2" data-path="visualización.html"><a href="visualización.html#dibujar-grafos-ponderados"><i class="fa fa-check"></i><b>9.2</b> Dibujar grafos ponderados</a></li>
+<li class="chapter" data-level="9.3" data-path="visualización.html"><a href="visualización.html#cambiar-aspecto-y-propiedades-de-un-grafo"><i class="fa fa-check"></i><b>9.3</b> Cambiar aspecto y propiedades de un grafo</a></li>
+<li class="chapter" data-level="9.4" data-path="visualización.html"><a href="visualización.html#ejemplos---plantillas"><i class="fa fa-check"></i><b>9.4</b> Ejemplos - plantillas</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="de-twitter.html"><a href="de-twitter.html"><i class="fa fa-check"></i><b>10</b> De Twitter</a></li>
+<li class="chapter" data-level="11" data-path="exportar-grafos.html"><a href="exportar-grafos.html"><i class="fa fa-check"></i><b>11</b> Exportar grafos</a></li>
+<li class="chapter" data-level="12" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html"><i class="fa fa-check"></i><b>12</b> Analysis of the Networks to extract knowledge.</a></li>
+<li class="chapter" data-level="13" data-path="centrality.html"><a href="centrality.html"><i class="fa fa-check"></i><b>13</b> Centrality</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="centrality.html"><a href="centrality.html#degree"><i class="fa fa-check"></i><b>13.1</b> Degree</a></li>
+<li class="chapter" data-level="13.2" data-path="centrality.html"><a href="centrality.html#betweenness"><i class="fa fa-check"></i><b>13.2</b> Betweenness</a></li>
+<li class="chapter" data-level="13.3" data-path="centrality.html"><a href="centrality.html#edge_betweenness"><i class="fa fa-check"></i><b>13.3</b> Edge_betweenness</a></li>
+<li class="chapter" data-level="13.4" data-path="centrality.html"><a href="centrality.html#closeness"><i class="fa fa-check"></i><b>13.4</b> Closeness</a></li>
+<li class="chapter" data-level="13.5" data-path="centrality.html"><a href="centrality.html#eigenvector"><i class="fa fa-check"></i><b>13.5</b> Eigenvector</a></li>
+<li class="chapter" data-level="13.6" data-path="centrality.html"><a href="centrality.html#pagerank"><i class="fa fa-check"></i><b>13.6</b> Pagerank</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="paths.html"><a href="paths.html"><i class="fa fa-check"></i><b>14</b> Paths</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="paths.html"><a href="paths.html#diameter"><i class="fa fa-check"></i><b>14.1</b> Diameter</a></li>
+<li class="chapter" data-level="14.2" data-path="paths.html"><a href="paths.html#caminos-y-distancias"><i class="fa fa-check"></i><b>14.2</b> Caminos y distancias</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>15</b> Clustering</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="clustering.html"><a href="clustering.html#transitivity"><i class="fa fa-check"></i><b>15.1</b> Transitivity</a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="clustering.html"><a href="clustering.html#global-clustering"><i class="fa fa-check"></i><b>15.1.1</b> Global clustering:</a></li>
+<li class="chapter" data-level="15.1.2" data-path="clustering.html"><a href="clustering.html#local-clustering"><i class="fa fa-check"></i><b>15.1.2</b> Local clustering</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="otras-medidas-y-definiciones.html"><a href="otras-medidas-y-definiciones.html"><i class="fa fa-check"></i><b>16</b> Otras medidas y definiciones</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -214,7 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ciencia de Datos - UMA</a>
           </h1>
         </div>
 
@@ -222,8 +250,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="otras-medidas-y-definiciones" class="section level1 hasAnchor" number="13">
-<h1><span class="header-section-number">Chapter 13</span> Otras medidas y definiciones<a href="otras-medidas-y-definiciones.html#otras-medidas-y-definiciones" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="otras-medidas-y-definiciones" class="section level1 hasAnchor" number="16">
+<h1><span class="header-section-number">Capítulo 16</span> Otras medidas y definiciones<a href="otras-medidas-y-definiciones.html#otras-medidas-y-definiciones" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <ul>
 <li><p>Densidad: Número de conexiones respecto al total de conexiones posibles. Un grafo completo tiene una densidad igual a 1 - <code>edge_density</code>.</p></li>
 <li><p>Popularidad: nodos que son centrales tienden a ser más populares.</p></li>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 12 Otros verbos auxiliares | Ciencia de Datos - UMA</title>
+  <meta name="description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 12 Otros verbos auxiliares | Ciencia de Datos - UMA" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 12 Otros verbos auxiliares | Ciencia de Datos - UMA" />
+  
+  <meta name="twitter:description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
+  
+
+<meta name="author" content="Domingo López, Ángel Mora" />
+
+
+<meta name="date" content="2022-05-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="uso-del-operador.html"/>
+<link rel="next" href="a-tibble-1-2-1.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Ciencia de datos con R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html"><i class="fa fa-check"></i><b>2</b> Análisis Exploratorio de Datos</a></li>
+<li class="chapter" data-level="3" data-path="importación-de-datos.html"><a href="importación-de-datos.html"><i class="fa fa-check"></i><b>3</b> Importación de datos</a></li>
+<li class="chapter" data-level="4" data-path="dplyr-para-manipulación-de-datos.html"><a href="dplyr-para-manipulación-de-datos.html"><i class="fa fa-check"></i><b>4</b> <code>dplyr</code> para Manipulación de Datos</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="dplyr-para-manipulación-de-datos.html"><a href="dplyr-para-manipulación-de-datos.html#backends"><i class="fa fa-check"></i><b>4.1</b> Backends</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="filtrado-de-filas-con-filter.html"><a href="filtrado-de-filas-con-filter.html"><i class="fa fa-check"></i><b>5</b> Filtrado de filas con <code>filter()</code></a></li>
+<li class="chapter" data-level="6" data-path="ordenar-filas-con-arrange.html"><a href="ordenar-filas-con-arrange.html"><i class="fa fa-check"></i><b>6</b> Ordenar filas con <code>arrange()</code></a></li>
+<li class="chapter" data-level="7" data-path="a-tibble-1-2.html"><a href="a-tibble-1-2.html"><i class="fa fa-check"></i><b>7</b> A tibble: 1 × 2</a></li>
+<li class="chapter" data-level="8" data-path="selección-de-columnas-select.html"><a href="selección-de-columnas-select.html"><i class="fa fa-check"></i><b>8</b> Selección de columnas <code>select()</code></a></li>
+<li class="chapter" data-level="9" data-path="añadir-o-renombrar-variables-con-mutate.html"><a href="añadir-o-renombrar-variables-con-mutate.html"><i class="fa fa-check"></i><b>9</b> Añadir o renombrar variables con <code>mutate()</code></a></li>
+<li class="chapter" data-level="10" data-path="rename.html"><a href="rename.html"><i class="fa fa-check"></i><b>10</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="11" data-path="uso-del-operador.html"><a href="uso-del-operador.html"><i class="fa fa-check"></i><b>11</b> Uso del operador <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="12" data-path="otros-verbos-auxiliares.html"><a href="otros-verbos-auxiliares.html"><i class="fa fa-check"></i><b>12</b> Otros verbos auxiliares</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="otros-verbos-auxiliares.html"><a href="otros-verbos-auxiliares.html#summarize"><i class="fa fa-check"></i><b>12.1</b> <code>summarize()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="a-tibble-1-2-1.html"><a href="a-tibble-1-2-1.html"><i class="fa fa-check"></i><b>13</b> A tibble: 1 × 2</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="a-tibble-1-2-1.html"><a href="a-tibble-1-2-1.html#group_by"><i class="fa fa-check"></i><b>13.1</b> <code>group_by()</code></a></li>
+<li class="chapter" data-level="13.2" data-path="a-tibble-1-2-1.html"><a href="a-tibble-1-2-1.html#slice"><i class="fa fa-check"></i><b>13.2</b> <code>slice()</code></a></li>
+<li class="chapter" data-level="13.3" data-path="a-tibble-1-2-1.html"><a href="a-tibble-1-2-1.html#transmute"><i class="fa fa-check"></i><b>13.3</b> <code>transmute()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="operaciones-con-dos-tablas.html"><a href="operaciones-con-dos-tablas.html"><i class="fa fa-check"></i><b>14</b> Operaciones con dos tablas</a></li>
+<li class="chapter" data-level="15" data-path="proyecto-starwarks.html"><a href="proyecto-starwarks.html"><i class="fa fa-check"></i><b>15</b> Proyecto Starwarks</a></li>
+<li class="chapter" data-level="16" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html"><i class="fa fa-check"></i><b>16</b> Reglas de Asociación</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#introducción-1"><i class="fa fa-check"></i><b>16.1</b> Introducción</a></li>
+<li class="chapter" data-level="16.2" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#detectando-y-prediciendo-tendencias"><i class="fa fa-check"></i><b>16.2</b> Detectando y prediciendo tendencias</a></li>
+<li class="chapter" data-level="16.3" data-path="reglas-de-asociación.html"><a href="reglas-de-asociación.html#reglas-de-asociación-de-transacciones"><i class="fa fa-check"></i><b>16.3</b> Reglas de Asociación de transacciones</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="parómetros-de-apriori.html"><a href="parómetros-de-apriori.html"><i class="fa fa-check"></i><b>17</b> Parómetros de <strong>apriori</strong></a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="parómetros-de-apriori.html"><a href="parómetros-de-apriori.html#reglas-de-asociación---preprocesamiento"><i class="fa fa-check"></i><b>17.1</b> Reglas de Asociación - preprocesamiento</a></li>
+<li class="chapter" data-level="17.2" data-path="parómetros-de-apriori.html"><a href="parómetros-de-apriori.html#discretización-de-items"><i class="fa fa-check"></i><b>17.2</b> Discretización de items</a></li>
+<li class="chapter" data-level="17.3" data-path="parómetros-de-apriori.html"><a href="parómetros-de-apriori.html#tipo-de-dato-transactions"><i class="fa fa-check"></i><b>17.3</b> Tipo de dato <em>transactions</em></a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="métodos-de-arules.html"><a href="métodos-de-arules.html"><i class="fa fa-check"></i><b>18</b> Métodos de arules</a></li>
+<li class="chapter" data-level="19" data-path="operaciones-con-reglas.html"><a href="operaciones-con-reglas.html"><i class="fa fa-check"></i><b>19</b> Operaciones con reglas</a></li>
+<li class="chapter" data-level="20" data-path="ejercicio-en-laboratorio.html"><a href="ejercicio-en-laboratorio.html"><i class="fa fa-check"></i><b>20</b> Ejercicio en Laboratorio</a></li>
+<li class="chapter" data-level="21" data-path="arulesviz.html"><a href="arulesviz.html"><i class="fa fa-check"></i><b>21</b> arulesViz</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="arulesviz.html"><a href="arulesviz.html#construyendo-un-sistema-recomendador"><i class="fa fa-check"></i><b>21.1</b> Construyendo un sistema recomendador</a></li>
+<li class="chapter" data-level="21.2" data-path="arulesviz.html"><a href="arulesviz.html#sistema-de-recomendación"><i class="fa fa-check"></i><b>21.2</b> Sistema de recomendación</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="social-network-analysis.html"><a href="social-network-analysis.html"><i class="fa fa-check"></i><b>22</b> Social Network Analysis</a>
+<ul>
+<li class="chapter" data-level="22.0.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#gephi"><i class="fa fa-check"></i><b>22.0.1</b> Gephi</a></li>
+<li class="chapter" data-level="22.0.2" data-path="social-network-analysis.html"><a href="social-network-analysis.html#cytoscape"><i class="fa fa-check"></i><b>22.0.2</b> Cytoscape</a></li>
+<li class="chapter" data-level="22.1" data-path="social-network-analysis.html"><a href="social-network-analysis.html#r-for-sna"><i class="fa fa-check"></i><b>22.1</b> R for SNA</a></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html"><i class="fa fa-check"></i><b>23</b> Elementos de una red</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#representación-de-redes"><i class="fa fa-check"></i><b>23.1</b> Representación de redes</a>
+<ul>
+<li class="chapter" data-level="23.1.1" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#grafos-como-listas-de-arcos"><i class="fa fa-check"></i><b>23.1.1</b> Grafos como listas de arcos</a></li>
+<li class="chapter" data-level="23.1.2" data-path="elementos-de-una-red.html"><a href="elementos-de-una-red.html#grafos-como-matrices"><i class="fa fa-check"></i><b>23.1.2</b> Grafos como matrices</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html"><i class="fa fa-check"></i><b>24</b> Introducción a <strong>igraph</strong></a>
+<ul>
+<li class="chapter" data-level="24.1" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html#acceder-a-elementos-de-grado"><i class="fa fa-check"></i><b>24.1</b> Acceder a elementos de grado</a></li>
+<li class="chapter" data-level="24.2" data-path="introducción-a-igraph.html"><a href="introducción-a-igraph.html#construirmodificar-un-grafo"><i class="fa fa-check"></i><b>24.2</b> Construir/Modificar un grafo</a></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="visualización.html"><a href="visualización.html"><i class="fa fa-check"></i><b>25</b> Visualización</a>
+<ul>
+<li class="chapter" data-level="25.1" data-path="visualización.html"><a href="visualización.html#layout"><i class="fa fa-check"></i><b>25.1</b> Layout</a></li>
+<li class="chapter" data-level="25.2" data-path="visualización.html"><a href="visualización.html#dibujar-grafos-ponderados"><i class="fa fa-check"></i><b>25.2</b> Dibujar grafos ponderados</a></li>
+<li class="chapter" data-level="25.3" data-path="visualización.html"><a href="visualización.html#cambiar-aspecto-y-propiedades-de-un-grafo"><i class="fa fa-check"></i><b>25.3</b> Cambiar aspecto y propiedades de un grafo</a></li>
+<li class="chapter" data-level="25.4" data-path="visualización.html"><a href="visualización.html#ejemplos---plantillas"><i class="fa fa-check"></i><b>25.4</b> Ejemplos - plantillas</a></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="de-twitter.html"><a href="de-twitter.html"><i class="fa fa-check"></i><b>26</b> De Twitter</a></li>
+<li class="chapter" data-level="27" data-path="exportar-grafos.html"><a href="exportar-grafos.html"><i class="fa fa-check"></i><b>27</b> Exportar grafos</a></li>
+<li class="chapter" data-level="28" data-path="analysis-of-the-networks-to-extract-knowledge..html"><a href="analysis-of-the-networks-to-extract-knowledge..html"><i class="fa fa-check"></i><b>28</b> Analysis of the Networks to extract knowledge.</a></li>
+<li class="chapter" data-level="29" data-path="centrality.html"><a href="centrality.html"><i class="fa fa-check"></i><b>29</b> Centrality</a>
+<ul>
+<li class="chapter" data-level="29.1" data-path="centrality.html"><a href="centrality.html#degree"><i class="fa fa-check"></i><b>29.1</b> Degree</a></li>
+<li class="chapter" data-level="29.2" data-path="centrality.html"><a href="centrality.html#betweenness"><i class="fa fa-check"></i><b>29.2</b> Betweenness</a></li>
+<li class="chapter" data-level="29.3" data-path="centrality.html"><a href="centrality.html#edge_betweenness"><i class="fa fa-check"></i><b>29.3</b> Edge_betweenness</a></li>
+<li class="chapter" data-level="29.4" data-path="centrality.html"><a href="centrality.html#closeness"><i class="fa fa-check"></i><b>29.4</b> Closeness</a></li>
+<li class="chapter" data-level="29.5" data-path="centrality.html"><a href="centrality.html#eigenvector"><i class="fa fa-check"></i><b>29.5</b> Eigenvector</a></li>
+<li class="chapter" data-level="29.6" data-path="centrality.html"><a href="centrality.html#pagerank"><i class="fa fa-check"></i><b>29.6</b> Pagerank</a></li>
+</ul></li>
+<li class="chapter" data-level="30" data-path="paths.html"><a href="paths.html"><i class="fa fa-check"></i><b>30</b> Paths</a>
+<ul>
+<li class="chapter" data-level="30.1" data-path="paths.html"><a href="paths.html#diameter"><i class="fa fa-check"></i><b>30.1</b> Diameter</a></li>
+<li class="chapter" data-level="30.2" data-path="paths.html"><a href="paths.html#caminos-y-distancias"><i class="fa fa-check"></i><b>30.2</b> Caminos y distancias</a></li>
+</ul></li>
+<li class="chapter" data-level="31" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>31</b> Clustering</a>
+<ul>
+<li class="chapter" data-level="31.1" data-path="clustering.html"><a href="clustering.html#transitivity"><i class="fa fa-check"></i><b>31.1</b> Transitivity</a>
+<ul>
+<li class="chapter" data-level="31.1.1" data-path="clustering.html"><a href="clustering.html#global-clustering"><i class="fa fa-check"></i><b>31.1.1</b> Global clustering:</a></li>
+<li class="chapter" data-level="31.1.2" data-path="clustering.html"><a href="clustering.html#local-clustering"><i class="fa fa-check"></i><b>31.1.2</b> Local clustering</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="32" data-path="otras-medidas-y-definiciones.html"><a href="otras-medidas-y-definiciones.html"><i class="fa fa-check"></i><b>32</b> Otras medidas y definiciones</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ciencia de Datos - UMA</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="otros-verbos-auxiliares" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">Capítulo 12</span> Otros verbos auxiliares<a href="otros-verbos-auxiliares.html#otros-verbos-auxiliares" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="summarize" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> <code>summarize()</code><a href="otros-verbos-auxiliares.html#summarize" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="uso-del-operador.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="a-tibble-1-2-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
