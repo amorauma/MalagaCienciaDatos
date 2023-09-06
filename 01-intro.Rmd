@@ -129,8 +129,8 @@ breast.cancer1 <- breast.cancer %>%
 res_deg_malig <-   breast.cancer %>% 
   as_tibble()%>%
   select(deg_malig)%>%
-  summarise(num_casos=n(),
-            distintos=n_distinct())
+  summarise(num_casos=n())
+            #distintos=n_distinct())
 
 
 
@@ -278,8 +278,8 @@ brcan_data %>%
 res_deg_malig <-   breast.cancer %>% 
   as_tibble()%>%
   select(deg_malig)%>%
-  summarise(num_casos=n(),
-            distintos=n_distinct())
+  summarise(num_casos=n())
+            #distintos=n_distinct())
  
 
 kableExtra::kable(res_deg_malig)

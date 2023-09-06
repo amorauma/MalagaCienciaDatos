@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 9 Formal Concept Analysis | Ciencia de Datos - UMA</title>
   <meta name="description" content="Material usado como Introducción a Ciencia de Datos - ETSI Informática" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 9 Formal Concept Analysis | Ciencia de Datos - UMA" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Domingo López, Ángel Mora" />
 
 
-<meta name="date" content="2022-05-15" />
+<meta name="date" content="2023-09-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -94,7 +94,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -107,7 +107,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -121,6 +121,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -220,7 +224,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.10" data-path="modelling-techniques.html"><a href="modelling-techniques.html#proyecto---predicción-de-riesgos"><i class="fa fa-check"></i><b>5.10</b> Proyecto - Predicción de riesgos</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="series-temporales.html"><a href="series-temporales.html"><i class="fa fa-check"></i><b>6</b> Series Temporales</a></li>
+<li class="chapter" data-level="6" data-path="series-temporales.html"><a href="series-temporales.html"><i class="fa fa-check"></i><b>6</b> Series Temporales</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="series-temporales.html"><a href="series-temporales.html#covid-predictions"><i class="fa fa-check"></i><b>6.1</b> COVID predictions</a></li>
+<li class="chapter" data-level="6.2" data-path="series-temporales.html"><a href="series-temporales.html#introduction"><i class="fa fa-check"></i><b>6.2</b> Introduction</a></li>
+<li class="chapter" data-level="6.3" data-path="series-temporales.html"><a href="series-temporales.html#time-series-analysis"><i class="fa fa-check"></i><b>6.3</b> Time series analysis</a></li>
+<li class="chapter" data-level="6.4" data-path="series-temporales.html"><a href="series-temporales.html#time-series-in-r"><i class="fa fa-check"></i><b>6.4</b> Time Series in <code>R</code></a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="series-temporales.html"><a href="series-temporales.html#importing-time-series"><i class="fa fa-check"></i><b>6.4.1</b> Importing time series</a></li>
+<li class="chapter" data-level="6.4.2" data-path="series-temporales.html"><a href="series-temporales.html#displaying-time-series"><i class="fa fa-check"></i><b>6.4.2</b> Displaying time series</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="series-temporales.html"><a href="series-temporales.html#time-series-components"><i class="fa fa-check"></i><b>6.5</b> Time Series Components</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="series-temporales.html"><a href="series-temporales.html#seasonal-plot"><i class="fa fa-check"></i><b>6.5.1</b> Seasonal plot</a></li>
+<li class="chapter" data-level="6.5.2" data-path="series-temporales.html"><a href="series-temporales.html#subseries-plot"><i class="fa fa-check"></i><b>6.5.2</b> Subseries plot</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="series-temporales.html"><a href="series-temporales.html#other-packages"><i class="fa fa-check"></i><b>6.6</b> Other packages</a></li>
+<li class="chapter" data-level="6.7" data-path="series-temporales.html"><a href="series-temporales.html#basic-forecasting-methods"><i class="fa fa-check"></i><b>6.7</b> Basic forecasting methods</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="series-temporales.html"><a href="series-temporales.html#average-method"><i class="fa fa-check"></i><b>6.7.1</b> Average method</a></li>
+<li class="chapter" data-level="6.7.2" data-path="series-temporales.html"><a href="series-temporales.html#naïve-method"><i class="fa fa-check"></i><b>6.7.2</b> Naïve method</a></li>
+<li class="chapter" data-level="6.7.3" data-path="series-temporales.html"><a href="series-temporales.html#seasonal-naïve-method"><i class="fa fa-check"></i><b>6.7.3</b> Seasonal naïve method</a></li>
+<li class="chapter" data-level="6.7.4" data-path="series-temporales.html"><a href="series-temporales.html#drift-method"><i class="fa fa-check"></i><b>6.7.4</b> Drift method</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="series-temporales.html"><a href="series-temporales.html#example-temperature-forecast-in-malaga---basic-forecasting-methods"><i class="fa fa-check"></i><b>6.8</b> Example: Temperature forecast in Malaga - Basic forecasting methods</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="series-temporales.html"><a href="series-temporales.html#average-method-1"><i class="fa fa-check"></i><b>6.8.1</b> Average method</a></li>
+<li class="chapter" data-level="6.8.2" data-path="series-temporales.html"><a href="series-temporales.html#naïve-method-1"><i class="fa fa-check"></i><b>6.8.2</b> Naïve method</a></li>
+<li class="chapter" data-level="6.8.3" data-path="series-temporales.html"><a href="series-temporales.html#seasonal-naïve-method-1"><i class="fa fa-check"></i><b>6.8.3</b> Seasonal naïve method</a></li>
+<li class="chapter" data-level="6.8.4" data-path="series-temporales.html"><a href="series-temporales.html#drift-method-1"><i class="fa fa-check"></i><b>6.8.4</b> Drift method</a></li>
+<li class="chapter" data-level="6.8.5" data-path="series-temporales.html"><a href="series-temporales.html#conclusion"><i class="fa fa-check"></i><b>6.8.5</b> Conclusion</a></li>
+<li class="chapter" data-level="6.8.6" data-path="series-temporales.html"><a href="series-temporales.html#decomposing-time-series"><i class="fa fa-check"></i><b>6.8.6</b> Decomposing Time Series</a></li>
+<li class="chapter" data-level="6.8.7" data-path="series-temporales.html"><a href="series-temporales.html#additive-decomposition"><i class="fa fa-check"></i><b>6.8.7</b> Additive decomposition</a></li>
+<li class="chapter" data-level="6.8.8" data-path="series-temporales.html"><a href="series-temporales.html#non-seasonal-data"><i class="fa fa-check"></i><b>6.8.8</b> Non-Seasonal Data</a></li>
+<li class="chapter" data-level="6.8.9" data-path="series-temporales.html"><a href="series-temporales.html#seasonal-data"><i class="fa fa-check"></i><b>6.8.9</b> Seasonal Data</a></li>
+<li class="chapter" data-level="6.8.10" data-path="series-temporales.html"><a href="series-temporales.html#seasonal-adjusting"><i class="fa fa-check"></i><b>6.8.10</b> Seasonal Adjusting</a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="series-temporales.html"><a href="series-temporales.html#example-temperature-forecast-in-malaga---decomposing-time-series"><i class="fa fa-check"></i><b>6.9</b> Example: Temperature forecast in Malaga - Decomposing Time Series</a>
+<ul>
+<li class="chapter" data-level="6.9.1" data-path="series-temporales.html"><a href="series-temporales.html#additive-decomposition-1"><i class="fa fa-check"></i><b>6.9.1</b> Additive decomposition</a></li>
+<li class="chapter" data-level="6.9.2" data-path="series-temporales.html"><a href="series-temporales.html#seasonal-adjusting-1"><i class="fa fa-check"></i><b>6.9.2</b> Seasonal Adjusting</a></li>
+<li class="chapter" data-level="6.9.3" data-path="series-temporales.html"><a href="series-temporales.html#forecasts-using-exponential-smoothing"><i class="fa fa-check"></i><b>6.9.3</b> Forecasts using Exponential Smoothing</a></li>
+<li class="chapter" data-level="6.9.4" data-path="series-temporales.html"><a href="series-temporales.html#simple-exponential-smoothing"><i class="fa fa-check"></i><b>6.9.4</b> Simple Exponential Smoothing</a></li>
+</ul></li>
+<li class="chapter" data-level="6.10" data-path="series-temporales.html"><a href="series-temporales.html#forecasting-using-forecast-package"><i class="fa fa-check"></i><b>6.10</b> Forecasting using forecast package</a></li>
+<li class="chapter" data-level="6.11" data-path="series-temporales.html"><a href="series-temporales.html#example-temperature-forecast-in-malaga---exponential-smoothing"><i class="fa fa-check"></i><b>6.11</b> Example: Temperature forecast in Malaga - Exponential Smoothing</a>
+<ul>
+<li class="chapter" data-level="6.11.1" data-path="series-temporales.html"><a href="series-temporales.html#simple-exponential-smoothing-1"><i class="fa fa-check"></i><b>6.11.1</b> Simple Exponential Smoothing</a></li>
+<li class="chapter" data-level="6.11.2" data-path="series-temporales.html"><a href="series-temporales.html#forecasting-using-forecast-package-1"><i class="fa fa-check"></i><b>6.11.2</b> Forecasting using forecast package</a></li>
+</ul></li>
+<li class="chapter" data-level="6.12" data-path="series-temporales.html"><a href="series-temporales.html#arima-methods"><i class="fa fa-check"></i><b>6.12</b> ARIMA methods</a>
+<ul>
+<li class="chapter" data-level="6.12.1" data-path="series-temporales.html"><a href="series-temporales.html#stationarity"><i class="fa fa-check"></i><b>6.12.1</b> Stationarity</a></li>
+</ul></li>
+<li class="chapter" data-level="6.13" data-path="series-temporales.html"><a href="series-temporales.html#autoregressive-models---arp"><i class="fa fa-check"></i><b>6.13</b> Autoregressive models - <strong>AR(p)</strong></a></li>
+<li class="chapter" data-level="6.14" data-path="series-temporales.html"><a href="series-temporales.html#moving-average-models"><i class="fa fa-check"></i><b>6.14</b> Moving average models</a>
+<ul>
+<li class="chapter" data-level="6.14.1" data-path="series-temporales.html"><a href="series-temporales.html#differentiation"><i class="fa fa-check"></i><b>6.14.1</b> Differentiation</a></li>
+<li class="chapter" data-level="6.14.2" data-path="series-temporales.html"><a href="series-temporales.html#second-order-differencing"><i class="fa fa-check"></i><b>6.14.2</b> Second order differencing</a></li>
+</ul></li>
+<li class="chapter" data-level="6.15" data-path="series-temporales.html"><a href="series-temporales.html#seasonal-differencing"><i class="fa fa-check"></i><b>6.15</b> Seasonal differencing</a>
+<ul>
+<li class="chapter" data-level="6.15.1" data-path="series-temporales.html"><a href="series-temporales.html#parameters-in-arima-methods."><i class="fa fa-check"></i><b>6.15.1</b> Parameters in ARIMA methods.</a></li>
+</ul></li>
+<li class="chapter" data-level="6.16" data-path="series-temporales.html"><a href="series-temporales.html#non-seasonal-arima-models"><i class="fa fa-check"></i><b>6.16</b> Non-seasonal ARIMA models</a></li>
+<li class="chapter" data-level="6.17" data-path="series-temporales.html"><a href="series-temporales.html#auto-arima-model"><i class="fa fa-check"></i><b>6.17</b> Auto-ARIMA model</a></li>
+<li class="chapter" data-level="6.18" data-path="series-temporales.html"><a href="series-temporales.html#example-temperature-forecast-in-malaga---modelos-arima"><i class="fa fa-check"></i><b>6.18</b> Example: Temperature forecast in Malaga - Modelos ARIMA</a></li>
+<li class="chapter" data-level="6.19" data-path="series-temporales.html"><a href="series-temporales.html#references"><i class="fa fa-check"></i><b>6.19</b> References</a></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>7</b> Clustering</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="clustering.html"><a href="clustering.html#fundamentos"><i class="fa fa-check"></i><b>7.1</b> Fundamentos</a>
@@ -353,7 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11" data-path="pagerank-1.html"><a href="pagerank-1.html"><i class="fa fa-check"></i><b>11</b> pagerank</a></li>
 <li class="chapter" data-level="12" data-path="análisis-de-componentes-principales.html"><a href="análisis-de-componentes-principales.html"><i class="fa fa-check"></i><b>12</b> Análisis de Componentes Principales</a></li>
 <li class="chapter" data-level="13" data-path="text-imining.html"><a href="text-imining.html"><i class="fa fa-check"></i><b>13</b> Text Imining</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -415,31 +486,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We show the main methods of FCA using the main functionalities and data structures of the <code>fcaR</code> package.</p>
 <p>We load the <code>fcaR</code> package by:</p>
 <p>Formal Context, <span class="math inline">\(\mathbf{ K} := (G, M, I)\)</span></p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="formal-concept-analysis.html#cb70-1" aria-hidden="true" tabindex="-1"></a>objects <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Mercury&quot;</span>, <span class="st">&quot;Venus&quot;</span>, <span class="st">&quot;Earth&quot;</span>, <span class="st">&quot;Mars&quot;</span>,</span>
-<span id="cb70-2"><a href="formal-concept-analysis.html#cb70-2" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;Jupiter&quot;</span>, <span class="st">&quot;Saturn&quot;</span>, <span class="st">&quot;Uranus&quot;</span>, <span class="st">&quot;Neptune&quot;</span>,</span>
-<span id="cb70-3"><a href="formal-concept-analysis.html#cb70-3" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;Pluto&quot;</span>)</span>
-<span id="cb70-4"><a href="formal-concept-analysis.html#cb70-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb70-5"><a href="formal-concept-analysis.html#cb70-5" aria-hidden="true" tabindex="-1"></a>attributes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;small&quot;</span>, <span class="st">&quot;medium&quot;</span>, <span class="st">&quot;large&quot;</span>,</span>
-<span id="cb70-6"><a href="formal-concept-analysis.html#cb70-6" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;near&quot;</span>, <span class="st">&quot;far&quot;</span>,</span>
-<span id="cb70-7"><a href="formal-concept-analysis.html#cb70-7" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;moon&quot;</span>, <span class="st">&quot;no_moon&quot;</span>)</span>
-<span id="cb70-8"><a href="formal-concept-analysis.html#cb70-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb70-9"><a href="formal-concept-analysis.html#cb70-9" aria-hidden="true" tabindex="-1"></a>planets <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> <span class="fu">length</span>(objects),</span>
-<span id="cb70-10"><a href="formal-concept-analysis.html#cb70-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ncol =</span> <span class="fu">length</span>(attributes))</span>
-<span id="cb70-11"><a href="formal-concept-analysis.html#cb70-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb70-12"><a href="formal-concept-analysis.html#cb70-12" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(planets) <span class="ot">&lt;-</span> objects</span>
-<span id="cb70-13"><a href="formal-concept-analysis.html#cb70-13" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(planets) <span class="ot">&lt;-</span> attributes</span>
-<span id="cb70-14"><a href="formal-concept-analysis.html#cb70-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb70-15"><a href="formal-concept-analysis.html#cb70-15" aria-hidden="true" tabindex="-1"></a>planets[<span class="st">&quot;Mercury&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;small&quot;</span>, <span class="st">&quot;near&quot;</span>, <span class="st">&quot;no_moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb70-16"><a href="formal-concept-analysis.html#cb70-16" aria-hidden="true" tabindex="-1"></a>planets[<span class="st">&quot;Venus&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;small&quot;</span>, <span class="st">&quot;near&quot;</span>, <span class="st">&quot;no_moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb70-17"><a href="formal-concept-analysis.html#cb70-17" aria-hidden="true" tabindex="-1"></a>planets[<span class="st">&quot;Earth&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;small&quot;</span>, <span class="st">&quot;near&quot;</span>, <span class="st">&quot;moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb70-18"><a href="formal-concept-analysis.html#cb70-18" aria-hidden="true" tabindex="-1"></a>planets[<span class="st">&quot;Mars&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;small&quot;</span>, <span class="st">&quot;near&quot;</span>, <span class="st">&quot;moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb70-19"><a href="formal-concept-analysis.html#cb70-19" aria-hidden="true" tabindex="-1"></a>planets[<span class="st">&quot;Jupiter&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;large&quot;</span>, <span class="st">&quot;far&quot;</span>, <span class="st">&quot;moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb70-20"><a href="formal-concept-analysis.html#cb70-20" aria-hidden="true" tabindex="-1"></a>planets[<span class="st">&quot;Saturn&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;large&quot;</span>, <span class="st">&quot;far&quot;</span>, <span class="st">&quot;moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb70-21"><a href="formal-concept-analysis.html#cb70-21" aria-hidden="true" tabindex="-1"></a>planets[<span class="st">&quot;Uranus&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;medium&quot;</span>, <span class="st">&quot;far&quot;</span>, <span class="st">&quot;moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb70-22"><a href="formal-concept-analysis.html#cb70-22" aria-hidden="true" tabindex="-1"></a>planets[<span class="st">&quot;Neptune&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;medium&quot;</span>, <span class="st">&quot;far&quot;</span>, <span class="st">&quot;moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb70-23"><a href="formal-concept-analysis.html#cb70-23" aria-hidden="true" tabindex="-1"></a>planets[<span class="st">&quot;Pluto&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;small&quot;</span>, <span class="st">&quot;far&quot;</span>, <span class="st">&quot;moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb70-24"><a href="formal-concept-analysis.html#cb70-24" aria-hidden="true" tabindex="-1"></a>fc_planets <span class="ot">&lt;-</span> FormalContext<span class="sc">$</span><span class="fu">new</span>(planets)</span></code></pre></div>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="formal-concept-analysis.html#cb71-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(planets, <span class="at">format =</span> <span class="st">&quot;html&quot;</span>, <span class="at">booktabs =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="formal-concept-analysis.html#cb83-1" tabindex="-1"></a>objects <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Mercury&quot;</span>, <span class="st">&quot;Venus&quot;</span>, <span class="st">&quot;Earth&quot;</span>, <span class="st">&quot;Mars&quot;</span>,</span>
+<span id="cb83-2"><a href="formal-concept-analysis.html#cb83-2" tabindex="-1"></a>             <span class="st">&quot;Jupiter&quot;</span>, <span class="st">&quot;Saturn&quot;</span>, <span class="st">&quot;Uranus&quot;</span>, <span class="st">&quot;Neptune&quot;</span>,</span>
+<span id="cb83-3"><a href="formal-concept-analysis.html#cb83-3" tabindex="-1"></a>             <span class="st">&quot;Pluto&quot;</span>)</span>
+<span id="cb83-4"><a href="formal-concept-analysis.html#cb83-4" tabindex="-1"></a></span>
+<span id="cb83-5"><a href="formal-concept-analysis.html#cb83-5" tabindex="-1"></a>attributes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;small&quot;</span>, <span class="st">&quot;medium&quot;</span>, <span class="st">&quot;large&quot;</span>,</span>
+<span id="cb83-6"><a href="formal-concept-analysis.html#cb83-6" tabindex="-1"></a>                <span class="st">&quot;near&quot;</span>, <span class="st">&quot;far&quot;</span>,</span>
+<span id="cb83-7"><a href="formal-concept-analysis.html#cb83-7" tabindex="-1"></a>                <span class="st">&quot;moon&quot;</span>, <span class="st">&quot;no_moon&quot;</span>)</span>
+<span id="cb83-8"><a href="formal-concept-analysis.html#cb83-8" tabindex="-1"></a></span>
+<span id="cb83-9"><a href="formal-concept-analysis.html#cb83-9" tabindex="-1"></a>planets <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> <span class="fu">length</span>(objects),</span>
+<span id="cb83-10"><a href="formal-concept-analysis.html#cb83-10" tabindex="-1"></a>                  <span class="at">ncol =</span> <span class="fu">length</span>(attributes))</span>
+<span id="cb83-11"><a href="formal-concept-analysis.html#cb83-11" tabindex="-1"></a></span>
+<span id="cb83-12"><a href="formal-concept-analysis.html#cb83-12" tabindex="-1"></a><span class="fu">rownames</span>(planets) <span class="ot">&lt;-</span> objects</span>
+<span id="cb83-13"><a href="formal-concept-analysis.html#cb83-13" tabindex="-1"></a><span class="fu">colnames</span>(planets) <span class="ot">&lt;-</span> attributes</span>
+<span id="cb83-14"><a href="formal-concept-analysis.html#cb83-14" tabindex="-1"></a></span>
+<span id="cb83-15"><a href="formal-concept-analysis.html#cb83-15" tabindex="-1"></a>planets[<span class="st">&quot;Mercury&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;small&quot;</span>, <span class="st">&quot;near&quot;</span>, <span class="st">&quot;no_moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb83-16"><a href="formal-concept-analysis.html#cb83-16" tabindex="-1"></a>planets[<span class="st">&quot;Venus&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;small&quot;</span>, <span class="st">&quot;near&quot;</span>, <span class="st">&quot;no_moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb83-17"><a href="formal-concept-analysis.html#cb83-17" tabindex="-1"></a>planets[<span class="st">&quot;Earth&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;small&quot;</span>, <span class="st">&quot;near&quot;</span>, <span class="st">&quot;moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb83-18"><a href="formal-concept-analysis.html#cb83-18" tabindex="-1"></a>planets[<span class="st">&quot;Mars&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;small&quot;</span>, <span class="st">&quot;near&quot;</span>, <span class="st">&quot;moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb83-19"><a href="formal-concept-analysis.html#cb83-19" tabindex="-1"></a>planets[<span class="st">&quot;Jupiter&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;large&quot;</span>, <span class="st">&quot;far&quot;</span>, <span class="st">&quot;moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb83-20"><a href="formal-concept-analysis.html#cb83-20" tabindex="-1"></a>planets[<span class="st">&quot;Saturn&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;large&quot;</span>, <span class="st">&quot;far&quot;</span>, <span class="st">&quot;moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb83-21"><a href="formal-concept-analysis.html#cb83-21" tabindex="-1"></a>planets[<span class="st">&quot;Uranus&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;medium&quot;</span>, <span class="st">&quot;far&quot;</span>, <span class="st">&quot;moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb83-22"><a href="formal-concept-analysis.html#cb83-22" tabindex="-1"></a>planets[<span class="st">&quot;Neptune&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;medium&quot;</span>, <span class="st">&quot;far&quot;</span>, <span class="st">&quot;moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb83-23"><a href="formal-concept-analysis.html#cb83-23" tabindex="-1"></a>planets[<span class="st">&quot;Pluto&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;small&quot;</span>, <span class="st">&quot;far&quot;</span>, <span class="st">&quot;moon&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb83-24"><a href="formal-concept-analysis.html#cb83-24" tabindex="-1"></a>fc_planets <span class="ot">&lt;-</span> FormalContext<span class="sc">$</span><span class="fu">new</span>(planets)</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="formal-concept-analysis.html#cb84-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(planets, <span class="at">format =</span> <span class="st">&quot;html&quot;</span>, <span class="at">booktabs =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -711,61 +782,64 @@ Pluto
 <li><p><strong>extent</strong>: <span class="math inline">\((\ )&#39;\colon 2^M \to 2^G\)</span> with, for all <span class="math inline">\(B\subseteq M\)</span>, <span class="math inline">\(B&#39; = \{g \in G \mid g\, I\, m \mbox{ for all } m \in B\}\)</span>.</p></li>
 </ul>
 <p>That is, the intent of a set of objects is the set of their common attributes:</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="formal-concept-analysis.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a set of objects</span></span>
-<span id="cb72-2"><a href="formal-concept-analysis.html#cb72-2" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> Set<span class="sc">$</span><span class="fu">new</span>(<span class="at">attributes =</span> fc_planets<span class="sc">$</span>objects)</span>
-<span id="cb72-3"><a href="formal-concept-analysis.html#cb72-3" aria-hidden="true" tabindex="-1"></a>S<span class="sc">$</span><span class="fu">assign</span>(<span class="at">Earth =</span> <span class="dv">1</span>, <span class="at">Mars =</span> <span class="dv">1</span>)</span>
-<span id="cb72-4"><a href="formal-concept-analysis.html#cb72-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Given the set of objects:&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="formal-concept-analysis.html#cb85-1" tabindex="-1"></a><span class="co"># Define a set of objects</span></span>
+<span id="cb85-2"><a href="formal-concept-analysis.html#cb85-2" tabindex="-1"></a>S <span class="ot">&lt;-</span> Set<span class="sc">$</span><span class="fu">new</span>(<span class="at">attributes =</span> fc_planets<span class="sc">$</span>objects)</span>
+<span id="cb85-3"><a href="formal-concept-analysis.html#cb85-3" tabindex="-1"></a>S<span class="sc">$</span><span class="fu">assign</span>(<span class="at">Earth =</span> <span class="dv">1</span>, <span class="at">Mars =</span> <span class="dv">1</span>)</span>
+<span id="cb85-4"><a href="formal-concept-analysis.html#cb85-4" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Given the set of objects:&quot;</span>)</span></code></pre></div>
 <p>Given the set of objects:</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="formal-concept-analysis.html#cb73-1" aria-hidden="true" tabindex="-1"></a>S</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="formal-concept-analysis.html#cb86-1" tabindex="-1"></a>S</span></code></pre></div>
 <p>{Earth, Mars}</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="formal-concept-analysis.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The intent is:&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="formal-concept-analysis.html#cb87-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The intent is:&quot;</span>)</span></code></pre></div>
 <p>The intent is:</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="formal-concept-analysis.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the intent of S</span></span>
-<span id="cb75-2"><a href="formal-concept-analysis.html#cb75-2" aria-hidden="true" tabindex="-1"></a>fc_planets<span class="sc">$</span><span class="fu">intent</span>(S)</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="formal-concept-analysis.html#cb88-1" tabindex="-1"></a></span>
+<span id="cb88-2"><a href="formal-concept-analysis.html#cb88-2" tabindex="-1"></a><span class="co"># Compute the intent of S</span></span>
+<span id="cb88-3"><a href="formal-concept-analysis.html#cb88-3" tabindex="-1"></a>fc_planets<span class="sc">$</span><span class="fu">intent</span>(S)</span></code></pre></div>
 <p>{small, near, moon}</p>
 <p>Analogously, the extent of a set of attributes is the set of objects which possess all the attributes in the given set:</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="formal-concept-analysis.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a set of objects</span></span>
-<span id="cb76-2"><a href="formal-concept-analysis.html#cb76-2" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> Set<span class="sc">$</span><span class="fu">new</span>(<span class="at">attributes =</span> fc_planets<span class="sc">$</span>attributes)</span>
-<span id="cb76-3"><a href="formal-concept-analysis.html#cb76-3" aria-hidden="true" tabindex="-1"></a>S<span class="sc">$</span><span class="fu">assign</span>(<span class="at">moon =</span> <span class="dv">1</span>, <span class="at">large =</span> <span class="dv">1</span>)</span>
-<span id="cb76-4"><a href="formal-concept-analysis.html#cb76-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Given the set of attributes:&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="formal-concept-analysis.html#cb89-1" tabindex="-1"></a><span class="co"># Define a set of objects</span></span>
+<span id="cb89-2"><a href="formal-concept-analysis.html#cb89-2" tabindex="-1"></a>S <span class="ot">&lt;-</span> Set<span class="sc">$</span><span class="fu">new</span>(<span class="at">attributes =</span> fc_planets<span class="sc">$</span>attributes)</span>
+<span id="cb89-3"><a href="formal-concept-analysis.html#cb89-3" tabindex="-1"></a>S<span class="sc">$</span><span class="fu">assign</span>(<span class="at">moon =</span> <span class="dv">1</span>, <span class="at">large =</span> <span class="dv">1</span>)</span>
+<span id="cb89-4"><a href="formal-concept-analysis.html#cb89-4" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Given the set of attributes:&quot;</span>)</span></code></pre></div>
 <p>Given the set of attributes:</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="formal-concept-analysis.html#cb77-1" aria-hidden="true" tabindex="-1"></a>S</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="formal-concept-analysis.html#cb90-1" tabindex="-1"></a>S</span></code></pre></div>
 <p>{large, moon}</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="formal-concept-analysis.html#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The extent is:&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="formal-concept-analysis.html#cb91-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The extent is:&quot;</span>)</span></code></pre></div>
 <p>The extent is:</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="formal-concept-analysis.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the extent of S</span></span>
-<span id="cb79-2"><a href="formal-concept-analysis.html#cb79-2" aria-hidden="true" tabindex="-1"></a>fc_planets<span class="sc">$</span><span class="fu">extent</span>(S)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="formal-concept-analysis.html#cb92-1" tabindex="-1"></a></span>
+<span id="cb92-2"><a href="formal-concept-analysis.html#cb92-2" tabindex="-1"></a><span class="co"># Compute the extent of S</span></span>
+<span id="cb92-3"><a href="formal-concept-analysis.html#cb92-3" tabindex="-1"></a>fc_planets<span class="sc">$</span><span class="fu">extent</span>(S)</span></code></pre></div>
 <p>{Jupiter, Saturn}</p>
 <p>This pair of mappings is a Galois connection.</p>
 <p>The composition of intent and extent is the closure of a set of attributes:</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="formal-concept-analysis.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the closure of S</span></span>
-<span id="cb80-2"><a href="formal-concept-analysis.html#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;El conjunto de objetos &quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="formal-concept-analysis.html#cb93-1" tabindex="-1"></a><span class="co"># Compute the closure of S</span></span>
+<span id="cb93-2"><a href="formal-concept-analysis.html#cb93-2" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;El conjunto de objetos &quot;</span>)</span></code></pre></div>
 <p>[1] “El conjunto de objetos”</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="formal-concept-analysis.html#cb81-1" aria-hidden="true" tabindex="-1"></a>S</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="formal-concept-analysis.html#cb94-1" tabindex="-1"></a>S</span></code></pre></div>
 <p>{large, moon}</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="formal-concept-analysis.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;tiene como cerrado&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="formal-concept-analysis.html#cb95-1" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;tiene como cerrado&quot;</span>)</span></code></pre></div>
 <p>[1] “tiene como cerrado”</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="formal-concept-analysis.html#cb83-1" aria-hidden="true" tabindex="-1"></a>Sc <span class="ot">&lt;-</span> fc_planets<span class="sc">$</span><span class="fu">closure</span>(S)</span>
-<span id="cb83-2"><a href="formal-concept-analysis.html#cb83-2" aria-hidden="true" tabindex="-1"></a>Sc</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="formal-concept-analysis.html#cb96-1" tabindex="-1"></a>Sc <span class="ot">&lt;-</span> fc_planets<span class="sc">$</span><span class="fu">closure</span>(S)</span>
+<span id="cb96-2"><a href="formal-concept-analysis.html#cb96-2" tabindex="-1"></a>Sc</span></code></pre></div>
 <p>{large, far, moon}</p>
 <p>This means that all planets which have the attributes <code>moon</code> and <code>large</code> also have <code>far</code> in common.</p>
 <p><strong>Definition:</strong> A <strong>formal concept</strong> is a pair <span class="math inline">\((A,B)\)</span> such that <span class="math inline">\(A \subseteq G\)</span>, <span class="math inline">\(B \subseteq M\)</span>, <span class="math inline">\(A&#39; = B\)</span> and <span class="math inline">\(B&#39; = A\)</span>. Consequently, <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are closed sets of objects and attributes, respectively.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="formal-concept-analysis.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a set of objects</span></span>
-<span id="cb84-2"><a href="formal-concept-analysis.html#cb84-2" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span>  Set<span class="sc">$</span><span class="fu">new</span>(<span class="at">attributes =</span> fc_planets<span class="sc">$</span>attributes)</span>
-<span id="cb84-3"><a href="formal-concept-analysis.html#cb84-3" aria-hidden="true" tabindex="-1"></a>S<span class="sc">$</span><span class="fu">assign</span>(<span class="at">moon =</span> <span class="dv">1</span>, <span class="at">large =</span> <span class="dv">1</span>, <span class="at">far=</span> <span class="dv">1</span>)</span>
-<span id="cb84-4"><a href="formal-concept-analysis.html#cb84-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Given the set of attributes:&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="formal-concept-analysis.html#cb97-1" tabindex="-1"></a><span class="co"># Define a set of objects</span></span>
+<span id="cb97-2"><a href="formal-concept-analysis.html#cb97-2" tabindex="-1"></a>S <span class="ot">&lt;-</span>  Set<span class="sc">$</span><span class="fu">new</span>(<span class="at">attributes =</span> fc_planets<span class="sc">$</span>attributes)</span>
+<span id="cb97-3"><a href="formal-concept-analysis.html#cb97-3" tabindex="-1"></a>S<span class="sc">$</span><span class="fu">assign</span>(<span class="at">moon =</span> <span class="dv">1</span>, <span class="at">large =</span> <span class="dv">1</span>, <span class="at">far=</span> <span class="dv">1</span>)</span>
+<span id="cb97-4"><a href="formal-concept-analysis.html#cb97-4" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Given the set of attributes:&quot;</span>)</span></code></pre></div>
 <p>[1] “Given the set of attributes:”</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="formal-concept-analysis.html#cb85-1" aria-hidden="true" tabindex="-1"></a>S</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="formal-concept-analysis.html#cb98-1" tabindex="-1"></a>S</span></code></pre></div>
 <p>{large, far, moon}</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="formal-concept-analysis.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;The extent is:&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="formal-concept-analysis.html#cb99-1" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;The extent is:&quot;</span>)</span></code></pre></div>
 <p>[1] “The extent is:”</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="formal-concept-analysis.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the extent of S</span></span>
-<span id="cb87-2"><a href="formal-concept-analysis.html#cb87-2" aria-hidden="true" tabindex="-1"></a>extent <span class="ot">&lt;-</span> fc_planets<span class="sc">$</span><span class="fu">extent</span>(S)</span>
-<span id="cb87-3"><a href="formal-concept-analysis.html#cb87-3" aria-hidden="true" tabindex="-1"></a>extent</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="formal-concept-analysis.html#cb100-1" tabindex="-1"></a></span>
+<span id="cb100-2"><a href="formal-concept-analysis.html#cb100-2" tabindex="-1"></a><span class="co"># Compute the extent of S</span></span>
+<span id="cb100-3"><a href="formal-concept-analysis.html#cb100-3" tabindex="-1"></a>extent <span class="ot">&lt;-</span> fc_planets<span class="sc">$</span><span class="fu">extent</span>(S)</span>
+<span id="cb100-4"><a href="formal-concept-analysis.html#cb100-4" tabindex="-1"></a>extent</span></code></pre></div>
 <p>{Jupiter, Saturn}</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="formal-concept-analysis.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;And the intent of this one is:&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="formal-concept-analysis.html#cb101-1" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;And the intent of this one is:&quot;</span>)</span></code></pre></div>
 <p>[1] “And the intent of this one is:”</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="formal-concept-analysis.html#cb89-1" aria-hidden="true" tabindex="-1"></a>fc_planets<span class="sc">$</span><span class="fu">intent</span>(extent)</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="formal-concept-analysis.html#cb102-1" tabindex="-1"></a>fc_planets<span class="sc">$</span><span class="fu">intent</span>(extent)</span></code></pre></div>
 <p>{large, far, moon}</p>
 <p><span class="math inline">\(\big(\{Jupiter, Saturn\},\{large, far, moon\}\big)\)</span> is a concept. It is a maximal cluster.</p>
 <div id="datasets" class="section level3 hasAnchor" number="9.1.1">
@@ -1236,7 +1310,7 @@ O3 0.5 0.5 0 0 0 1<br />
 O4 0 0 0 1 0.5 0<br />
 O5 0 0 1 0.5 0 0<br />
 O6 0.5 0.5 0 0 0 1</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-113-1.png" width="384" /><img src="_main_files/figure-html/unnamed-chunk-113-2.png" width="384" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-186-1.png" width="384" style="display: block; margin: auto;" /><img src="_main_files/figure-html/unnamed-chunk-186-2.png" width="384" style="display: block; margin: auto;" /></p>
 <p>Also, we can export the formal context as a LaTeX table:</p>
 </div>
 <div id="closures" class="section level3 hasAnchor" number="9.2.2">
@@ -1280,17 +1354,17 @@ O5 1 0.5 0 0 0<br />
 <p>It can be used both for binary and fuzzy formal contexts, resulting in binary or fuzzy concepts and implications:</p>
 <p>We can inspect the results as:</p>
 <p>A set of 12 concepts:
-1: ({Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto}, {})
-2: ({Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto}, {moon})
-3: ({Jupiter, Saturn, Uranus, Neptune, Pluto}, {far, moon})
-4: ({Jupiter, Saturn}, {large, far, moon})
-5: ({Uranus, Neptune}, {medium, far, moon})
-6: ({Mercury, Venus, Earth, Mars, Pluto}, {small})
-7: ({Earth, Mars, Pluto}, {small, moon})
-8: ({Pluto}, {small, far, moon})
-9: ({Mercury, Venus, Earth, Mars}, {small, near})
-10: ({Mercury, Venus}, {small, near, no_moon})
-11: ({Earth, Mars}, {small, near, moon})
+1: ({Mercury, Venus, Earth, Mars, Jupiter}, {})
+2: ({Venus, Earth, Mars, Jupiter}, {moon})
+3: ({Earth, Mars, Jupiter}, {far, moon})
+4: ({Earth}, {large, far, moon})
+5: ({Mars}, {medium, far, moon})
+6: ({Mercury, Venus, Jupiter}, {small})
+7: ({Venus, Jupiter}, {small, moon})
+8: ({Jupiter}, {small, far, moon})
+9: ({Mercury, Venus}, {small, near})
+10: ({Mercury}, {small, near, no_moon})
+11: ({Venus}, {small, near, moon})
 12: ({}, {small, medium, large, near, far, moon, no_moon})
 Implication set with 10 implications.
 Rule 1: {no_moon} -&gt; {small, near}
@@ -1323,39 +1397,35 @@ Rule 10: {small, medium, far, moon} -&gt; {large, near, no_moon}</p>
 <div id="plot-print-and-latex" class="section level3 hasAnchor" number="9.3.1">
 <h3><span class="header-section-number">9.3.1</span> Plot, print and LaTeX<a href="formal-concept-analysis.html#plot-print-and-latex" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The concept lattice can be plotted using a Hasse diagram and the function <code>plot()</code> inside the <code>ConceptLattice</code> component:</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-123-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-123-2.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-196-1.png" width="480" style="display: block; margin: auto;" /><img src="_main_files/figure-html/unnamed-chunk-196-2.png" width="480" style="display: block; margin: auto;" /></p>
 <p>If one desires to get the list of concepts printed, or in <span class="math inline">\(\LaTeX\)</span> format, just:</p>
 A set of 12 concepts:
-1: ({Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto}, {})
-2: ({Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto}, {moon})
-3: ({Jupiter, Saturn, Uranus, Neptune, Pluto}, {far, moon})
-4: ({Jupiter, Saturn}, {large, far, moon})
-5: ({Uranus, Neptune}, {medium, far, moon})
-6: ({Mercury, Venus, Earth, Mars, Pluto}, {small})
-7: ({Earth, Mars, Pluto}, {small, moon})
-8: ({Pluto}, {small, far, moon})
-9: ({Mercury, Venus, Earth, Mars}, {small, near})
-10: ({Mercury, Venus}, {small, near, no_moon})
-11: ({Earth, Mars}, {small, near, moon})
+1: ({Mercury, Venus, Earth, Mars, Jupiter}, {})
+2: ({Venus, Earth, Mars, Jupiter}, {moon})
+3: ({Earth, Mars, Jupiter}, {far, moon})
+4: ({Earth}, {large, far, moon})
+5: ({Mars}, {medium, far, moon})
+6: ({Mercury, Venus, Jupiter}, {small})
+7: ({Venus, Jupiter}, {small, moon})
+8: ({Jupiter}, {small, far, moon})
+9: ({Mercury, Venus}, {small, near})
+10: ({Mercury}, {small, near, no_moon})
+11: ({Venus}, {small, near, moon})
 12: ({}, {small, medium, large, near, far, moon, no_moon})
 </div>
 <div id="getting-all-extents-intents-and-retrieving-concepts" class="section level3 hasAnchor" number="9.3.2">
 <h3><span class="header-section-number">9.3.2</span> Getting all extents, intents and retrieving concepts<a href="formal-concept-analysis.html#getting-all-extents-intents-and-retrieving-concepts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For a <code>ConceptLattice</code>, one may want to retrieve particular concepts, using a subsetting as in <code>R</code>:</p>
 <p>A set of 2 concepts:
-1: ({Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto}, {moon})
-2: ({Jupiter, Saturn, Uranus, Neptune, Pluto}, {far, moon})</p>
+1: ({Venus, Earth, Mars, Jupiter}, {moon})
+2: ({Earth, Mars, Jupiter}, {far, moon})</p>
 <p>Or get all the extents and all the intents of all concepts, as sparse matrices:</p>
-<p>9 x 12 sparse Matrix of class “dgCMatrix”</p>
+<p>5 x 12 sparse Matrix of class “dgCMatrix”</p>
 <p>[1,] 1 . . . . 1 . . 1 1 . .
-[2,] 1 . . . . 1 . . 1 1 . .
-[3,] 1 1 . . . 1 1 . 1 . 1 .
-[4,] 1 1 . . . 1 1 . 1 . 1 .
-[5,] 1 1 1 1 . . . . . . . .
-[6,] 1 1 1 1 . . . . . . . .
-[7,] 1 1 1 . 1 . . . . . . .
-[8,] 1 1 1 . 1 . . . . . . .
-[9,] 1 1 1 . . 1 1 1 . . . .
+[2,] 1 1 . . . 1 1 . 1 . 1 .
+[3,] 1 1 1 1 . . . . . . . .
+[4,] 1 1 1 . 1 . . . . . . .
+[5,] 1 1 1 . . 1 1 1 . . . .
 7 x 12 sparse Matrix of class “dgCMatrix”</p>
 <p>[1,] . . . . . 1 1 1 1 1 1 1
 [2,] . . . . 1 . . . . . . 1
@@ -1382,7 +1452,7 @@ supp(X)=\frac{X^\prime}{G}
 <p>When the concept lattice is too large, it can be useful in certain occasions to just work with a sublattice of the complete lattice. To this end, we use the <code>sublattice()</code> function.</p>
 <p>For instance, to build the sublattice of those concepts with support greater than 0.5, we can do:</p>
 <p>A set of 13 concepts:
-1: ({O1, O2, O3, O4, O5, O6}, {})
+1: ({O1, O2, O3, O4, O5}, {})
 2: ({O1, O4, O5}, {P4 [0.5]})
 3: ({O1, O4}, {P4 [0.5], P5 [0.5]})
 4: ({O1, O2, O5}, {P3 [0.5]})
@@ -1391,32 +1461,32 @@ supp(X)=\frac{X^\prime}{G}
 7: ({O1 [0.5], O2, O5}, {P3})
 8: ({O1 [0.5], O5}, {P3, P4 [0.5]})
 9: ({O1 [0.5]}, {P3, P4, P5})
-10: ({O2, O3, O6}, {P1 [0.5], P2 [0.5]})
-11: ({O3, O6}, {P1 [0.5], P2 [0.5], P6})
+10: ({O2, O3}, {P1 [0.5], P2 [0.5]})
+11: ({O3}, {P1 [0.5], P2 [0.5], P6})
 12: ({O2}, {P1, P2, P3})
 13: ({}, {P1, P2, P3, P4, P5, P6})</p>
 <p>And we can plot just the sublattice:</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-202-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="subconcepts-superconcepts-infimum-and-supremum" class="section level3 hasAnchor" number="9.3.5">
 <h3><span class="header-section-number">9.3.5</span> Subconcepts, superconcepts, infimum and supremum<a href="formal-concept-analysis.html#subconcepts-superconcepts-infimum-and-supremum" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>It may be interesting to use the notions of subconcept and superconcept. Given a concept, we can compute all its subconcepts and all its superconcepts:</p>
 <p>A set of 1 concepts:
-1: ({Uranus, Neptune}, {medium, far, moon})
+1: ({Mars}, {medium, far, moon})
 A set of 2 concepts:
-1: ({Uranus, Neptune}, {medium, far, moon})
+1: ({Mars}, {medium, far, moon})
 2: ({}, {small, medium, large, near, far, moon, no_moon})
 A set of 4 concepts:
-1: ({Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto}, {})
-2: ({Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto}, {moon})
-3: ({Jupiter, Saturn, Uranus, Neptune, Pluto}, {far, moon})
-4: ({Uranus, Neptune}, {medium, far, moon})</p>
+1: ({Mercury, Venus, Earth, Mars, Jupiter}, {})
+2: ({Venus, Earth, Mars, Jupiter}, {moon})
+3: ({Earth, Mars, Jupiter}, {far, moon})
+4: ({Mars}, {medium, far, moon})</p>
 <p>Also, we can define infimum and supremum of a set of concepts as the greatest common subconcept of all the given concepts, and the lowest common superconcept of them, and can be computed by:</p>
 <p>A set of 3 concepts:
-1: ({Uranus, Neptune}, {medium, far, moon})
-2: ({Mercury, Venus, Earth, Mars, Pluto}, {small})
-3: ({Earth, Mars, Pluto}, {small, moon})
-({Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto}, {})
+1: ({Mars}, {medium, far, moon})
+2: ({Mercury, Venus, Jupiter}, {small})
+3: ({Venus, Jupiter}, {small, moon})
+({Mercury, Venus, Earth, Mars, Jupiter}, {})
 ({}, {small, medium, large, near, far, moon, no_moon})</p>
 </div>
 <div id="join--and-meet--irreducible-elements" class="section level3 hasAnchor" number="9.3.6">
@@ -1426,19 +1496,19 @@ A set of 4 concepts:
 <p><img src="reticulo.png" width="600" /></p>
 <p>The irreducible elements with respect to join (supremum) and meet (infimum) can be computed for a given concept lattice:</p>
 <p>A set of 5 concepts:
-1: ({Jupiter, Saturn}, {large, far, moon})
-2: ({Uranus, Neptune}, {medium, far, moon})
-3: ({Pluto}, {small, far, moon})
-4: ({Mercury, Venus}, {small, near, no_moon})
-5: ({Earth, Mars}, {small, near, moon})
+1: ({Earth}, {large, far, moon})
+2: ({Mars}, {medium, far, moon})
+3: ({Jupiter}, {small, far, moon})
+4: ({Mercury}, {small, near, no_moon})
+5: ({Venus}, {small, near, moon})
 A set of 7 concepts:
-1: ({Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto}, {moon})
-2: ({Jupiter, Saturn, Uranus, Neptune, Pluto}, {far, moon})
-3: ({Jupiter, Saturn}, {large, far, moon})
-4: ({Uranus, Neptune}, {medium, far, moon})
-5: ({Mercury, Venus, Earth, Mars, Pluto}, {small})
-6: ({Mercury, Venus, Earth, Mars}, {small, near})
-7: ({Mercury, Venus}, {small, near, no_moon})</p>
+1: ({Venus, Earth, Mars, Jupiter}, {moon})
+2: ({Earth, Mars, Jupiter}, {far, moon})
+3: ({Earth}, {large, far, moon})
+4: ({Mars}, {medium, far, moon})
+5: ({Mercury, Venus, Jupiter}, {small})
+6: ({Mercury, Venus}, {small, near})
+7: ({Mercury}, {small, near, no_moon})</p>
 <p>This are the concepts used to build the <em>standard context</em>, mentioned above.</p>
 </div>
 </div>
@@ -1473,7 +1543,7 @@ The extent is:{Jupiter, Saturn}
 <p>A set of 2 concepts:
 1: ({Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto}, {})
 2: ({}, {small, medium, large, near, far, moon, no_moon})
-<img src="_main_files/figure-html/unnamed-chunk-137-1.png" width="672" /></p>
+<img src="_main_files/figure-html/unnamed-chunk-210-1.png" width="480" style="display: block; margin: auto;" /></p>
 <ol start="6" style="list-style-type: decimal">
 <li>Compute the major concept (in lattice) that has moon. The same with no_moon. Locate both in the lattice to understand the meaning.</li>
 </ol>
@@ -1524,7 +1594,7 @@ The extent is:{Jupiter, Saturn}
 7: ({Mercury, Venus, Earth, Mars}, {small, near})
 8: ({Mercury, Venus}, {small, near, no_moon})
 9: ({}, {small, medium, large, near, far, moon, no_moon})
-<img src="_main_files/figure-html/unnamed-chunk-142-1.png" width="672" /></p>
+<img src="_main_files/figure-html/unnamed-chunk-215-1.png" width="480" style="display: block; margin: auto;" /></p>
 <ol start="11" style="list-style-type: decimal">
 <li>Develop a function returning the index and also the labels in all the concepts (inside the formal context) having a vector with attributes. HOMEWORK.</li>
 </ol>
@@ -1564,7 +1634,7 @@ Rule 7: {P1, P2, P3, P6} -&gt; {P4, P5}</p>
 <div id="visualization" class="section level4 hasAnchor" number="9.5.2.1">
 <h4><span class="header-section-number">9.5.2.1</span> Visualization<a href="formal-concept-analysis.html#visualization" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We provide functions to plot both the concept lattice and the formal context:</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-147-1.png" width="720" /><img src="_main_files/figure-html/unnamed-chunk-147-2.png" width="720" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-220-1.png" width="720" style="display: block; margin: auto;" /><img src="_main_files/figure-html/unnamed-chunk-220-2.png" width="720" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="redudancy-removal" class="section level3 hasAnchor" number="9.5.3">
@@ -1610,7 +1680,7 @@ Rule 12: {P1, P2, P3, P6} -&gt; {P4, P5}</p>
 <div id="visualization-1" class="section level4 hasAnchor" number="9.5.4.2">
 <h4><span class="header-section-number">9.5.4.2</span> Visualization<a href="formal-concept-analysis.html#visualization-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Let us plot the concept lattice and the formal context.
-<img src="_main_files/figure-html/unnamed-chunk-153-1.png" width="720" /><img src="_main_files/figure-html/unnamed-chunk-153-2.png" width="720" /></p>
+<img src="_main_files/figure-html/unnamed-chunk-226-1.png" width="720" style="display: block; margin: auto;" /><img src="_main_files/figure-html/unnamed-chunk-226-2.png" width="720" style="display: block; margin: auto;" /></p>
 </div>
 <div id="redudancy-removal-1" class="section level4 hasAnchor" number="9.5.4.3">
 <h4><span class="header-section-number">9.5.4.3</span> Redudancy Removal<a href="formal-concept-analysis.html#redudancy-removal-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1710,16 +1780,16 @@ filter tree heap memopt load sort verbose
 set transactions …[114 item(s), 8124 transaction(s)] done [0.01s].
 sorting and recoding items … [53 item(s)] done [0.00s].
 creating transaction tree … done [0.00s].
-checking subsets of size 1 2 3 4 5 6 7 8 9 10 done [2.03s].
-writing … [1799427 rule(s)] done [0.15s].
-creating S4 object … done [0.68s].</p>
+checking subsets of size 1 2 3 4 5 6 7 8 9 10 done [1.41s].
+writing … [1799427 rule(s)] done [0.11s].
+creating S4 object … done [0.58s].</p>
 <p>The number of implications extracted by the algorithm (with this configuration) is <code>length(mush) =</code> 1799427.</p>
 </div>
 <div id="preprocessing" class="section level3 hasAnchor" number="9.7.2">
 <h3><span class="header-section-number">9.7.2</span> Preprocessing<a href="formal-concept-analysis.html#preprocessing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Next step is to remove the redundant rules in the implications set. To this end, let us use the <code>is.redundant()</code> function in <code>arules</code>.</p>
 <p>user system elapsed
-4.588 0.189 4.803
+4.223 0.176 4.413
 After this, the number of implications is <code>length(mush_clean) =</code> 2002, that is, just a 0.111 percent of the original ruleset.</p>
 </div>
 <div id="importing-in-fcar" class="section level3 hasAnchor" number="9.7.3">
@@ -1834,7 +1904,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
