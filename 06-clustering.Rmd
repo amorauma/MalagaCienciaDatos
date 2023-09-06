@@ -255,6 +255,7 @@ options(knitr.table.format = "html")
 ## grpMeat <- kmeans(dataset[,c("Atributo1","Atributo2","Atributo3")], centers=5, nstart=10)
 
 ## ------------------------------------------------------------------------
+
 food <- read.csv('data/protein.csv')
 head(food)
 # 25 paises y 9 tipos de comida 
@@ -274,7 +275,6 @@ kable(sort(round(colMeans(my.foods, 1))),"html")
 
 #desviación estándar 
 kable(sort(round(apply(my.foods, 2, sd),1)),"html")
-
 
 ## ------------------------------------------------------------------------
  
