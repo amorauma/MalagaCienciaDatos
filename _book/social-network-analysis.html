@@ -23,7 +23,7 @@
 <meta name="author" content="Domingo López, Ángel Mora" />
 
 
-<meta name="date" content="2023-09-06" />
+<meta name="date" content="2023-09-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -539,7 +539,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 [6] “Apollo 13” “Apollo 13” “Apollo 13” “Apollo 13” “Apollo 13”<br />
 [11] “Apollo 13” “Apollo 13” “Apollo 13” “The Rock” “The Rock”<br />
 [16] “The Rock”<br />
-<img src="_main_files/figure-html/unnamed-chunk-242-1.png" width="480" style="display: block; margin: auto;" /></p>
+<img src="_main_files/figure-html/unnamed-chunk-243-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="representación-de-redes" class="section level3 hasAnchor" number="10.1.2">
 <h3><span class="header-section-number">10.1.2</span> Representación de redes<a href="social-network-analysis.html#representación-de-redes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -646,10 +646,10 @@ C 1 0 1</p>
 <span id="cb115-18"><a href="social-network-analysis.html#cb115-18" tabindex="-1"></a><span class="co">#Red social entre miembros de club de karate de universidad </span></span>
 <span id="cb115-19"><a href="social-network-analysis.html#cb115-19" tabindex="-1"></a><span class="fu">data</span>(karate,<span class="at">package=</span><span class="st">&quot;igraphdata&quot;</span>) </span>
 <span id="cb115-20"><a href="social-network-analysis.html#cb115-20" tabindex="-1"></a><span class="fu">plot</span>(karate)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-247-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-248-1.png" width="480" style="display: block; margin: auto;" /></p>
 <div id="acceder-a-elementos-de-grado" class="section level3 hasAnchor" number="10.2.1">
 <h3><span class="header-section-number">10.2.1</span> Acceder a elementos de grado<a href="social-network-analysis.html#acceder-a-elementos-de-grado" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><img src="_main_files/figure-html/unnamed-chunk-248-1.png" width="480" style="display: block; margin: auto;" />IGRAPH 6f42903 D-W- 81 817 –
+<p><img src="_main_files/figure-html/unnamed-chunk-249-1.png" width="480" style="display: block; margin: auto;" />IGRAPH 6f42903 D-W- 81 817 –
 + attr: Type (g/c), Date (g/c), Citation (g/c), Author (g/c), Group
 | (v/n), weight (e/n)
 + edges from 6f42903:
@@ -703,7 +703,7 @@ $ :List of 4
 .. ..$ Group: num [1:81] 3 1 3 3 2 2 2 1 3 2 …
 ..$ :List of 1
 .. ..$ weight: num [1:817] 4 14 4 4 10 2 6 2 4 4 …
-$ :&lt;environment: 0x10c99be08&gt;
+$ :&lt;environment: 0x1474aaa40&gt;
 [1] 4 14 4 4 10 2
 [1] 3 1 3 3 2 2</p>
 </div>
@@ -715,28 +715,28 @@ $ :&lt;environment: 0x10c99be08&gt;
 <div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="social-network-analysis.html#cb116-1" tabindex="-1"></a><span class="co"># Un grafo dirigido  vacío  </span></span>
 <span id="cb116-2"><a href="social-network-analysis.html#cb116-2" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_empty_graph</span>(<span class="at">n =</span> <span class="dv">0</span>, <span class="at">directed =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb116-3"><a href="social-network-analysis.html#cb116-3" tabindex="-1"></a>g</span></code></pre></div>
-<p>IGRAPH c24d318 D— 0 0 –
-+ edges from c24d318:</p>
+<p>IGRAPH 119c7cb D— 0 0 –
++ edges from 119c7cb:</p>
 <div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="social-network-analysis.html#cb117-1" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertices</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>))</span>
 <span id="cb117-2"><a href="social-network-analysis.html#cb117-2" tabindex="-1"></a>g</span></code></pre></div>
-<p>IGRAPH 24e76cf DN– 3 0 –
+<p>IGRAPH d29c61e DN– 3 0 –
 + attr: name (v/c)
-+ edges from 24e76cf (vertex names):</p>
++ edges from d29c61e (vertex names):</p>
 <div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="social-network-analysis.html#cb118-1" tabindex="-1"></a></span>
 <span id="cb118-2"><a href="social-network-analysis.html#cb118-2" tabindex="-1"></a><span class="co"># Arcos:  A to C ,  B to C</span></span>
 <span id="cb118-3"><a href="social-network-analysis.html#cb118-3" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;C&quot;</span>, <span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>)) </span>
 <span id="cb118-4"><a href="social-network-analysis.html#cb118-4" tabindex="-1"></a>g</span></code></pre></div>
-<p>IGRAPH 2ec374e DN– 3 2 –
+<p>IGRAPH 0c95e33 DN– 3 2 –
 + attr: name (v/c)
-+ edges from 2ec374e (vertex names):
++ edges from 0c95e33 (vertex names):
 [1] A-&gt;C B-&gt;C</p>
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="social-network-analysis.html#cb119-1" tabindex="-1"></a></span>
 <span id="cb119-2"><a href="social-network-analysis.html#cb119-2" tabindex="-1"></a><span class="co"># Eliminar arco  A</span></span>
 <span id="cb119-3"><a href="social-network-analysis.html#cb119-3" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">-</span> <span class="fu">V</span>(g)[<span class="st">&quot;A&quot;</span>]</span>
 <span id="cb119-4"><a href="social-network-analysis.html#cb119-4" tabindex="-1"></a>g</span></code></pre></div>
-<p>IGRAPH 0fea690 DN– 2 1 –
+<p>IGRAPH 9671c4e DN– 2 1 –
 + attr: name (v/c)
-+ edge from 0fea690 (vertex names):
++ edge from 9671c4e (vertex names):
 [1] B-&gt;C</p>
 <div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="social-network-analysis.html#cb120-1" tabindex="-1"></a><span class="co"># Eliminará todos los arcos conectados con A</span></span></code></pre></div>
 <blockquote>
@@ -746,25 +746,25 @@ $ :&lt;environment: 0x10c99be08&gt;
 <span id="cb121-2"><a href="social-network-analysis.html#cb121-2" tabindex="-1"></a></span>
 <span id="cb121-3"><a href="social-network-analysis.html#cb121-3" tabindex="-1"></a><span class="co">#     graph() id desde   1. </span></span>
 <span id="cb121-4"><a href="social-network-analysis.html#cb121-4" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">graph</span>( <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">1</span>,<span class="dv">3</span>, <span class="dv">2</span>,<span class="dv">3</span>, <span class="dv">3</span>,<span class="dv">4</span> ));g1</span></code></pre></div>
-<p>IGRAPH 61b9198 D— 4 4 –
-+ edges from 61b9198:
+<p>IGRAPH 8bf683f D— 4 4 –
++ edges from 8bf683f:
 [1] 1-&gt;2 1-&gt;3 2-&gt;3 3-&gt;4</p>
 <div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="social-network-analysis.html#cb122-1" tabindex="-1"></a><span class="fu">summary</span>(g1)</span></code></pre></div>
-<p>IGRAPH 61b9198 D— 4 4 –</p>
+<p>IGRAPH 8bf683f D— 4 4 –</p>
 <div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="social-network-analysis.html#cb123-1" tabindex="-1"></a><span class="fu">plot</span>(g1)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-250-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-251-1.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="social-network-analysis.html#cb124-1" tabindex="-1"></a></span>
 <span id="cb124-2"><a href="social-network-analysis.html#cb124-2" tabindex="-1"></a><span class="co"># El parámetro &quot;directed&quot; a  FALSE para</span></span>
 <span id="cb124-3"><a href="social-network-analysis.html#cb124-3" tabindex="-1"></a><span class="co"># grafos no dirigidos.  </span></span>
 <span id="cb124-4"><a href="social-network-analysis.html#cb124-4" tabindex="-1"></a></span>
 <span id="cb124-5"><a href="social-network-analysis.html#cb124-5" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">graph</span>( <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">1</span>,<span class="dv">3</span>, <span class="dv">2</span>,<span class="dv">3</span>, <span class="dv">3</span>,<span class="dv">4</span> , <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">3</span>), <span class="at">directed=</span><span class="cn">FALSE</span>); g2 </span></code></pre></div>
-<p>IGRAPH 6889701 U— 5 6 –
-+ edges from 6889701:
+<p>IGRAPH 7b8f44f U— 5 6 –
++ edges from 7b8f44f:
 [1] 1–2 1–3 2–3 3–4 3–5 1–3</p>
 <div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="social-network-analysis.html#cb125-1" tabindex="-1"></a><span class="fu">summary</span>(g2)</span></code></pre></div>
-<p>IGRAPH 6889701 U— 5 6 –</p>
+<p>IGRAPH 7b8f44f U— 5 6 –</p>
 <div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="social-network-analysis.html#cb126-1" tabindex="-1"></a><span class="fu">plot</span>(g2)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-250-2.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-251-2.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="social-network-analysis.html#cb127-1" tabindex="-1"></a></span>
 <span id="cb127-2"><a href="social-network-analysis.html#cb127-2" tabindex="-1"></a><span class="co">#Obtener la lista de arcos a partir de un grafo   </span></span>
 <span id="cb127-3"><a href="social-network-analysis.html#cb127-3" tabindex="-1"></a>edgelist<span class="ot">&lt;-</span><span class="fu">get.edgelist</span>(g2) ; edgelist</span></code></pre></div>
@@ -786,15 +786,15 @@ $ :&lt;environment: 0x10c99be08&gt;
 <div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="social-network-analysis.html#cb131-1" tabindex="-1"></a></span>
 <span id="cb131-2"><a href="social-network-analysis.html#cb131-2" tabindex="-1"></a><span class="co"># Obtener el grafo a partir de la lista de arcos</span></span>
 <span id="cb131-3"><a href="social-network-analysis.html#cb131-3" tabindex="-1"></a>g3<span class="ot">&lt;-</span><span class="fu">graph</span>( <span class="fu">t</span>(edgelist));  g3;  <span class="fu">plot</span>(g3)</span></code></pre></div>
-<p>IGRAPH c59ec1f D— 5 6 –
-+ edges from c59ec1f:
+<p>IGRAPH 25bb350 D— 5 6 –
++ edges from 25bb350:
 [1] 1-&gt;2 1-&gt;3 2-&gt;3 3-&gt;4 3-&gt;5 1-&gt;3
-<img src="_main_files/figure-html/unnamed-chunk-250-3.png" width="480" style="display: block; margin: auto;" /></p>
+<img src="_main_files/figure-html/unnamed-chunk-251-3.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="social-network-analysis.html#cb132-1" tabindex="-1"></a>g3<span class="ot">&lt;-</span><span class="fu">graph</span>( edgelist);  g3;  <span class="fu">plot</span>(g3)</span></code></pre></div>
-<p>IGRAPH 7da7d2a D— 5 6 –
-+ edges from 7da7d2a:
+<p>IGRAPH 45eaa52 D— 5 6 –
++ edges from 45eaa52:
 [1] 1-&gt;1 2-&gt;3 3-&gt;1 2-&gt;3 3-&gt;4 5-&gt;3
-<img src="_main_files/figure-html/unnamed-chunk-250-4.png" width="480" style="display: block; margin: auto;" /></p>
+<img src="_main_files/figure-html/unnamed-chunk-251-4.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="social-network-analysis.html#cb133-1" tabindex="-1"></a></span>
 <span id="cb133-2"><a href="social-network-analysis.html#cb133-2" tabindex="-1"></a><span class="co"># algunos parámetros de plot </span></span>
 <span id="cb133-3"><a href="social-network-analysis.html#cb133-3" tabindex="-1"></a></span>
@@ -804,7 +804,7 @@ $ :&lt;environment: 0x10c99be08&gt;
 <span id="cb133-7"><a href="social-network-analysis.html#cb133-7" tabindex="-1"></a>     <span class="at">vertex.size=</span><span class="dv">25</span>,</span>
 <span id="cb133-8"><a href="social-network-analysis.html#cb133-8" tabindex="-1"></a>     <span class="at">edge.curved=</span><span class="fl">0.5</span>,</span>
 <span id="cb133-9"><a href="social-network-analysis.html#cb133-9" tabindex="-1"></a>     <span class="at">layout_as_star=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-250-5.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-251-5.png" width="480" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p>Matrices de adyacencia: graph.adjacency(), get.adjacency()</p>
 </blockquote>
@@ -822,7 +822,7 @@ $ :&lt;environment: 0x10c99be08&gt;
 <span id="cb134-12"><a href="social-network-analysis.html#cb134-12" tabindex="-1"></a>g_adj_u <span class="ot">&lt;-</span> <span class="fu">graph.adjacency</span>(adjm_u, <span class="at">mode=</span><span class="st">&quot;undirected&quot;</span>) </span>
 <span id="cb134-13"><a href="social-network-analysis.html#cb134-13" tabindex="-1"></a></span>
 <span id="cb134-14"><a href="social-network-analysis.html#cb134-14" tabindex="-1"></a><span class="fu">plot</span>(g_adj_u)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-251-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-252-1.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="social-network-analysis.html#cb135-1" tabindex="-1"></a><span class="co"># Matriz de adyacencia a partir de grafo</span></span>
 <span id="cb135-2"><a href="social-network-analysis.html#cb135-2" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">get.adjacency</span>(g_adj_u); A</span></code></pre></div>
 <p>6 x 6 sparse Matrix of class “dgCMatrix”</p>
@@ -854,12 +854,12 @@ $ :&lt;environment: 0x10c99be08&gt;
 3 El Tu 3</p>
 <div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="social-network-analysis.html#cb139-1" tabindex="-1"></a><span class="co"># Crear el grafo </span></span>
 <span id="cb139-2"><a href="social-network-analysis.html#cb139-2" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.data.frame</span>(df, <span class="at">directed=</span><span class="cn">FALSE</span>); g</span></code></pre></div>
-<p>IGRAPH bdbcd42 UNW- 3 3 –
+<p>IGRAPH ee46e44 UNW- 3 3 –
 + attr: name (v/c), weight (e/n)
-+ edges from bdbcd42 (vertex names):
++ edges from ee46e44 (vertex names):
 [1] Ella–El Ella–Tu Tu –El</p>
 <div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="social-network-analysis.html#cb140-1" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-252-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-253-1.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="social-network-analysis.html#cb141-1" tabindex="-1"></a><span class="co"># Si se conocen los vértices</span></span>
 <span id="cb141-2"><a href="social-network-analysis.html#cb141-2" tabindex="-1"></a><span class="co"># g &lt;- graph.data.frame(df, vertices=listvertices, directed=FALSE);g</span></span>
 <span id="cb141-3"><a href="social-network-analysis.html#cb141-3" tabindex="-1"></a></span>
@@ -877,12 +877,12 @@ $ :&lt;environment: 0x10c99be08&gt;
 <span id="cb143-2"><a href="social-network-analysis.html#cb143-2" tabindex="-1"></a></span>
 <span id="cb143-3"><a href="social-network-analysis.html#cb143-3" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph_from_literal</span>(A<span class="sc">--</span>C, A<span class="sc">-+</span>D, C<span class="sc">-+</span>A, , D<span class="sc">-+</span>C)</span>
 <span id="cb143-4"><a href="social-network-analysis.html#cb143-4" tabindex="-1"></a>g</span></code></pre></div>
-<p>IGRAPH 4be95cd DN– 4 3 –
+<p>IGRAPH 19bfb88 DN– 4 3 –
 + attr: name (v/c)
-+ edges from 4be95cd (vertex names):
++ edges from 19bfb88 (vertex names):
 [1] A-&gt;D C-&gt;A D-&gt;C</p>
 <div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="social-network-analysis.html#cb144-1" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-253-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-254-1.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="social-network-analysis.html#cb145-1" tabindex="-1"></a></span>
 <span id="cb145-2"><a href="social-network-analysis.html#cb145-2" tabindex="-1"></a><span class="co">#IGRAPH DN-- 4 4 -- </span></span>
 <span id="cb145-3"><a href="social-network-analysis.html#cb145-3" tabindex="-1"></a><span class="co">#+ attr: name (v/c)</span></span>
@@ -891,16 +891,16 @@ $ :&lt;environment: 0x10c99be08&gt;
 <span id="cb145-6"><a href="social-network-analysis.html#cb145-6" tabindex="-1"></a></span>
 <span id="cb145-7"><a href="social-network-analysis.html#cb145-7" tabindex="-1"></a> G3 <span class="ot">&lt;-</span><span class="fu">graph_from_literal</span>(A<span class="sc">-</span>B, B <span class="sc">-+</span>C)</span>
 <span id="cb145-8"><a href="social-network-analysis.html#cb145-8" tabindex="-1"></a> <span class="fu">plot</span>(G3)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-253-2.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-254-2.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="social-network-analysis.html#cb146-1" tabindex="-1"></a> G3 <span class="ot">&lt;-</span><span class="fu">graph_from_literal</span>(A<span class="sc">-</span>B, B <span class="sc">-</span>C)</span>
 <span id="cb146-2"><a href="social-network-analysis.html#cb146-2" tabindex="-1"></a> <span class="fu">plot</span>(G3)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-253-3.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-254-3.png" width="480" style="display: block; margin: auto;" /></p>
 <blockquote>
 <blockquote>
 <p>grafo aleatorio</p>
 </blockquote>
 </blockquote>
-<p><img src="_main_files/figure-html/unnamed-chunk-254-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-255-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="visualización-1" class="section level3 hasAnchor" number="10.2.3">
 <h3><span class="header-section-number">10.2.3</span> Visualización<a href="social-network-analysis.html#visualización-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -910,45 +910,45 @@ $ :&lt;environment: 0x10c99be08&gt;
 <span id="cb147-2"><a href="social-network-analysis.html#cb147-2" tabindex="-1"></a><span class="co"># Trees</span></span>
 <span id="cb147-3"><a href="social-network-analysis.html#cb147-3" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_tree</span>(<span class="dv">27</span>, <span class="at">children=</span><span class="dv">3</span>)</span>
 <span id="cb147-4"><a href="social-network-analysis.html#cb147-4" tabindex="-1"></a>g; <span class="fu">plot</span>(g)</span></code></pre></div>
-<p>IGRAPH 8b5b1d7 D— 27 26 – Tree
+<p>IGRAPH 3c8cd09 D— 27 26 – Tree
 + attr: name (g/c), children (g/n), mode (g/c)
-+ edges from 8b5b1d7:
++ edges from 3c8cd09:
 [1] 1-&gt; 2 1-&gt; 3 1-&gt; 4 2-&gt; 5 2-&gt; 6 2-&gt; 7 3-&gt; 8 3-&gt; 9 3-&gt;10 4-&gt;11 4-&gt;12 4-&gt;13
 [13] 5-&gt;14 5-&gt;15 5-&gt;16 6-&gt;17 6-&gt;18 6-&gt;19 7-&gt;20 7-&gt;21 7-&gt;22 8-&gt;23 8-&gt;24 8-&gt;25
 [25] 9-&gt;26 9-&gt;27
-<img src="_main_files/figure-html/unnamed-chunk-255-1.png" width="480" style="display: block; margin: auto;" /></p>
+<img src="_main_files/figure-html/unnamed-chunk-256-1.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="social-network-analysis.html#cb148-1" tabindex="-1"></a></span>
 <span id="cb148-2"><a href="social-network-analysis.html#cb148-2" tabindex="-1"></a><span class="co"># Cliques </span></span>
 <span id="cb148-3"><a href="social-network-analysis.html#cb148-3" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_full_graph</span>(<span class="at">n=</span><span class="dv">6</span>)</span>
 <span id="cb148-4"><a href="social-network-analysis.html#cb148-4" tabindex="-1"></a>g; <span class="fu">plot</span>(g)</span></code></pre></div>
-<p>IGRAPH c3c5c9d U— 6 15 – Full graph
+<p>IGRAPH e86b852 U— 6 15 – Full graph
 + attr: name (g/c), loops (g/l)
-+ edges from c3c5c9d:
++ edges from e86b852:
 [1] 1–2 1–3 1–4 1–5 1–6 2–3 2–4 2–5 2–6 3–4 3–5 3–6 4–5 4–6 5–6
-<img src="_main_files/figure-html/unnamed-chunk-255-2.png" width="480" style="display: block; margin: auto;" /></p>
+<img src="_main_files/figure-html/unnamed-chunk-256-2.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="social-network-analysis.html#cb149-1" tabindex="-1"></a></span>
 <span id="cb149-2"><a href="social-network-analysis.html#cb149-2" tabindex="-1"></a><span class="co"># Lattices</span></span>
 <span id="cb149-3"><a href="social-network-analysis.html#cb149-3" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_lattice</span>(<span class="at">dimvector =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>), <span class="at">circular =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb149-4"><a href="social-network-analysis.html#cb149-4" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>label <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
 <span id="cb149-5"><a href="social-network-analysis.html#cb149-5" tabindex="-1"></a>g; <span class="fu">plot</span>(g)</span></code></pre></div>
-<p>IGRAPH de17e93 U— 25 40 – Lattice graph
+<p>IGRAPH 5aac38f U— 25 40 – Lattice graph
 + attr: name (g/c), dimvector (g/n), nei (g/n), mutual (g/l), circular
 | (g/l), label (v/l)
-+ edges from de17e93:
++ edges from 5aac38f:
 [1] 1– 2 1– 6 2– 3 2– 7 3– 4 3– 8 4– 5 4– 9 5–10 6– 7
 [11] 6–11 7– 8 7–12 8– 9 8–13 9–10 9–14 10–15 11–12 11–16
 [21] 12–13 12–17 13–14 13–18 14–15 14–19 15–20 16–17 16–21 17–18
 [31] 17–22 18–19 18–23 19–20 19–24 20–25 21–22 22–23 23–24 24–25
-<img src="_main_files/figure-html/unnamed-chunk-255-3.png" width="480" style="display: block; margin: auto;" /></p>
+<img src="_main_files/figure-html/unnamed-chunk-256-3.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="social-network-analysis.html#cb150-1" tabindex="-1"></a></span>
 <span id="cb150-2"><a href="social-network-analysis.html#cb150-2" tabindex="-1"></a><span class="co">#Stars</span></span>
 <span id="cb150-3"><a href="social-network-analysis.html#cb150-3" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_star</span>(<span class="at">n=</span><span class="dv">10</span>,<span class="at">mode =</span> <span class="st">&quot;undirected&quot;</span>)</span>
 <span id="cb150-4"><a href="social-network-analysis.html#cb150-4" tabindex="-1"></a>g;  <span class="fu">plot</span>(g)</span></code></pre></div>
-<p>IGRAPH d783e8e U— 10 9 – Star
+<p>IGRAPH 501c927 U— 10 9 – Star
 + attr: name (g/c), mode (g/c), center (g/n)
-+ edges from d783e8e:
++ edges from 501c927:
 [1] 1– 2 1– 3 1– 4 1– 5 1– 6 1– 7 1– 8 1– 9 1–10
-<img src="_main_files/figure-html/unnamed-chunk-255-4.png" width="480" style="display: block; margin: auto;" /></p>
+<img src="_main_files/figure-html/unnamed-chunk-256-4.png" width="480" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p>Anillo con conexiones cruzadas:</p>
 </blockquote>
@@ -959,7 +959,7 @@ $ :&lt;environment: 0x10c99be08&gt;
 <span id="cb151-5"><a href="social-network-analysis.html#cb151-5" tabindex="-1"></a>g <span class="ot">&lt;-</span>  g <span class="sc">+</span> <span class="fu">edges</span>(<span class="dv">9</span>,<span class="dv">5</span>, <span class="dv">7</span>,<span class="dv">1</span>, <span class="dv">1</span>,<span class="dv">5</span>)</span>
 <span id="cb151-6"><a href="social-network-analysis.html#cb151-6" tabindex="-1"></a></span>
 <span id="cb151-7"><a href="social-network-analysis.html#cb151-7" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-256-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-257-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="layout" class="section level3 hasAnchor" number="10.2.4">
 <h3><span class="header-section-number">10.2.4</span> Layout<a href="social-network-analysis.html#layout" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -982,11 +982,11 @@ $ :&lt;environment: 0x10c99be08&gt;
 <div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="social-network-analysis.html#cb152-1" tabindex="-1"></a></span>
 <span id="cb152-2"><a href="social-network-analysis.html#cb152-2" tabindex="-1"></a>Lykamada <span class="ot">&lt;-</span> <span class="fu">layout.kamada.kawai</span>(g)</span>
 <span id="cb152-3"><a href="social-network-analysis.html#cb152-3" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>Lykamada)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-257-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-258-1.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="social-network-analysis.html#cb153-1" tabindex="-1"></a></span>
 <span id="cb153-2"><a href="social-network-analysis.html#cb153-2" tabindex="-1"></a>Lyfruchtermant <span class="ot">&lt;-</span> <span class="fu">layout.fruchterman.reingold</span>(g)</span>
 <span id="cb153-3"><a href="social-network-analysis.html#cb153-3" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>Lyfruchtermant)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-257-2.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-258-2.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="social-network-analysis.html#cb154-1" tabindex="-1"></a></span>
 <span id="cb154-2"><a href="social-network-analysis.html#cb154-2" tabindex="-1"></a>lo <span class="ot">&lt;-</span> <span class="fu">layout_in_circle</span>(g)</span>
 <span id="cb154-3"><a href="social-network-analysis.html#cb154-3" tabindex="-1"></a><span class="fu">head</span>(lo, <span class="at">n=</span><span class="dv">4</span>) </span></code></pre></div>
@@ -1010,20 +1010,20 @@ $ :&lt;environment: 0x10c99be08&gt;
 [9,] 0.309017 -9.510565e-01
 [10,] 0.809017 -5.877853e-01</p>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="social-network-analysis.html#cb158-1" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-257-3.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-258-3.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="social-network-analysis.html#cb159-1" tabindex="-1"></a></span>
 <span id="cb159-2"><a href="social-network-analysis.html#cb159-2" tabindex="-1"></a><span class="co"># See ?layout_ for a full list</span></span>
 <span id="cb159-3"><a href="social-network-analysis.html#cb159-3" tabindex="-1"></a></span>
 <span id="cb159-4"><a href="social-network-analysis.html#cb159-4" tabindex="-1"></a><span class="co"># Para redes tipo árbol:  layout_as_tree</span></span>
 <span id="cb159-5"><a href="social-network-analysis.html#cb159-5" tabindex="-1"></a>gTree <span class="ot">&lt;-</span> <span class="fu">make_tree</span>(<span class="dv">15</span>)</span>
 <span id="cb159-6"><a href="social-network-analysis.html#cb159-6" tabindex="-1"></a><span class="fu">plot</span>(gTree, <span class="at">layout=</span><span class="fu">layout_as_tree</span>(gTree, <span class="at">root =</span> <span class="dv">1</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-257-4.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-258-4.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="social-network-analysis.html#cb160-1" tabindex="-1"></a></span>
 <span id="cb160-2"><a href="social-network-analysis.html#cb160-2" tabindex="-1"></a><span class="co"># layout como un grid</span></span>
 <span id="cb160-3"><a href="social-network-analysis.html#cb160-3" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span><span class="fu">layout_on_grid</span>(g))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-257-5.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-258-5.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Mallas:</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-258-1.png" width="480" style="display: block; margin: auto;" /><img src="_main_files/figure-html/unnamed-chunk-258-2.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-259-1.png" width="480" style="display: block; margin: auto;" /><img src="_main_files/figure-html/unnamed-chunk-259-2.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="dibujar-grafos-ponderados" class="section level3 hasAnchor" number="10.2.5">
 <h3><span class="header-section-number">10.2.5</span> Dibujar grafos ponderados<a href="social-network-analysis.html#dibujar-grafos-ponderados" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1042,9 +1042,9 @@ V(g)$color</code></pre>
 <li>set_vertex_attr</li>
 <li>set_graph_attr</li>
 </ul>
-<p><img src="_main_files/figure-html/unnamed-chunk-260-1.png" width="480" style="display: block; margin: auto;" /><img src="_main_files/figure-html/unnamed-chunk-260-2.png" width="480" style="display: block; margin: auto;" /><img src="_main_files/figure-html/unnamed-chunk-260-3.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-261-1.png" width="480" style="display: block; margin: auto;" /><img src="_main_files/figure-html/unnamed-chunk-261-2.png" width="480" style="display: block; margin: auto;" /><img src="_main_files/figure-html/unnamed-chunk-261-3.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Note: colores en R <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf" class="uri">http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf</a></p>
-<p><img src="_main_files/figure-html/unnamed-chunk-261-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-262-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ejemplos---plantillas" class="section level3 hasAnchor" number="10.2.7">
 <h3><span class="header-section-number">10.2.7</span> Ejemplos - plantillas<a href="social-network-analysis.html#ejemplos---plantillas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1058,16 +1058,16 @@ V(g)$color</code></pre>
 <span id="cb162-5"><a href="social-network-analysis.html#cb162-5" tabindex="-1"></a>g <span class="ot">&lt;-</span>  g <span class="sc">+</span> <span class="fu">edges</span>(<span class="dv">9</span>,<span class="dv">5</span>, <span class="dv">7</span>,<span class="dv">1</span>, <span class="dv">1</span>,<span class="dv">5</span>)</span>
 <span id="cb162-6"><a href="social-network-analysis.html#cb162-6" tabindex="-1"></a></span>
 <span id="cb162-7"><a href="social-network-analysis.html#cb162-7" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-262-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-263-1.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="social-network-analysis.html#cb163-1" tabindex="-1"></a>vowel <span class="ot">&lt;-</span> <span class="fu">V</span>(g)<span class="sc">$</span>name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;E&quot;</span>,<span class="st">&quot;I&quot;</span>,<span class="st">&quot;O&quot;</span>,<span class="st">&quot;U&quot;</span>) <span class="sc">+</span> <span class="dv">1</span> <span class="co"># gives 1 or 2</span></span>
 <span id="cb163-2"><a href="social-network-analysis.html#cb163-2" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo, <span class="at">vertex.shape=</span><span class="fu">c</span>(<span class="st">&quot;circle&quot;</span>, <span class="st">&quot;square&quot;</span>)[vowel])</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-262-2.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-263-2.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="social-network-analysis.html#cb164-1" tabindex="-1"></a><span class="co">#colores</span></span>
 <span id="cb164-2"><a href="social-network-analysis.html#cb164-2" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo, <span class="at">vertex.color=</span><span class="fu">c</span>(<span class="st">&quot;tomato2&quot;</span>, <span class="st">&quot;royalblue&quot;</span>)[vowel])</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-262-3.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-263-3.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="social-network-analysis.html#cb165-1" tabindex="-1"></a><span class="co">#tamaño</span></span>
 <span id="cb165-2"><a href="social-network-analysis.html#cb165-2" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo, <span class="at">vertex.size=</span><span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">30</span>)[vowel])</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-262-4.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-263-4.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="social-network-analysis.html#cb166-1" tabindex="-1"></a><span class="co">#Propiedades usando atributos</span></span>
 <span id="cb166-2"><a href="social-network-analysis.html#cb166-2" tabindex="-1"></a></span>
 <span id="cb166-3"><a href="social-network-analysis.html#cb166-3" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>shape <span class="ot">&lt;-</span> <span class="st">&quot;circle&quot;</span> <span class="co"># Aplicado a todos los vértices</span></span>
@@ -1080,7 +1080,7 @@ V(g)$color</code></pre>
 <span id="cb166-10"><a href="social-network-analysis.html#cb166-10" tabindex="-1"></a><span class="fu">V</span>(g)[isVowel]<span class="sc">$</span>size <span class="ot">&lt;-</span> <span class="dv">25</span></span>
 <span id="cb166-11"><a href="social-network-analysis.html#cb166-11" tabindex="-1"></a></span>
 <span id="cb166-12"><a href="social-network-analysis.html#cb166-12" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-262-5.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-263-5.png" width="480" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p>Propiedades de los arcos</p>
 </blockquote>
@@ -1088,7 +1088,7 @@ V(g)$color</code></pre>
 <span id="cb167-2"><a href="social-network-analysis.html#cb167-2" tabindex="-1"></a>v1 <span class="ot">&lt;-</span><span class="fu">V</span>(g)[isVowel]</span>
 <span id="cb167-3"><a href="social-network-analysis.html#cb167-3" tabindex="-1"></a>v1</span></code></pre></div>
 <ul>
-<li>3/10 vertices, named, from 5b82f2b:
+<li>3/10 vertices, named, from 4696d31:
 [1] A E I</li>
 </ul>
 <div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="social-network-analysis.html#cb168-1" tabindex="-1"></a><span class="fu">E</span>(g)[v1  <span class="sc">%--%</span>  v1]<span class="sc">$</span>width <span class="ot">&lt;-</span> <span class="dv">4</span></span>
@@ -1096,11 +1096,11 @@ V(g)$color</code></pre>
 <span id="cb168-3"><a href="social-network-analysis.html#cb168-3" tabindex="-1"></a><span class="co"># Ver http://igraph.org/r/doc/igraph-es-indexing.html</span></span>
 <span id="cb168-4"><a href="social-network-analysis.html#cb168-4" tabindex="-1"></a></span>
 <span id="cb168-5"><a href="social-network-analysis.html#cb168-5" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-263-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-264-1.png" width="480" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="social-network-analysis.html#cb169-1" tabindex="-1"></a></span>
 <span id="cb169-2"><a href="social-network-analysis.html#cb169-2" tabindex="-1"></a><span class="co">#Arcos curvados</span></span>
 <span id="cb169-3"><a href="social-network-analysis.html#cb169-3" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">layout=</span>lo, <span class="at">edge.curved=</span><span class="fl">0.3</span><span class="sc">*</span><span class="fu">which_mutual</span>(g))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-263-2.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-264-2.png" width="480" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p>Agrupaciones por índices:</p>
 </blockquote>
@@ -1120,7 +1120,7 @@ V(g)$color</code></pre>
 <span id="cb170-14"><a href="social-network-analysis.html#cb170-14" tabindex="-1"></a><span class="fu">text</span>(<span class="fl">0.45</span>,<span class="fl">0.1</span>,<span class="st">&quot;Vocales&quot;</span>, <span class="at">cex=</span><span class="fl">1.5</span>)</span>
 <span id="cb170-15"><a href="social-network-analysis.html#cb170-15" tabindex="-1"></a><span class="fu">text</span>(<span class="fl">0.5</span>,<span class="fl">0.9</span>,<span class="st">&quot;Grupo consonantes 1&quot;</span>, <span class="at">cex=</span><span class="fl">1.5</span>)</span>
 <span id="cb170-16"><a href="social-network-analysis.html#cb170-16" tabindex="-1"></a><span class="fu">text</span>(<span class="sc">-</span><span class="fl">0.8</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="st">&quot;Grupo consonantes 2&quot;</span>, <span class="at">cex=</span><span class="fl">1.5</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-264-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-265-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="exportar-grafos" class="section level2 hasAnchor" number="10.3">
@@ -1379,9 +1379,9 @@ V(g)$color</code></pre>
 <p>Visualiza el grafo</p>
 </blockquote>
 </blockquote>
-<p>IGRAPH c0e24c7 UN– 8 16 –
+<p>IGRAPH 4a9f64c UN– 8 16 –
 + attr: name (v/c), Gender (v/c), BestActorActress (v/c), Movie (e/c)
-+ edges from c0e24c7 (vertex names):
++ edges from 4a9f64c (vertex names):
 [1] Tom Hanks –Gary Sinise Tom Hanks –Robin Wright
 [3] Gary Sinise –Robin Wright Tom Hanks –Gary Sinise
 [5] Tom Hanks –Bill Paxton Tom Hanks –Kevin Bacon
@@ -1390,7 +1390,7 @@ V(g)$color</code></pre>
 [11] Bill Paxton –Kevin Bacon Bill Paxton –Ed Harris<br />
 [13] Kevin Bacon –Ed Harris Ed Harris –Sean Connery
 [15] Ed Harris –Nicolas Cage Sean Connery–Nicolas Cage
-<img src="_main_files/figure-html/unnamed-chunk-270-1.png" width="480" style="display: block; margin: auto;" /></p>
+<img src="_main_files/figure-html/unnamed-chunk-271-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="análisis-del-grafo" class="section level3 hasAnchor" number="10.7.2">
 <h3><span class="header-section-number">10.7.2</span> Análisis del grafo<a href="social-network-analysis.html#análisis-del-grafo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1413,7 +1413,7 @@ V(g)$color</code></pre>
 </blockquote>
 </blockquote>
 <ul>
-<li>1/8 vertex, named, from c0e24c7:
+<li>1/8 vertex, named, from 4a9f64c:
 [1] Robin Wright</li>
 </ul>
 <blockquote>
@@ -1422,7 +1422,7 @@ V(g)$color</code></pre>
 </blockquote>
 </blockquote>
 <ul>
-<li>1/16 edge from c0e24c7 (vertex names):
+<li>1/16 edge from 4a9f64c (vertex names):
 [1] Tom Hanks–Gary Sinise</li>
 </ul>
 <p>Cambia algunas propiedades del grafo:</p>
@@ -1431,20 +1431,20 @@ V(g)$color</code></pre>
 <p>Cambia el layout del grafo (he usado el de estrella pero puedes usar el que quieras.</p>
 </blockquote>
 </blockquote>
-<p><img src="_main_files/figure-html/unnamed-chunk-275-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-276-1.png" width="480" style="display: block; margin: auto;" /></p>
 <blockquote>
 <blockquote>
 <p>Agrupar los nodos de protagonistas que han ganado un oscar</p>
 </blockquote>
 </blockquote>
-<p><img src="_main_files/figure-html/unnamed-chunk-276-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-277-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="cambiar-atributos-del-grafo" class="section level3 hasAnchor" number="10.7.3">
 <h3><span class="header-section-number">10.7.3</span> Cambiar atributos del grafo<a href="social-network-analysis.html#cambiar-atributos-del-grafo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Para acceder a los atributos del grafo usamos:</p>
-<p>IGRAPH c0e24c7 UN– 8 16 –
+<p>IGRAPH 4a9f64c UN– 8 16 –
 + attr: name (v/c), Gender (v/c), BestActorActress (v/c), Movie (e/c)
-+ edges from c0e24c7 (vertex names):
++ edges from 4a9f64c (vertex names):
 [1] Tom Hanks –Gary Sinise Tom Hanks –Robin Wright
 [3] Gary Sinise –Robin Wright Tom Hanks –Gary Sinise
 [5] Tom Hanks –Bill Paxton Tom Hanks –Kevin Bacon
@@ -1467,7 +1467,7 @@ $name
 [11] “Apollo 13” “Apollo 13” “Apollo 13” “The Rock” “The Rock”<br />
 [16] “The Rock”</p>
 <ul>
-<li>8/8 vertices, named, from c0e24c7:
+<li>8/8 vertices, named, from 4a9f64c:
 [1] Tom Hanks Gary Sinise Robin Wright Bill Paxton Kevin Bacon
 [6] Ed Harris Sean Connery Nicolas Cage
 [1] “Tom Hanks” “Gary Sinise” “Robin Wright” “Bill Paxton” “Kevin Bacon”
@@ -1477,7 +1477,7 @@ $name
 [1] “Winner” “None” “None” “None” “None” “Nominated”
 [7] “None” “Winner”<br />
 </li>
-<li>1/16 edge from c0e24c7 (vertex names):
+<li>1/16 edge from 4a9f64c (vertex names):
 [1] Tom Hanks–Gary Sinise
 [1] “Forest Gump” “Forest Gump” “Forest Gump” “Apollo 13” “Apollo 13”<br />
 [6] “Apollo 13” “Apollo 13” “Apollo 13” “Apollo 13” “Apollo 13”<br />
@@ -1514,7 +1514,7 @@ Ed Harris . 1 1
 Sean Connery 1 . 1
 Nicolas Cage 1 1 .</p>
 <p>Recordar usar funciones vectoriales:</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-278-1.png" width="480" style="display: block; margin: auto;" />$name
+<p><img src="_main_files/figure-html/unnamed-chunk-279-1.png" width="480" style="display: block; margin: auto;" />$name
 [1] “Tom Hanks” “Gary Sinise” “Robin Wright” “Bill Paxton” “Kevin Bacon”
 [6] “Ed Harris” “Sean Connery” “Nicolas Cage”</p>
 <p>$Gender
@@ -1543,9 +1543,9 @@ Nicolas Cage 1 1 .</p>
 </blockquote>
 </blockquote>
 <ul>
-<li>2/8 vertices, named, from c0e24c7:
+<li>2/8 vertices, named, from 4a9f64c:
 [1] Tom Hanks Nicolas Cage
-<img src="_main_files/figure-html/unnamed-chunk-279-1.png" width="480" style="display: block; margin: auto;" /></li>
+<img src="_main_files/figure-html/unnamed-chunk-280-1.png" width="480" style="display: block; margin: auto;" /></li>
 </ul>
 <blockquote>
 <blockquote>
@@ -1553,7 +1553,7 @@ Nicolas Cage 1 1 .</p>
 </blockquote>
 </blockquote>
 <ul>
-<li>13/16 edges from c0e24c7 (vertex names):
+<li>13/16 edges from 4a9f64c (vertex names):
 [1] Tom Hanks –Gary Sinise Tom Hanks –Bill Paxton
 [3] Tom Hanks –Kevin Bacon Tom Hanks –Ed Harris<br />
 [5] Gary Sinise –Bill Paxton Gary Sinise –Kevin Bacon
@@ -1561,7 +1561,7 @@ Nicolas Cage 1 1 .</p>
 [9] Bill Paxton –Ed Harris Kevin Bacon –Ed Harris<br />
 [11] Ed Harris –Sean Connery Ed Harris –Nicolas Cage
 [13] Sean Connery–Nicolas Cage
-<img src="_main_files/figure-html/unnamed-chunk-280-1.png" width="480" style="display: block; margin: auto;" /></li>
+<img src="_main_files/figure-html/unnamed-chunk-281-1.png" width="480" style="display: block; margin: auto;" /></li>
 </ul>
 <blockquote>
 <blockquote>
@@ -1570,20 +1570,20 @@ Nicolas Cage 1 1 .</p>
 </blockquote>
 <p>Definimos la importancia como el número de películas multiplicado por 15.</p>
 <p>Ayuda: ver funciones <code>strength(grafo)</code></p>
-<p><img src="_main_files/figure-html/unnamed-chunk-281-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-282-1.png" width="480" style="display: block; margin: auto;" /></p>
 <blockquote>
 <blockquote>
 <p>Eliminar el nombre (la etiqueta - atributo label) de los nodos con protagonistas con importancia menor que 4.</p>
 </blockquote>
 </blockquote>
-<p><img src="_main_files/figure-html/unnamed-chunk-282-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-283-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="modificar-el-grafo" class="section level3 hasAnchor" number="10.7.4">
 <h3><span class="header-section-number">10.7.4</span> Modificar el grafo<a href="social-network-analysis.html#modificar-el-grafo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Para practicar todo lo visto:
 - Modifica los atributos del grafo para que se muestre parecido al siguiente (función <code>legend</code> para las leyendas):</p>
 <ul>
-<li>13/16 edges from c0e24c7 (vertex names):
+<li>13/16 edges from 4a9f64c (vertex names):
 [1] Tom Hanks –Gary Sinise Tom Hanks –Bill Paxton
 [3] Tom Hanks –Kevin Bacon Tom Hanks –Ed Harris<br />
 [5] Gary Sinise –Bill Paxton Gary Sinise –Kevin Bacon
@@ -1591,7 +1591,7 @@ Nicolas Cage 1 1 .</p>
 [9] Bill Paxton –Ed Harris Kevin Bacon –Ed Harris<br />
 [11] Ed Harris –Sean Connery Ed Harris –Nicolas Cage
 [13] Sean Connery–Nicolas Cage
-<img src="_main_files/figure-html/unnamed-chunk-283-1.png" width="480" style="display: block; margin: auto;" /></li>
+<img src="_main_files/figure-html/unnamed-chunk-284-1.png" width="480" style="display: block; margin: auto;" /></li>
 </ul>
 
 </div>

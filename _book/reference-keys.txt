@@ -1,8 +1,8 @@
 tab:unnamed-chunk-72
 tab:unnamed-chunk-78
-fig:unnamed-chunk-144
 fig:unnamed-chunk-145
 fig:unnamed-chunk-146
+fig:unnamed-chunk-147
 introducción
 análisis-exploratorio-de-datos
 importación-de-datos

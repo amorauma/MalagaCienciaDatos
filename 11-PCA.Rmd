@@ -1,5 +1,4 @@
- 
-#  Análisis de Componentes Principales
+ #  Análisis de Componentes Principales
 
 
 

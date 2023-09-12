@@ -1,11 +1,11 @@
  
 #  Algebra Lineal 
 
-## sistemas de ecuaciones lineales
+## Sistemas de ecuaciones lineales
 
-## grandes sistemas
+## Grandes sistemas
 
-## matrices dispersas
+## Matrices dispersas
 
 
 

@@ -112,6 +112,34 @@ The next step is to store the data in a time series object in R.
 
 There is a lot of packages and functions to deal with time series. Firstly, we will use **ts** function, which is used to create time-series objects. 
 
+The sintax of **ts** function is: 
+
+```{r, eval=FALSE}
+serie_1<-  ts(data, start, end, frequency)
+
+# data - the  values in the time series
+
+# start -  the first forecast observations in a time series
+
+# end -  the last observation  in a time series
+
+# frequency -  periods  (month, quarter, annual)
+
+#     frequency=1 (by default) -  no periods or season in your data
+#     frequency=12 - period is monthly
+#     frequency=4  - period is quarterly
+#Example
+
+# data <- c(2, 8, 6, 10,
+#           5, 14, 7, 14,
+#           9, 23, 11, 29, 12)
+# serie1 <- ts(data,start = c(2023,1),frequency = 12)
+
+# plot(serie1)
+# autoplot(serie1) - ggplot of the ts object
+```
+
+
 See [ts-objects](https://otexts.org/fpp2/ts-objects.html).
 
 
@@ -197,6 +225,24 @@ plot.ts(logts.f1)
  
 See  [time plots](https://otexts.org/fpp2/time-plots.html).
  
+## Time-dependent regression 
+ 
+With one of the previously imported series (tsf1), we are fitting the model: 
+
+$$y=a+bx+cx^2$$
+
+```{r}
+library(ggplot2)
+library(forecast)
+str(ts.f1)
+mydata <- data.frame(x=1:length(ts.f1), y=tsf1)
+autoplot(ts.f1)
+model <- lm( y ~ x , data=mydata)
+summary(model)
+prediction_model <- forecast::forecast(model, newdata = data.frame(x=86:100))
+plot(prediction_model)
+```
+
  
  
 ##  Time Series Components

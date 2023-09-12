@@ -23,7 +23,7 @@
 <meta name="author" content="Domingo López, Ángel Mora" />
 
 
-<meta name="date" content="2023-09-06" />
+<meta name="date" content="2023-09-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -518,6 +518,7 @@ points is in a simple text file with one column.</p>
 <p>The next step is to store the data in a time series object in R.</p>
 <p><strong>A time series is a list of numbers with temporal information stored as a ts object in R</strong></p>
 <p>There is a lot of packages and functions to deal with time series. Firstly, we will use <strong>ts</strong> function, which is used to create time-series objects.</p>
+<p>The sintax of <strong>ts</strong> function is:</p>
 <p>See <a href="https://otexts.org/fpp2/ts-objects.html">ts-objects</a>.</p>
 <p>Time Series:
 Start = 1
@@ -585,13 +586,13 @@ Aug Sep Oct Nov Dec
 <div id="displaying-time-series" class="section level3 hasAnchor" number="6.4.2">
 <h3><span class="header-section-number">6.4.2</span> Displaying time series<a href="series-temporales.html#displaying-time-series" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let us make a basic plot of the time series data (for the two first datasets):</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-91-1.png" width="480" style="display: block; margin: auto;" /><img src="_main_files/figure-html/unnamed-chunk-91-2.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-92-1.png" width="480" style="display: block; margin: auto;" /><img src="_main_files/figure-html/unnamed-chunk-92-2.png" width="480" style="display: block; margin: auto;" /></p>
 <p>In the second one, there seems to be seasonal variation in the number of unemployees per month: There is a peak every summer, and a trough every winter.</p>
 <p>The plot for the third dataset is the following:
-<img src="_main_files/figure-html/unnamed-chunk-92-1.png" width="480" style="display: block; margin: auto;" /></p>
+<img src="_main_files/figure-html/unnamed-chunk-93-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>The size of
 the seasonal fluctuations and random fluctuations seem to increase with the level of the time series. In these cases it is reasonable to transform the time series by calculating the natural logarithm of the original data.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-93-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-94-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>See <a href="https://otexts.org/fpp2/time-plots.html">time plots</a>.</p>
 </div>
 </div>
@@ -601,11 +602,11 @@ the seasonal fluctuations and random fluctuations seem to increase with the leve
 <p>See <a href="https://otexts.org/fpp2/tspatterns.html">Time series patterns: Trend, Seasonal, Cyclic</a>.</p>
 <div id="seasonal-plot" class="section level3 hasAnchor" number="6.5.1">
 <h3><span class="header-section-number">6.5.1</span> Seasonal plot<a href="series-temporales.html#seasonal-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><img src="_main_files/figure-html/unnamed-chunk-94-1.png" width="480" style="display: block; margin: auto;" /><img src="_main_files/figure-html/unnamed-chunk-94-2.png" width="480" style="display: block; margin: auto;" /><img src="_main_files/figure-html/unnamed-chunk-94-3.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-95-1.png" width="480" style="display: block; margin: auto;" /><img src="_main_files/figure-html/unnamed-chunk-95-2.png" width="480" style="display: block; margin: auto;" /><img src="_main_files/figure-html/unnamed-chunk-95-3.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="subseries-plot" class="section level3 hasAnchor" number="6.5.2">
 <h3><span class="header-section-number">6.5.2</span> Subseries plot<a href="series-temporales.html#subseries-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><img src="_main_files/figure-html/unnamed-chunk-95-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-96-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>The mean is indicated by horizontal lines.</p>
 <p>See <a href="https://otexts.org/fpp2/graphics.html">Time series graphics: Scatterplots, lag plots, etc.</a>.</p>
 </div>
@@ -640,26 +641,26 @@ The forecast error is:
 <div id="average-method" class="section level3 hasAnchor" number="6.7.1">
 <h3><span class="header-section-number">6.7.1</span> Average method<a href="series-temporales.html#average-method" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[\hat{y}_{T+h\mid T}=\frac{(y_1, \ldots, y_T)}{T}\]</span></p>
-<p><img src="_main_files/figure-html/unnamed-chunk-96-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-97-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="naïve-method" class="section level3 hasAnchor" number="6.7.2">
 <h3><span class="header-section-number">6.7.2</span> Naïve method<a href="series-temporales.html#naïve-method" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The prediction will be the last <span class="math inline">\(Y_T\)</span>.</p>
 <p><span class="math display">\[\hat{y}_{T+h\mid T}= y_T\]</span></p>
-<p><img src="_main_files/figure-html/unnamed-chunk-97-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-98-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="seasonal-naïve-method" class="section level3 hasAnchor" number="6.7.3">
 <h3><span class="header-section-number">6.7.3</span> Seasonal naïve method<a href="series-temporales.html#seasonal-naïve-method" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The prediction will be the same that the value of the variable in the last year in the same time.</p>
 <p><span class="math display">\[\hat{y}_{T+h\mid T}= y_{T+h-m(k+1)}\]</span>
 (where <span class="math inline">\(m\)</span> is the season in the year and <span class="math inline">\(k\)</span> is the truncated value of <span class="math inline">\((h-1)/m\)</span>)</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-98-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-99-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="drift-method" class="section level3 hasAnchor" number="6.7.4">
 <h3><span class="header-section-number">6.7.4</span> Drift method<a href="series-temporales.html#drift-method" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>It is based on naïve method where the amount of change in time (the drift) is set as the average change in the historical data:</p>
 <p><span class="math display">\[\hat{y}_{_{T+h\mid T}}=y_{_{T}}+\frac{h}{T-1}\displaystyle\sum_{t=2}^T(y_t-t_{t-1})=y_{_{T}}+h\frac{y_{_T}-y_{_{1}}}{T-1}\]</span></p>
-<p><img src="_main_files/figure-html/unnamed-chunk-99-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-100-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>See all the methods in the same picture - <a href="https://otexts.org/fpp2/simple-methods.html#fig:beerf">Forecasts for quarterly beer production</a>.</p>
 <p>Note: It is necessary the package <strong>fpp2</strong> to execute the code in this page.</p>
 </div>
@@ -668,34 +669,34 @@ The forecast error is:
 <h2><span class="header-section-number">6.8</span> Example: Temperature forecast in Malaga - Basic forecasting methods<a href="series-temporales.html#example-temperature-forecast-in-malaga---basic-forecasting-methods" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To analyse the evolution of minimum temperatures since 2001 in Malaga.</p>
 <p>First of all we obtain a time-series object with the function <strong>ts</strong>, as our data are divided into months, we set the parameter <em>frecuency</em> to 12 and we indicate that we start in January 2001. After this, we draw the object obtained:</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-101-1.png" width="480" style="display: block; margin: auto;" /></p>
-<p>We decompose the data: <em>Seasonal component</em>, <em>Trend component</em>, <em>Cycle component</em> y <em>residual</em>.</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-102-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>We decompose the data: <em>Seasonal component</em>, <em>Trend component</em>, <em>Cycle component</em> y <em>residual</em>.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-103-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Let’s see if it is seasonal, let’s look at the data by year:
-<img src="_main_files/figure-html/unnamed-chunk-103-1.png" width="480" style="display: block; margin: auto;" /></p>
+<img src="_main_files/figure-html/unnamed-chunk-104-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>As we can see, all the years are identical, which indicates that the temperatures repeat annual and monthly cycles.</p>
 <p>With these graphs we can see that our series is seasonal, at the beginning of the year it is down, during the year it rises and from August onwards it starts to fall. This cycle is repeated every year.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-104-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-105-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>With this last graph we see the subseries by months. From it we see how each month moves in the same range. With this we confirm that it is a seasonal series.</p>
 <div id="average-method-1" class="section level3 hasAnchor" number="6.8.1">
 <h3><span class="header-section-number">6.8.1</span> Average method<a href="series-temporales.html#average-method-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>With this method we see that the prediction is basically an average.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-105-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-106-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="naïve-method-1" class="section level3 hasAnchor" number="6.8.2">
 <h3><span class="header-section-number">6.8.2</span> Naïve method<a href="series-temporales.html#naïve-method-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This method uses the last value of <span class="math inline">\(y_t\)</span>.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-106-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-107-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="seasonal-naïve-method-1" class="section level3 hasAnchor" number="6.8.3">
 <h3><span class="header-section-number">6.8.3</span> Seasonal naïve method<a href="series-temporales.html#seasonal-naïve-method-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This method uses the last year to predict. As we will see in the graph, it generates what has happened in the last year.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-107-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-108-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="drift-method-1" class="section level3 hasAnchor" number="6.8.4">
 <h3><span class="header-section-number">6.8.4</span> Drift method<a href="series-temporales.html#drift-method-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This method is based on the previous one and that the amount of change over time is set as the average change in the historical data.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-108-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-109-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="conclusion" class="section level3 hasAnchor" number="6.8.5">
 <h3><span class="header-section-number">6.8.5</span> Conclusion<a href="series-temporales.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -733,7 +734,7 @@ common to use a smoothing method, such as calculating the Simple Moving Average 
 <p>To compute the average eliminates randomness in the data.</p>
 <p>To specify the order of the simple moving average, the parameter <span class="math inline">\(n\)</span> will be used. For example, to calculate a simple moving
 average of order 2, we set <span class="math inline">\(n=2\)</span> in the SMA() function.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-109-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-110-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>There still appears to be quite a lot of random fluctuations in the time series smoothed using a simple moving
 average of order 2.</p>
 <p>Thus, to estimate the trend component more accurately, we might want to try smoothing the
@@ -756,7 +757,7 @@ amount of smoothing.</p>
 <p>Given the time series <strong>ts.n1</strong>, we will decompose the time serie using the following:</p>
 <!-- Given the time series  of the number of births per month in New York. -->
 <p>The estimated seasonal factors are given for the months January-December, and are the same for each year.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-111-1.png" width="480" style="display: block; margin: auto;" />
+<p><img src="_main_files/figure-html/unnamed-chunk-112-1.png" width="480" style="display: block; margin: auto;" />
 <!--  We see that the -->
 <!-- estimated trend component shows a small decrease from about 24 in 1947 to about 22 in 1948, followed by a -->
 <!-- steady increase from then on to about 27 in 1959. --></p>
@@ -800,7 +801,7 @@ Sep Oct Nov Dec
 1991 28.35638 27.70876 27.74377 28.11182
 1992 27.71338 27.16976 27.02177 26.99582
 1993 28.56938 28.23676 28.10177 28.27382
-<img src="_main_files/figure-html/unnamed-chunk-113-1.png" width="480" style="display: block; margin: auto;" /></p>
+<img src="_main_files/figure-html/unnamed-chunk-114-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>The seasonal variation has been removed from the seasonally adjusted time series. The seasonally
 adjusted time series now just contains the trend component and an irregular component.</p>
 </div>
@@ -812,7 +813,7 @@ adjusted time series now just contains the trend component and an irregular comp
 <div id="additive-decomposition-1" class="section level3 hasAnchor" number="6.9.1">
 <h3><span class="header-section-number">6.9.1</span> Additive decomposition<a href="series-temporales.html#additive-decomposition-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A seasonal time series consists of a trend component, a seasonal component and an irregular component. To decompose it we are going to use <strong>decompose</strong>.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-114-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-115-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="seasonal-adjusting-1" class="section level3 hasAnchor" number="6.9.2">
 <h3><span class="header-section-number">6.9.2</span> Seasonal Adjusting<a href="series-temporales.html#seasonal-adjusting-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -855,7 +856,7 @@ Sep Oct Nov Dec
 2016 15.35424 15.92508 14.72900 16.25081
 2017 15.15424 14.22508 14.32900 13.95081
 2018 16.55424 14.32508</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-116-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-117-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="forecasts-using-exponential-smoothing" class="section level3 hasAnchor" number="6.9.3">
 <h3><span class="header-section-number">6.9.3</span> Forecasts using Exponential Smoothing<a href="series-temporales.html#forecasts-using-exponential-smoothing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -895,7 +896,7 @@ the level at the current time point.</li>
 <p>The file <strong>ts_p1.dat</strong> contains total annual snowfall for a city.<br />
 <!-- For instance, the file  **precip1.dat** contains total annual rainfall in inches for -->
 <!-- London, from 1813-1912 (original data from Hipel and McLeod, 1994).   --></p>
-<p><img src="_main_files/figure-html/unnamed-chunk-117-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-118-1.png" width="480" style="display: block; margin: auto;" /></p>
 <ul>
 <li>The mean stays constant at about 25 - roughly constant level.</li>
 <li>The random fluctuations seem to be roughly constant.</li>
@@ -927,11 +928,11 @@ a 24.67819</p>
 <p>The output of <code>HoltWinters()</code> tells us that the estimated value of the
 alpha parameter is about 0.024. This is very close to zero, telling us
 that past observations have more influence on forecasts.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-120-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-121-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>The plot shows the original time series in black, and the forecasts of
 these values as a red line. The time series of forecasts is much
 smoother than the time series of the original data here.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-121-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-122-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>The function <code>forecast</code> predicts the value as the previous plot shows.</p>
 <p>As a measure of the accuracy of the forecasts, we can calculate the sum
 of squared errors for the in-sample forecast errors, that is, the
@@ -952,7 +953,7 @@ gamma: FALSE</p>
 <p>Coefficients:
 [,1]
 a 26.45644
-<img src="_main_files/figure-html/unnamed-chunk-123-1.png" width="480" style="display: block; margin: auto;" />[1] 2428.339
+<img src="_main_files/figure-html/unnamed-chunk-124-1.png" width="480" style="display: block; margin: auto;" />[1] 2428.339
 Holt-Winters exponential smoothing without trend and without seasonal component.</p>
 <p>Call:
 HoltWinters(x = ts.p1, alpha = 0.9, beta = FALSE, gamma = FALSE)</p>
@@ -963,7 +964,7 @@ gamma: FALSE</p>
 <p>Coefficients:
 [,1]
 a 27.57778
-<img src="_main_files/figure-html/unnamed-chunk-123-2.png" width="480" style="display: block; margin: auto;" />[1] 3399.419</p>
+<img src="_main_files/figure-html/unnamed-chunk-124-2.png" width="480" style="display: block; margin: auto;" />[1] 3399.419</p>
 <p>Note: The forecasts made by <code>HoltWinters</code> are stored in the list called
 fitted.</p>
 <p>Time Series:
@@ -1109,7 +1110,7 @@ a 95% prediction interval for the forecast.</p>
 <!-- - Point: the yearThe forecasted snowfall for 2008 is about 24.68, -->
 <!-- with a 95% prediction interval of (16.24, 33.11).  -->
 <p>Plotting the predictions:</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-127-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-128-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>The forecasts for 2000-2020 are plotted as a blue line, the 80%
 prediction interval as a dark blue shaded area, and the 95% prediction
 interval as a grey shaded area.</p>
@@ -1127,7 +1128,7 @@ the in-sample forecast errors. We can calculate a correlogram of the
 forecast errors using the <code>acf</code> function in R.</p>
 <p><code>acf</code> computes (and plots, by default) the estimation of the
 autocovariance or AutoCorrelation Function (ACF).</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-128-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-129-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>The autocorrelation at lag 3 is just touching the significance bounds
 (significant evidence for non-zero correlations).</p>
 <p>To test whether there is significant evidence for non-zero correlations
@@ -1158,7 +1159,7 @@ autocorrelations in the in-sample forecast errors at lags 1-20.</p>
 <h2><span class="header-section-number">6.11</span> Example: Temperature forecast in Malaga - Exponential Smoothing<a href="series-temporales.html#example-temperature-forecast-in-malaga---exponential-smoothing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Analyse the evolution of minimum temperatures since 2001 in Malaga <strong>with the methods seen in this document. Malaga </strong>with the methods seen in this document**.</p>
 <p>We obtain a time-series object with the <code>ts</code> function. data are divided into months, the parameter <em>frequency</em> is set to 12 and we indicate that we start in January 2001. After this, we draw the object:</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-131-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-132-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p><strong>Forecasts using Exponential Smoothing</strong></p>
 <p><em>Exponential Smoothing</em> considers weights on variable values: weighted averages of past observations. The weights decrease exponentially for distant values.</p>
 <div id="simple-exponential-smoothing-1" class="section level3 hasAnchor" number="6.11.1">
@@ -1193,10 +1194,10 @@ s9 6.9081866
 s10 7.9327353
 s11 5.3361482
 s12 1.4610327</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-133-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-134-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>The graph shows the original time series in black, and forecasts of these values as a red line. The forecast time series is very close to the original data.</p>
 <p>We now draw the forecast using <code>forecast</code>.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-134-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-135-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>As we can see it fits quite well with what is happening in recent years.</p>
 <p>Let’s try a higher <em>alpha</em> value:</p>
 <p>Holt-Winters exponential smoothing without trend and with additive seasonal component.</p>
@@ -1221,7 +1222,7 @@ s9 7.0279317
 s10 8.0279557
 s11 5.3161216
 s12 1.1929326</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-136-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-137-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Holt-Winters exponential smoothing without trend and with additive seasonal component.</p>
 <p>Call:
 HoltWinters(x = ts.p1, alpha = 0.9, beta = FALSE)</p>
@@ -1244,7 +1245,7 @@ s9 6.5257969
 s10 7.4170932
 s11 4.6994542
 s12 1.1345783</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-138-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-139-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>As we can see there is not much difference between the first model and the other 2 created later, so the <em>alpha</em> value generated by the first model is the optimal one. We can see that the higher the <em>alpha</em> value, the narrower the fixed values, and the <em>gamma</em> values increase along with <em>alpha</em>.</p>
 </div>
 <div id="forecasting-using-forecast-package-1" class="section level3 hasAnchor" number="6.11.2">
@@ -1277,7 +1278,7 @@ Jul 2020 21.708406 20.086715 23.33010 19.228243 24.18857
 Aug 2020 22.732955 21.100371 24.36554 20.236134 25.22978
 Sep 2020 20.136368 18.492964 21.77977 17.622999 22.64974
 Oct 2020 16.261252 14.607099 17.91541 13.731443 18.79106</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-140-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-141-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>The forecasts for the next 2 years are represented as a blue line, the 80% prediction interval as a dark grey shaded area and the 95% prediction interval as a grey shaded area.</p>
 <p><strong>Forecast errors</strong></p>
 <p>Errors are stored in <code>residuals</code>.</p>
@@ -1287,7 +1288,7 @@ Oct 2020 16.261252 14.607099 17.91541 13.731443 18.79106</p>
 </ul>
 <p>To find out which is the case, we can obtain a correlation of the errors. We can calculate it using the <code>acf</code> function. <code>acf</code> calculates the estimate of the autocovariance or autocorrelation function <em>(ACF)</em>.</p>
 <p>Let’s see what happens, we use <code>acf</code> with residuals and lag max 24.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-141-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-142-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>We performed a Ljung Box text to see if there is significant evidence of non-zero correlations in the <strong>lag</strong>.</p>
 <pre><code>Box-Ljung test</code></pre>
 <p>data: ts.p1.forecasts2$residuals
@@ -1372,16 +1373,16 @@ where <span class="math inline">\(m\)</span> is the number of seasons.</p>
 <span id="cb11-4"><a href="series-temporales.html#cb11-4" tabindex="-1"></a>electricity.ts <span class="ot">&lt;-</span> <span class="fu">ts</span>(electricity<span class="sc">$</span>Million.kilowatt.hours, <span class="at">frequency =</span> <span class="dv">12</span>, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1956</span>, <span class="dv">1</span>))</span></code></pre></div>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="series-temporales.html#cb12-1" tabindex="-1"></a></span>
 <span id="cb12-2"><a href="series-temporales.html#cb12-2" tabindex="-1"></a><span class="fu">plot.ts</span>(lynx.ts, <span class="at">xlab =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Lynx Trapped&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-144"></span>
-<img src="_main_files/figure-html/unnamed-chunk-144-1.png" alt="\label{fig:cyclic}Although there are cycles, they are not fixed in time." width="480" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-145"></span>
+<img src="_main_files/figure-html/unnamed-chunk-145-1.png" alt="\label{fig:cyclic}Although there are cycles, they are not fixed in time." width="480" />
 <p class="caption">
 Figure 6.1: Although there are cycles, they are not fixed in time.
 </p>
 </div>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="series-temporales.html#cb13-1" tabindex="-1"></a></span>
 <span id="cb13-2"><a href="series-temporales.html#cb13-2" tabindex="-1"></a><span class="fu">plot.ts</span>(electricity.ts, <span class="at">xlab =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;kW/h&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-145"></span>
-<img src="_main_files/figure-html/unnamed-chunk-145-1.png" alt="\label{fig:trendy}Clear trend indicates this is not a stationary series." width="480" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-146"></span>
+<img src="_main_files/figure-html/unnamed-chunk-146-1.png" alt="\label{fig:trendy}Clear trend indicates this is not a stationary series." width="480" />
 <p class="caption">
 Figure 6.2: Clear trend indicates this is not a stationary series.
 </p>
@@ -1389,8 +1390,8 @@ Figure 6.2: Clear trend indicates this is not a stationary series.
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="series-temporales.html#cb14-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
 <span id="cb14-2"><a href="series-temporales.html#cb14-2" tabindex="-1"></a><span class="fu">acf</span>(lynx.ts)</span>
 <span id="cb14-3"><a href="series-temporales.html#cb14-3" tabindex="-1"></a><span class="fu">acf</span>(electricity.ts)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-146"></span>
-<img src="_main_files/figure-html/unnamed-chunk-146-1.png" alt="\label{fig:acf}Lynx trapped ACF plot (left) and kilowatts per hour in Australia ACF plot (right)." width="672" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-147"></span>
+<img src="_main_files/figure-html/unnamed-chunk-147-1.png" alt="\label{fig:acf}Lynx trapped ACF plot (left) and kilowatts per hour in Australia ACF plot (right)." width="672" />
 <p class="caption">
 Figure 6.3: Lynx trapped ACF plot (left) and kilowatts per hour in Australia ACF plot (right).
 </p>
@@ -1438,10 +1439,10 @@ where <span class="math inline">\(y&#39;_t\)</span> is the series to which diffe
 <h2><span class="header-section-number">6.18</span> Example: Temperature forecast in Malaga - Modelos ARIMA<a href="series-temporales.html#example-temperature-forecast-in-malaga---modelos-arima" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Analyse the evolution of the minimum temperatures since 2001 in Malaga <strong>with the methods seen in this document</strong>.</p>
 <p>We obtain a time-series object with the <code>ts</code> function, as our data are divided into months, we set the parameter <em>frequency</em> to 12 and we indicate that we start in January 2001. Then we draw the object obtained:</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-148-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-149-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p><strong><em>ARIMA models</em></strong></p>
 <p>We decompose the data: <em>Seasonal component</em>, <em>Trend component</em>, <em>Cycle component</em> y <em>residual</em>.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-149-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-150-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Previously we have seen that the series is stationary, but to fit an ARIMA model requires the series to be stationary.</p>
 <pre><code>Augmented Dickey-Fuller Test</code></pre>
 <p>data: obj.ts
@@ -1457,7 +1458,7 @@ ar1 ma1
 s.e. 0.0668 0.0175</p>
 <p>sigma^2 = 0.7702: log likelihood = -274.66
 AIC=555.32 AICc=555.44 BIC=565.41</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-152-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-153-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>As we can see, even lag=23 is equal, so p or q is 23.</p>
 <p>Call:
 arima(x = deseasonal_cnt, order = c(1, 1, 23))</p>
@@ -1472,9 +1473,9 @@ ma17 ma18 ma19 ma20 ma21 ma22 ma23
 -0.1927 -0.2143 0.0691 0.1088 0.1423 -0.0907 -0.0931
 s.e. 0.0902 0.1099 0.0969 0.1216 0.1053 0.1051 0.1117</p>
 <p>sigma^2 estimated as 0.6437: log likelihood = -261.09, aic = 572.19
-<img src="_main_files/figure-html/unnamed-chunk-153-1.png" width="480" style="display: block; margin: auto;" /></p>
+<img src="_main_files/figure-html/unnamed-chunk-154-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>We forecast for the next 30 months:</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-154-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-155-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 <div id="references" class="section level2 hasAnchor" number="6.19">
 <h2><span class="header-section-number">6.19</span> References<a href="series-temporales.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h2>
